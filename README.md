@@ -44,6 +44,7 @@ Générez en un instant un code QR pour **ajouter un contact** ou **ce que vous 
   - [Désinstallation](#désinstallation)
 - 📘 [Informations techniques](#-informations-techniques)
   - [Technologies utilisées](#-technologies)
+  - [Documentation](https://lob2018.github.io/CanScan/)
   - [Licence](#licence)
 
 ## ✨ Fonctionnalités
