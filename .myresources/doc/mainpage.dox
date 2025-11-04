@@ -1,0 +1,23 @@
+/**
+ * @mainpage Documentation of CanScan
+ *
+ * # 📲 CanScan
+ *
+ * Générez en un instant un code QR pour **ajouter un contact** ou **ce que vous voulez** !
+ * - 👤 **Partager un contact** : Générer un code QR scannable contenant ses coordonnées au format MECARD
+ * - 🌐 **Partager ce que vous voulez** : Créer un code QR d’un lien vers un site web, un événement de calendrier, etc.
+ * - 🎨 **Personnaliser l'apparence** : Choisir vos couleurs, modules arrondis, marges et dimensions
+ * - 🖼️ **Ajouter votre logo** : Intégrer une image centrale sans compromettre la lisibilité
+ * - 📷 **Vérifier et tester** : S’assurer que le code QR est scannable grâce à l’aperçu dynamique
+ * - 💾 **Enregistrer facilement** : Sauvegarder l’image au format PNG
+ *
+ *
+ * <a href="https://github.com/Lob2018/CanScan/releases/latest">
+ *   <img src="https://raw.githubusercontent.com/Lob2018/CanScan/master/.myresources/images/CanScan_in_action.png" alt="CanScan in action"  width="400"/>
+ * </a>
+ *
+ * \section Liens_utiles Liens utiles
+ * - [GitHub](https://github.com/Lob2018/CanScan)
+ * - [Démo](https://youtu.be/YV2UbsMo910)
+ * - [Documentation](https://lob2018.github.io/CanScan/)
+ */

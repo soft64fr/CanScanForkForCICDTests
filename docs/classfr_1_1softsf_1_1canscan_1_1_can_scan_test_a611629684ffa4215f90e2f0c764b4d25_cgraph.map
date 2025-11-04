@@ -1,0 +1,15 @@
+<map id="fr.softsf.canscan.CanScanTest.givenDifferentImageRatios_whenDrawLogoIfPresent_thenLogoScaledCorrectly" name="fr.softsf.canscan.CanScanTest.givenDifferentImageRatios_whenDrawLogoIfPresent_thenLogoScaledCorrectly">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,277,131"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#adbb5179aab9252237d61ebd2333824c1" title=" " alt="" coords="341,5,518,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,59,325,48,326,53,278,64"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="325,72,534,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,91,309,91,309,96,277,96"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="608,131,789,173"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="277,117,325,124,464,138,592,145,592,151,464,143,324,129,277,122"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="582,40,814,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,78,566,74,567,80,535,84"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="531,113,593,126,592,132,530,118"/>
+<area shape="rect" id="Node000005" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="862,40,1095,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="815,59,847,59,847,64,815,64"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="648,131,646,121,654,112,672,106,698,104,727,107,745,113,743,118,726,112,698,109,673,111,657,116,651,122,653,129"/>
+</map>

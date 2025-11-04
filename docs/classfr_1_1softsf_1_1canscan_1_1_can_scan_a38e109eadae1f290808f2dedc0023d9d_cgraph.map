@@ -1,0 +1,15 @@
+<map id="fr.softsf.canscan.CanScan.dispose" name="fr.softsf.canscan.CanScan.dispose">
+<area shape="rect" id="Node000001" title="Overrides dispose() to ensure explicit resource cleanup before window disposal." alt="" coords="5,113,232,140"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab3bf57de8d7f86f063fd3e6ba9d576fe" title="Releases all runtime resources associated with the QR code preview and generation workflow." alt="" coords="280,105,506,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,124,264,124,264,129,232,129"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a0b2e07f16a3c9b537016b04215b4d595" title="Cancels all active background workers and ensures proper cleanup." alt="" coords="554,39,773,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="482,102,559,83,560,88,483,107"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4815606aa036969bcf5313568220d396" title="Releases the currently stored QR code image to free native memory." alt="" coords="562,105,765,148"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="506,124,547,124,547,129,506,129"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a61ffd3b70feaa6414de075f723a24b62" title="Stops and clears all active Swing timers used in the QR code workflow." alt="" coords="560,172,767,215"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="483,146,560,165,559,170,482,151"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab7aac2c23dad07b50ad8a83dfb98aa4d" title="Cancels and flushes any active preview worker to ensure clean restart." alt="" coords="821,5,1041,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="773,44,805,40,806,45,774,49"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae299b57aba96ad890bab5bdfaae06f98" title="Cancels any ongoing resize worker if active and waits for its proper termination." alt="" coords="821,72,1041,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="774,71,806,75,805,80,773,76"/>
+</map>

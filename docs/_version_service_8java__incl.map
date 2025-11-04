@@ -1,0 +1,37 @@
+<map id="src/main/java/fr/softsf/canscan/service/VersionService.java" name="src/main/java/fr/softsf/canscan/service/VersionService.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1479,5,1718,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,104,141,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1478,33,798,54,424,73,270,85,152,99,131,103,130,97,151,93,269,80,424,68,798,49,1478,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="164,104,366,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1478,33,1270,38,996,50,688,69,377,99,343,103,343,98,377,93,688,64,996,44,1270,33,1478,27"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="389,104,485,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1478,34,964,55,693,74,581,86,496,99,484,102,483,96,495,93,581,80,693,69,964,50,1478,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="508,104,664,131"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1478,34,1119,53,898,72,677,99,653,103,652,98,677,93,898,66,1118,48,1478,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="689,104,860,131"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1478,38,1201,60,1036,77,872,99,846,103,845,98,871,93,1035,72,1200,55,1478,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="884,104,1065,131"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1479,44,1290,68,1077,99,1051,103,1050,98,1077,93,1289,62,1478,39"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1090,96,1286,139"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1503,51,1300,95,1298,90,1501,46"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1310,96,1510,139"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1555,51,1469,92,1467,87,1553,46"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1535,104,1662,131"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1601,48,1601,88,1596,88,1596,48"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1686,96,1879,139"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1643,46,1727,87,1725,91,1640,51"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1903,104,2056,131"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1688,46,1911,97,1910,103,1687,51"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="2080,104,2228,131"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1719,40,1885,63,2069,93,2090,98,2089,103,2069,99,1885,68,1718,45"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="2253,104,2424,131"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1719,35,1961,57,2241,93,2268,98,2267,103,2241,99,1960,63,1718,40"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="2447,104,2587,131"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1719,29,2044,48,2240,67,2436,93,2457,97,2456,103,2435,99,2239,72,2043,54,1719,34"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="2611,104,2783,131"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1719,28,1891,35,2111,47,2354,66,2599,93,2627,98,2626,103,2598,99,2354,71,2110,52,1891,40,1718,34"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="2807,104,2982,131"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1719,27,1923,31,2191,43,2492,62,2795,93,2824,98,2823,103,2794,99,2491,68,2191,48,1923,37,1718,32"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="3006,104,3199,131"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1719,26,1954,30,2271,40,2630,60,2814,75,2993,93,3027,98,3026,103,2993,99,2813,80,2630,66,2270,45,1954,35,1719,31"/>
+</map>

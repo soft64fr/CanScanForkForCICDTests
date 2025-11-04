@@ -1,0 +1,17 @@
+<map id="fr.softsf.canscan.CanScanTest.givenNullGraphics_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanTest.givenNullGraphics_whenDrawLogoIfPresent_thenReturnWithoutException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,85,248,160"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#adbb5179aab9252237d61ebd2333824c1" title=" " alt="" coords="312,5,489,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,82,295,57,314,51,316,56,297,63,228,87"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="296,72,505,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,107,280,104,280,109,248,112"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="578,131,760,173"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="248,127,563,144,563,149,248,132"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac77e48bdbcedc2673009c6df51b5ad09" title=" " alt="" coords="311,189,490,232"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="246,158,318,181,316,187,244,163"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="553,40,785,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="505,78,537,74,538,80,506,84"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="502,113,564,126,563,132,501,118"/>
+<area shape="rect" id="Node000005" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="833,40,1066,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="786,59,818,59,818,64,786,64"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="619,131,617,121,625,112,643,106,669,104,698,107,716,113,714,118,697,112,669,109,644,111,628,116,622,122,624,129"/>
+</map>

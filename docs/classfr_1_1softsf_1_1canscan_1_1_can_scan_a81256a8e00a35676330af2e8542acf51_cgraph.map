@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.CanScan.fillBackground" name="fr.softsf.canscan.CanScan.fillBackground">
+<area shape="rect" id="Node000001" title="Fills the entire QR code area with the specified background color." alt="" coords="5,5,200,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="248,5,480,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,24,232,24,232,29,200,29"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="528,5,760,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,24,512,24,512,29,481,29"/>
+</map>

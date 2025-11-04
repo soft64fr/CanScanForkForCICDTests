@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.CanScanTest" name="fr.softsf.canscan.CanScanTest">
+<area shape="rect" id="Node000001" title="Test suite for CanScan." alt="" coords="5,2709,312,3467"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan &#45; Swing application to generate QR Codes." alt="" coords="31,160,286,2645"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,2645,162,2692,156,2692,156,2645"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="61,16,116,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,100,96,160,91,160,88,100"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html" title="Defines the application operation modes." alt="" coords="139,5,323,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="231,96,229,144,223,143,226,96"/>
+</map>

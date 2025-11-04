@@ -1,0 +1,8 @@
+<map id="fr.softsf.canscan.NativeImageConfigSimulator.interceptAndValideDialog" name="fr.softsf.canscan.NativeImageConfigSimulator.interceptAndValideDialog">
+<area shape="rect" id="Node000001" title="Confirms and closes a visible JOptionPane by pressing Enter, then returns the dialog title." alt="" coords="5,55,210,113"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ac80dbcb1d031bb72c93cf21315c09f27" title="Recursively searches the given container and its descendants for a JOptionPane instance." alt="" coords="258,29,501,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,69,242,65,242,70,211,74"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ab4d4463dc9177237a8de0a7b6713e7cf" title="Simulates pressing the Enter key using the provided Robot, followed by a short delay." alt="" coords="271,96,488,139"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="211,94,256,100,255,105,210,99"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="328,29,326,19,335,10,353,5,379,3,409,5,426,12,424,17,408,10,379,8,353,10,338,15,331,21,333,28"/>
+</map>

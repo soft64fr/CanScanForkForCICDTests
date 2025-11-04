@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.service.BuildQRDataService.appendField" name="fr.softsf.canscan.service.BuildQRDataService.appendField">
+<area shape="rect" id="Node000001" title="Appends a field to the MECARD string if the value is non&#45;null and non&#45;blank." alt="" coords="5,5,222,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="270,5,502,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,24,254,24,254,29,222,29"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="550,5,782,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="503,24,534,24,534,29,503,29"/>
+</map>

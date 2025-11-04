@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- Project information -->
+  <groupId>fr.softsf</groupId>
+  <artifactId>canscan</artifactId>
+  <version>0.9.0.4</version>
+  <name>CanScan</name>
+  <organization>
+    <name>Soft64.fr</name>
+  </organization>
+  <!-- Developer information -->
+  <developers>
+    <developer>
+      <email>soft64.fr@gmail.com</email>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+  <!-- Project properties -->
+  <properties>
+    <app.main-class>fr.softsf.canscan.CanScan</app.main-class>
+    <app.name>${project.name}</app.name>
+    <app.organization>${project.organization.name}</app.organization>
+    <app.version>${project.version}</app.version>
+    <java.version>21</java.version>
+    <license.name>MIT</license.name>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>lob2018</sonar.organization>
+    <spotless-maven-plugin.skip>false</spotless-maven-plugin.skip>
+  </properties>
+  <!-- Project dependencies -->
+  <dependencies>
+    <!-- Flatlaf themes dependency -->
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf</artifactId>
+      <version>3.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf-intellij-themes</artifactId>
+      <version>3.6.2</version>
+    </dependency>
+    <!-- Zxing QR Code dependency -->
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>core</artifactId>
+      <version>3.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>javase</artifactId>
+      <version>3.5.3</version>
+    </dependency>
+    <!-- Apache Commons Lang 3 dependency -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.19.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>5.6.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <!--
+                                            Spotless plugin for source file formatting:
+                                            - `ratchetFrom`: Format files based on the reference branch (`origin/main`).
+                                            - `skip`: Skip formatting based on the `spotless-maven-plugin.skip` property.
+                                            - `formats`: Defines format rules for various file types (e.g., `.gitignore`, `.xml`, `.md`, `.yaml`).
+                                            - `pom`: Formats `pom.xml` with indentation, element order, and plugin-specific settings.
+                                            - `java`: Applies `google-java-format` to Java files, with sorting imports and removing unused ones.
+                                            - `sql`: Formats SQL files for Flyway migrations with indentation and whitespace handling.
+                                            - `executions`:
+                                              - `spotless-apply`: Applies formatting during the `validate` phase.
+                                              - `spotless-check`: Checks if files are properly formatted during the `validate` phase.
+                                          -->
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <ratchetFrom>NONE</ratchetFrom>
+          <skip>${spotless-maven-plugin.skip}</skip>
+          <formats>
+            <!-- independent formats -->
+            <format>
+              <!-- define the files to apply to -->
+              <includes>
+                <include>.gitignore</include>
+                <include>jvm.config</include>
+                <include>**/*.md</include>
+                <include>**/*.xml</include>
+                <include>**/*.yaml</include>
+                <include>**/*.yml</include>
+              </includes>
+              <excludes>
+                <exclude>pom.xml</exclude>
+                <exclude>.flattened-pom.xml</exclude>
+                <exclude>**/target/**/*</exclude>
+                <exclude>.git/**</exclude>
+                <exclude>setup/**</exclude>
+              </excludes>
+              <!-- steps to apply to those files -->
+              <trimTrailingWhitespace/>
+              <endWithNewline/>
+              <indent>
+                <spaces>true</spaces>
+                <spacesPerTab>4</spacesPerTab>
+              </indent>
+            </format>
+          </formats>
+          <!-- language-specific format -->
+          <pom>
+            <!-- defaults -->
+            <includes>
+              <include>pom.xml</include>
+            </includes>
+            <sortPom>
+              <encoding>UTF-8</encoding>
+              <!-- The encoding of the pom files -->
+              <lineSeparator>${line.separator}</lineSeparator>
+              <!-- line separator to use -->
+              <expandEmptyElements>false</expandEmptyElements>
+              <!-- Should empty elements be expanded-->
+              <spaceBeforeCloseEmptyElement>false</spaceBeforeCloseEmptyElement>
+              <!-- Should a space be added inside self-closing elements-->
+              <keepBlankLines>true</keepBlankLines>
+              <!-- Keep empty lines -->
+              <nrOfIndentSpace>2</nrOfIndentSpace>
+              <!-- Indentation -->
+              <indentBlankLines>false</indentBlankLines>
+              <!-- Should empty lines be indented -->
+              <indentSchemaLocation>false</indentSchemaLocation>
+              <!-- Should schema locations be indended -->
+              <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+              <!-- Sort order of elements: https://github.com/Ekryd/sortpom/wiki/PredefinedSortOrderProfiles-->
+              <sortOrderFile/>
+              <!-- Custom sort order of elements: https://raw.githubusercontent.com/Ekryd/sortpom/master/sorter/src/main/resources/custom_1.xml -->
+              <sortDependencies>groupId,artifactId</sortDependencies>
+              <!-- Sort dependencies: https://github.com/Ekryd/sortpom/wiki/SortDependencies-->
+              <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+              <!-- Sort dependency exclusions: https://github.com/Ekryd/sortpom/wiki/SortDependencies-->
+              <sortPlugins>groupId,artifactId</sortPlugins>
+              <!-- Sort plugins: https://github.com/Ekryd/sortpom/wiki/SortPlugins -->
+              <sortProperties>true</sortProperties>
+              <!-- Sort properties -->
+              <sortModules>true</sortModules>
+              <!-- Sort modules -->
+              <sortExecutions>true</sortExecutions>
+              <!-- Sort plugin executions -->
+            </sortPom>
+          </pom>
+          <java>
+            <!-- Included source folders -->
+            <includes>
+              <include>src/main/java/**/*.java</include>
+              <include>src/test/java/**/*.java</include>
+            </includes>
+            <!-- Use Google Java Format with AOSP style and string reflow -->
+            <googleJavaFormat>
+              <version>1.27.0</version>
+              <style>AOSP</style>
+              <reflowLongStrings>true</reflowLongStrings>
+            </googleJavaFormat>
+            <!-- Import ordering rules -->
+            <importOrder>
+              <!-- Place wildcard imports after regular imports -->
+              <wildcardsLast>true</wildcardsLast>
+              <order>java|javax,org,com,,com.abcdef,\#,\#com.abcdef</order>
+              <!-- Use '|' to group without line breaks, empty string for others, '\#' for static imports -->
+              <!-- Alternatively: <file>${project.basedir}/eclipse.importorder</file> -->
+            </importOrder>
+            <!-- Remove unused imports -->
+            <removeUnusedImports/>
+            <!-- Format Java type annotations consistently -->
+            <formatAnnotations/>
+            <!-- Insert license header at the top of each file -->
+            <licenseHeader>
+              <content><![CDATA[
+/*
+ * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
+ * Licensed under the MIT License (MIT).
+ * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
+ */
+]]></content>
+              <!-- Or load from external file: <file>${project.basedir}/license-header</file> -->
+            </licenseHeader>
+          </java>
+        </configuration>
+        <executions>
+          <!-- Execution to apply formatting on every build -->
+          <execution>
+            <id>spotless-apply</id>
+            <goals>
+              <goal>apply</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+          <!-- Execution to check if formatting is correct -->
+          <execution>
+            <id>spotless-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Génération de version.properties -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <target>
+                <!-- Créer le répertoire target/classes si nécessaire -->
+                <mkdir dir="${project.build.outputDirectory}"/>
+                <!-- Générer le fichier version.properties -->
+                <propertyfile file="${project.build.outputDirectory}/version.properties">
+                  <entry key="app.version" value="${project.version}"/>
+                  <entry key="app.name" value="${project.name}"/>
+                  <entry key="app.organization" value="${project.organization.name}"/>
+                </propertyfile>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Maven Assembly Plugin pour créer un JAR exécutable avec toutes les dépendances -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.7.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>fr.softsf.canscan.CanScan</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <!-- On force le nom final à remplacer le JAR normal -->
+          <finalName>${project.artifactId}-${project.version}</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Maven Checkstyle Plugin for static code analysis -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <!-- Path to your custom checkstyle.xml configuration file -->
+          <configLocation>checkstyle.xml</configLocation>
+          <!-- Optional: suppressions file if needed -->
+          <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+          <!-- Fail the build on violations -->
+          <failsOnError>true</failsOnError>
+          <!-- Enable console output -->
+          <consoleOutput>true</consoleOutput>
+          <!-- Minimum severity level that fails the build -->
+          <violationSeverity>error</violationSeverity>
+        </configuration>
+        <dependencies>
+          <!-- Use a specific version of Checkstyle (must match your checkstyle.xml DTD) -->
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>12.0.1</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>validate</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Java compiler plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <!-- Maven Enforcer Plugin to define the minimum Maven version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.6.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>${maven.version}</version>
+                  <message>The version of Maven must be at least ${maven.version}. Please update your
+                                        Maven installation.</message>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Surefire plugin for running tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.4</version>
+        <configuration>
+          <argLine>@{jacoco.argLine} -XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <mainClass>fr.softsf.canscan.CanScan</mainClass>
+        </configuration>
+      </plugin>
+      <!-- JaCoCo plugin for code coverage -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.14</version>
+        <configuration>
+          <excludes>
+            <exclude>fr/softsf/canscan/util/BrowserHelper*</exclude>
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+            <configuration>
+              <propertyName>jacoco.argLine</propertyName>
+            </configuration>
+          </execution>
+          <execution>
+            <id>report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
+            <phase>test</phase>
+          </execution>
+          <execution>
+            <id>jacoco-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <rules>
+                <rule>
+                  <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>LINE</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.7</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>visualvm-monitoring</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.1.0</version>
+            <configuration>
+              <executable>java</executable>
+              <arguments>
+                <!-- Application metadata -->
+                <argument>-Dapp.version=${project.version}</argument>
+                <argument>-Dapp.name=${project.name}</argument>
+                <argument>-Dapp.organization=${project.organization.name}</argument>
+                <argument>-Dapp.run.id=${maven.build.timestamp}</argument>
+                <!-- JMX monitoring for VisualVM -->
+                <argument>-Dcom.sun.management.jmxremote</argument>
+                <argument>-Dcom.sun.management.jmxremote.port=9010</argument>
+                <argument>-Dcom.sun.management.jmxremote.authenticate=false</argument>
+                <argument>-Dcom.sun.management.jmxremote.ssl=false</argument>
+                <argument>-Dcom.sun.management.jmxremote.local.only=false</argument>
+                <argument>-Djava.rmi.server.hostname=localhost</argument>
+                <!-- Memory and GC configuration -->
+                <argument>-Xmx2048m</argument>
+                <argument>-XX:MaxMetaspaceSize=128m</argument>
+                <argument>-XX:NativeMemoryTracking=summary</argument>
+                <argument>-Xlog:gc*,gc+heap=debug,gc+age=trace</argument>
+                <!-- Classpath and main class -->
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>fr.softsf.canscan.CanScan</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Profile for native Windows packaging. Runs a batch script at package phase. -->
+    <profile>
+      <id>windows-native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.6.1</version>
+            <executions>
+              <execution>
+                <!-- Windows package using batch script -->
+                <id>exec-batch</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                  <executable>cmd</executable>
+                  <arguments>
+                    <argument>/c</argument>
+                    <argument>.myresources\scripts\natif.cmd</argument>
+                    <argument>${app.name}</argument>
+                    <argument>${app.version}</argument>
+                    <argument>${app.organization}</argument>
+                    <argument>${app.main-class}</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

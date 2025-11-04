@@ -1,0 +1,34 @@
+<map id="fr.softsf.canscan.NativeImageConfigSimulator.runE2ESimulation" name="fr.softsf.canscan.NativeImageConfigSimulator.runE2ESimulation">
+<area shape="rect" id="Node000001" title="Runs the full end&#45;to&#45;end UI simulation for Native Image configuration using a Robot." alt="" coords="5,204,264,247"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#acbf2b92c5c36da7ad4329966d92f1a1b" title="Simulates clicking a browse button to open a JFileChooser, performs a right&#45;click inside it,..." alt="" coords="327,72,566,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,201,239,171,311,140,328,134,330,139,313,145,242,176,179,206"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a3ce8b70d660baabe5ed741e64dfd0af3" title="Simulates selecting a color via JColorChooser, confirms the dialog with Enter, and verifies the selec..." alt="" coords="312,5,581,48"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,202,215,130,260,91,310,58,322,52,324,57,313,62,264,95,219,134,155,205"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ad18c2e9f57e07032b9a48a10e02e61f6" title="Searches for a component of the specified type and name within the given container hierarchy." alt="" coords="325,427,568,469"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="156,245,222,314,266,353,313,388,369,418,367,423,310,393,262,357,218,318,153,249"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a38fd2d97bfc693365a8dc700273ada47" title="Simulates selecting the free data mode and entering an oversized payload into the input field." alt="" coords="344,237,548,296"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="265,240,329,248,328,254,264,245"/>
+<area shape="rect" id="Node000010" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ae2840980d77f2806ab5f1bd471186ed3" title="Simulates typing &quot;Test&quot; into a JTextField and verifies the input using a Robot." alt="" coords="334,320,558,379"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="179,245,242,275,313,306,330,312,328,317,311,310,239,280,177,250"/>
+<area shape="rect" id="Node000013" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a9e920788e82b3b113a566174265607af" title="Simulates hovering over a JSlider to verify its tooltip matches the current slider value." alt="" coords="340,155,552,213"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="264,206,324,197,325,203,265,211"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d" title="Compares two strings and prints the test result with a label." alt="" coords="629,163,859,205"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,129,651,155,649,161,554,134"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="554,46,582,58,705,151,702,155,580,62,552,51"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ab4d4463dc9177237a8de0a7b6713e7cf" title="Simulates pressing the Enter key using the provided Robot, followed by a short delay." alt="" coords="920,125,1138,168"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="554,46,907,119,906,124,553,51"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="391,427,388,417,398,407,417,402,446,400,478,402,497,409,495,414,477,408,446,405,418,407,400,412,393,418,396,425"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="548,236,649,207,651,213,550,241"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a4795cbc2d8717311fd26b8589a618616" title="Confirms and closes a visible JOptionPane by pressing Enter, then returns the dialog title." alt="" coords="642,233,846,292"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="549,263,626,262,626,267,549,268"/>
+<area shape="poly" id="edge13_Node000008_Node000005" title=" " alt="" coords="820,230,858,215,961,172,963,177,860,220,822,235"/>
+<area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ac80dbcb1d031bb72c93cf21315c09f27" title="Recursively searches the given container and its descendants for a JOptionPane instance." alt="" coords="907,241,1151,284"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="847,260,892,260,892,265,847,265"/>
+<area shape="poly" id="edge12_Node000009_Node000009" title=" " alt="" coords="976,241,973,231,982,222,1001,217,1029,215,1060,217,1078,223,1076,228,1058,222,1029,220,1002,222,985,227,979,233,981,240"/>
+<area shape="poly" id="edge15_Node000010_Node000003" title=" " alt="" coords="557,320,579,306,596,285,603,264,610,242,627,219,639,211,642,215,631,223,614,244,608,266,600,288,583,310,560,325"/>
+<area shape="rect" id="Node000011" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#acc5424a9d2c1d44c93a045868f58a5ff" title="Simulates typing a full string using the Robot class." alt="" coords="638,328,851,371"/>
+<area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="559,347,622,347,622,352,559,352"/>
+<area shape="rect" id="Node000012" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a4c1895b6327fef325b1b0c8047bcfcb7" title="Simulates typing a single character using the Robot class." alt="" coords="925,328,1133,371"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="851,347,910,347,910,352,851,352"/>
+<area shape="poly" id="edge19_Node000013_Node000003" title=" " alt="" coords="553,181,613,181,613,187,553,187"/>
+</map>

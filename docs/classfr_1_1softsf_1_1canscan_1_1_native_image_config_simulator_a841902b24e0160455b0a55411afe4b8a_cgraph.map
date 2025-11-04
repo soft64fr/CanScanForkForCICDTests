@@ -1,0 +1,6 @@
+<map id="fr.softsf.canscan.NativeImageConfigSimulator.findComponent" name="fr.softsf.canscan.NativeImageConfigSimulator.findComponent">
+<area shape="rect" id="Node000001" title="Recursively searches for a component of the specified type and name within the container hierarchy." alt="" coords="5,29,248,72"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ad18c2e9f57e07032b9a48a10e02e61f6" title="Searches for a component of the specified type and name within the given container hierarchy." alt="" coords="296,29,538,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,48,280,48,280,53,248,53"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="362,29,360,19,369,10,388,5,417,3,448,5,466,11,465,16,447,10,417,8,389,10,372,15,365,21,368,28"/>
+</map>

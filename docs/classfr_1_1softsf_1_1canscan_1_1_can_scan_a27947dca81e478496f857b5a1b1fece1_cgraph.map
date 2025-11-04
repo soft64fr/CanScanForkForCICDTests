@@ -1,0 +1,10 @@
+<map id="fr.softsf.canscan.CanScan.drawModule" name="fr.softsf.canscan.CanScan.drawModule">
+<area shape="rect" id="Node000001" title="Draws a single QR code module at the specified coordinates with configured size and shape." alt="" coords="5,51,215,93"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="263,5,495,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,52,247,46,248,51,215,57"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="288,96,470,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,87,273,97,272,102,215,92"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="543,5,775,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="496,24,527,24,527,29,496,29"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="328,96,326,86,335,77,352,71,379,69,408,72,425,78,423,83,407,77,379,75,353,77,338,81,331,87,333,95"/>
+</map>

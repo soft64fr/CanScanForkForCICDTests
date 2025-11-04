@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.CanScan.initMecard" name="fr.softsf.canscan.CanScan.initMecard">
+<area shape="rect" id="Node000001" title="Initializes the MECARD input panel with labeled text fields for contact information." alt="" coords="5,5,204,48"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2732ecdc4490a717352975e68fce494c" title="Adds a labeled text field row to a panel using GridBagLayout." alt="" coords="252,13,481,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,24,236,24,236,29,204,29"/>
+</map>

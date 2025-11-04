@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['imageratio_0',['imageRatio',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aafe584b7ed133f9669807fb766b40987',1,'fr::softsf::canscan::CanScan']]],
+  ['init_1',['init',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a3739707225ce03bec34198e8cbc19018',1,'fr::softsf::canscan::ui::Loader']]],
+  ['initfreecard_2',['initFreeCard',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#addd7b7d7f9cc810756dbbb66218414d4',1,'fr::softsf::canscan::CanScan']]],
+  ['initializeautomaticqrcoderendering_3',['initializeAutomaticQRCodeRendering',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4047170747f52f54ee69ddbc834c5373',1,'fr::softsf::canscan::CanScan']]],
+  ['initmecard_4',['initMecard',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab78c47588f2cb82b4395a1268b3c4ca4',1,'fr::softsf::canscan::CanScan']]],
+  ['instance_5',['INSTANCE',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a963890c09ec066d77793bcb65b3e41bc',1,'fr.softsf.canscan.service.BuildQRDataService.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a7d9402e34eb40e2392f9a0b5b29a1216',1,'fr.softsf.canscan.service.VersionService.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a76d1b5dd00ff7cd28d557a803791288c',1,'fr.softsf.canscan.ui.Loader.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a2028e054e6e2915740c95a5fc3f2c439',1,'fr.softsf.canscan.ui.Popup.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_icon_util.html#a1d3adc85ec191cd900cb3faaf239ea6c',1,'fr.softsf.canscan.ui.QrCodeIconUtil.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#a609d047cf99ed8248d57ad4d44bb443a',1,'fr.softsf.canscan.util.BrowserHelper.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a25f48e8a37521a74796a669eadad04f9',1,'fr.softsf.canscan.util.Checker.INSTANCE'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html#a8fb6354acb5ffa36a97918500c4e72b9',1,'fr.softsf.canscan.util.FrameHelper.INSTANCE']]],
+  ['interceptandvalidedialog_6',['interceptAndValideDialog',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a4795cbc2d8717311fd26b8589a618616',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['isinbottomleftpattern_7',['isInBottomLeftPattern',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abf3dc1201aa081507d7a0229e3c798e4',1,'fr::softsf::canscan::CanScan']]],
+  ['isinpositionpattern_8',['isInPositionPattern',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a940bd22cc9e8523e3f60bf19efb91129',1,'fr::softsf::canscan::CanScan']]],
+  ['isintopleftpattern_9',['isInTopLeftPattern',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a169bc46f13cb9990c8629fdd13abf182',1,'fr::softsf::canscan::CanScan']]],
+  ['isintoprightpattern_10',['isInTopRightPattern',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a12dfb700fa0b93fec09bf799ef2a917f',1,'fr::softsf::canscan::CanScan']]],
+  ['isinvalidqrdata_11',['isInvalidQrData',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa520a5f04c8429a7d24c96e9ecab3351',1,'fr::softsf::canscan::CanScan']]]
+];

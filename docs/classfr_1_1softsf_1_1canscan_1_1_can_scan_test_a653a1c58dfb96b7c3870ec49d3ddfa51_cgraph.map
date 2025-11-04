@@ -1,0 +1,14 @@
+<map id="fr.softsf.canscan.CanScanTest.givenNullConfig_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanTest.givenNullConfig_whenDrawLogoIfPresent_thenReturnWithoutException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,254,135"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="302,51,511,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,88,286,84,286,89,255,93"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac77e48bdbcedc2673009c6df51b5ad09" title=" " alt="" coords="317,117,496,160"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="255,118,302,123,301,129,254,123"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="559,5,791,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="511,52,543,46,544,51,512,57"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="584,96,766,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="512,87,569,97,568,102,511,92"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="839,5,1072,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="792,24,824,24,824,29,792,29"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="625,96,623,86,631,77,649,71,675,69,704,72,722,78,720,83,703,77,675,75,650,77,634,81,628,87,630,95"/>
+</map>

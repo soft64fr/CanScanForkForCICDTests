@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.util.Checker.checkStaticNPE" name="fr.softsf.canscan.util.Checker.checkStaticNPE">
+<area shape="rect" id="Node000001" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="5,5,238,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="286,5,518,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,24,270,24,270,29,238,29"/>
+</map>

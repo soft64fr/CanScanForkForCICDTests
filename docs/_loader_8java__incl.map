@@ -1,0 +1,11 @@
+<map id="src/main/java/fr/softsf/canscan/ui/Loader.java" name="src/main/java/fr/softsf/canscan/ui/Loader.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="201,5,360,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,106,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,51,106,93,104,88,222,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="129,96,272,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="262,50,226,87,222,83,258,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="296,96,428,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="304,47,341,83,337,87,300,51"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="452,96,579,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="342,46,465,88,463,93,340,51"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.service.VersionService.checkLatestVersion" name="fr.softsf.canscan.service.VersionService.checkLatestVersion">
+<area shape="rect" id="Node000001" title="Asynchronously checks whether the current application version matches the latest GitHub release tag." alt="" coords="5,39,232,81"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c" title="Validates input for version check." alt="" coords="280,5,530,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,44,264,40,264,46,232,49"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a50d6bb31ba86a1981f6311e0caee214e" title="Sends an HTTP request to the GitHub tags API and verifies if the latest release tag matches the curre..." alt="" coords="298,72,512,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,71,282,76,282,82,232,76"/>
+</map>

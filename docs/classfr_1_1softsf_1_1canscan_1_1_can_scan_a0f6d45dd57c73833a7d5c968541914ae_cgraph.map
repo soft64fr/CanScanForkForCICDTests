@@ -1,0 +1,61 @@
+<map id="fr.softsf.canscan.CanScan.generateQrCodeImage" name="fr.softsf.canscan.CanScan.generateQrCodeImage">
+<area shape="rect" id="Node000001" title="Generates a QR code image with optional logo and custom styling." alt="" coords="5,596,237,639"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="838,240,1071,283"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,596,126,513,135,456,149,394,169,330,198,268,235,211,283,163,347,119,407,89,466,73,524,69,584,74,647,88,791,134,831,152,867,176,925,227,922,231,864,180,828,156,789,138,646,93,583,79,524,74,467,78,409,94,350,123,286,167,239,214,202,270,174,332,154,395,140,457,132,513,125,596"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a82526318e704277d2a8270264552db6c" title="Creates a QR code matrix for the given text." alt="" coords="289,177,506,220"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="127,595,147,537,180,458,226,369,253,326,283,285,313,253,347,227,350,231,317,257,287,288,257,328,230,372,185,460,152,539,132,597"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a57411c1dc563d6c8a1fdec872ad66877" title="Renders the three QR code finder patterns at the corners using the specified style." alt="" coords="293,299,502,341"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="141,594,364,351,368,355,144,597"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="1144,605,1326,648"/>
+<area shape="poly" id="edge35_Node000001_Node000008" title=" " alt="" coords="165,637,222,663,286,688,361,712,420,726,559,745,704,759,818,760,873,755,930,745,1070,707,1130,682,1184,654,1187,659,1133,687,1072,712,931,750,873,760,818,766,704,764,559,751,419,732,359,717,284,693,220,668,163,642"/>
+<area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="570,693,779,736"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="238,635,555,691,554,696,237,640"/>
+<area shape="rect" id="Node000010" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9bec7e01bac5ab7e6ef38f704d903f7f" title="Renders all QR code modules onto the provided graphics context." alt="" coords="293,541,502,584"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="232,593,277,584,278,589,233,598"/>
+<area shape="rect" id="Node000018" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a070e10a2c703a908c63b30821cdcb4b1" title="Estimates the memory required to create a BufferedImage." alt="" coords="559,816,790,859"/>
+<area shape="poly" id="edge31_Node000001_Node000018" title=" " alt="" coords="138,637,162,671,196,712,238,752,286,784,349,809,415,826,481,835,544,839,544,844,481,840,414,831,347,815,283,789,234,756,192,716,158,674,134,640"/>
+<area shape="rect" id="Node000019" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a81256a8e00a35676330af2e8542acf51" title="Fills the entire QR code area with the specified background color." alt="" coords="301,5,495,48"/>
+<area shape="poly" id="edge32_Node000001_Node000019" title=" " alt="" coords="119,595,124,501,132,434,145,359,165,281,194,204,232,130,256,96,283,65,294,55,298,59,287,69,260,99,237,133,199,206,170,283,150,361,137,435,129,501,125,596"/>
+<area shape="rect" id="Node000020" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a734f691ae3eeecc255c1e43c4f9edb8c" title="Gets the available memory in the JVM." alt="" coords="575,893,774,936"/>
+<area shape="poly" id="edge34_Node000001_Node000020" title=" " alt="" coords="129,638,145,696,174,772,195,811,220,849,251,882,286,908,320,925,356,937,394,944,432,948,507,946,575,937,576,942,507,951,431,953,393,949,355,942,318,930,283,913,247,886,216,852,190,814,169,774,140,698,124,640"/>
+<area shape="rect" id="Node000021" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a8919d8945854ca9cd798a20e9f076bff" title="Validates that sufficient memory is available to generate a square image of the given size." alt="" coords="285,856,511,899"/>
+<area shape="poly" id="edge36_Node000001_Node000021" title=" " alt="" coords="135,638,158,679,191,732,235,787,286,835,304,847,302,851,283,839,231,791,187,735,153,682,130,640"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="1119,224,1351,267"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1071,252,1103,250,1103,256,1071,257"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="469,174,537,158,619,147,705,145,749,150,791,159,826,172,860,189,917,228,914,232,858,194,824,177,790,164,748,155,705,150,619,152,538,164,470,179"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="503,314,640,307,790,292,842,284,843,289,791,297,640,312,503,320"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad07293248fd94f28e8840a4127591c74" title="Draws a QR code finder pattern with rounded corners at the specified pixel coordinates." alt="" coords="570,173,779,216"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="430,296,488,261,558,226,574,219,576,224,560,230,491,265,433,300"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a52d47c63db292c6e4c9170ff3f110372" title="Draws a standard square QR code finder pattern at the specified pixel coordinates." alt="" coords="570,240,779,283"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="501,295,555,284,556,289,502,301"/>
+<area shape="poly" id="edge11_Node000005_Node000008" title=" " alt="" coords="503,338,622,365,766,404,921,455,1072,516,1139,554,1196,594,1193,598,1136,558,1070,521,919,460,765,410,621,371,502,343"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="768,214,848,233,846,238,767,219"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="780,259,823,259,823,264,780,264"/>
+<area shape="poly" id="edge12_Node000008_Node000008" title=" " alt="" coords="1182,605,1180,595,1189,586,1207,581,1235,579,1265,581,1283,587,1281,592,1264,586,1235,584,1208,586,1192,591,1185,597,1187,604"/>
+<area shape="poly" id="edge14_Node000009_Node000002" title=" " alt="" coords="699,691,745,643,769,612,788,579,801,543,807,511,806,451,805,422,808,393,817,362,836,328,856,306,881,289,884,293,860,310,840,331,822,364,813,394,810,423,811,451,812,511,806,544,793,581,773,615,749,646,703,695"/>
+<area shape="poly" id="edge15_Node000009_Node000008" title=" " alt="" coords="780,707,918,695,1070,672,1154,650,1156,656,1071,677,919,700,780,712"/>
+<area shape="poly" id="edge17_Node000010_Node000002" title=" " alt="" coords="424,539,484,493,558,444,644,397,732,354,884,286,886,291,734,358,646,402,560,449,487,498,427,543"/>
+<area shape="poly" id="edge23_Node000010_Node000008" title=" " alt="" coords="494,582,559,595,698,616,838,628,954,631,1071,628,1129,627,1129,632,1071,633,954,636,838,633,698,622,559,600,493,587"/>
+<area shape="rect" id="Node000011" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a27947dca81e478496f857b5a1b1fece1" title="Draws a single QR code module at the specified coordinates with configured size and shape." alt="" coords="570,459,779,501"/>
+<area shape="poly" id="edge18_Node000010_Node000011" title=" " alt="" coords="469,538,558,511,582,504,584,509,560,516,470,543"/>
+<area shape="rect" id="Node000012" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a484c9ff5ae69812c69d4318735f32130" title="Encapsulates contextual data for module rendering decisions." alt="" coords="864,576,1045,619"/>
+<area shape="poly" id="edge21_Node000010_Node000012" title=" " alt="" coords="503,572,559,577,849,592,848,597,559,583,503,578"/>
+<area shape="rect" id="Node000013" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad9893ec413ee4e8987dc7719d1bd9596" title="Determines whether a QR code module should be skipped during rendering." alt="" coords="565,525,784,568"/>
+<area shape="poly" id="edge24_Node000010_Node000013" title=" " alt="" coords="503,554,549,551,550,557,503,559"/>
+<area shape="poly" id="edge19_Node000011_Node000002" title=" " alt="" coords="706,456,746,425,788,388,812,357,821,343,837,327,894,288,897,292,840,331,825,346,816,360,792,391,750,429,709,460"/>
+<area shape="poly" id="edge20_Node000011_Node000008" title=" " alt="" coords="780,495,919,523,1071,561,1170,597,1168,602,1070,567,918,528,779,500"/>
+<area shape="poly" id="edge22_Node000012_Node000008" title=" " alt="" coords="1046,604,1129,613,1128,618,1045,609"/>
+<area shape="poly" id="edge25_Node000013_Node000002" title=" " alt="" coords="774,523,788,511,805,490,813,468,815,446,815,424,815,378,822,353,836,328,858,306,883,288,886,293,861,310,840,331,827,355,820,378,820,424,821,446,818,469,810,492,792,515,778,527"/>
+<area shape="poly" id="edge30_Node000013_Node000012" title=" " alt="" coords="785,564,849,576,848,581,784,569"/>
+<area shape="rect" id="Node000014" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a940bd22cc9e8523e3f60bf19efb91129" title="Determines whether the given coordinates fall within any of the three QR code position patterns." alt="" coords="859,341,1050,384"/>
+<area shape="poly" id="edge26_Node000013_Node000014" title=" " alt="" coords="765,522,789,511,829,485,866,454,924,394,928,398,869,458,832,489,792,516,767,527"/>
+<area shape="rect" id="Node000015" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abf3dc1201aa081507d7a0229e3c798e4" title="Checks if coordinates are within the bottom&#45;left position pattern." alt="" coords="1139,291,1330,333"/>
+<area shape="poly" id="edge27_Node000014_Node000015" title=" " alt="" coords="1050,343,1123,329,1124,335,1051,348"/>
+<area shape="rect" id="Node000016" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a169bc46f13cb9990c8629fdd13abf182" title="Checks if coordinates are within the top&#45;left position pattern." alt="" coords="1139,357,1330,400"/>
+<area shape="poly" id="edge28_Node000014_Node000016" title=" " alt="" coords="1051,365,1124,370,1123,375,1050,371"/>
+<area shape="rect" id="Node000017" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a12dfb700fa0b93fec09bf799ef2a917f" title="Checks if coordinates are within the top&#45;right position pattern." alt="" coords="1139,424,1330,467"/>
+<area shape="poly" id="edge29_Node000014_Node000017" title=" " alt="" coords="1028,382,1119,409,1144,417,1142,422,1118,415,1027,387"/>
+<area shape="poly" id="edge33_Node000019_Node000002" title=" " alt="" coords="495,14,564,14,640,19,718,35,756,48,792,64,840,99,881,142,914,186,938,225,933,228,909,189,877,145,837,103,789,69,754,53,717,40,639,25,564,19,495,20"/>
+<area shape="poly" id="edge37_Node000021_Node000018" title=" " alt="" coords="511,858,543,854,544,859,512,864"/>
+<area shape="poly" id="edge38_Node000021_Node000020" title=" " alt="" coords="512,890,560,897,559,902,511,895"/>
+</map>

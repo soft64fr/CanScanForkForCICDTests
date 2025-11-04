@@ -1,0 +1,692 @@
+/*
+ * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
+ * Licensed under the MIT License (MIT).
+ * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
+ */
+package fr.softsf.canscan;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.nio.file.Path;
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+
+import fr.softsf.canscan.model.Mode;
+import fr.softsf.canscan.model.QrDataResult;
+import fr.softsf.canscan.model.QrInput;
+import fr.softsf.canscan.service.BuildQRDataService;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
+
+/**
+ * Test suite for {@link CanScan}.
+ *
+ * <p>Note: These tests validate the QR data generation logic using various contact field
+ * combinations. They do not cover full UI behavior or static method mocking. For complete UI
+ * testing, consider using AssertJ Swing or manual integration tests.
+ */
+@DisplayName("CanScan QR Data Tests")
+class CanScanTest {
+
+    private CanScan generator;
+
+    @TempDir File tempDir;
+
+    @BeforeEach
+    void setUp() {
+        generator = new CanScan();
+        generator.nameField.setText("John");
+        generator.phoneField.setText("0123456789");
+        generator.emailField.setText("john@example.com");
+        generator.orgField.setText("Org");
+        generator.adrField.setText("Addr");
+        generator.urlField.setText("https://example.com");
+        generator.logoField.setText("");
+        generator.sizeField.setText("400");
+        generator.marginSlider.setValue(3);
+        generator.ratioSlider.setValue((int) (0.27 * 100));
+        generator.roundedModulesCheckBox.setSelected(true);
+    }
+
+    @Test
+    void givenAllContactFields_whenBuildMecard_thenReturnCompleteMecardString() {
+        String mecard =
+                BuildQRDataService.INSTANCE.buildMecard(
+                        "Alice", "12345", "a@b.com", "Org", "Addr", "https://toto.com");
+        assertTrue(mecard.startsWith("MECARD:"));
+        assertTrue(mecard.contains("N:Alice;"));
+        assertTrue(mecard.contains("TEL:12345;"));
+        assertTrue(mecard.contains("EMAIL:a@b.com;"));
+        assertTrue(mecard.contains("ORG:Org;"));
+        assertTrue(mecard.contains("ADR:Addr;"));
+        assertTrue(mecard.contains("URL:https://toto.com;"));
+    }
+
+    @Test
+    void givenOnlyNameField_whenBuildMecard_thenReturnMecardWithNameOnly() {
+        String mecard = BuildQRDataService.INSTANCE.buildMecard("Bob", "", "", "", "", "");
+        assertTrue(mecard.startsWith("MECARD:"));
+        assertTrue(mecard.contains("N:Bob;"));
+        assertFalse(mecard.contains("TEL:"));
+        assertFalse(mecard.contains("EMAIL:"));
+    }
+
+    @Test
+    void givenAllBlankFields_whenBuildMecard_thenReturnEmptyMecardStructure() {
+        String mecard = BuildQRDataService.INSTANCE.buildMecard("", "", "", "", "", "");
+        assertEquals("MECARD:;", mecard);
+    }
+
+    @Test
+    void givenConfigWithoutLogo_whenGenerateQrCodeImage_thenReturn400x400Image() throws Exception {
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        BufferedImage qr =
+                CanScan.generateQrCodeImage(
+                        BuildQRDataService.INSTANCE.buildMecard(
+                                "John", "0123456789", "", "", "", ""),
+                        config);
+        assertNotNull(qr);
+        assertEquals(400, qr.getWidth());
+        assertEquals(400, qr.getHeight());
+    }
+
+    @Test
+    void givenConfigWithRoundedModules_whenGenerateQrCodeImage_thenReturn400x400Image()
+            throws Exception {
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 400, 0.27, Color.BLACK, Color.WHITE, true, 3);
+        BufferedImage qr = CanScan.generateQrCodeImage("Test data", config);
+        assertNotNull(qr);
+        assertEquals(400, qr.getWidth());
+        assertEquals(400, qr.getHeight());
+    }
+
+    @Test
+    void givenConfigWithCustomColors_whenGenerateQrCodeImage_thenReturn300x300Image()
+            throws Exception {
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 300, 0.0, Color.RED, Color.YELLOW, false, 2);
+        BufferedImage qr = CanScan.generateQrCodeImage("Test", config);
+        assertNotNull(qr);
+        assertEquals(300, qr.getWidth());
+    }
+
+    @Test
+    void givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage() throws Exception {
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 400, 0.1, Color.BLACK, Color.WHITE, false, 0);
+        BufferedImage qr = CanScan.generateQrCodeImage("Test", config);
+        assertNotNull(qr);
+    }
+
+    @Test
+    void givenConfigWithLargeLogoRatio_whenGenerateQrCodeImage_thenReturnValidImage()
+            throws Exception {
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 500, 0.5, Color.BLACK, Color.WHITE, true, 4);
+        BufferedImage qr = CanScan.generateQrCodeImage("Large logo test", config);
+        assertNotNull(qr);
+    }
+
+    @Test
+    void givenRedColorSelected_whenChooseQrColor_thenButtonTextAndColorUpdated() throws Exception {
+        JButton button = new JButton();
+        try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
+            chooserMock
+                    .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
+                    .thenReturn(Color.RED);
+            Method method =
+                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
+            method.setAccessible(true);
+            method.invoke(generator, button, true);
+            assertEquals("#FF0000", button.getText());
+            Field qrColorField = CanScan.class.getDeclaredField("qrColor");
+            qrColorField.setAccessible(true);
+            assertEquals(Color.RED, qrColorField.get(generator));
+        }
+    }
+
+    @Test
+    void givenBlueColorSelected_whenChooseBgColor_thenButtonTextAndColorUpdated() throws Exception {
+        JButton button = new JButton();
+        try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
+            chooserMock
+                    .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
+                    .thenReturn(Color.BLUE);
+            Method method =
+                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
+            method.setAccessible(true);
+            method.invoke(generator, button, false);
+            assertEquals("#0000FF", button.getText());
+            Field bgColorField = CanScan.class.getDeclaredField("bgColor");
+            bgColorField.setAccessible(true);
+            assertEquals(Color.BLUE, bgColorField.get(generator));
+        }
+    }
+
+    @Test
+    void givenColorDialogCancelled_whenChooseColor_thenButtonTextUnchanged() throws Exception {
+        JButton button = new JButton("Noir");
+        try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
+            chooserMock
+                    .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
+                    .thenReturn(null);
+            Method method =
+                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
+            method.setAccessible(true);
+            method.invoke(generator, button, true);
+            assertEquals("Noir", button.getText());
+        }
+    }
+
+    @Test
+    void givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated() {
+        CanScan spyGenerator = spy(generator);
+        File fakeFile = new File("fake-logo.png");
+        doReturn(fakeFile).when(spyGenerator).chooseLogoFile();
+        ActionEvent e = mock(ActionEvent.class);
+        spyGenerator.browseLogo(e);
+        assertTrue(spyGenerator.logoField.getText().endsWith("fake-logo.png"));
+    }
+
+    @Test
+    void givenFileSelectionCancelled_whenBrowseLogo_thenLogoFieldUnchanged() {
+        CanScan spyGenerator = spy(generator);
+        doReturn(null).when(spyGenerator).chooseLogoFile();
+        spyGenerator.logoField.setText("");
+        ActionEvent e = mock(ActionEvent.class);
+        spyGenerator.browseLogo(e);
+        assertEquals("", spyGenerator.logoField.getText());
+    }
+
+    @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
+    @CsvSource({
+        "500, 500", // valid
+        "abc, 400", // invalid text
+        "-50, 10", // negative
+        "0, 10", // zero
+        "5, 10" // below minimum
+    })
+    void givenVariousSizeInputs_whenSizeFieldCheck_thenReturnExpectedResult(
+            String input, int expected) {
+        generator.sizeField.setText(input);
+        int result = generator.sizeFieldCheck();
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void givenValidMargin4_whenMarginFieldCheck_thenMarginUpdatedTo4() {
+        generator.marginSlider.setValue(4);
+        generator.marginFieldCheck();
+        Field marginField = getField("margin");
+        assertEquals(4, getFieldValue(marginField));
+    }
+
+    @Test
+    void givenNegativeMargin_whenMarginFieldCheck_thenMarginSetTo0() {
+        generator.marginSlider.setValue(-2);
+        generator.marginFieldCheck();
+        Field marginField = getField("margin");
+        assertEquals(0, getFieldValue(marginField));
+    }
+
+    @Test
+    void givenMarginAboveMaximum_whenMarginFieldCheck_thenMarginSetTo10() {
+        generator.marginSlider.setValue(15);
+        generator.marginFieldCheck();
+        Field marginField = getField("margin");
+        assertEquals(10, getFieldValue(marginField));
+    }
+
+    @ParameterizedTest(name = "given ratio {0}% when ratioFieldCheck then ratio set to {1}")
+    @CsvSource({"0,   0.0", "50,  0.5", "100, 1.0"})
+    void givenRatioPercent_whenRatioFieldCheck_thenRatioSetCorrectly(
+            int sliderValue, double expectedRatio) {
+        generator.ratioSlider.setValue(sliderValue);
+        generator.ratioFieldCheck();
+        Field ratioField = getField("imageRatio");
+        double actualRatio = (double) getFieldValue(ratioField);
+        assertEquals(expectedRatio, actualRatio, 0.01);
+    }
+
+    @Test
+    void givenMecardMode_whenSwitchToFreeMode_thenCurrentModeIsFree() throws Exception {
+        Method switchMode = CanScan.class.getDeclaredMethod("switchMode", Mode.class);
+        switchMode.setAccessible(true);
+        switchMode.invoke(generator, Mode.FREE);
+        Field currentModeField = CanScan.class.getDeclaredField("currentMode");
+        currentModeField.setAccessible(true);
+        assertEquals(Mode.FREE, currentModeField.get(generator));
+    }
+
+    @Test
+    void givenFreeMode_whenSwitchToMecardMode_thenCurrentModeIsMecard() throws Exception {
+        Method switchMode = CanScan.class.getDeclaredMethod("switchMode", Mode.class);
+        switchMode.setAccessible(true);
+        switchMode.invoke(generator, Mode.FREE);
+        switchMode.invoke(generator, Mode.MECARD);
+        Field currentModeField = CanScan.class.getDeclaredField("currentMode");
+        currentModeField.setAccessible(true);
+        assertEquals(Mode.MECARD, currentModeField.get(generator));
+    }
+
+    @Test
+    void givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin() {
+        BufferedImage img = new BufferedImage(50, 50, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = img.createGraphics();
+        CanScan.drawSquareFinderPatternAtPixel(g, 0, 0, 21, Color.BLACK, Color.WHITE);
+        int rgb = img.getRGB(0, 0);
+        assertNotEquals(0, rgb);
+    }
+
+    @Test
+    void givenQrImage_whenDrawFinderPatterns_thenAllThreePatternsDrawn() {
+        BufferedImage img = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = img.createGraphics();
+        CanScan.QrConfig configRounded =
+                new CanScan.QrConfig(null, 100, 0.27, Color.BLACK, Color.WHITE, true, 2);
+        CanScan.drawFinderPatterns(g, 21, configRounded);
+        CanScan.QrConfig configSquare =
+                new CanScan.QrConfig(null, 100, 0.27, Color.BLACK, Color.WHITE, false, 2);
+        CanScan.drawFinderPatterns(g, 21, configSquare);
+        double moduleSizeX = (double) configSquare.size() / 21;
+        int firstX = (int) (configSquare.margin() * moduleSizeX);
+        int firstY = (int) (configSquare.margin() * moduleSizeX);
+        int pixel = img.getRGB(firstX, firstY);
+        assertNotEquals(
+                0,
+                pixel,
+                "Le pixel dans le coin du pattern doit avoir été modifié après le dessin des"
+                        + " patterns");
+    }
+
+    @Test
+    void givenBlackColor_whenConvertToHex_thenReturn000000() throws Exception {
+        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
+        colorToHex.setAccessible(true);
+        String hex = (String) colorToHex.invoke(generator, Color.BLACK);
+        assertEquals("#000000", hex);
+    }
+
+    @Test
+    void givenMecardMode_whenGetModeText_thenReturnMECARD() {
+        assertEquals("MECARD", Mode.MECARD.text());
+        assertEquals("FREE", Mode.FREE.text());
+    }
+
+    @Test
+    void givenWhiteColor_whenConvertToHex_thenReturnFFFFFF() throws Exception {
+        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
+        colorToHex.setAccessible(true);
+        String hex = (String) colorToHex.invoke(generator, Color.WHITE);
+        assertEquals("#FFFFFF", hex);
+    }
+
+    @Test
+    void givenCustomColor_whenConvertToHex_thenReturnCorrectHex() throws Exception {
+        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
+        colorToHex.setAccessible(true);
+        Color custom = new Color(128, 64, 192);
+        String hex = (String) colorToHex.invoke(generator, custom);
+        assertEquals("#8040C0", hex);
+    }
+
+    @Test
+    void givenFileWithPngExtension_whenGetSelectedPngFile_thenReturnSameFile() throws Exception {
+        Method getSelectedPngFile =
+                CanScan.class.getDeclaredMethod("getSelectedPngFile", JFileChooser.class);
+        getSelectedPngFile.setAccessible(true);
+        JFileChooser chooser = mock(JFileChooser.class);
+        File testFile = new File(tempDir, "test.png");
+        when(chooser.getSelectedFile()).thenReturn(testFile);
+        File result = (File) getSelectedPngFile.invoke(generator, chooser);
+        assertTrue(result.getName().endsWith(".png"));
+    }
+
+    @Test
+    void givenFileWithoutPngExtension_whenGetSelectedPngFile_thenReturnFileWithPngExtension()
+            throws Exception {
+        Method getSelectedPngFile =
+                CanScan.class.getDeclaredMethod("getSelectedPngFile", JFileChooser.class);
+        getSelectedPngFile.setAccessible(true);
+        JFileChooser chooser = mock(JFileChooser.class);
+        File testFile = new File(tempDir, "test");
+        when(chooser.getSelectedFile()).thenReturn(testFile);
+        File result = (File) getSelectedPngFile.invoke(generator, chooser);
+        assertTrue(result.getName().endsWith(".png"));
+    }
+
+    @Test
+    void givenNonExistingFile_whenResolveFileNameConflict_thenReturnSameFile() throws Exception {
+        Method resolveFileNameConflict =
+                CanScan.class.getDeclaredMethod("resolveFileNameConflict", File.class);
+        resolveFileNameConflict.setAccessible(true);
+        File testFile = new File(tempDir, "nonexistent.png");
+        File result = (File) resolveFileNameConflict.invoke(generator, testFile);
+        assertEquals(testFile, result);
+    }
+
+    @Test
+    void givenMecardModeWithContactData_whenBuildQrData_thenReturnMecardString() {
+        QrInput input = new QrInput("Alice", "123456", "", "", "", "", "");
+        QrDataResult result = BuildQRDataService.INSTANCE.buildQrData(Mode.MECARD, input);
+        assertNotNull(result);
+        String data = result.data();
+        assertTrue(data.startsWith("MECARD:"));
+        assertTrue(data.contains("N:Alice"));
+        assertTrue(data.contains("TEL:123456"));
+    }
+
+    @Test
+    void givenFreeModeWithText_whenBuildQrData_thenReturnFreeText() {
+        QrInput input = new QrInput("", "", "", "", "", "", "Test data");
+        QrDataResult result = BuildQRDataService.INSTANCE.buildQrData(Mode.FREE, input);
+        assertNotNull(result);
+        assertEquals("Test data", result.data());
+    }
+
+    @Test
+    void givenEmptyMecardFields_whenBuildQrData_thenReturnEmptyString() {
+        QrInput input = new QrInput("", "", "", "", "", "", "");
+        QrDataResult result = BuildQRDataService.INSTANCE.buildQrData(Mode.MECARD, input);
+        assertNotNull(result);
+        assertEquals("", result.data());
+    }
+
+    @Test
+    void givenValidLogo_whenDrawLogoIfPresent_thenLogoDrawnOnImage() throws Exception {
+        File logoFile = createTestLogoFile("test-logo.png");
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        CanScan.drawLogoIfPresent(g, config);
+        int centerX = 200;
+        int centerY = 200;
+        boolean hasModifiedPixels = false;
+        for (int x = centerX - 50; x < centerX + 50; x++) {
+            for (int y = centerY - 50; y < centerY + 50; y++) {
+                if (qrImage.getRGB(x, y) != Color.WHITE.getRGB()) {
+                    hasModifiedPixels = true;
+                    break;
+                }
+            }
+            if (hasModifiedPixels) break;
+        }
+        assertTrue(hasModifiedPixels, "Le logo devrait être visible dans la zone centrale");
+        g.dispose();
+    }
+
+    @Test
+    void givenNullGraphics_whenDrawLogoIfPresent_thenReturnWithoutException() throws Exception {
+        File logoFile = createTestLogoFile("test-logo.png");
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        executeWithoutDialog(
+                () -> assertDoesNotThrow(() -> CanScan.drawLogoIfPresent(null, config)));
+    }
+
+    @Test
+    void givenNullConfig_whenDrawLogoIfPresent_thenReturnWithoutException() {
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        executeWithoutDialog(
+                () ->
+                        assertDoesNotThrow(
+                                () -> {
+                                    try {
+                                        CanScan.drawLogoIfPresent(g, null);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }));
+        g.dispose();
+    }
+
+    @Test
+    void givenNullLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException() {
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(null, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(() -> CanScan.drawLogoIfPresent(g, config));
+        g.dispose();
+    }
+
+    @Test
+    void givenNonExistentLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException() {
+        File nonExistentFile = new File(tempDir, "non-existent-logo.png");
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(
+                        nonExistentFile, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(() -> CanScan.drawLogoIfPresent(g, config));
+        g.dispose();
+    }
+
+    @Test
+    void givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException() throws Exception {
+        File logoFile = createTestLogoFile("test-logo.png");
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, 0.0, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(() -> CanScan.drawLogoIfPresent(g, config));
+        g.dispose();
+    }
+
+    @ParameterizedTest(
+            name = "given imageRatio {0} when drawLogoIfPresent then logo scaled correctly")
+    @CsvSource({"0.1", "0.2", "0.27", "0.3", "0.4", "0.5"})
+    void givenDifferentImageRatios_whenDrawLogoIfPresent_thenLogoScaledCorrectly(double ratio)
+            throws Exception {
+        File logoFile = createTestLogoFile("test-logo-ratio.png");
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, ratio, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(
+                () -> CanScan.drawLogoIfPresent(g, config),
+                "drawLogoIfPresent devrait fonctionner avec imageRatio = " + ratio);
+        g.dispose();
+    }
+
+    @Test
+    void givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully() throws Exception {
+        File logoFile = createTestLogoFile("test-logo.jpg");
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(
+                () -> CanScan.drawLogoIfPresent(g, config),
+                "drawLogoIfPresent devrait fonctionner avec un fichier JPEG");
+        g.dispose();
+    }
+
+    @Test
+    void givenLargeQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly() throws Exception {
+        File logoFile = createTestLogoFile("test-logo-large.png");
+        int largeSize = 1000;
+        BufferedImage qrImage = new BufferedImage(largeSize, largeSize, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, largeSize, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(
+                () -> CanScan.drawLogoIfPresent(g, config),
+                "drawLogoIfPresent devrait gérer les grandes tailles de QR code");
+        g.dispose();
+    }
+
+    @Test
+    void givenSmallQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly() throws Exception {
+        File logoFile = createTestLogoFile("test-logo-small.png");
+        int smallSize = 100;
+        BufferedImage qrImage = new BufferedImage(smallSize, smallSize, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, smallSize, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(
+                () -> CanScan.drawLogoIfPresent(g, config),
+                "drawLogoIfPresent devrait gérer les petites tailles de QR code");
+        g.dispose();
+    }
+
+    @Test
+    void givenLogoWithTransparency_whenDrawLogoIfPresent_thenLogoDrawnWithAlpha() throws Exception {
+        File logoFile = createTestLogoFileWithAlpha();
+        BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(logoFile, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
+        assertDoesNotThrow(
+                () -> CanScan.drawLogoIfPresent(g, config),
+                "drawLogoIfPresent devrait gérer les logos avec transparence");
+        g.dispose();
+    }
+
+    @Test
+    void givenValidLogo_whenDrawLogoIfPresent_thenLogoCenteredCorrectly() throws Exception {
+        File logoFile = createTestLogoFile("test-logo-centered.png");
+        int size = 400;
+        double imageRatio = 0.27;
+        BufferedImage qrImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = qrImage.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, size, size);
+        CanScan.QrConfig config =
+                new CanScan.QrConfig(
+                        logoFile, size, imageRatio, Color.BLACK, Color.WHITE, false, 3);
+        CanScan.drawLogoIfPresent(g, config);
+        int whiteBoxSize = (int) (size * imageRatio);
+        int expectedCenterX = size / 2;
+        int expectedCenterY = size / 2;
+        int tolerance = whiteBoxSize / 2;
+        boolean hasLogoNearCenter = false;
+        for (int x = Math.max(0, expectedCenterX - tolerance);
+                x < Math.min(size, expectedCenterX + tolerance);
+                x++) {
+            for (int y = Math.max(0, expectedCenterY - tolerance);
+                    y < Math.min(size, expectedCenterY + tolerance);
+                    y++) {
+                if (qrImage.getRGB(x, y) != Color.WHITE.getRGB()) {
+                    hasLogoNearCenter = true;
+                    break;
+                }
+            }
+            if (hasLogoNearCenter) break;
+        }
+        assertTrue(hasLogoNearCenter, "Le logo devrait être centré sur le QR code");
+        g.dispose();
+    }
+
+    // Méthodes utilitaires
+
+    private void executeWithoutDialog(Runnable test) {
+        try (MockedStatic<JOptionPane> optionPaneMock = Mockito.mockStatic(JOptionPane.class)) {
+            optionPaneMock
+                    .when(
+                            () ->
+                                    JOptionPane.showMessageDialog(
+                                            null, null, null, JOptionPane.INFORMATION_MESSAGE))
+                    .thenAnswer(inv -> null);
+            optionPaneMock
+                    .when(
+                            () ->
+                                    JOptionPane.showMessageDialog(
+                                            null, null, null, JOptionPane.WARNING_MESSAGE))
+                    .thenAnswer(inv -> null);
+            optionPaneMock
+                    .when(
+                            () ->
+                                    JOptionPane.showMessageDialog(
+                                            null, null, null, JOptionPane.ERROR_MESSAGE))
+                    .thenAnswer(inv -> null);
+            optionPaneMock
+                    .when(
+                            () ->
+                                    JOptionPane.showMessageDialog(
+                                            null, null, null, JOptionPane.QUESTION_MESSAGE))
+                    .thenAnswer(inv -> null);
+            optionPaneMock
+                    .when(
+                            () ->
+                                    JOptionPane.showMessageDialog(
+                                            null, null, null, JOptionPane.PLAIN_MESSAGE))
+                    .thenAnswer(inv -> null);
+            test.run();
+        }
+    }
+
+    private File createTestLogoFile(String filename) throws IOException {
+        String extension = filename.substring(filename.lastIndexOf('.') + 1);
+        Path logoPath = tempDir.toPath().resolve(filename);
+        BufferedImage logo = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = logo.createGraphics();
+        g.setColor(Color.RED);
+        g.fillRect(0, 0, 100, 100);
+        g.dispose();
+        ImageIO.write(logo, extension.equals("jpg") ? "jpg" : "png", logoPath.toFile());
+        return logoPath.toFile();
+    }
+
+    private File createTestLogoFileWithAlpha() throws IOException {
+        Path logoPath = tempDir.toPath().resolve("test-logo-alpha.png");
+        BufferedImage logo = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = logo.createGraphics();
+        g.setColor(new Color(255, 0, 0, 128));
+        g.fillOval(10, 10, 80, 80);
+        g.dispose();
+        ImageIO.write(logo, "png", logoPath.toFile());
+        return logoPath.toFile();
+    }
+
+    private Field getField(String fieldName) {
+        try {
+            Field field = CanScan.class.getDeclaredField(fieldName);
+            field.setAccessible(true);
+            return field;
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private Object getFieldValue(Field field) {
+        try {
+            return field.get(generator);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

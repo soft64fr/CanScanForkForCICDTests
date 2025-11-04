@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.NativeImageConfigSimulator.browseFoldersSimulation" name="fr.softsf.canscan.NativeImageConfigSimulator.browseFoldersSimulation">
+<area shape="rect" id="Node000001" title="Simulates clicking a browse button to open a JFileChooser, performs a right&#45;click inside it,..." alt="" coords="5,5,245,64"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d" title="Compares two strings and prints the test result with a label." alt="" coords="293,13,523,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,32,277,32,277,37,245,37"/>
+</map>

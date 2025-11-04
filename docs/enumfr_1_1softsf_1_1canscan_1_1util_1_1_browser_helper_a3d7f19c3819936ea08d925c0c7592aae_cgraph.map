@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.util.BrowserHelper.tryOpenBrowser" name="fr.softsf.canscan.util.BrowserHelper.tryOpenBrowser">
+<area shape="rect" id="Node000001" title="Attempts to open the URL using Java&#39;s Desktop API." alt="" coords="5,5,198,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#ad01d21b7d4e978f4819503ba20e891f2" title="Displays error dialog to user with failure details." alt="" coords="246,5,438,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,230,24,230,29,198,29"/>
+</map>

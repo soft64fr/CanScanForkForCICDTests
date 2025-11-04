@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.ui.Loader.startAndAdjustWaitIcon" name="fr.softsf.canscan.ui.Loader.startAndAdjustWaitIcon">
+<area shape="rect" id="Node000001" title="Displays the waiting icon and scales its font to fit the label height." alt="" coords="5,5,212,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a7db844fe9a47d8286890e795c2462d0f" title="Stops the wait icon animation and clears the label." alt="" coords="260,5,465,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,24,244,24,244,29,212,29"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a6c92e28cca5328333ffc2ceffe24ad3b" title="Stops and disposes the wait icon timer." alt="" coords="513,5,738,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,24,497,24,497,29,466,29"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.CanScan.browseLogo" name="fr.softsf.canscan.CanScan.browseLogo">
+<area shape="rect" id="Node000001" title="Opens a file chooser to select a logo image and updates the logo text field." alt="" coords="5,13,257,40"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac0b9579fee0a4d633c23c085d5d9d4ef" title="Chooses a file via JFileChooser." alt="" coords="305,5,528,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,24,289,24,289,29,257,29"/>
+</map>

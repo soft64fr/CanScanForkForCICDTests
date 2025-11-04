@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.ui.Loader.stopWaitIcon" name="fr.softsf.canscan.ui.Loader.stopWaitIcon">
+<area shape="rect" id="Node000001" title="Stops the wait icon animation and clears the label." alt="" coords="5,5,211,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a6c92e28cca5328333ffc2ceffe24ad3b" title="Stops and disposes the wait icon timer." alt="" coords="259,5,484,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,24,243,24,243,29,211,29"/>
+</map>

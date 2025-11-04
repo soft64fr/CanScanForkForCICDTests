@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['bg_5fcolor_0',['BG_COLOR',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a0445d2544f5f0f9d37ad553023f739e3',1,'fr::softsf::canscan::CanScan']]],
+  ['bgcolor_1',['bgColor',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a69e4eafb595ce66d340246ede96e15b0',1,'fr::softsf::canscan::CanScan']]],
+  ['bgcolorbutton_2',['bgColorButton',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad08129e8234bdd1b0e79ca2f7d9f4e1f',1,'fr::softsf::canscan::CanScan']]],
+  ['browsebutton_3',['browseButton',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a8f7c8f90d49af08706b6b1ec41462e03',1,'fr::softsf::canscan::CanScan']]],
+  ['browsefolderssimulation_4',['browseFoldersSimulation',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#acbf2b92c5c36da7ad4329966d92f1a1b',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['browselogo_5',['browseLogo',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab418aab8165b2e96ce08f98422655cde',1,'fr::softsf::canscan::CanScan']]],
+  ['browserhelper_6',['BrowserHelper',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html',1,'fr::softsf::canscan::util']]],
+  ['browserhelper_2ejava_7',['BrowserHelper.java',['../_browser_helper_8java.html',1,'']]],
+  ['buildmecard_8',['buildMecard',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#af9ccf3cd47449ca963a63fbf91b0b3c2',1,'fr::softsf::canscan::service::BuildQRDataService']]],
+  ['buildpreviewimage_9',['buildPreviewImage',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2890dcd783570601563cbe7a21df9c15',1,'fr::softsf::canscan::CanScan']]],
+  ['buildqrdata_10',['buildQrData',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a04344ca25fe24482f4cb5b5de493b2a9',1,'fr::softsf::canscan::service::BuildQRDataService']]],
+  ['buildqrdataservice_11',['BuildQRDataService',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html',1,'fr::softsf::canscan::service']]],
+  ['buildqrdataservice_2ejava_12',['BuildQRDataService.java',['../_build_q_r_data_service_8java.html',1,'']]],
+  ['buildqrinput_13',['buildQrInput',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#adfbb5c9cf5fa4e297933cd0fce90162c',1,'fr::softsf::canscan::CanScan']]],
+  ['buildtitle_14',['buildTitle',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad77dc63cc1aac70e3833d39005d42f25',1,'fr::softsf::canscan::CanScan']]],
+  ['button_5fcolor_5ficon_5ftext_5fgap_15',['BUTTON_COLOR_ICON_TEXT_GAP',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a566abd8e5282d3df31861531e6acab53',1,'fr::softsf::canscan::CanScan']]],
+  ['button_5ficon_5fcolor_5fsize_16',['BUTTON_ICON_COLOR_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4dd869c6841f8fbecbaa68cbb509f4af',1,'fr::softsf::canscan::CanScan']]],
+  ['bytes_5fper_5fkilobyte_17',['BYTES_PER_KILOBYTE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a989c0bcbc93589d73f27eb11ce1f1ab6',1,'fr::softsf::canscan::CanScan']]]
+];

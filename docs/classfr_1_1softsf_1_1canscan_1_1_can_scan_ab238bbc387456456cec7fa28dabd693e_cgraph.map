@@ -1,0 +1,26 @@
+<map id="fr.softsf.canscan.CanScan.handlePreviewWorkerCompletion" name="fr.softsf.canscan.CanScan.handlePreviewWorkerCompletion">
+<area shape="rect" id="Node000001" title="Handles preview worker completion: checks cancellation, flushes result, updates UI,..." alt="" coords="5,131,225,173"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4a59af6963394f55f423ff281a4232ba" title="Schedules a debounced QR code resize operation based on available vertical space." alt="" coords="273,131,493,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,149,257,149,257,155,225,155"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab8d47730e193662fdf6af6ad7a53d79a" title="Handles the actual QR code resize logic after debounce delay." alt="" coords="541,131,760,173"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,149,526,149,526,155,494,155"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#adfbb5c9cf5fa4e297933cd0fce90162c" title="Builds a QrInput from the current field values." alt="" coords="816,5,1025,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="682,128,739,93,807,58,823,51,825,56,809,62,742,97,685,133"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae299b57aba96ad890bab5bdfaae06f98" title="Cancels any ongoing resize worker if active and waits for its proper termination." alt="" coords="1081,135,1300,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="761,150,1065,152,1065,158,761,155"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa520a5f04c8429a7d24c96e9ecab3351" title="Determines whether the QR data is invalid or null and handles cleanup if needed." alt="" coords="825,72,1016,115"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="751,127,809,115,810,120,752,133"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a3a59f2d5eae9195b29a42c70f52c0dac" title="Manages the lifecycle of the resize worker by cancelling any existing worker, creating a new SwingWor..." alt="" coords="811,189,1030,232"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="752,171,805,183,804,188,751,177"/>
+<area shape="rect" id="Node000012" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a81ea88dd5138cbfcddf59be7837611f9" title="Clears previous QR code visuals and starts wait icon animation." alt="" coords="808,256,1033,299"/>
+<area shape="poly" id="edge12_Node000003_Node000012" title=" " alt="" coords="685,171,742,207,809,242,825,248,823,253,807,246,739,211,682,176"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4815606aa036969bcf5313568220d396" title="Releases the currently stored QR code image to free native memory." alt="" coords="1089,68,1292,111"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1017,89,1073,88,1073,94,1017,95"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="1029,186,1067,178,1068,184,1030,191"/>
+<area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa6e81c2bc494d739a728f4572163b781" title="Creates a background task to resize the QR code image to the specified height." alt="" coords="1082,201,1299,244"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1031,213,1066,214,1066,220,1030,218"/>
+<area shape="rect" id="Node000010" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a1ff2f05476d5b6127e69c1645fd53704" title="Handles resize worker completion: checks cancellation, disposes obsolete icons, updates UI,..." alt="" coords="1348,168,1567,211"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1299,206,1332,202,1333,208,1300,212"/>
+<area shape="rect" id="Node000011" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9ecdcaf8fb8d45df31f2bdf3101243df" title="Performs the image resizing operation on a background thread." alt="" coords="1350,235,1566,277"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="1300,234,1334,238,1334,243,1299,239"/>
+</map>

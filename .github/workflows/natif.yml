@@ -1,0 +1,279 @@
+name: Build and Release Native Windows App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package_for_windows:
+    name: Package for Windows
+    runs-on: windows-latest
+    env:
+      LIBERICA_VERSION: 23.1.9
+      OPENJDK_VERSION: 21.0.9+12
+      LIBERICA_FOLDER: LibericaNIK-23-OpenJDK-21
+      LIBERICA_MSI: bellsoft-liberica-vm-openjdk21.0.9+12-23.1.9+1-windows-amd64.msi
+      MSVC_VCVARS: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat
+      INNOSETUP_EXE: C:\Program Files (x86)\Inno Setup 6\ISCC.exe
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~\.m2\repository
+          key: maven-repo-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-repo-${{ runner.os }}-
+
+      - name: Cache Liberica NIK installer
+        uses: actions/cache@v3
+        with:
+          path: liberica-nik.msi
+          key: liberica-nik-${{ runner.os }}-${{ env.LIBERICA_VERSION }}
+
+      - name: Download and install Liberica NIK via MSI
+        shell: cmd
+        run: |
+          if not exist liberica-nik.msi (
+            curl -L -o liberica-nik.msi https://download.bell-sw.com/vm/${{ env.LIBERICA_VERSION }}/${{ env.LIBERICA_MSI }}
+          )
+          msiexec /quiet /i liberica-nik.msi
+
+      - name: List BellSoft installation folders
+        shell: cmd
+        run: dir "C:\Program Files\BellSoft"
+
+      - name: Set JAVA_HOME and update PATH
+        shell: pwsh
+        run: |
+          $env:JAVA_HOME = "C:\Program Files\BellSoft\${{ env.LIBERICA_FOLDER }}"
+          echo "JAVA_HOME=$env:JAVA_HOME" >> $env:GITHUB_ENV
+          echo "NIK_HOME=$env:JAVA_HOME" >> $env:GITHUB_ENV
+          echo "$env:JAVA_HOME\bin" >> $env:GITHUB_PATH
+          echo "$env:JAVA_HOME\lib" >> $env:GITHUB_PATH
+
+      - name: Initialize MSVC environment
+        shell: cmd
+        run: |
+          call "${{ env.MSVC_VCVARS }}"
+          cl.exe || (echo ❌ MSVC compiler not found & exit /b 1)
+
+      - name: Extract version from pom.xml
+        shell: pwsh
+        run: |
+          $pom = Get-Content "pom.xml" -Raw
+          if ($pom -match '<parent>[\s\S]*?</parent>[\s\S]*?<version>(.+?)</version>') {
+            $version = $matches[1]
+          } elseif ($pom -match '<version>(.+?)</version>') {
+            $version = $matches[1]
+          } else {
+            Write-Host "❌ Impossible d'extraire la version depuis pom.xml"
+            exit 1
+          }
+          echo "POM_VERSION=$version" >> $env:GITHUB_ENV
+          Write-Host "Version extraite: $version"
+
+      - name: Cache Inno Setup installer
+        uses: actions/cache@v3
+        with:
+          path: ${{ runner.temp }}\is.exe
+          key: inno-setup-${{ runner.os }}
+
+      - name: Install Inno Setup
+        shell: cmd
+        run: |
+          if not exist "%TEMP%\is.exe" (
+            powershell -Command "Invoke-WebRequest 'https://jrsoftware.org/download.php/is.exe' -OutFile '%TEMP%\is.exe'"
+          )
+          "%TEMP%\is.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+
+      - name: Set INNOSETUP path
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${{ env.INNOSETUP_EXE }}")) {
+            Write-Host "❌ Inno Setup not found at expected path"
+            exit 1
+          }
+          echo "INNOSETUP=${{ env.INNOSETUP_EXE }}" >> $env:GITHUB_ENV
+
+      - name: Show environment variables
+        shell: pwsh
+        run: |
+          Write-Host "JAVA_HOME=$env:JAVA_HOME"
+          Write-Host "NIK_HOME=$env:NIK_HOME"
+          Write-Host "PATH=$env:PATH"
+          Write-Host "INNOSETUP=$env:INNOSETUP"
+          Write-Host "POM_VERSION=$env:POM_VERSION"
+
+      - name: Compile, Test, and analyze with Maven profile
+        shell: cmd
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+            mvn -B test -f pom.xml ^
+            org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
+            -Dsonar.projectKey=Lob2018_CanScan ^
+            -Dsonar.qualitygate.wait=true ^
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+
+      - name: Build native Windows package
+        shell: cmd
+        run: mvn package -Pwindows-native
+
+      - name: List files in output directory
+        shell: pwsh
+        run: |
+          if (Test-Path output) {
+            Get-ChildItem -Path output
+          }
+
+      - name: Generate hash file for Windows
+        shell: pwsh
+        run: |
+          $exeFile = Get-ChildItem -Path output -Filter "*.exe" | Select-Object -First 1
+          if ($exeFile) {
+            $hash = (Get-FileHash $exeFile.FullName -Algorithm SHA256).Hash
+            "$hash  $($exeFile.Name)" | Out-File -FilePath "output\hash_windows.txt" -Encoding UTF8
+          }
+
+      - name: Upload output folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-folder-windows
+          path: output
+
+  publish_release:
+    permissions:
+      contents: write
+    name: Publish the release and tag it
+    needs: [ package_for_windows ]
+    runs-on: ubuntu-latest
+    env:
+      GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract version
+        run: echo "POM_VERSION=$(awk '/<parent>/,/<\/parent>/ {next} /<version>/ {gsub(/.*<version>|<\/version>.*/, ""); print; exit}' pom.xml)" >> $GITHUB_ENV
+
+      - name: Download output folder (Windows)
+        uses: actions/download-artifact@v4
+        with:
+          name: output-folder-windows
+          path: output
+
+      - name: List files in output directory
+        run: ls -la output/
+
+      - name: GPG - Import private key using an isolated configuration
+        if: env.GPG_PUBLIC_KEY != ''
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: |
+          echo "::add-mask::$GPG_PRIVATE_KEY"
+          export GNUPGHOME=$(mktemp -d)
+          chmod 700 $GNUPGHOME
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --yes --import
+          echo "allow-loopback-pinentry" > $GNUPGHOME/gpg-agent.conf
+          gpgconf --homedir $GNUPGHOME --reload gpg-agent
+          echo "GNUPGHOME=$GNUPGHOME" >> $GITHUB_ENV
+
+      - name: GPG - Sign and verify files (excluding .txt and .asc)
+        if: env.GPG_PUBLIC_KEY != ''
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          echo "::add-mask::$GPG_PASSPHRASE"
+          export GPG_TTY=$(tty)
+
+          # List files in output directory
+          echo "Files in output directory:"
+          ls -la output/
+
+          for file in output/*; do
+            if [[ -f "$file" && ! "$file" == *.txt && ! "$file" == *.asc ]]; then
+              echo "Signing file: $file"
+              gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" --detach-sign --armor -o "$file.asc" "$file"
+              gpg --verify "$file.asc" "$file"
+            fi
+          done
+
+      - name: GPG - Clean up GNUPGHOME
+        if: env.GPG_PUBLIC_KEY != ''
+        run: rm -rf $GNUPGHOME
+
+      - name: GPG - Export public key from secrets and save to output
+        if: env.GPG_PUBLIC_KEY != ''
+        run: |
+          mkdir -p output
+          echo "$GPG_PUBLIC_KEY" > output/canscan-public-key.asc
+
+      - name: Create Release
+        uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
+        with:
+          name: CanScan release v${{ env.POM_VERSION }}
+          tag: v${{ env.POM_VERSION }}
+          body: |
+            ## 📲 CanScan v${{ env.POM_VERSION }}
+
+            **Ce fichier Installe automatiquement l'application sur les systèmes Windows 64 bits.**
+
+            Lien de l'installateur Windows x64 :
+
+            &nbsp;&nbsp;&nbsp;&nbsp;[![Windows EXE](https://img.shields.io/badge/Windows_EXE-CanScan--${{ env.POM_VERSION }}--x64.exe-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/CanScan-${{ env.POM_VERSION }}-x64.exe)
+
+            ## Vérification de l'intégrité du fichier avec GPG
+
+            **Pour garantir l'intégrité du fichier téléchargé, vérifiez sa signature à l'aide de la clé publique GPG correspondante**
+
+            Lien vers la clé publique GPG :
+
+            &nbsp;&nbsp;&nbsp;&nbsp;[![Public GPG (GNU Privacy Guard)](https://img.shields.io/badge/Public_GPG-canscan--public--key.asc-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/canscan-public-key.asc)
+
+            Lien vers la signature GPG disponible :
+
+            &nbsp;&nbsp;&nbsp;&nbsp;[![Windows EXE GPG (GNU Privacy Guard)](https://img.shields.io/badge/Windows_EXE_GPG-CanScan--${{ env.POM_VERSION }}--x64.exe.asc-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/CanScan-${{ env.POM_VERSION }}-x64.exe.asc)
+
+            ## Empreinte du fichier
+
+            **L'intégrité du fichier téléchargé peut être vérifiée à l'aide du fichier de hash correspondant**
+
+            Lien du fichier de hash :
+
+            &nbsp;&nbsp;&nbsp;&nbsp;[![hash_windows.txt](https://img.shields.io/badge/hash__windows.txt-(pour_Windows)-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/hash_windows.txt)
+
+          artifacts: 'output/*'
+
+      - name: Create Tag
+        run: git tag v${{ env.POM_VERSION }}
+
+      - name: Push Tag
+        run: git push --tags
+
+      - name: Delete all artifacts and output folder after publishing
+        uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b
+        with:
+          name: |
+            output-folder-*
+
+      - name: Remove output directory
+        run: rm -rf output

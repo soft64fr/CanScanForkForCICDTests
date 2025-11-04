@@ -1,0 +1,13 @@
+<map id="fr.softsf.canscan.CanScanTest.givenNonExistentLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanTest.givenNonExistentLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,51,293,125"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="341,37,550,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,71,325,68,325,73,294,76"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="624,96,805,139"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="293,93,608,109,608,115,293,98"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="598,5,830,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="550,44,582,40,583,45,551,49"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="547,78,609,92,608,97,546,83"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="878,5,1111,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="831,24,863,24,863,29,831,29"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="664,96,662,86,670,77,688,71,714,69,743,72,761,78,759,83,742,77,714,75,689,77,673,81,667,87,669,95"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.service.BuildQRDataService.buildMecard" name="fr.softsf.canscan.service.BuildQRDataService.buildMecard">
+<area shape="rect" id="Node000001" title="Builds a MECARD&#45;formatted string from the provided contact fields." alt="" coords="5,5,222,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a1a95907fccdf6addf79672cd6bb25a78" title="Appends a field to the MECARD string if the value is non&#45;null and non&#45;blank." alt="" coords="270,5,486,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,24,254,24,254,29,222,29"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="534,5,766,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,24,518,24,518,29,487,29"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="814,5,1047,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="767,24,799,24,799,29,767,29"/>
+</map>

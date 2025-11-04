@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.CanScan.validateMemoryForImageSize" name="fr.softsf.canscan.CanScan.validateMemoryForImageSize">
+<area shape="rect" id="Node000001" title="Validates that sufficient memory is available to generate a square image of the given size." alt="" coords="5,39,232,81"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a070e10a2c703a908c63b30821cdcb4b1" title="Estimates the memory required to create a BufferedImage." alt="" coords="280,5,511,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,44,264,40,264,45,232,49"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a734f691ae3eeecc255c1e43c4f9edb8c" title="Gets the available memory in the JVM." alt="" coords="296,72,495,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,71,280,77,280,82,232,76"/>
+</map>

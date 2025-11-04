@@ -1,0 +1,9 @@
+<map id="src/main/java/fr/softsf/canscan/util/Checker.java" name="src/main/java/fr/softsf/canscan/util/Checker.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="176,5,352,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,104,147,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,51,118,99,115,95,219,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="171,96,357,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,48,267,81,261,81,261,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="381,104,555,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="313,46,426,95,424,100,311,51"/>
+</map>
