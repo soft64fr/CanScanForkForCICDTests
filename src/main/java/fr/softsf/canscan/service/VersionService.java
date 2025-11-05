@@ -35,6 +35,9 @@ public enum VersionService {
             "https://api.github.com/repos/Lob2018/CanScan/tags";
     private static final Pattern TAG_PATTERN = Pattern.compile("\"name\"\\s*:\\s*\"([^\"]+)\"");
     private static final int HTTP_STATUS_CODE_OK = 200;
+    private static final String LATEST_RELEASES_REPO_URL =
+            "https://github.com/Lob2018/CanScan/releases/latest";
+    private static final String CLOSE_HTML = "</html>";
     private final HttpClient httpClient;
 
     /**
@@ -63,11 +66,11 @@ public enum VersionService {
 
     /**
      * Asynchronously checks whether the current application version matches the latest GitHub
-     * release tag. If an update is available, the specified button is made visible; otherwise, it
-     * remains hidden.
+     * release tag. If an update is available, the specified button is made enabled; otherwise, it
+     * remains disabled.
      *
      * @param currentVersion the current version of the application (e.g., "1.0.0.0")
-     * @param updateButton the button to toggle visibility based on update status
+     * @param updateButton the button to toggle enabled state based on update status
      * @return a {@code SwingWorker} that returns {@code true} if the version is up-to-date, {@code
      *     false} if an update is available
      */
@@ -97,12 +100,31 @@ public enum VersionService {
             protected void done() {
                 try {
                     boolean isUpToDate = get();
-                    updateButton.setVisible(!isUpToDate);
+                    updateButtonState(
+                            updateButton,
+                            !isUpToDate,
+                            isUpToDate
+                                    ? "<html>Votre version est à jour<br>"
+                                            + LATEST_RELEASES_REPO_URL
+                                            + CLOSE_HTML
+                                    : "<html>Cliquer pour télécharger la nouvelle version<br>"
+                                            + LATEST_RELEASES_REPO_URL
+                                            + CLOSE_HTML);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
-                    updateButton.setVisible(false);
+                    updateButtonState(
+                            updateButton,
+                            false,
+                            "<html>Vérification de la mise à jour interrompue<br>"
+                                    + LATEST_RELEASES_REPO_URL
+                                    + CLOSE_HTML);
                 } catch (ExecutionException e) {
-                    updateButton.setVisible(false);
+                    updateButtonState(
+                            updateButton,
+                            false,
+                            "<html>Erreur lors de la vérification de la mise à jour<br>"
+                                    + LATEST_RELEASES_REPO_URL
+                                    + CLOSE_HTML);
                 }
             }
         };
@@ -139,11 +161,11 @@ public enum VersionService {
     }
 
     /**
-     * Validates input for version check. If null, returns a fallback {@code SwingWorker} that hides
-     * the update button; otherwise returns {@code null}.
+     * Validates input for version check. If null, returns a fallback {@code SwingWorker} that
+     * disables the update button; otherwise returns {@code null}.
      *
      * @param currentVersion current app version
-     * @param updateButton button to toggle visibility
+     * @param updateButton button to toggle state
      * @return fallback worker if input is null; {@code null} otherwise
      */
     private static SwingWorker<Boolean, Void> npeCheckLatestVersion(
@@ -158,10 +180,27 @@ public enum VersionService {
 
                 @Override
                 protected void done() {
-                    updateButton.setVisible(false);
+                    updateButtonState(
+                            updateButton,
+                            false,
+                            "<html>Il manque un paramètre pour vérifier la mise à jour<br>"
+                                    + LATEST_RELEASES_REPO_URL
+                                    + CLOSE_HTML);
                 }
             };
         }
         return null;
+    }
+
+    /**
+     * Updates the state and tooltip of the given button based on application logic.
+     *
+     * @param button the JButton to update
+     * @param enabled whether the button should be enabled
+     * @param tooltip the tooltip text to display on hover
+     */
+    private static void updateButtonState(JButton button, boolean enabled, String tooltip) {
+        button.setEnabled(enabled);
+        button.setToolTipText(tooltip);
     }
 }

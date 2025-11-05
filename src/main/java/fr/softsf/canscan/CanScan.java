@@ -261,10 +261,9 @@ public class CanScan extends JFrame {
         radioButtonPanel.add(mecardRadio);
         radioButtonPanel.add(freeRadio);
         // UPDATE
-        update.setVisible(false);
+        update.setEnabled(false);
         update.setToolTipText(
-                "<html>Une nouvelle version est disponible.<br>"
-                        + "Cliquer pour la télécharger :<br>"
+                "<html>Recherche de mise à jour<br>"
                         + LATEST_RELEASES_REPO_URL
                         + "</html>");
         update.addActionListener(
