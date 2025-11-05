@@ -1347,10 +1347,7 @@ public class CanScan extends JFrame {
                     String.format(
                             "Mémoire insuffisante pour générer une image de %dx%d pixels.%nTaille"
                                     + " estimée %d Mo.%nMémoire disponible %d Mo.",
-                            size,
-                            size,
-                            estimateImageMemoryMB(size),
-                            getAvailableMemoryMB() - AVAILABLE_MEMORY_TO_GENERATE_IMAGE));
+                            size, size, estimateImageMemoryMB(size), getAvailableMemoryMB()));
         } finally {
             if (g != null) {
                 g.dispose();
@@ -1383,16 +1380,13 @@ public class CanScan extends JFrame {
         }
         long estimatedMB = estimateImageMemoryMB(size);
         long availableMB = getAvailableMemoryMB();
-        if (estimatedMB > availableMB - AVAILABLE_MEMORY_TO_GENERATE_IMAGE) {
+        if (estimatedMB > availableMB) {
             throw new OutOfMemoryError(
                     String.format(
                             "Mémoire insuffisante pour générer une image de %dx%d pixels.%nMémoire"
                                     + " nécessaire %d Mo.%nMémoire disponible %d Mo.%nRéduire la"
                                     + " dimension souhaitée.",
-                            size,
-                            size,
-                            estimatedMB,
-                            availableMB - AVAILABLE_MEMORY_TO_GENERATE_IMAGE));
+                            size, size, estimatedMB, availableMB));
         }
     }
 
@@ -1409,17 +1403,24 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Gets the available memory in the JVM.
+     * Gets the available memory in the JVM with safety margin for image generation.
      *
-     * @return Available memory in megabytes.
+     * @return Available memory in megabytes, minus the reserved safety margin. Returns 0 if not
+     *     enough memory is available.
      */
     private static long getAvailableMemoryMB() {
         Runtime runtime = Runtime.getRuntime();
         long maxMemory = runtime.maxMemory();
         long allocatedMemory = runtime.totalMemory();
         long freeMemory = runtime.freeMemory();
-        long availableMemory = maxMemory - (allocatedMemory - freeMemory);
-        return availableMemory / (BYTES_PER_KILOBYTE * BYTES_PER_KILOBYTE);
+        long usedMemory = allocatedMemory - freeMemory;
+        long availableMemory = maxMemory - usedMemory;
+        long safeAvailableMemory =
+                availableMemory
+                        - (AVAILABLE_MEMORY_TO_GENERATE_IMAGE
+                                * BYTES_PER_KILOBYTE
+                                * BYTES_PER_KILOBYTE);
+        return Math.max(0, safeAvailableMemory) / (BYTES_PER_KILOBYTE * BYTES_PER_KILOBYTE);
     }
 
     /**
