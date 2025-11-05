@@ -502,8 +502,8 @@ public class CanScan extends JFrame {
                         - northPanelWrapper.getHeight()
                         - southSpacer.getHeight()
                         - DEFAULT_GAP * 3;
-        if (squareSize <= 0) {
-            return;
+        if (squareSize < QR_CODE_LABEL_DEFAULT_SIZE) {
+            squareSize = QR_CODE_LABEL_DEFAULT_SIZE;
         }
         qrCodeLabel.setPreferredSize(new Dimension(squareSize, squareSize));
         QrDataResult qrData = BuildQRDataService.INSTANCE.buildQrData(currentMode, buildQrInput());

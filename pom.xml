@@ -4,7 +4,7 @@
   <!-- Project information -->
   <groupId>fr.softsf</groupId>
   <artifactId>canscan</artifactId>
-  <version>0.9.0.4</version>
+  <version>0.9.0.5</version>
   <name>CanScan</name>
   <organization>
     <name>Soft64.fr</name>
