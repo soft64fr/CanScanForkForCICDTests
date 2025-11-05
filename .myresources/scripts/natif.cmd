@@ -43,7 +43,8 @@ echo.
 echo [4/6] Building native image...
 echo       Les options SUBSYSTEM:WINDOWS et ENTRY:mainCRTStartup suppriment la console
 echo       (retirer ces 2 lignes pour afficher la console pendant l'exécution)
-call native-image --no-fallback ^
+call native-image --strict-image-heap ^
+                  --no-fallback ^
                   --no-server ^
                   --verbose ^
                   --enable-preview ^
