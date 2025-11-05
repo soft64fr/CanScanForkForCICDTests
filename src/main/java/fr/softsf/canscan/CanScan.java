@@ -134,6 +134,7 @@ public class CanScan extends JFrame {
     private static final String QR_DATA = "qrData";
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
+    private static final int COLOR_BUTTONS_GAP = 10;
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
@@ -327,26 +328,35 @@ public class CanScan extends JFrame {
                 "<html>Pourcentage de visibilité du logo par rapport au code QR."
                         + "<br>⚠ Risque de gêner la détection.</html>",
                 ratioSlider);
+        JPanel colorPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
         qrColorButton.setIconTextGap(BUTTON_COLOR_ICON_TEXT_GAP);
         bgColorButton.setIconTextGap(BUTTON_COLOR_ICON_TEXT_GAP);
         qrColorButton.setIcon(createColorIcon(qrColorButton, Color.BLACK));
         bgColorButton.setIcon(createColorIcon(bgColorButton, Color.WHITE));
         qrColorButton.addActionListener(e -> chooseColor(qrColorButton, true));
-        addRow(
-                northPanel,
-                grid,
-                "Couleur des modules ⚠",
-                "<html>Saisir la couleur des modules.<br>⚠ Le code QR ne fonctionnera que"
-                        + " si le contraste avec le fond est suffisant.</html>",
-                qrColorButton);
         bgColorButton.addActionListener(e -> chooseColor(bgColorButton, false));
+        qrColorButton.setToolTipText(
+                "<html>Couleur des modules.<br>⚠ Le code QR ne fonctionnera que"
+                        + " si le contraste avec le fond est suffisant.</html>");
+        bgColorButton.setToolTipText(
+                "<html>Couleur du fond.<br>⚠ Le code QR ne fonctionnera que"
+                        + " si le contraste avec les modules est suffisant.</html>");
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 0.5;
+        gbc.insets = new Insets(0, 0, 0, COLOR_BUTTONS_GAP);
+        colorPanel.add(bgColorButton, gbc);
+        gbc.gridx = 1;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        colorPanel.add(qrColorButton, gbc);
         addRow(
                 northPanel,
                 grid,
-                "Couleur du fond ⚠",
-                "<html>Saisir la couleur du fond.<br>⚠ Le code QR ne fonctionnera que si"
-                        + " le contraste avec les modules est suffisant.</html>",
-                bgColorButton);
+                "Couleurs ⚠",
+                "<html>Saisir la couleur du fond et des modules.<br>⚠ Le code QR ne fonctionnera"
+                        + " que si le contraste est suffisant.</html>",
+                colorPanel);
+
         addRow(
                 northPanel,
                 grid,
