@@ -80,6 +80,7 @@ import fr.softsf.canscan.ui.Popup;
 import fr.softsf.canscan.ui.QrCodeIconUtil;
 import fr.softsf.canscan.util.BrowserHelper;
 import fr.softsf.canscan.util.Checker;
+import fr.softsf.canscan.util.UseLucioleFont;
 
 /**
  * CanScan - Swing application to generate QR Codes.
@@ -107,7 +108,7 @@ public class CanScan extends JFrame {
     private static final int TEXT_FIELDS_COLUMNS = 25;
     private static final int MULTILINE_TEXT_FIELDS_ROWS = 10;
     private static final int RADIO_BUTTON_GAP = 20;
-    private static final int DEFAULT_LABEL_WIDTH = 135;
+    private static final int DEFAULT_LABEL_WIDTH = 140;
     private static final String ADD_ROW = "addRow";
     private static final String CONFIG = "config";
     private static final String DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL =
@@ -310,7 +311,7 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "Dimension en pixels ⚠",
-                "<html>Saisir la dimension du côté en pixels.<br>⚠ Une dimension trop"
+                "<html>Saisir la dimension du côté du code QR en pixels.<br>⚠ Une dimension trop"
                         + " grande surcharge la mémoire et dégrade les performances de"
                         + " l'application.</html>",
                 sizeField);
@@ -639,7 +640,7 @@ public class CanScan extends JFrame {
             if (cancelledOrStale) {
                 return;
             }
-            Popup.INSTANCE.showDialog("❌ Resize error\n", ex.getMessage(), ERREUR);
+            Popup.INSTANCE.showDialog("Pas de redimensionnement\n", ex.getMessage(), ERREUR);
         }
     }
 
@@ -993,21 +994,19 @@ public class CanScan extends JFrame {
             SwingUtilities.invokeLater(
                     () ->
                             Popup.INSTANCE.showDialog(
-                                    "❌ " + oom.getMessage(), "Erreur de mémoire", ERREUR));
+                                    "Manque de mémoire\n", oom.getMessage(), ERREUR));
 
         } catch (WriterException we) {
             SwingUtilities.invokeLater(
                     () ->
                             Popup.INSTANCE.showDialog(
-                                    "❌ Erreur lors de la génération du QR Code",
-                                    we.getMessage(),
-                                    ERREUR));
+                                    "Pas de génération du QR Code\n", we.getMessage(), ERREUR));
 
         } catch (IOException ioe) {
             SwingUtilities.invokeLater(
                     () ->
                             Popup.INSTANCE.showDialog(
-                                    "❌ Erreur de lecture/écriture de fichier",
+                                    "Pas de lecture/écriture de fichier\n",
                                     ioe.getMessage(),
                                     ERREUR));
         }
@@ -1108,7 +1107,7 @@ public class CanScan extends JFrame {
             if (cancelledOrStale) {
                 return;
             }
-            Popup.INSTANCE.showDialog("❌ Erreur d'affichage\n", ex.getMessage(), ERREUR);
+            Popup.INSTANCE.showDialog("Pas d'affichage\n", ex.getMessage(), ERREUR);
         }
     }
 
@@ -1159,7 +1158,7 @@ public class CanScan extends JFrame {
             SwingUtilities.invokeLater(
                     () ->
                             Popup.INSTANCE.showDialog(
-                                    "❌ Erreur de rendu du code QR\n", ex.getMessage(), ERREUR));
+                                    "Pas de rendu du code QR\n", ex.getMessage(), ERREUR));
             return null;
         }
     }
@@ -1833,7 +1832,7 @@ public class CanScan extends JFrame {
             }
         } catch (IOException e) {
             Popup.INSTANCE.showDialog(
-                    "❌ Le fichier version.properties est illisible\n", e.getMessage(), ERREUR);
+                    "Le fichier version.properties est illisible\n", e.getMessage(), ERREUR);
         }
         version = props.getProperty("app.version");
         name = props.getProperty("app.name");
@@ -1841,13 +1840,14 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Application entry point. Sets up the FlatCobalt2 theme and launches the CanScan GUI on the
-     * EDT.
+     * Application entry point. Sets up the FlatCobalt2 theme with the Luciole font and launches the
+     * CanScan GUI on the EDT.
      *
      * @param args command-line arguments (ignored)
      */
     public static void main(String[] args) {
         FlatCobalt2IJTheme.setup();
+        UseLucioleFont.INSTANCE.initialize();
         SwingUtilities.invokeLater(() -> new CanScan().setVisible(true));
     }
 }

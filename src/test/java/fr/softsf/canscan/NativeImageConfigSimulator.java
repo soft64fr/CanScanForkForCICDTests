@@ -29,6 +29,8 @@ import javax.swing.SwingUtilities;
 
 import com.formdev.flatlaf.intellijthemes.FlatCobalt2IJTheme;
 
+import fr.softsf.canscan.util.UseLucioleFont;
+
 /**
  * Simulates Native Image configuration behavior for UI testing and preview without generating the
  * actual image.
@@ -47,6 +49,7 @@ public class NativeImageConfigSimulator {
                 "\n[e2e INFO] Demarrage de la generation de configuration Native Image...");
         try {
             FlatCobalt2IJTheme.setup();
+            UseLucioleFont.INSTANCE.initialize();
         } catch (Exception e) {
             System.err.println("[e2e ERROR] dans le setup du theme: " + e.getMessage());
             e.printStackTrace();
@@ -65,7 +68,7 @@ public class NativeImageConfigSimulator {
                                                             System.out.println(
                                                                     "[e2e INFO] Configuration"
                                                                         + " Native Image generee"
-                                                                        + " avec succes");
+                                                                        + " avec succes\n");
 
                                                             System.exit(0);
                                                         } catch (Exception e) {

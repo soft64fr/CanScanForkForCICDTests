@@ -22,6 +22,8 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Third-party components
 
+### Licence propriétaire Microsoft, redistribution sous conditions du contrat de licence logiciel Microsoft
+
 * Microsoft Visual C++ Redistributable 2022 (x64)
 
 This application redistributes the Microsoft Visual C++ Redistributable 2022 (x64),
@@ -29,3 +31,11 @@ version 14.44.36211, as provided by Microsoft via https://aka.ms/vs/17/release/v
 This package includes ARM64 and x64 runtime binaries required for execution on modern
 Windows systems. Redistribution is performed in accordance with Microsoft's licensing
 terms. The redistributable is used unmodified and solely to enable runtime compatibility.
+
+### Licence CC BY 4.0
+
+* Luciole typeface
+These fonts are freely available under Creative Commons Attribution 4.0 International Public License:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Luciole © Laurent Bourcellier & Jonathan Perez
