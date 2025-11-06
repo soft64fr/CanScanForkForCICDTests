@@ -39,8 +39,7 @@ public enum UseLucioleFont {
     public void initialize() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_LUCIOLE_PATH)) {
             if (is == null) {
-                throw new RuntimeException(
-                        "La police Luciole n'a pas pu être chargée : " + FONT_LUCIOLE_PATH);
+                throw new IllegalStateException("La police Luciole n'a pas pu être chargée : " + FONT_LUCIOLE_PATH);
             }
             Font defaultFont = UIManager.getFont("defaultFont");
             Font loadedFont = Font.createFont(Font.TRUETYPE_FONT, is);
@@ -53,7 +52,7 @@ public enum UseLucioleFont {
                     luciole.deriveFont(shiftDown).deriveFont(luciole.getStyle(), luciole.getSize());
             UIManager.put("defaultFont", adjustedFont);
             SwingUtilities.invokeLater(FlatLaf::updateUI);
-        } catch (FontFormatException | IOException e) {
+        } catch (FontFormatException | IOException | IllegalStateException e) {
             Popup.INSTANCE.showDialog(
                     "La police Luciole n'a pas pu être utilisée\n", e.getMessage(), "ERREUR");
         }
