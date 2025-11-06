@@ -56,10 +56,10 @@ public enum VersionService {
                             .build();
         } catch (NoSuchAlgorithmException | KeyManagementException e) {
             Popup.INSTANCE.showDialog(
-                    "❌ TLS 1.3 est requis mais non disponible", e.getMessage(), "ERREUR");
+                    "TLS 1.3 est requis mais non disponible.\n", e.getMessage(), "ERREUR");
         } catch (UncheckedIOException | SecurityException e) {
             Popup.INSTANCE.showDialog(
-                    "❌ Impossible de créer HTTP client", e.getMessage(), "ERREUR");
+                    "Impossible de créer HTTP client.\n", e.getMessage(), "ERREUR");
         }
         this.httpClient = client;
     }
@@ -104,10 +104,10 @@ public enum VersionService {
                             updateButton,
                             !isUpToDate,
                             isUpToDate
-                                    ? "<html>Votre version est à jour<br>"
+                                    ? "<html>Votre version est à jour.<br>"
                                             + LATEST_RELEASES_REPO_URL
                                             + CLOSE_HTML
-                                    : "<html>Cliquer pour télécharger la nouvelle version<br>"
+                                    : "<html>Cliquer pour télécharger la nouvelle version.<br>"
                                             + LATEST_RELEASES_REPO_URL
                                             + CLOSE_HTML);
                 } catch (InterruptedException e) {
@@ -115,14 +115,14 @@ public enum VersionService {
                     updateButtonState(
                             updateButton,
                             false,
-                            "<html>Vérification de la mise à jour interrompue<br>"
+                            "<html>Vérification de la mise à jour interrompue.<br>"
                                     + LATEST_RELEASES_REPO_URL
                                     + CLOSE_HTML);
                 } catch (ExecutionException e) {
                     updateButtonState(
                             updateButton,
                             false,
-                            "<html>Erreur lors de la vérification de la mise à jour<br>"
+                            "<html>Vérification de la mise à jour non réalisée.<br>"
                                     + LATEST_RELEASES_REPO_URL
                                     + CLOSE_HTML);
                 }
@@ -183,7 +183,7 @@ public enum VersionService {
                     updateButtonState(
                             updateButton,
                             false,
-                            "<html>Il manque un paramètre pour vérifier la mise à jour<br>"
+                            "<html>Il manque un paramètre pour vérifier la mise à jour.<br>"
                                     + LATEST_RELEASES_REPO_URL
                                     + CLOSE_HTML);
                 }
