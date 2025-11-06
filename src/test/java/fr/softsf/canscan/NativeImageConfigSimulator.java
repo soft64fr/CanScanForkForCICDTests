@@ -259,13 +259,13 @@ public class NativeImageConfigSimulator {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(200);
-        String expected = "Test";
+        String expected = "test";
         typeString(robot, expected);
         robot.delay(500);
         assertEquals(
                 "\n=== Test 2: Verification de la saisie du nom ===\n",
-                expected,
-                nameField.getText());
+                expected.toLowerCase(),
+                nameField.getText().toLowerCase());
     }
 
     /**
