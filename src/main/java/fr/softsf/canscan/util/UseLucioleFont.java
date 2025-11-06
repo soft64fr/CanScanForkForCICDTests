@@ -40,7 +40,8 @@ public enum UseLucioleFont {
     public void initialize() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_LUCIOLE_PATH)) {
             if (is == null) {
-                throw new IllegalStateException("La police Luciole n'a pas pu être chargée : " + FONT_LUCIOLE_PATH);
+                throw new IllegalStateException(
+                        "La police Luciole n'a pas pu être chargée : " + FONT_LUCIOLE_PATH);
             }
             Font defaultFont = UIManager.getFont(DEFAULT_FONT);
             Font loadedFont = Font.createFont(Font.TRUETYPE_FONT, is);
