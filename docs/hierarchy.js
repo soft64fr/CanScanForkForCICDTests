@@ -18,5 +18,7 @@ var hierarchy =
     [ "fr.softsf.canscan.PopupTest.ShowDialogTests", "classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_dialog_tests.html", null ],
     [ "fr.softsf.canscan.PopupTest.ShowYesNoConfirmDialogTests", "classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_yes_no_confirm_dialog_tests.html", null ],
     [ "fr.softsf.canscan.PopupTest.SingletonTests", "classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_singleton_tests.html", null ],
+    [ "fr.softsf.canscan.util.UseLucioleFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html", null ],
+    [ "fr.softsf.canscan.UseLucioleFontTest", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html", null ],
     [ "fr.softsf.canscan.service.VersionService", "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html", null ]
 ];

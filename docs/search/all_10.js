@@ -1,7 +1,7 @@
 var searchData=
 [
   ['setratioslidertooltipvalue_0',['setRatioSliderTooltipValue',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abbe4fb71ad979d6affed0b2c9629b832',1,'fr::softsf::canscan::CanScan']]],
-  ['setup_1',['setUp',['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac4409e24be0dfc3605386cb93b51e730',1,'fr::softsf::canscan::CanScanTest']]],
+  ['setup_1',['setUp',['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac4409e24be0dfc3605386cb93b51e730',1,'fr.softsf.canscan.CanScanTest.setUp()'],['../classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html#aaee4c5fc3e9cb616b1b69a47d83fa360',1,'fr.softsf.canscan.UseLucioleFontTest.setUp()']]],
   ['should_5fskip_5fmodule_2',['SHOULD_SKIP_MODULE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#af9a679b96dae36e6ebefd8604dcbe747',1,'fr::softsf::canscan::CanScan']]],
   ['shouldskipmodule_3',['shouldSkipModule',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad9893ec413ee4e8987dc7719d1bd9596',1,'fr::softsf::canscan::CanScan']]],
   ['show_5fargument_5ferror_5fdialog_4',['SHOW_ARGUMENT_ERROR_DIALOG',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a5cf0ef8c85da7c4efdb139aa29858221',1,'fr::softsf::canscan::ui::Popup']]],

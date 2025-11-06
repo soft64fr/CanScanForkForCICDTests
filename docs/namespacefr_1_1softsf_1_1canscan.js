@@ -7,5 +7,6 @@ var namespacefr_1_1softsf_1_1canscan =
     [ "CanScan", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan" ],
     [ "CanScanTest", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test" ],
     [ "NativeImageConfigSimulator", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator" ],
-    [ "PopupTest", "classfr_1_1softsf_1_1canscan_1_1_popup_test.html", "classfr_1_1softsf_1_1canscan_1_1_popup_test" ]
+    [ "PopupTest", "classfr_1_1softsf_1_1canscan_1_1_popup_test.html", "classfr_1_1softsf_1_1canscan_1_1_popup_test" ],
+    [ "UseLucioleFontTest", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test" ]
 ];

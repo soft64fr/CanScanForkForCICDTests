@@ -18,12 +18,14 @@ var annotated_dup =
           [ "util", "namespacefr_1_1softsf_1_1canscan_1_1util.html", [
             [ "BrowserHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper" ],
             [ "Checker", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker" ],
-            [ "FrameHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper" ]
+            [ "FrameHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper" ],
+            [ "UseLucioleFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font" ]
           ] ],
           [ "CanScan", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan" ],
           [ "CanScanTest", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test" ],
           [ "NativeImageConfigSimulator", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator" ],
-          [ "PopupTest", "classfr_1_1softsf_1_1canscan_1_1_popup_test.html", "classfr_1_1softsf_1_1canscan_1_1_popup_test" ]
+          [ "PopupTest", "classfr_1_1softsf_1_1canscan_1_1_popup_test.html", "classfr_1_1softsf_1_1canscan_1_1_popup_test" ],
+          [ "UseLucioleFontTest", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test" ]
         ] ]
       ] ]
     ] ]

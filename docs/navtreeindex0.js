@@ -14,6 +14,8 @@ var NAVTREEINDEX0 =
 "_qr_code_icon_util_8java.html":[3,0,1,0,0,0,0,0,2,2],
 "_qr_data_result_8java.html":[3,0,1,0,0,0,0,0,0,1],
 "_qr_input_8java.html":[3,0,1,0,0,0,0,0,0,2],
+"_use_luciole_font_8java.html":[3,0,1,0,0,0,0,0,3,3],
+"_use_luciole_font_test_8java.html":[3,0,1,1,0,0,0,0,3],
 "_version_service_8java.html":[3,0,1,0,0,0,0,0,1,1],
 "annotated.html":[2,0],
 "classes.html":[2,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac5293cabe08688ee6d3f820e24deeae6":[2,0,0,0,0,4,116],
 "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac6fabfa11abff9b059cb8abefd871cf6":[1,0,0,0,0,4,117],
 "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac6fabfa11abff9b059cb8abefd871cf6":[2,0,0,0,0,4,117],
-"classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac739a37d50db54e9f7861f71f36ebbe2":[1,0,0,0,0,4,73],
-"classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac739a37d50db54e9f7861f71f36ebbe2":[2,0,0,0,0,4,73],
-"classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac7e9244de4b3fc4f7f9a621de453d9cf":[1,0,0,0,0,4,43]
+"classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac739a37d50db54e9f7861f71f36ebbe2":[1,0,0,0,0,4,73]
 };
