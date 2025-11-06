@@ -85,6 +85,6 @@ public enum BrowserHelper {
      * @param url the URL that failed to open
      */
     private void handleError(String message, Exception e, String url) {
-        Popup.INSTANCE.showDialog("❌ " + message + "\n", e.getMessage() + "\nURL: " + url, ERROR);
+        Popup.INSTANCE.showDialog(message + "\n", e.getMessage() + "\nURL: " + url, ERROR);
     }
 }
