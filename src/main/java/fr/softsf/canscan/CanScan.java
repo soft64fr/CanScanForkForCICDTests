@@ -137,6 +137,7 @@ public class CanScan extends JFrame {
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
     private static final int COLOR_BUTTONS_GAP = 10;
+    private static final int MARGE_MAXIMUM_VALUE = 10;
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
@@ -1271,8 +1272,8 @@ public class CanScan extends JFrame {
             if (margin < 0) {
                 margin = 0;
             }
-            if (margin > DEFAULT_GAP) {
-                margin = DEFAULT_GAP;
+            if (margin > MARGE_MAXIMUM_VALUE) {
+                margin = MARGE_MAXIMUM_VALUE;
             }
         } catch (NumberFormatException ex) {
             margin = 3;
