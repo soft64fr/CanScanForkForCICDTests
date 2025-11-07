@@ -14,7 +14,7 @@ import java.awt.image.BufferedImage;
 public enum QrCodeBufferedImage {
     INSTANCE;
 
-    private BufferedImage qrOriginal;
+    private transient BufferedImage qrOriginal;
     private final Object imageLock = new Object();
 
     /**
