@@ -235,17 +235,17 @@ class CanScanTest {
         "0, 10", // zero
         "5, 10" // below minimum
     })
-    void givenVariousSizeInputs_whenSizeFieldCheck_thenReturnExpectedResult(
+    void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) {
         generator.sizeField.setText(input);
-        int result = generator.sizeFieldCheck();
+        int result = generator.validateAndGetSize();
         assertEquals(expected, result);
     }
 
     @Test
     void givenValidMargin4_whenMarginFieldCheck_thenGetMarginUpdatedTo4() {
         generator.marginSlider.setValue(4);
-        generator.getMarginFieldChecked();
+        generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(4, getFieldValue(marginField));
     }
@@ -253,7 +253,7 @@ class CanScanTest {
     @Test
     void givenNegativeMargin_whenMarginFieldCheck_thenGetMarginSetTo0() {
         generator.marginSlider.setValue(-2);
-        generator.getMarginFieldChecked();
+        generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(0, getFieldValue(marginField));
     }
@@ -261,7 +261,7 @@ class CanScanTest {
     @Test
     void givenMarginAboveMaximum_whenMarginFieldCheck_thenGetMarginSetTo10() {
         generator.marginSlider.setValue(15);
-        generator.getMarginFieldChecked();
+        generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(10, getFieldValue(marginField));
     }
@@ -271,7 +271,7 @@ class CanScanTest {
     void givenRatioPercent_whenRatioFieldCheck_thenGetRatioSetCorrectly(
             int sliderValue, double expectedRatio) {
         generator.ratioSlider.setValue(sliderValue);
-        generator.getRatioFieldChecked();
+        generator.validateAndGetRatio();
         Field ratioField = getField("imageRatio");
         double actualRatio = (double) getFieldValue(ratioField);
         assertEquals(expectedRatio, actualRatio, 0.01);

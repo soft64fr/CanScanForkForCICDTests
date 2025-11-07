@@ -198,7 +198,7 @@ public enum QrCodePreview {
                             qrInput.qrColor(),
                             qrInput.bgColor(),
                             qrInput.isRoundedModules(),
-                            qrInput.marge());
+                            qrInput.margin());
             if (Thread.currentThread().isInterrupted()) {
                 return null;
             }

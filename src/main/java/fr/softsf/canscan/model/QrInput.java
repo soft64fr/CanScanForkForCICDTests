@@ -45,9 +45,9 @@ import java.awt.Color;
  *     supports PNG, JPG, JPEG formats; if null or empty, no logo is embedded; logo size is
  *     automatically scaled based on {@code ratio}
  * @param size the target dimension (width and height) of the generated QR code image in pixels;
- * @param marge the outer margin (quiet zone) around the QR code in modules (QR matrix units); valid
- *     range: 0-10; values below 4 may cause scanning issues on some readers; recommended: 3-4 for
- *     reliable detection
+ * @param margin the outer margin (quiet zone) around the QR code in modules (QR matrix units);
+ *     valid range: 0-10; values below 4 may cause scanning issues on some readers; recommended: 3-4
+ *     for reliable detection
  * @param ratio the logo visibility ratio as a decimal (0.0-1.0); determines the proportion of the
  *     QR code center occupied by the logo; typical range: 0.2-0.3; values above 0.3 may compromise
  *     scannability despite error correction
@@ -74,7 +74,7 @@ public record QrInput(
         String url,
         String logoPath,
         int size,
-        int marge,
+        int margin,
         double ratio,
         Color qrColor,
         Color bgColor,

@@ -111,7 +111,7 @@ public class CanScan extends JFrame {
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
     private static final int COLOR_BUTTONS_GAP = 10;
-    private static final int MARGE_MAXIMUM_VALUE = 10;
+    private static final int MARGIN_MAXIMUM_VALUE = 10;
     private static final double GBC_COLOR_BUTTONS_WEIGHT_X = 0.5;
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
@@ -353,7 +353,7 @@ public class CanScan extends JFrame {
                                 () -> QrCodeResize.INSTANCE.updateQrCodeSize(getQrInput()));
                     }
                 });
-        // SOUTH (marge)
+        // SOUTH (margin)
         southSpacer.setPreferredSize(new Dimension(0, IntConstants.DEFAULT_GAP.getValue()));
         initializeAutomaticQRCodeRendering();
         // MAIN (with scroll)
@@ -802,9 +802,9 @@ public class CanScan extends JFrame {
                 return;
             }
             File logoFile = logoField.getText().isBlank() ? null : new File(logoField.getText());
-            int size = sizeFieldCheck();
-            getMarginFieldChecked();
-            getRatioFieldChecked();
+            int size = validateAndGetSize();
+            validateAndGetMargin();
+            validateAndGetRatio();
             boolean roundedModules = roundedModulesCheckBox.isSelected();
             QrConfig config =
                     new QrConfig(
@@ -926,9 +926,9 @@ public class CanScan extends JFrame {
                 adrField.getText(),
                 urlField.getText(),
                 logoField.getText(),
-                sizeFieldCheck(),
-                getMarginFieldChecked(),
-                getRatioFieldChecked(),
+                validateAndGetSize(),
+                validateAndGetMargin(),
+                validateAndGetRatio(),
                 qrColor,
                 bgColor,
                 roundedModulesCheckBox.isSelected());
@@ -1001,7 +1001,7 @@ public class CanScan extends JFrame {
      *
      * @return the validated image ratio as a double between 0 and 1
      */
-    double getRatioFieldChecked() {
+    double validateAndGetRatio() {
         try {
             imageRatio = (double) ratioSlider.getValue() / MAX_PERCENTAGE;
             if (imageRatio < 0 || imageRatio > 1) {
@@ -1016,19 +1016,19 @@ public class CanScan extends JFrame {
     /**
      * Validates and returns the current QR code margin from the margin slider.
      *
-     * <p>The value is clamped to the range [0, {@link #MARGE_MAXIMUM_VALUE}]. If parsing fails, the
-     * default margin {@link #margin} is used.
+     * <p>The value is clamped to the range [0, {@link #MARGIN_MAXIMUM_VALUE}]. If parsing fails,
+     * the default margin {@link #margin} is used.
      *
      * @return the validated margin value in pixels
      */
-    int getMarginFieldChecked() {
+    int validateAndGetMargin() {
         try {
             margin = marginSlider.getValue();
             if (margin < 0) {
                 margin = 0;
             }
-            if (margin > MARGE_MAXIMUM_VALUE) {
-                margin = MARGE_MAXIMUM_VALUE;
+            if (margin > MARGIN_MAXIMUM_VALUE) {
+                margin = MARGIN_MAXIMUM_VALUE;
             }
         } catch (NumberFormatException ex) {
             margin = 3;
@@ -1044,7 +1044,7 @@ public class CanScan extends JFrame {
      *
      * @return the validated QR code size in pixels
      */
-    int sizeFieldCheck() {
+    int validateAndGetSize() {
         int size;
         try {
             size = Integer.parseInt(sizeField.getText());
