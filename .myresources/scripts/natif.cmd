@@ -39,6 +39,7 @@ java -agentlib:native-image-agent=config-output-dir=../config ^
           fr.softsf.canscan.NativeImageConfigSimulator
 
 if %ERRORLEVEL% neq 0 (
+    echo.
     echo [ERROR] Configuration simulation failed
     exit /b 1
 )
