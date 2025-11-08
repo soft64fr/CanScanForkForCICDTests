@@ -27,46 +27,46 @@ cd dist
 
 echo.
 echo [3/6] Simulating runtime usage to generate native-image config...
+echo   -agentlib:native-image-agent  : Agent GraalVM pour tracer reflexion/ressources/JNI
+echo   config-output-dir             : Repertoire de sortie des fichiers de config
+echo   -Djava.awt.headless=false     : Active l'interface graphique Swing/AWT
+echo   -cp                           : Classpath (JAR + classes de test)
+echo   NativeImageConfigSimulator    : Classe simulant l'usage runtime de l'app
+echo.
 java -agentlib:native-image-agent=config-output-dir=../config ^
-     -Dflatlaf.uiScale=1 ^
      -Djava.awt.headless=false ^
      -cp "../target/canscan-%2.jar;../target/test-classes" ^
           fr.softsf.canscan.NativeImageConfigSimulator
 
 if %ERRORLEVEL% neq 0 (
-    echo.
-    echo [ERROR] La simulation a echoue avec le code %ERRORLEVEL%
+    echo [ERROR] Configuration simulation failed
     exit /b 1
 )
 
 echo.
 echo [4/6] Building native image...
-echo       Les options SUBSYSTEM:WINDOWS et ENTRY:mainCRTStartup suppriment la console
-echo       (retirer ces 2 lignes pour afficher la console pendant l'exécution)
-call native-image --strict-image-heap ^
-                  --no-fallback ^
-                  --no-server ^
-                  --verbose ^
-                  --enable-preview ^
-                  -H:ConfigurationFileDirectories=../config ^
+echo   --no-fallback                 : Force la compilation native (pas de fallback JVM)
+echo   --strict-image-heap           : Prepare pour les prochaines versions GraalVM
+echo   -H:+UnlockExperimentalVMOptions : Deverrouille les options experimentales
+echo   -H:ConfigurationFileDirectories : Charge les configs de reflexion/ressources/JNI
+echo   -H:Name                       : Nom de l'executable (canscan.exe)
+echo   -H:Class                      : Classe main a executer
+echo   -H:NativeLinkerOption=SUBSYSTEM : Supprime la console Windows
+echo   -H:NativeLinkerOption=ENTRY   : Point d'entree sans console
+echo   -Djava.awt.headless=false     : Active l'interface graphique Swing/AWT
+echo   -Dsun.java2d.d3d=false        : Desactive Direct3D (stabilite Windows)
+echo   -J-Xmx7G                      : Memoire max pour la compilation (7 GB)
+echo.
+call native-image --no-fallback ^
+                  --strict-image-heap ^
                   -H:+UnlockExperimentalVMOptions ^
-                  -H:+ReportUnsupportedElementsAtRuntime ^
-                  -H:+ReportExceptionStackTraces ^
+                  -H:ConfigurationFileDirectories=../config ^
                   -H:Name=canscan ^
                   -H:Class=%4 ^
-                  -H:IncludeResources=".*\\.properties|.*\\.png|.*\\.svg|.*\\.ttf|.*\\.json" ^
-                  -H:ReflectionConfigurationFiles=../config\reflect-config.json ^
-                  -H:ResourceConfigurationFiles=../config\resource-config.json ^
-                  -H:JNIConfigurationFiles=../config\jni-config.json ^
-                  -H:DynamicProxyConfigurationFiles=../config\proxy-config.json ^
                   -H:NativeLinkerOption=/SUBSYSTEM:WINDOWS ^
                   -H:NativeLinkerOption=/ENTRY:mainCRTStartup ^
-                  -Dsun.java2d.d3d=false ^
-                  -Dsun.java2d.noddraw=true ^
                   -Djava.awt.headless=false ^
-                  -J-Dsun.java2d.d3d=false ^
-                  -J-Dsun.java2d.noddraw=true ^
-                  -J-Djava.awt.headless=false ^
+                  -Dsun.java2d.d3d=false ^
                   -J-Xmx7G ^
                   -jar ../target/canscan-%2.jar
 
