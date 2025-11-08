@@ -7,28 +7,32 @@ package fr.softsf.canscan.ui;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.util.Objects;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
 /**
- * Utility for displaying and managing a QR code loading animation. Must be initialized once and
- * used from the Event Dispatch Thread (EDT).
+ * Manages an animated loading indicator for a JLabel component. Must be used from the Event
+ * Dispatch Thread (EDT).
  */
-public enum Loader {
-    INSTANCE;
+public class Loader {
 
     private static final int WAIT_ICON_DELAY_MS = 100;
     private static final String[] WAIT_FRAMES = {"◒", "◐", "◓", "◑"};
 
-    private JLabel qrCodeLabel;
-
+    private final JLabel qrCodeLabel;
+    private final FontMetrics qrCodeLabelFontMetrics;
+    private final Font qrCodeLabelFont;
     private Timer waitIconTimer;
-    private FontMetrics qrCodeLabelFontMetrics;
-    private Font qrCodeLabelFont;
 
-    /** Injects UI dependencies. Must be called once during initialization. */
-    public void init(JLabel qrCodeLabel) {
-        this.qrCodeLabel = qrCodeLabel;
+    /**
+     * Creates a loader for the specified label.
+     *
+     * @param qrCodeLabel the label to display the animation
+     * @throws NullPointerException if qrCodeLabel is null
+     */
+    public Loader(JLabel qrCodeLabel) {
+        this.qrCodeLabel = Objects.requireNonNull(qrCodeLabel);
         this.qrCodeLabelFont = qrCodeLabel.getFont();
         this.qrCodeLabelFontMetrics = qrCodeLabel.getFontMetrics(qrCodeLabel.getFont());
     }

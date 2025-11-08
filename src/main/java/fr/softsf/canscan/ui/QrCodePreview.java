@@ -32,8 +32,9 @@ import fr.softsf.canscan.util.StringConstants;
  * ensure efficient, flicker-free updates during frequent input or configuration changes.
  *
  * <p>Each instance manages the preview lifecycle for a specific {@link JLabel} and works with a
- * {@link QrCodeResize} instance to handle dynamic resizing. This design supports multiple
- * independent QR preview components within the same application.
+ * {@link QrCodeResize} instance to handle dynamic resizing. The optional {@link Loader} allows the
+ * UI to indicate ongoing background processing. This design supports multiple independent QR
+ * preview components within the same application.
  */
 public class QrCodePreview {
 
@@ -43,6 +44,7 @@ public class QrCodePreview {
     private final QrCodeBufferedImage qrCodeBufferedImage;
     private final QrCodeResize qrCodeResize;
     private final JLabel qrCodeLabel;
+    private final Loader loader;
 
     /**
      * Creates a new asynchronous QR code preview manager for the specified label.
@@ -53,14 +55,17 @@ public class QrCodePreview {
      *     must not be {@code null}
      * @param qrCodeLabel the Swing {@link JLabel} used to display the generated QR preview; must
      *     not be {@code null}
+     * @param loader optional {@link Loader} to indicate background processing; can be {@code null}
      */
     public QrCodePreview(
             QrCodeBufferedImage qrCodeBufferedImage,
             QrCodeResize qrCodeResize,
-            JLabel qrCodeLabel) {
+            JLabel qrCodeLabel,
+            Loader loader) {
         this.qrCodeBufferedImage = qrCodeBufferedImage;
         this.qrCodeResize = qrCodeResize;
         this.qrCodeLabel = qrCodeLabel;
+        this.loader = loader;
     }
 
     /**
@@ -130,7 +135,7 @@ public class QrCodePreview {
 
             @Override
             protected void done() {
-                Loader.INSTANCE.stopWaitIcon();
+                loader.stopWaitIcon();
                 handlePreviewWorkerCompletion(this);
             }
         };

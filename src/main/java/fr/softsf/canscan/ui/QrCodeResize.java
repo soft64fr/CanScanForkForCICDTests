@@ -33,7 +33,8 @@ import fr.softsf.canscan.util.StringConstants;
  * efficient, flicker-free updates during frequent layout or configuration changes.
  *
  * <p>Each instance manages resizing for a specific {@link JLabel}, enabling multiple independent
- * resizable QR components within the same application.
+ * resizable QR components within the same application. The optional {@link Loader} allows the UI to
+ * display a loading indicator while the resize operation is in progress.
  */
 public class QrCodeResize {
 
@@ -46,6 +47,7 @@ public class QrCodeResize {
     private QrInput qrInput;
     private final QrCodeBufferedImage qrCodeBufferedImage;
     private final JLabel qrCodeLabel;
+    private final Loader loader;
 
     /**
      * Creates a new asynchronous QR code resize manager for the specified label.
@@ -54,10 +56,14 @@ public class QrCodeResize {
      *     be {@code null}
      * @param qrCodeLabel the Swing {@link JLabel} that displays the resized QR code; must not be
      *     {@code null}
+     * @param loader optional {@link Loader} used to indicate ongoing background processing; can be
+     *     {@code null}
      */
-    public QrCodeResize(QrCodeBufferedImage qrCodeBufferedImage, JLabel qrCodeLabel) {
+    public QrCodeResize(
+            QrCodeBufferedImage qrCodeBufferedImage, JLabel qrCodeLabel, Loader loader) {
         this.qrCodeBufferedImage = qrCodeBufferedImage;
         this.qrCodeLabel = qrCodeLabel;
+        this.loader = loader;
     }
 
     /**
@@ -122,7 +128,7 @@ public class QrCodeResize {
 
             @Override
             protected void done() {
-                Loader.INSTANCE.stopWaitIcon();
+                loader.stopWaitIcon();
                 handleResizeWorkerCompletion(this);
             }
         };
@@ -217,7 +223,7 @@ public class QrCodeResize {
             // Expected: CancellationException if cancelled, ExecutionException if task failed
         }
         resizeWorker = null;
-        Loader.INSTANCE.stopWaitIcon();
+        loader.stopWaitIcon();
     }
 
     /**
@@ -267,7 +273,7 @@ public class QrCodeResize {
     private boolean isInvalidQrData(QrDataResult qrData) {
         if (Checker.INSTANCE.checkNPE(qrData, "isInvalidQrData", StringConstants.QR_DATA.getValue())
                 || StringUtils.isBlank(qrData.data())) {
-            Loader.INSTANCE.stopWaitIcon();
+            loader.stopWaitIcon();
             qrCodeBufferedImage.freeQrOriginal();
             QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
             return true;
@@ -286,7 +292,7 @@ public class QrCodeResize {
         cancelPreviousResizeWorker();
         QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
         qrCodeLabel.setIcon(null);
-        SwingUtilities.invokeLater(Loader.INSTANCE::startAndAdjustWaitIcon);
+        SwingUtilities.invokeLater(loader::startAndAdjustWaitIcon);
         launchResizeWorker(height);
     }
 }

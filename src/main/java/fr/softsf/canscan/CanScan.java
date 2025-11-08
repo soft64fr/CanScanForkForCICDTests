@@ -151,11 +151,12 @@ public class CanScan extends JFrame {
     final JCheckBox roundedModulesCheckBox = new JCheckBox();
     // Rendu dynamique
     private final JLabel qrCodeLabel = new JLabel("", SwingConstants.CENTER);
+    private final transient Loader loader = new Loader(qrCodeLabel);
     private final transient QrCodeBufferedImage qrCodeBufferedImage = new QrCodeBufferedImage();
     private final transient QrCodeResize qrCodeResize =
-            new QrCodeResize(qrCodeBufferedImage, qrCodeLabel);
+            new QrCodeResize(qrCodeBufferedImage, qrCodeLabel, loader);
     private final transient QrCodePreview qrCodePreview =
-            new QrCodePreview(qrCodeBufferedImage, qrCodeResize, qrCodeLabel);
+            new QrCodePreview(qrCodeBufferedImage, qrCodeResize, qrCodeLabel, loader);
     // SOUTH
     private final JPanel southSpacer = new JPanel();
 
@@ -183,8 +184,6 @@ public class CanScan extends JFrame {
                 new BorderLayout(
                         IntConstants.DEFAULT_GAP.getValue(), IntConstants.DEFAULT_GAP.getValue()));
         setResizable(true);
-        // Init
-        Loader.INSTANCE.init(qrCodeLabel);
         // Sliders
         marginSlider.setMajorTickSpacing(1);
         marginSlider.setPaintTicks(true);
@@ -406,7 +405,7 @@ public class CanScan extends JFrame {
      * preventing memory leaks and lingering timers.
      */
     private void stopAllTimers() {
-        Loader.INSTANCE.disposeWaitIconTimer();
+        loader.disposeWaitIconTimer();
         qrCodeResize.stop();
         qrCodePreview.stop();
     }
@@ -887,7 +886,7 @@ public class CanScan extends JFrame {
      */
     private void resetAndStartPreviewWorker() {
         qrCodeLabel.setIcon(null);
-        SwingUtilities.invokeLater(Loader.INSTANCE::startAndAdjustWaitIcon);
+        SwingUtilities.invokeLater(loader::startAndAdjustWaitIcon);
         qrCodePreview.launchPreviewWorker(getQrInput());
     }
 
