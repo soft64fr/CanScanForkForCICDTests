@@ -99,7 +99,6 @@ $(function(){initNavTree('enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker-members.html">List of all members</a>  </div>
@@ -107,27 +106,21 @@ $(function(){initNavTree('enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html',
 </div><!--header-->
 <div class="contents">
 
-<p>Utility for validating arguments and reporting null or blank values.  
+<p>Centralized argument validation utility for detecting and reporting <code class="JavaDocCode">null</code> or blank values.  
  <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for fr.softsf.canscan.util.Checker:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker__coll__graph.svg" width="199" height="251"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker__coll__graph.svg" width="194" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88f59798782812f0fcf61267db09a8b9" id="r_a88f59798782812f0fcf61267db09a8b9"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88f59798782812f0fcf61267db09a8b9">checkNPE</a> (Object obj, String methodName, String name)</td></tr>
-<tr class="memdesc:a88f59798782812f0fcf61267db09a8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given object is null within an instance context and displays an error dialog if so.  <br /></td></tr>
+<tr class="memdesc:a88f59798782812f0fcf61267db09a8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the specified object is not <code class="JavaDocCode">null</code>.  <br /></td></tr>
 <tr class="separator:a88f59798782812f0fcf61267db09a8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a38aa8db97b16480c728481f1835da11f" id="r_a38aa8db97b16480c728481f1835da11f"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38aa8db97b16480c728481f1835da11f">checkStaticNPE</a> (Object obj, String methodName, String name)</td></tr>
-<tr class="memdesc:a38aa8db97b16480c728481f1835da11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given object is null in a static context and displays an error dialog if so.  <br /></td></tr>
-<tr class="separator:a38aa8db97b16480c728481f1835da11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -136,13 +129,13 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:af3fc9dd2a33f4d12c5db8cf2aeea17d7" id="r_af3fc9dd2a33f4d12c5db8cf2aeea17d7"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3fc9dd2a33f4d12c5db8cf2aeea17d7">checkNullOrBlankInternal</a> (Object obj, String methodName, String name, Component parent)</td></tr>
-<tr class="memdesc:af3fc9dd2a33f4d12c5db8cf2aeea17d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the given object is non-null and, if a String, not blank.  <br /></td></tr>
-<tr class="separator:af3fc9dd2a33f4d12c5db8cf2aeea17d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82691680982c86f9e1f664e065f2247e" id="r_a82691680982c86f9e1f664e065f2247e"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82691680982c86f9e1f664e065f2247e">checkNullOrBlankInternal</a> (Object obj, String methodName, String name)</td></tr>
+<tr class="memdesc:a82691680982c86f9e1f664e065f2247e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates the given object for <code class="JavaDocCode">null</code> or blank values.  <br /></td></tr>
+<tr class="separator:a82691680982c86f9e1f664e065f2247e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility for validating arguments and reporting null or blank values. </p>
-<p>Provides instance and static methods for null and blank checks with standardized error dialogs. Designed for use in defensive programming and audit-friendly workflows. </p>
+<div class="textblock"><p>Centralized argument validation utility for detecting and reporting <code class="JavaDocCode">null</code> or blank values. </p>
+<p>Implemented as an enum singleton to ensure a single shared instance. Designed for defensive programming and consistent user feedback through standardized error dialogs. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a88f59798782812f0fcf61267db09a8b9" name="a88f59798782812f0fcf61267db09a8b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88f59798782812f0fcf61267db09a8b9">&#9670;&#160;</a></span>checkNPE()</h2>
@@ -168,17 +161,17 @@ Static Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if the given object is null within an instance context and displays an error dialog if so. </p>
-<p>Delegates to <code><a class="el" href="#af3fc9dd2a33f4d12c5db8cf2aeea17d7">checkNullOrBlankInternal(Object, String, String, Component)</a></code>, using the current instance as the parent component.</p>
+<p>Validates that the specified object is not <code class="JavaDocCode">null</code>. </p>
+<p>Displays an error dialog if the value is invalid.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>the object to validate </td></tr>
-    <tr><td class="paramname">methodName</td><td>the calling method's name (for context in the dialog) </td></tr>
-    <tr><td class="paramname">name</td><td>the object's name (used in the dialog) </td></tr>
+    <tr><td class="paramname">methodName</td><td>the name of the calling method, used for context in the error dialog </td></tr>
+    <tr><td class="paramname">name</td><td>the parameter name, displayed in the error dialog </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the object is null, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if the object is <code class="JavaDocCode">null</code>; <code class="JavaDocCode">false</code> otherwise </dd></dl>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -189,8 +182,8 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af3fc9dd2a33f4d12c5db8cf2aeea17d7" name="af3fc9dd2a33f4d12c5db8cf2aeea17d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3fc9dd2a33f4d12c5db8cf2aeea17d7">&#9670;&#160;</a></span>checkNullOrBlankInternal()</h2>
+<a id="a82691680982c86f9e1f664e065f2247e" name="a82691680982c86f9e1f664e065f2247e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82691680982c86f9e1f664e065f2247e">&#9670;&#160;</a></span>checkNullOrBlankInternal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,12 +204,7 @@ Static Private Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Component</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;)</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -226,71 +214,17 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Validates that the given object is non-null and, if a String, not blank. </p>
+<p>Validates the given object for <code class="JavaDocCode">null</code> or blank values. </p>
 <p>Displays a standardized error dialog if invalid.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>the object to validate </td></tr>
-    <tr><td class="paramname">methodName</td><td>the name of the calling method (used in the dialog) </td></tr>
-    <tr><td class="paramname">name</td><td>the name of the parameter (used in the dialog) </td></tr>
-    <tr><td class="paramname">parent</td><td>the parent component for the dialog (can be <code class="JavaDocCode">null</code>) </td></tr>
+    <tr><td class="paramname">methodName</td><td>the name of the calling method </td></tr>
+    <tr><td class="paramname">name</td><td>the name of the parameter </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if the object is invalid; <code class="JavaDocCode">false</code> otherwise </dd></dl>
-
-</div>
-</div>
-<a id="a38aa8db97b16480c728481f1835da11f" name="a38aa8db97b16480c728481f1835da11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38aa8db97b16480c728481f1835da11f">&#9670;&#160;</a></span>checkStaticNPE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static boolean fr.softsf.canscan.util.Checker.checkStaticNPE </td>
-          <td>(</td>
-          <td class="paramtype">Object</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>methodName</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the given object is null in a static context and displays an error dialog if so. </p>
-<p>Delegates to <code><a class="el" href="#af3fc9dd2a33f4d12c5db8cf2aeea17d7">checkNullOrBlankInternal(Object, String, String, Component)</a></code> with a null parent.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>the object to validate </td></tr>
-    <tr><td class="paramname">methodName</td><td>the calling method's name (for context in the dialog) </td></tr>
-    <tr><td class="paramname">name</td><td>the object's name (used in the dialog) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the object is null, false otherwise </dd></dl>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker_a38aa8db97b16480c728481f1835da11f_cgraph.svg" width="524" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -318,7 +252,7 @@ Static Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1util.html">util</a></li><li class="navelem"><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html">Checker</a></li>
-    <li class="footer">Generated on Fri Nov 7 2025 21:32:05 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sat Nov 8 2025 18:02:10 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

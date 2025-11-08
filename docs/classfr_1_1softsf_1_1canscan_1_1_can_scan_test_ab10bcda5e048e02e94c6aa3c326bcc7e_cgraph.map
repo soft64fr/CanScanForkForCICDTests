@@ -1,9 +1,5 @@
 <map id="fr.softsf.canscan.CanScanTest.givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin" name="fr.softsf.canscan.CanScanTest.givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,215,80"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a52d47c63db292c6e4c9170ff3f110372" title="Draws a standard square QR code finder pattern at the specified pixel coordinates." alt="" coords="263,21,472,64"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#ad408b9a718a53adbf8891606715a7bba" title="Draws a standard square QR code finder pattern at the specified pixel coordinates." alt="" coords="263,13,519,72"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,40,247,40,247,45,215,45"/>
-<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="520,21,752,64"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,40,504,40,504,45,472,45"/>
-<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="800,21,1033,64"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="753,40,785,40,785,45,753,45"/>
 </map>

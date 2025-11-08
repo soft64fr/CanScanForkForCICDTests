@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.ui.QrCodeBufferedImage.validateMemoryForImageSize" name="fr.softsf.canscan.ui.QrCodeBufferedImage.validateMemoryForImageSize">
+<area shape="rect" id="Node000001" title="Validates that sufficient memory is available to generate a square image of the given size." alt="" coords="5,31,226,89"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a9a9498240266cd1874ce471cdd24368f" title="Estimates the memory required to create a BufferedImage." alt="" coords="274,5,536,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,45,258,41,259,46,226,50"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a64887707a74d89b80bc1de3e2a826314" title="Gets the available memory in the JVM with safety margin for image generation." alt="" coords="281,72,528,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,70,266,75,265,80,226,75"/>
+</map>

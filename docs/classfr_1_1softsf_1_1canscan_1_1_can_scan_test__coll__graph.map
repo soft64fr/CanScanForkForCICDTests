@@ -1,9 +1,25 @@
 <map id="fr.softsf.canscan.CanScanTest" name="fr.softsf.canscan.CanScanTest">
-<area shape="rect" id="Node000001" title="Test suite for CanScan." alt="" coords="5,1835,312,2592"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan — a Swing&#45;based application for generating QR codes." alt="" coords="29,160,288,1771"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,1770,162,1817,156,1817,156,1770"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="61,16,116,85"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,100,99,160,94,161,89,100"/>
-<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html" title="Defines the application operation modes." alt="" coords="139,5,323,96"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="230,96,226,143,221,143,225,96"/>
+<area shape="rect" id="Node000001" title="Test suite for CanScan." alt="" coords="657,4763,964,5520"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan — a Swing&#45;based application for generating QR codes." alt="" coords="508,3088,767,4699"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="752,4698,759,4746,753,4746,747,4699"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="538,2675,593,2744"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="571,2758,591,3088,586,3088,566,2759"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html" title="Defines the application operation modes." alt="" coords="616,2664,800,2755"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="708,2755,689,3071,684,3071,703,2754"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" title="Manages an animated loading indicator for a JLabel component." alt="" coords="547,611,744,899"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="676,898,704,1059,736,1268,769,1516,800,1794,823,2093,836,2404,837,2561,834,2717,827,2872,815,3024,797,3170,773,3317,767,3316,791,3169,809,3024,822,2872,829,2717,832,2560,831,2404,818,2093,794,1795,764,1517,731,1269,698,1060,670,899"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html" title="Handles asynchronous resizing of generated QR code images in a Swing UI." alt="" coords="357,1568,597,2331"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="628,899,536,1552,531,1551,623,898"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html" title="Handles asynchronous generation and display of QR code previews in a Swing UI." alt="" coords="135,2435,374,2984"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="665,898,696,1235,709,1444,715,1660,712,1870,706,1969,696,2061,682,2146,664,2220,640,2283,612,2332,589,2354,566,2366,541,2370,516,2371,464,2372,438,2380,412,2397,385,2424,381,2420,409,2393,436,2375,463,2367,516,2365,541,2365,564,2361,586,2350,607,2329,636,2280,659,2218,677,2144,691,2061,701,1969,707,1870,710,1660,704,1444,691,1236,660,898"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="76,5,321,1504"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="79,1329,52,1513,30,1713,14,1924,8,2143,14,2366,34,2590,50,2701,70,2810,95,2918,125,3023,160,3120,201,3216,247,3310,297,3402,401,3570,500,3712,496,3715,397,3573,293,3404,243,3313,196,3218,155,3122,120,3025,90,2919,65,2811,44,2701,28,2590,9,2366,3,2143,9,1924,24,1712,47,1513,74,1328"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="324,1279,387,1551,382,1552,319,1280"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="191,1504,197,1914,214,2331,221,2417,216,2418,209,2331,191,1915,186,1504"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="441,2330,437,2395,420,2710,422,2848,437,3024,467,3217,507,3410,501,3411,461,3218,432,3024,416,2848,415,2710,432,2395,436,2330"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="360,2299,340,2332,327,2344,315,2356,289,2419,284,2417,311,2353,323,2340,335,2329,355,2296"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="291,2983,310,3063,351,3202,400,3341,452,3474,504,3598,499,3600,447,3476,395,3342,346,3203,305,3065,286,2985"/>
+<area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html" title="Utility class for managing QR code colors and color&#45;related UI operations." alt="" coords="880,2395,1075,3024"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="968,3024,965,3064,906,3968,846,4746,841,4745,900,3968,960,3064,962,3024"/>
+<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="890,3024,774,3427,769,3425,885,3023"/>
 </map>

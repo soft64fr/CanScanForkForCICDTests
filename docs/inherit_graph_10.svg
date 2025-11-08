@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" target="_top" xlink:title="Utility for displaying and managing a QR code loading animation.">
+<g id="a_Node000000"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" target="_top" xlink:title="Manages an animated loading indicator for a JLabel component.">
 <polygon fill="white" stroke="#666666" points="132.25,-20 0,-20 0,0 132.25,0 132.25,-20"/>
 <text text-anchor="middle" x="66.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.Loader</text>
 </a>

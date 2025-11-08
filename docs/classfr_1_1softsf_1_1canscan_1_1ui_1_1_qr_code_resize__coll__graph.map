@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.ui.QrCodeResize" name="fr.softsf.canscan.ui.QrCodeResize">
+<area shape="rect" id="Node000001" title="Handles asynchronous resizing of generated QR code images in a Swing UI." alt="" coords="130,1568,370,2331"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="5,5,250,1504"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,1503,212,1551,207,1551,202,1504"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" title="Manages an animated loading indicator for a JLabel component." alt="" coords="275,611,472,899"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="379,898,378,1035,374,1197,364,1371,346,1544,346,1552,340,1551,341,1544,359,1371,369,1196,373,1034,373,898"/>
+</map>

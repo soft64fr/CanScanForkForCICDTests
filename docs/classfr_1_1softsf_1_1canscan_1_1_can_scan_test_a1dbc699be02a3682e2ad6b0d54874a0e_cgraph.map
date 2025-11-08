@@ -1,13 +1,5 @@
 <map id="fr.softsf.canscan.CanScanTest.givenNullLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanTest.givenNullLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,51,248,125"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada7babf06b5adade313f5236f040a383" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="296,37,505,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,72,280,69,280,74,248,78"/>
-<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abb6acfc2fa4bf839236f0daee33746f7" title="Configuration parameters used to generate a QR code." alt="" coords="578,96,760,139"/>
-<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="248,92,563,109,563,114,248,97"/>
-<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="553,5,785,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="505,44,537,40,538,45,506,49"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="502,78,564,92,563,97,501,83"/>
-<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="833,5,1066,48"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="786,24,818,24,818,29,786,29"/>
-<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="619,96,617,86,625,77,643,71,669,69,698,72,716,78,714,83,697,77,669,75,644,77,628,81,622,87,624,95"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,248,80"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a7b57fa714bbbc6001476ed03fb148fdc" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="296,21,514,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,40,280,40,280,45,248,45"/>
 </map>

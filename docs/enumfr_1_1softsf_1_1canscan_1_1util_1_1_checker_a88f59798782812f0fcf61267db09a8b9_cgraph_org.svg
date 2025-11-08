@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Checks if the given object is null within an instance context and displays an error dialog if so.">
+<g id="a_Node000001"><a xlink:title="Validates that the specified object is not null.">
 <polygon fill="#999999" stroke="#666666" points="195.25,-26 0,-26 0,-6 195.25,-6 195.25,-26"/>
 <text text-anchor="middle" x="97.62" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.util.Checker.checkNPE</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" target="_top" xlink:title="Validates that the given object is non&#45;null and, if a String, not blank.">
+<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a82691680982c86f9e1f664e065f2247e" target="_top" xlink:title="Validates the given object for null or blank values.">
 <polygon fill="white" stroke="#666666" points="405.5,-32 231.25,-32 231.25,0 405.5,0 405.5,-32"/>
 <text text-anchor="start" x="239.25" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.util.Checker.check</text>
 <text text-anchor="middle" x="318.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">NullOrBlankInternal</text>

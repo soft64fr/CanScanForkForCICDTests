@@ -2,8 +2,8 @@ var searchData=
 [
   ['setratioslidertooltipvalue_0',['setRatioSliderTooltipValue',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abbe4fb71ad979d6affed0b2c9629b832',1,'fr::softsf::canscan::CanScan']]],
   ['setup_1',['setUp',['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac4409e24be0dfc3605386cb93b51e730',1,'fr.softsf.canscan.CanScanTest.setUp()'],['../classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html#aaee4c5fc3e9cb616b1b69a47d83fa360',1,'fr.softsf.canscan.UseLucioleFontTest.setUp()']]],
-  ['should_5fskip_5fmodule_2',['SHOULD_SKIP_MODULE',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a5b04bed51835f774c6f0bd34ae3861d2',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
-  ['shouldskipmodule_3',['shouldSkipModule',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a1e86fe28f725b960843bc242bb77f286',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
+  ['should_5fskip_5fmodule_2',['SHOULD_SKIP_MODULE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#abec43c216ca3996056f1274c68e2094e',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
+  ['shouldskipmodule_3',['shouldSkipModule',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a1e86fe28f725b960843bc242bb77f286',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
   ['show_5fargument_5ferror_5fdialog_4',['SHOW_ARGUMENT_ERROR_DIALOG',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a5cf0ef8c85da7c4efdb139aa29858221',1,'fr::softsf::canscan::ui::Popup']]],
   ['showargumenterrordialog_5',['showArgumentErrorDialog',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#ae1f8dbbff9a3488c51207419023aeed5',1,'fr::softsf::canscan::ui::Popup']]],
   ['showargumenterrordialogtests_6',['ShowArgumentErrorDialogTests',['../classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_argument_error_dialog_tests.html',1,'fr::softsf::canscan::PopupTest']]],
@@ -16,11 +16,12 @@ var searchData=
   ['size_5ffield_5fdefault_13',['SIZE_FIELD_DEFAULT',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2eeed49947c5553ac3c60fa5a9c00d0f',1,'fr::softsf::canscan::CanScan']]],
   ['sizefield_14',['sizeField',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a33d7e0d017188e732c23f30053c19490',1,'fr::softsf::canscan::CanScan']]],
   ['southspacer_15',['southSpacer',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a94662f11008aae918883b2b7acd79c4f',1,'fr::softsf::canscan::CanScan']]],
-  ['startandadjustwaiticon_16',['startAndAdjustWaitIcon',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a8b17c2c41f01ae0056fc78037c0922c0',1,'fr::softsf::canscan::ui::Loader']]],
-  ['stop_17',['stop',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a18464a10348140991e373b711e507d1e',1,'fr.softsf.canscan.ui.QrCodePreview.stop()'],['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a01d0bf550b2174b4aa737e0fdae27f52',1,'fr.softsf.canscan.ui.QrCodeResize.stop()']]],
+  ['startandadjustwaiticon_16',['startAndAdjustWaitIcon',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a8b17c2c41f01ae0056fc78037c0922c0',1,'fr::softsf::canscan::ui::Loader']]],
+  ['stop_17',['stop',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a18464a10348140991e373b711e507d1e',1,'fr.softsf.canscan.ui.QrCodePreview.stop()'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a01d0bf550b2174b4aa737e0fdae27f52',1,'fr.softsf.canscan.ui.QrCodeResize.stop()']]],
   ['stopalltimers_18',['stopAllTimers',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a61ffd3b70feaa6414de075f723a24b62',1,'fr::softsf::canscan::CanScan']]],
-  ['stopwaiticon_19',['stopWaitIcon',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a7db844fe9a47d8286890e795c2462d0f',1,'fr::softsf::canscan::ui::Loader']]],
+  ['stopwaiticon_19',['stopWaitIcon',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a7db844fe9a47d8286890e795c2462d0f',1,'fr::softsf::canscan::ui::Loader']]],
   ['stringconstants_20',['StringConstants',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html',1,'fr.softsf.canscan.util.StringConstants'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a1893cd304efa09d08238bbfc416f1003',1,'fr.softsf.canscan.util.StringConstants.StringConstants()']]],
   ['stringconstants_2ejava_21',['StringConstants.java',['../_string_constants_8java.html',1,'']]],
-  ['switchmode_22',['switchMode',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a428c742b098fa27d4c8984c1030c238d',1,'fr::softsf::canscan::CanScan']]]
+  ['stroke_5fwidth_22',['STROKE_WIDTH',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#ad9e5026ed6d3ac33f58f00bec157b1bf',1,'fr::softsf::canscan::ui::QrCodeColor']]],
+  ['switchmode_23',['switchMode',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a428c742b098fa27d4c8984c1030c238d',1,'fr::softsf::canscan::CanScan']]]
 ];

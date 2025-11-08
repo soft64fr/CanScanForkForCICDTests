@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.ui.QrCodeBufferedImage.isInPositionPattern" name="fr.softsf.canscan.ui.QrCodeBufferedImage.isInPositionPattern">
+<area shape="rect" id="Node000001" title="Determines whether the given coordinates fall within any of the three QR code position patterns." alt="" coords="5,72,225,115"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#acdbacde2b4cabcb6003fbf7ac3699852" title="Checks if coordinates are within the bottom&#45;left position pattern." alt="" coords="273,5,509,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,69,284,50,286,55,207,74"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a3951aad146f1247d0b23eae74de9e5dd" title="Checks if coordinates are within the top&#45;left position pattern." alt="" coords="283,72,498,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,91,268,91,268,96,225,96"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#ad31e256d4159e4a6a791b995c9629863" title="Checks if coordinates are within the top&#45;right position pattern." alt="" coords="279,139,503,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,113,286,132,284,137,206,118"/>
+</map>

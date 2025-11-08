@@ -1,0 +1,13 @@
+<map id="fr.softsf.canscan.ui.QrCodeResize.resetAndStartResizeWorker" name="fr.softsf.canscan.ui.QrCodeResize.resetAndStartResizeWorker">
+<area shape="rect" id="Node000001" title="Cancels any pending task, clears the current icon, starts the wait animation, and launches a new resi..." alt="" coords="5,39,234,81"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a8d6601bb69287724be51e8ffac0fc369" title="Cancels any active resize worker and waits for proper termination." alt="" coords="282,5,519,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,44,266,40,267,45,234,49"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#aadf6afa51d8b8667ff70777b0202d4af" title="Launches a background worker that resizes the QR code image to the specified height." alt="" coords="307,72,494,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,71,292,78,292,83,234,76"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a2141e795770aa1577397e33f990d356c" title="Creates a SwingWorker to perform image resizing off the EDT and update the UI when the task completes..." alt="" coords="567,72,751,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="494,91,551,91,551,96,494,96"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#affac6f7db21e00ef84b3d804823c6b51" title="Handles resize worker completion, ensuring that cancellation and stale worker checks are performed be..." alt="" coords="799,39,1052,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="752,79,783,75,784,80,752,84"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a9d652d45dd8f6c5a1715e7c19f27fad5" title="Performs image resizing logic off the EDT." alt="" coords="817,105,1034,148"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="752,102,802,108,801,114,752,108"/>
+</map>

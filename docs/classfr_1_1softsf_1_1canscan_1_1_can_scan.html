@@ -217,18 +217,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a0b2e07f16a3c9b537016b04215b4d595" id="r_a0b2e07f16a3c9b537016b04215b4d595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b2e07f16a3c9b537016b04215b4d595">cancelAllWorkers</a> ()</td></tr>
 <tr class="memdesc:a0b2e07f16a3c9b537016b04215b4d595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels all active background workers responsible for QR code preview and resizing.  <br /></td></tr>
 <tr class="separator:a0b2e07f16a3c9b537016b04215b4d595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209f22e1225dc963a2f7bde026af1bf9" id="r_a209f22e1225dc963a2f7bde026af1bf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209f22e1225dc963a2f7bde026af1bf9">chooseColor</a> (JButton button, boolean isQrColor)</td></tr>
-<tr class="memdesc:a209f22e1225dc963a2f7bde026af1bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a color chooser dialog and updates the selected color.  <br /></td></tr>
-<tr class="separator:a209f22e1225dc963a2f7bde026af1bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3bf57de8d7f86f063fd3e6ba9d576fe" id="r_ab3bf57de8d7f86f063fd3e6ba9d576fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3bf57de8d7f86f063fd3e6ba9d576fe">cleanupResources</a> ()</td></tr>
 <tr class="memdesc:ab3bf57de8d7f86f063fd3e6ba9d576fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all runtime resources used by the QR code workflow.  <br /></td></tr>
 <tr class="separator:ab3bf57de8d7f86f063fd3e6ba9d576fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a224c283143d84ebcfbce9d0058bd93aa" id="r_a224c283143d84ebcfbce9d0058bd93aa"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a224c283143d84ebcfbce9d0058bd93aa">colorToHex</a> (Color c)</td></tr>
-<tr class="memdesc:a224c283143d84ebcfbce9d0058bd93aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <code><a class="el" href="">Color</a></code> object to its hexadecimal RGB string representation.  <br /></td></tr>
-<tr class="separator:a224c283143d84ebcfbce9d0058bd93aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa401982a8aebc5d658e96917e4296d8a" id="r_aa401982a8aebc5d658e96917e4296d8a"><td class="memItemLeft" align="right" valign="top">Icon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa401982a8aebc5d658e96917e4296d8a">createColorIcon</a> (JButton button, Color color)</td></tr>
-<tr class="memdesc:aa401982a8aebc5d658e96917e4296d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a square icon filled with the specified color and a visible border.  <br /></td></tr>
-<tr class="separator:aa401982a8aebc5d658e96917e4296d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba5b2671745886284c444b8e3bec80e2" id="r_aba5b2671745886284c444b8e3bec80e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba5b2671745886284c444b8e3bec80e2">freeQrOriginalAndQrCodeLabel</a> ()</td></tr>
 <tr class="memdesc:aba5b2671745886284c444b8e3bec80e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the QR code image and its label icon to release memory.  <br /></td></tr>
 <tr class="separator:aba5b2671745886284c444b8e3bec80e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,12 +293,22 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a262c7c7b9075ccf754020574b3ca6855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafe584b7ed133f9669807fb766b40987" id="r_aafe584b7ed133f9669807fb766b40987"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafe584b7ed133f9669807fb766b40987">imageRatio</a> = <a class="el" href="#a45df8d4366866c90e5fb074f95b80cd6">DEFAULT_IMAGE_RATIO</a></td></tr>
 <tr class="separator:aafe584b7ed133f9669807fb766b40987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d0e0832459ed82263c36dd65193f01" id="r_aa0d0e0832459ed82263c36dd65193f01"><td class="memItemLeft" align="right" valign="top">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0d0e0832459ed82263c36dd65193f01">loader</a> = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>(<a class="el" href="#ac7221699a8aa1d73cc7c9de900b24636">qrCodeLabel</a>)</td></tr>
+<tr class="separator:aa0d0e0832459ed82263c36dd65193f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a309b37d78b4ad197106d3168434452f6" id="r_a309b37d78b4ad197106d3168434452f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a309b37d78b4ad197106d3168434452f6">margin</a> = 3</td></tr>
 <tr class="separator:a309b37d78b4ad197106d3168434452f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3858b49959ca85feb167c004f0f3fa7f" id="r_a3858b49959ca85feb167c004f0f3fa7f"><td class="memItemLeft" align="right" valign="top">final JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3858b49959ca85feb167c004f0f3fa7f">northPanelWrapper</a> = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0))</td></tr>
 <tr class="separator:a3858b49959ca85feb167c004f0f3fa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80dee7dd2663784754490d076d0ebe96" id="r_a80dee7dd2663784754490d076d0ebe96"><td class="memItemLeft" align="right" valign="top">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80dee7dd2663784754490d076d0ebe96">qrCodeBufferedImage</a> = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a>()</td></tr>
+<tr class="separator:a80dee7dd2663784754490d076d0ebe96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7431e56e66fd3038341d7807e3c27509" id="r_a7431e56e66fd3038341d7807e3c27509"><td class="memItemLeft" align="right" valign="top">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html">QrCodeColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7431e56e66fd3038341d7807e3c27509">qrCodeColor</a> = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html">QrCodeColor</a>()</td></tr>
+<tr class="separator:a7431e56e66fd3038341d7807e3c27509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7221699a8aa1d73cc7c9de900b24636" id="r_ac7221699a8aa1d73cc7c9de900b24636"><td class="memItemLeft" align="right" valign="top">final JLabel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7221699a8aa1d73cc7c9de900b24636">qrCodeLabel</a> = new JLabel(&quot;&quot;, SwingConstants.CENTER)</td></tr>
 <tr class="separator:ac7221699a8aa1d73cc7c9de900b24636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9700f734b204cc34701d8b551207b042" id="r_a9700f734b204cc34701d8b551207b042"><td class="memItemLeft" align="right" valign="top">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html">QrCodePreview</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9700f734b204cc34701d8b551207b042">qrCodePreview</a></td></tr>
+<tr class="separator:a9700f734b204cc34701d8b551207b042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6c08ac95245250baf3bab5744f3167" id="r_afe6c08ac95245250baf3bab5744f3167"><td class="memItemLeft" align="right" valign="top">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">QrCodeResize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe6c08ac95245250baf3bab5744f3167">qrCodeResize</a></td></tr>
+<tr class="separator:afe6c08ac95245250baf3bab5744f3167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a043320b69991577de80f783375257a4a" id="r_a043320b69991577de80f783375257a4a"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a043320b69991577de80f783375257a4a">qrColor</a> = Color.BLACK</td></tr>
 <tr class="separator:a043320b69991577de80f783375257a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2241fd6885a5901d2bc0480eca92611a" id="r_a2241fd6885a5901d2bc0480eca92611a"><td class="memItemLeft" align="right" valign="top">final JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2241fd6885a5901d2bc0480eca92611a">qrColorButton</a> = new JButton(&quot;#000000&quot;)</td></tr>
@@ -319,10 +320,6 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a7dba27b36b14620f4eea414761e1575c" id="r_a7dba27b36b14620f4eea414761e1575c"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dba27b36b14620f4eea414761e1575c">ADD_ROW</a> = &quot;addRow&quot;</td></tr>
 <tr class="separator:a7dba27b36b14620f4eea414761e1575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a566abd8e5282d3df31861531e6acab53" id="r_a566abd8e5282d3df31861531e6acab53"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a566abd8e5282d3df31861531e6acab53">BUTTON_COLOR_ICON_TEXT_GAP</a> = 10</td></tr>
-<tr class="separator:a566abd8e5282d3df31861531e6acab53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dd869c6841f8fbecbaa68cbb509f4af" id="r_a4dd869c6841f8fbecbaa68cbb509f4af"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dd869c6841f8fbecbaa68cbb509f4af">BUTTON_ICON_COLOR_SIZE</a> = 14</td></tr>
-<tr class="separator:a4dd869c6841f8fbecbaa68cbb509f4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbdb1d243b0ddb6b60a3d48b31cf3999" id="r_acbdb1d243b0ddb6b60a3d48b31cf3999"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbdb1d243b0ddb6b60a3d48b31cf3999">COLOR_BUTTONS_GAP</a> = 10</td></tr>
 <tr class="separator:acbdb1d243b0ddb6b60a3d48b31cf3999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45df8d4366866c90e5fb074f95b80cd6" id="r_a45df8d4366866c90e5fb074f95b80cd6"><td class="memItemLeft" align="right" valign="top">static final double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45df8d4366866c90e5fb074f95b80cd6">DEFAULT_IMAGE_RATIO</a> = 0.27</td></tr>
@@ -595,52 +592,6 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a209f22e1225dc963a2f7bde026af1bf9" name="a209f22e1225dc963a2f7bde026af1bf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a209f22e1225dc963a2f7bde026af1bf9">&#9670;&#160;</a></span>chooseColor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.CanScan.chooseColor </td>
-          <td>(</td>
-          <td class="paramtype">JButton</td>          <td class="paramname"><span class="paramname"><em>button</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>isQrColor</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Opens a color chooser dialog and updates the selected color. </p>
-<p>If <code class="JavaDocCode">isQrColor</code> is true, updates the QR code modules color; otherwise, updates the background color. The corresponding button icon and text are updated, and the QR code preview is refreshed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">button</td><td>the JButton representing the color to update </td></tr>
-    <tr><td class="paramname">isQrColor</td><td>true to update the QR code color, false to update the background color </td></tr>
-  </table>
-  </dd>
-</dl>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a209f22e1225dc963a2f7bde026af1bf9_cgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
 <a id="ac0b9579fee0a4d633c23c085d5d9d4ef" name="ac0b9579fee0a4d633c23c085d5d9d4ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0b9579fee0a4d633c23c085d5d9d4ef">&#9670;&#160;</a></span>chooseLogoFile()</h2>
 
@@ -695,95 +646,13 @@ Static Private Attributes</h2></td></tr>
 
 <p>Releases all runtime resources used by the QR code workflow. </p>
 <p>Stops active timers, cancels background workers, and frees any allocated QR code images to prevent memory leaks and ensure a clean shutdown of the preview and generation system. </p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_ab3bf57de8d7f86f063fd3e6ba9d576fe_cgraph.svg" width="504" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-
-</div>
-</div>
-<a id="a224c283143d84ebcfbce9d0058bd93aa" name="a224c283143d84ebcfbce9d0058bd93aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a224c283143d84ebcfbce9d0058bd93aa">&#9670;&#160;</a></span>colorToHex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String fr.softsf.canscan.CanScan.colorToHex </td>
-          <td>(</td>
-          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a <code><a class="el" href="">Color</a></code> object to its hexadecimal RGB string representation. </p>
-<p>Returns a default color of "#FFFFFF" if the input is null.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>the <code><a class="el" href="">Color</a></code> to convert </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a hexadecimal string in the format "#RRGGBB", e.g., "#FF00AA" </dd></dl>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a224c283143d84ebcfbce9d0058bd93aa_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aa401982a8aebc5d658e96917e4296d8a" name="aa401982a8aebc5d658e96917e4296d8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa401982a8aebc5d658e96917e4296d8a">&#9670;&#160;</a></span>createColorIcon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Icon fr.softsf.canscan.CanScan.createColorIcon </td>
-          <td>(</td>
-          <td class="paramtype">JButton</td>          <td class="paramname"><span class="paramname"><em>button</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a square icon filled with the specified color and a visible border. </p>
-<p>The previous icon of the button, if any, is disposed to release graphics resources. The resulting icon can be used to visually represent the color on a JButton.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">button</td><td>the JButton whose previous icon will be disposed and replaced </td></tr>
-    <tr><td class="paramname">color</td><td>the color to display in the icon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>an ImageIcon displaying the color with a border, or <code class="JavaDocCode">null</code> if <code class="JavaDocCode">button</code> or <code class="JavaDocCode">color</code> is <code class="JavaDocCode">null</code> </dd></dl>
 
 </div>
 </div>
@@ -804,11 +673,11 @@ Static Private Attributes</h2></td></tr>
 
 <p>Disposes of the <a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan — a Swing-based application for generating QR codes.">CanScan</a> window, ensuring all resources are explicitly released. </p>
 <p>Stops timers, cancels background workers, and frees image resources before delegating to <code><a class="el" href="">JFrame#dispose()</a></code> to prevent memory leaks and lingering threads. </p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a38e109eadae1f290808f2dedc0023d9d_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -873,11 +742,11 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a9f5b25b481c247871a646961db643caf_cgraph.svg" width="100%" height="572"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -908,11 +777,11 @@ Static Private Attributes</h2></td></tr>
 
 <p>Loads application metadata from the <code>version.properties</code> file. </p>
 <p>Sets the static fields for the application version, name, and organization. Displays an error dialog if the properties file cannot be read. </p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_aefe4d08d96fdc7b2097daf4033bbbb9c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -944,11 +813,11 @@ Static Private Attributes</h2></td></tr>
 <p>Builds and returns a <code><a class="el" href="">QrInput</a></code> object containing all current user inputs and settings. </p>
 <p>Aggregates data from MECARD or FREE fields, visual settings (colors, size, margin, logo, rounded modules), and layout parameters to configure QR code generation.</p>
 <dl class="section return"><dt>Returns</dt><dd>a fully populated <code><a class="el" href="">QrInput</a></code> instance for QR code generation </dd></dl>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a2d26dcd1ae708eae46dba8952351aa1a_cgraph.svg" width="492" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1025,11 +894,11 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_addd7b7d7f9cc810756dbbb66218414d4_cgraph.svg" width="487" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1060,11 +929,11 @@ Static Private Attributes</h2></td></tr>
 
 <p>Sets up automatic QR code preview updates for all input fields and controls. </p>
 <p>Any change in text fields, sliders, or the "rounded modules" checkbox triggers an immediate update of the QR code preview without saving to a file. Also attaches a listener to validate input and enable or disable the generate button accordingly. </p>
-<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a4047170747f52f54ee69ddbc834c5373_cgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1106,11 +975,11 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_ab78c47588f2cb82b4395a1268b3c4ca4_cgraph.svg" width="487" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1147,11 +1016,11 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a3452eff1010c69d3f01d23dc2fac7e8e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1182,11 +1051,11 @@ Static Private Attributes</h2></td></tr>
 
 <p>Clears the current QR code display and starts a background worker to generate a new preview. </p>
 <p>Resets the preview icon, starts the loading animation, and launches the asynchronous task to render the QR code based on the latest input and configuration. </p>
-<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a42d6a5e11bc8f147bed036366316564f_cgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1349,11 +1218,11 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a428c742b098fa27d4c8984c1030c238d_cgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1418,11 +1287,11 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
 
 <p>Schedules a debounced QR code preview update based on the current input and settings. </p>
 <p>If a preview generation is already in progress, restarts the debounce timer to avoid excessive regeneration. Otherwise, clears the current preview and launches a new background worker to generate the QR code preview asynchronously. </p>
-<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_can_scan_a9ac2e28615c970404a4408245e62a6fc_cgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1620,50 +1489,6 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a566abd8e5282d3df31861531e6acab53" name="a566abd8e5282d3df31861531e6acab53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a566abd8e5282d3df31861531e6acab53">&#9670;&#160;</a></span>BUTTON_COLOR_ICON_TEXT_GAP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int fr.softsf.canscan.CanScan.BUTTON_COLOR_ICON_TEXT_GAP = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4dd869c6841f8fbecbaa68cbb509f4af" name="a4dd869c6841f8fbecbaa68cbb509f4af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dd869c6841f8fbecbaa68cbb509f4af">&#9670;&#160;</a></span>BUTTON_ICON_COLOR_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int fr.softsf.canscan.CanScan.BUTTON_ICON_COLOR_SIZE = 14</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2090,6 +1915,28 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aa0d0e0832459ed82263c36dd65193f01" name="aa0d0e0832459ed82263c36dd65193f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d0e0832459ed82263c36dd65193f01">&#9670;&#160;</a></span>loader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> fr.softsf.canscan.CanScan.loader = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>(<a class="el" href="#ac7221699a8aa1d73cc7c9de900b24636">qrCodeLabel</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a6df1515192c53219894766a3f4071c" name="a7a6df1515192c53219894766a3f4071c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6df1515192c53219894766a3f4071c">&#9670;&#160;</a></span>logoField</h2>
 
@@ -2464,6 +2311,50 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
 
 </div>
 </div>
+<a id="a80dee7dd2663784754490d076d0ebe96" name="a80dee7dd2663784754490d076d0ebe96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80dee7dd2663784754490d076d0ebe96">&#9670;&#160;</a></span>qrCodeBufferedImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> fr.softsf.canscan.CanScan.qrCodeBufferedImage = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7431e56e66fd3038341d7807e3c27509" name="a7431e56e66fd3038341d7807e3c27509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7431e56e66fd3038341d7807e3c27509">&#9670;&#160;</a></span>qrCodeColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html">QrCodeColor</a> fr.softsf.canscan.CanScan.qrCodeColor = new <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html">QrCodeColor</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac7221699a8aa1d73cc7c9de900b24636" name="ac7221699a8aa1d73cc7c9de900b24636"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7221699a8aa1d73cc7c9de900b24636">&#9670;&#160;</a></span>qrCodeLabel</h2>
 
@@ -2484,6 +2375,60 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
 </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a9700f734b204cc34701d8b551207b042" name="a9700f734b204cc34701d8b551207b042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9700f734b204cc34701d8b551207b042">&#9670;&#160;</a></span>qrCodePreview</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html">QrCodePreview</a> fr.softsf.canscan.CanScan.qrCodePreview</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">            <span class="keyword">new</span> <a class="code hl_class" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html">QrCodePreview</a>(<a class="code hl_variable" href="#a80dee7dd2663784754490d076d0ebe96">qrCodeBufferedImage</a>, <a class="code hl_variable" href="#afe6c08ac95245250baf3bab5744f3167">qrCodeResize</a>, <a class="code hl_variable" href="#ac7221699a8aa1d73cc7c9de900b24636">qrCodeLabel</a>, <a class="code hl_variable" href="#aa0d0e0832459ed82263c36dd65193f01">loader</a>)</div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1_can_scan_html_a80dee7dd2663784754490d076d0ebe96"><div class="ttname"><a href="#a80dee7dd2663784754490d076d0ebe96">fr.softsf.canscan.CanScan.qrCodeBufferedImage</a></div><div class="ttdeci">final transient QrCodeBufferedImage qrCodeBufferedImage</div><div class="ttdef"><b>Definition</b> CanScan.java:148</div></div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1_can_scan_html_aa0d0e0832459ed82263c36dd65193f01"><div class="ttname"><a href="#aa0d0e0832459ed82263c36dd65193f01">fr.softsf.canscan.CanScan.loader</a></div><div class="ttdeci">final transient Loader loader</div><div class="ttdef"><b>Definition</b> CanScan.java:147</div></div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1_can_scan_html_ac7221699a8aa1d73cc7c9de900b24636"><div class="ttname"><a href="#ac7221699a8aa1d73cc7c9de900b24636">fr.softsf.canscan.CanScan.qrCodeLabel</a></div><div class="ttdeci">final JLabel qrCodeLabel</div><div class="ttdef"><b>Definition</b> CanScan.java:146</div></div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1_can_scan_html_afe6c08ac95245250baf3bab5744f3167"><div class="ttname"><a href="#afe6c08ac95245250baf3bab5744f3167">fr.softsf.canscan.CanScan.qrCodeResize</a></div><div class="ttdeci">final transient QrCodeResize qrCodeResize</div><div class="ttdef"><b>Definition</b> CanScan.java:149</div></div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview_html"><div class="ttname"><a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html">fr.softsf.canscan.ui.QrCodePreview</a></div><div class="ttdoc">Handles asynchronous generation and display of QR code previews in a Swing UI.</div><div class="ttdef"><b>Definition</b> QrCodePreview.java:39</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afe6c08ac95245250baf3bab5744f3167" name="afe6c08ac95245250baf3bab5744f3167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6c08ac95245250baf3bab5744f3167">&#9670;&#160;</a></span>qrCodeResize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final transient <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">QrCodeResize</a> fr.softsf.canscan.CanScan.qrCodeResize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">            <span class="keyword">new</span> <a class="code hl_class" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">QrCodeResize</a>(<a class="code hl_variable" href="#a80dee7dd2663784754490d076d0ebe96">qrCodeBufferedImage</a>, <a class="code hl_variable" href="#ac7221699a8aa1d73cc7c9de900b24636">qrCodeLabel</a>, <a class="code hl_variable" href="#aa0d0e0832459ed82263c36dd65193f01">loader</a>)</div>
+<div class="ttc" id="aclassfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_html"><div class="ttname"><a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">fr.softsf.canscan.ui.QrCodeResize</a></div><div class="ttdoc">Handles asynchronous resizing of generated QR code images in a Swing UI.</div><div class="ttdef"><b>Definition</b> QrCodeResize.java:39</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a043320b69991577de80f783375257a4a" name="a043320b69991577de80f783375257a4a"></a>
@@ -2781,7 +2726,7 @@ FREE mode: <code class="JavaDocCode">freeField</code> must be non-empty. </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html">CanScan</a></li>
-    <li class="footer">Generated on Fri Nov 7 2025 21:32:05 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sat Nov 8 2025 18:02:10 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

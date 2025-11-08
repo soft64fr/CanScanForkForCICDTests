@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.ui.QrCodePreview.createPreviewWorker" name="fr.softsf.canscan.ui.QrCodePreview.createPreviewWorker">
+<area shape="rect" id="Node000001" title="Creates a SwingWorker responsible for generating the QR code image in a background thread and updatin..." alt="" coords="5,39,201,81"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a55581238ed0fb7c9ff7cab5bd779e87d" title="Builds and returns a QR code preview image using the current input and configuration." alt="" coords="289,5,472,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,46,273,37,274,42,201,51"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#adf0f34728c921b64f86c92f37d009a3a" title="Handles completion of the preview worker by validating cancellation state, retrieving the image,..." alt="" coords="249,72,512,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,69,234,73,233,78,201,74"/>
+</map>

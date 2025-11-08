@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.ui.QrCodePreview.launchPreviewWorker" name="fr.softsf.canscan.ui.QrCodePreview.launchPreviewWorker">
+<area shape="rect" id="Node000001" title="Sets the current QrInput and launches a new asynchronous preview generation task." alt="" coords="5,39,203,81"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#ac5481060a8dcf2b576267198916581e6" title="Creates a SwingWorker responsible for generating the QR code image in a background thread and updatin..." alt="" coords="251,39,446,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,57,235,57,235,63,203,63"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a55581238ed0fb7c9ff7cab5bd779e87d" title="Builds and returns a QR code preview image using the current input and configuration." alt="" coords="534,5,717,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,46,519,37,519,42,447,51"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#adf0f34728c921b64f86c92f37d009a3a" title="Handles completion of the preview worker by validating cancellation state, retrieving the image,..." alt="" coords="494,72,757,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="447,69,479,73,478,78,446,74"/>
+</map>

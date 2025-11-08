@@ -1,12 +1,7 @@
 <map id="fr.softsf.canscan.service.BuildQRDataService.buildQrData" name="fr.softsf.canscan.service.BuildQRDataService.buildQrData">
-<area shape="rect" id="Node000001" title="Builds the QR content and default filename based on the selected mode." alt="" coords="5,35,221,77"/>
+<area shape="rect" id="Node000001" title="Builds the QR content and default filename based on the selected mode." alt="" coords="5,5,221,48"/>
 <area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#af9ccf3cd47449ca963a63fbf91b0b3c2" title="Builds a MECARD&#45;formatted string from the provided contact fields." alt="" coords="269,5,485,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,41,253,38,254,43,222,47"/>
-<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a38aa8db97b16480c728481f1835da11f" title="Checks if the given object is null in a static context and displays an error dialog if so." alt="" coords="797,35,1030,77"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="221,56,269,57,509,59,749,57,782,57,782,62,749,63,509,65,269,63,221,62"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,24,253,24,253,29,221,29"/>
 <area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a1a95907fccdf6addf79672cd6bb25a78" title="Appends a field to the MECARD string if the value is non&#45;null and non&#45;blank." alt="" coords="533,5,749,48"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="485,24,517,24,517,29,485,29"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="750,36,782,39,781,44,750,41"/>
-<area shape="rect" id="Node000005" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#af3fc9dd2a33f4d12c5db8cf2aeea17d7" title="Validates that the given object is non&#45;null and, if a String, not blank." alt="" coords="1078,35,1310,77"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1030,53,1062,53,1062,59,1030,59"/>
 </map>

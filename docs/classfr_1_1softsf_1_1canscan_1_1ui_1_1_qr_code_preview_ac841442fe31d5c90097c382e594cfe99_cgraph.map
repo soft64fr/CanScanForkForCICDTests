@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.ui.QrCodePreview.updatePreviewDebounceTimer" name="fr.softsf.canscan.ui.QrCodePreview.updatePreviewDebounceTimer">
+<area shape="rect" id="Node000001" title="Updates the debounce timer and cancels any active preview worker to ensure a clean restart." alt="" coords="5,5,255,48"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#ad403fcc9b625324b306e1a978990c7ad" title="Cancels and flushes any active preview worker to ensure a clean restart before a new preview is gener..." alt="" coords="303,5,537,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,24,287,24,287,29,255,29"/>
+</map>

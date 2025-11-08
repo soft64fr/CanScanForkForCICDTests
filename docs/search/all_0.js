@@ -6,5 +6,5 @@ var searchData=
   ['append_5ffield_3',['APPEND_FIELD',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a6781123e1544d271c48d6fc1b7c9c703',1,'fr::softsf::canscan::service::BuildQRDataService']]],
   ['appendfield_4',['appendField',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html#a1a95907fccdf6addf79672cd6bb25a78',1,'fr::softsf::canscan::service::BuildQRDataService']]],
   ['assertequals_5',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
-  ['available_5fmemory_5fto_5fgenerate_5fimage_6',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a36076778fd155236cdaa363373d3e835',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
+  ['available_5fmemory_5fto_5fgenerate_5fimage_6',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a5ee7752d5d4faa7be9fb9f6d12e4a3bc',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
 ];

@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.ui.QrCodeResize.createResizeWorker" name="fr.softsf.canscan.ui.QrCodeResize.createResizeWorker">
+<area shape="rect" id="Node000001" title="Creates a SwingWorker to perform image resizing off the EDT and update the UI when the task completes..." alt="" coords="5,39,190,81"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#affac6f7db21e00ef84b3d804823c6b51" title="Handles resize worker completion, ensuring that cancellation and stale worker checks are performed be..." alt="" coords="238,5,490,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,46,222,42,222,47,191,51"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a9d652d45dd8f6c5a1715e7c19f27fad5" title="Performs image resizing logic off the EDT." alt="" coords="255,72,472,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,69,240,75,239,80,190,74"/>
+</map>
