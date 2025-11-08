@@ -162,7 +162,7 @@ public class NativeImageConfigSimulator {
             for (Window window : Window.getWindows()) {
                 if (window.isShowing()
                         && window instanceof JDialog dialog
-                        && dialog.getTitle().equals("Choisir la couleur")) {
+                        && dialog.getTitle().equals("Choisir la couleur des modules")) {
                     colorDialog = dialog;
                     break;
                 }

@@ -5,7 +5,6 @@
  */
 package fr.softsf.canscan;
 
-import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -13,10 +12,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
@@ -31,11 +28,8 @@ import java.util.Objects;
 import java.util.Properties;
 import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JColorChooser;
 import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -67,6 +61,7 @@ import fr.softsf.canscan.service.VersionService;
 import fr.softsf.canscan.ui.Loader;
 import fr.softsf.canscan.ui.Popup;
 import fr.softsf.canscan.ui.QrCodeBufferedImage;
+import fr.softsf.canscan.ui.QrCodeColor;
 import fr.softsf.canscan.ui.QrCodeIconUtil;
 import fr.softsf.canscan.ui.QrCodePreview;
 import fr.softsf.canscan.ui.QrCodeResize;
@@ -105,8 +100,6 @@ public class CanScan extends JFrame {
     private static final int GENERATE_BUTTON_EXTRA_HEIGHT = 35;
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
     private static final int PREVIEW_DEBOUNCE_DELAY_MS = 200;
-    private static final int BUTTON_ICON_COLOR_SIZE = 14;
-    private static final int BUTTON_COLOR_ICON_TEXT_GAP = 10;
     private static final String SIZE_FIELD_DEFAULT = "400";
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
@@ -157,6 +150,7 @@ public class CanScan extends JFrame {
             new QrCodeResize(qrCodeBufferedImage, qrCodeLabel, loader);
     private final transient QrCodePreview qrCodePreview =
             new QrCodePreview(qrCodeBufferedImage, qrCodeResize, qrCodeLabel, loader);
+    private final transient QrCodeColor qrCodeColor = new QrCodeColor();
     // SOUTH
     private final JPanel southSpacer = new JPanel();
 
@@ -290,18 +284,26 @@ public class CanScan extends JFrame {
                 ratioSlider);
         JPanel colorPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        qrColorButton.setIconTextGap(BUTTON_COLOR_ICON_TEXT_GAP);
-        bgColorButton.setIconTextGap(BUTTON_COLOR_ICON_TEXT_GAP);
-        qrColorButton.setIcon(createColorIcon(qrColorButton, Color.BLACK));
-        bgColorButton.setIcon(createColorIcon(bgColorButton, Color.WHITE));
-        qrColorButton.addActionListener(e -> chooseColor(qrColorButton, true));
-        bgColorButton.addActionListener(e -> chooseColor(bgColorButton, false));
-        qrColorButton.setToolTipText(
-                "<html>Couleur des modules.<br>⚠ Le code QR ne fonctionnera que"
-                        + " si le contraste avec le fond est suffisant.</html>");
-        bgColorButton.setToolTipText(
-                "<html>Couleur du fond.<br>⚠ Le code QR ne fonctionnera que"
-                        + " si le contraste avec les modules est suffisant.</html>");
+        qrCodeColor.initializeColorButton(qrColorButton, Color.BLACK, true);
+        qrCodeColor.initializeColorButton(bgColorButton, Color.WHITE, false);
+        qrColorButton.addActionListener(
+                e -> {
+                    Color newColor =
+                            qrCodeColor.chooseColor(
+                                    qrColorButton, qrColor, true, this::updatePreviewQRCode);
+                    if (newColor != null) {
+                        qrColor = newColor;
+                    }
+                });
+        bgColorButton.addActionListener(
+                e -> {
+                    Color newColor =
+                            qrCodeColor.chooseColor(
+                                    bgColorButton, bgColor, false, this::updatePreviewQRCode);
+                    if (newColor != null) {
+                        bgColor = newColor;
+                    }
+                });
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = GBC_COLOR_BUTTONS_WEIGHT_X;
         gbc.insets = new Insets(0, 0, 0, COLOR_BUTTONS_GAP);
@@ -622,78 +624,6 @@ public class CanScan extends JFrame {
      */
     private void setRatioSliderTooltipValue() {
         ratioSlider.setToolTipText(ratioSlider.getValue() + "%");
-    }
-
-    /**
-     * Opens a color chooser dialog and updates the selected color.
-     *
-     * <p>If {@code isQrColor} is true, updates the QR code modules color; otherwise, updates the
-     * background color. The corresponding button icon and text are updated, and the QR code preview
-     * is refreshed.
-     *
-     * @param button the JButton representing the color to update
-     * @param isQrColor true to update the QR code color, false to update the background color
-     */
-    private void chooseColor(JButton button, boolean isQrColor) {
-        if (Checker.INSTANCE.checkNPE(button, "chooseColor", "button")) {
-            return;
-        }
-        Color initial = isQrColor ? qrColor : bgColor;
-        Color chosen = JColorChooser.showDialog(this, "Choisir la couleur", initial);
-        if (chosen != null) {
-            if (isQrColor) {
-                qrColor = chosen;
-            } else {
-                bgColor = chosen;
-            }
-            button.setIcon(createColorIcon(button, chosen));
-            button.setText(colorToHex(chosen));
-            updatePreviewQRCode();
-        }
-    }
-
-    /**
-     * Creates a square icon filled with the specified color and a visible border.
-     *
-     * <p>The previous icon of the button, if any, is disposed to release graphics resources. The
-     * resulting icon can be used to visually represent the color on a JButton.
-     *
-     * @param button the JButton whose previous icon will be disposed and replaced
-     * @param color the color to display in the icon
-     * @return an ImageIcon displaying the color with a border, or {@code null} if {@code button} or
-     *     {@code color} is {@code null}
-     */
-    private Icon createColorIcon(JButton button, Color color) {
-        if (Checker.INSTANCE.checkNPE(button, "createColorIcon", "button")
-                || Checker.INSTANCE.checkNPE(color, "createColorIcon", "color")) {
-            return null;
-        }
-        ImageIcon oldIcon = (ImageIcon) button.getIcon();
-        if (oldIcon != null) {
-            Image oldImage = oldIcon.getImage();
-            if (oldImage != null) {
-                oldImage.flush();
-            }
-            button.setIcon(null);
-        }
-        final int size = BUTTON_ICON_COLOR_SIZE;
-        final float strokeWidth = 2f;
-        final int offset = (int) (strokeWidth / 2);
-        BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = null;
-        try {
-            g2 = image.createGraphics();
-            g2.setColor(color);
-            g2.fillRect(0, 0, size, size);
-            g2.setColor(Color.decode("#003f5e"));
-            g2.setStroke(new BasicStroke(strokeWidth));
-            g2.drawRect(offset, offset, size - (int) strokeWidth, size - (int) strokeWidth);
-        } finally {
-            if (g2 != null) {
-                g2.dispose();
-            }
-        }
-        return new ImageIcon(image);
     }
 
     /**
@@ -1052,21 +982,6 @@ public class CanScan extends JFrame {
             sizeField.setText(SIZE_FIELD_DEFAULT);
         }
         return size;
-    }
-
-    /**
-     * Converts a {@link Color} object to its hexadecimal RGB string representation.
-     *
-     * <p>Returns a default color of "#FFFFFF" if the input is null.
-     *
-     * @param c the {@link Color} to convert
-     * @return a hexadecimal string in the format "#RRGGBB", e.g., "#FF00AA"
-     */
-    private String colorToHex(Color c) {
-        if (Checker.checkStaticNPE(c, "colorToHex", "c")) {
-            return "#FFFFFF";
-        }
-        return "#" + Integer.toHexString(c.getRGB()).substring(2).toUpperCase();
     }
 
     /**

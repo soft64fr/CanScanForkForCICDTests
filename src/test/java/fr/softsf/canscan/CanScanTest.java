@@ -35,12 +35,14 @@ import fr.softsf.canscan.model.QrDataResult;
 import fr.softsf.canscan.model.QrInput;
 import fr.softsf.canscan.service.BuildQRDataService;
 import fr.softsf.canscan.ui.QrCodeBufferedImage;
+import fr.softsf.canscan.ui.QrCodeColor;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
@@ -60,12 +62,14 @@ import static org.mockito.Mockito.when;
 class CanScanTest {
 
     private CanScan generator;
+    private QrCodeColor qrCodeColor;
 
     @TempDir File tempDir;
 
     @BeforeEach
     void setUp() {
         generator = new CanScan();
+        qrCodeColor = new QrCodeColor();
         generator.nameField.setText("John");
         generator.phoneField.setText("0123456789");
         generator.emailField.setText("john@example.com");
@@ -161,52 +165,40 @@ class CanScanTest {
     }
 
     @Test
-    void givenRedColorSelected_whenChooseQrColor_thenButtonTextAndColorUpdated() throws Exception {
+    void givenRedColorSelected_whenChooseQrColor_thenButtonTextAndColorUpdated() {
         JButton button = new JButton();
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(Color.RED);
-            Method method =
-                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
-            method.setAccessible(true);
-            method.invoke(generator, button, true);
+            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true, null);
+            assertEquals(Color.RED, chosen);
             assertEquals("#FF0000", button.getText());
-            Field qrColorField = CanScan.class.getDeclaredField("qrColor");
-            qrColorField.setAccessible(true);
-            assertEquals(Color.RED, qrColorField.get(generator));
         }
     }
 
     @Test
-    void givenBlueColorSelected_whenChooseBgColor_thenButtonTextAndColorUpdated() throws Exception {
+    void givenBlueColorSelected_whenChooseBgColor_thenButtonTextAndColorUpdated() {
         JButton button = new JButton();
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(Color.BLUE);
-            Method method =
-                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
-            method.setAccessible(true);
-            method.invoke(generator, button, false);
+            Color chosen = qrCodeColor.chooseColor(button, Color.WHITE, false, null);
+            assertEquals(Color.BLUE, chosen);
             assertEquals("#0000FF", button.getText());
-            Field bgColorField = CanScan.class.getDeclaredField("bgColor");
-            bgColorField.setAccessible(true);
-            assertEquals(Color.BLUE, bgColorField.get(generator));
         }
     }
 
     @Test
-    void givenColorDialogCancelled_whenChooseColor_thenButtonTextUnchanged() throws Exception {
+    void givenColorDialogCancelled_whenChooseColor_thenButtonTextUnchanged() {
         JButton button = new JButton("Noir");
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(null);
-            Method method =
-                    CanScan.class.getDeclaredMethod("chooseColor", JButton.class, boolean.class);
-            method.setAccessible(true);
-            method.invoke(generator, button, true);
+            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true, null);
+            assertNull(chosen);
             assertEquals("Noir", button.getText());
         }
     }
@@ -334,10 +326,8 @@ class CanScanTest {
     }
 
     @Test
-    void givenBlackColor_whenConvertToHex_thenReturn000000() throws Exception {
-        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
-        colorToHex.setAccessible(true);
-        String hex = (String) colorToHex.invoke(generator, Color.BLACK);
+    void givenBlackColor_whenConvertToHex_thenReturn000000() {
+        String hex = qrCodeColor.colorToHex(Color.BLACK);
         assertEquals("#000000", hex);
     }
 
@@ -348,19 +338,15 @@ class CanScanTest {
     }
 
     @Test
-    void givenWhiteColor_whenConvertToHex_thenReturnFFFFFF() throws Exception {
-        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
-        colorToHex.setAccessible(true);
-        String hex = (String) colorToHex.invoke(generator, Color.WHITE);
+    void givenWhiteColor_whenConvertToHex_thenReturnFFFFFF() {
+        String hex = qrCodeColor.colorToHex(Color.WHITE);
         assertEquals("#FFFFFF", hex);
     }
 
     @Test
-    void givenCustomColor_whenConvertToHex_thenReturnCorrectHex() throws Exception {
-        Method colorToHex = CanScan.class.getDeclaredMethod("colorToHex", Color.class);
-        colorToHex.setAccessible(true);
+    void givenCustomColor_whenConvertToHex_thenReturnCorrectHex() {
         Color custom = new Color(128, 64, 192);
-        String hex = (String) colorToHex.invoke(generator, custom);
+        String hex = qrCodeColor.colorToHex(custom);
         assertEquals("#8040C0", hex);
     }
 
