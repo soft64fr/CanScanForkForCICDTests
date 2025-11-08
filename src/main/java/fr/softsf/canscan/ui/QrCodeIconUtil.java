@@ -26,7 +26,7 @@ public enum QrCodeIconUtil {
      * @param label the {@link JLabel} containing the icon to dispose
      */
     public void disposeIcon(JLabel label) {
-        if (Checker.checkStaticNPE(label, "disposeIcon", "label")) {
+        if (Checker.INSTANCE.checkNPE(label, "disposeIcon", "label")) {
             return;
         }
         Icon icon = label.getIcon();

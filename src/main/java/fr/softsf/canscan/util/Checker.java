@@ -5,71 +5,53 @@
  */
 package fr.softsf.canscan.util;
 
-import java.awt.Component;
-
 import org.apache.commons.lang3.StringUtils;
 
 import fr.softsf.canscan.ui.Popup;
 
 /**
- * Utility for validating arguments and reporting null or blank values.
+ * Centralized argument validation utility for detecting and reporting {@code null} or blank values.
  *
- * <p>Provides instance and static methods for null and blank checks with standardized error
- * dialogs. Designed for use in defensive programming and audit-friendly workflows.
+ * <p>Implemented as an enum singleton to ensure a single shared instance. Designed for defensive
+ * programming and consistent user feedback through standardized error dialogs.
  */
 public enum Checker {
     INSTANCE;
 
     /**
-     * Checks if the given object is null within an instance context and displays an error dialog if
-     * so.
-     *
-     * <p>Delegates to {@link #checkNullOrBlankInternal(Object, String, String, Component)}, using
-     * the current instance as the parent component.
+     * Validates that the specified object is not {@code null}. Displays an error dialog if the
+     * value is invalid.
      *
      * @param obj the object to validate
-     * @param methodName the calling method's name (for context in the dialog)
-     * @param name the object's name (used in the dialog)
-     * @return true if the object is null, false otherwise
+     * @param methodName the name of the calling method, used for context in the error dialog
+     * @param name the parameter name, displayed in the error dialog
+     * @return {@code true} if the object is {@code null}; {@code false} otherwise
      */
     public boolean checkNPE(Object obj, String methodName, String name) {
-        return checkNullOrBlankInternal(obj, methodName, name, null);
+        return checkNullOrBlankInternal(obj, methodName, name);
     }
 
     /**
-     * Checks if the given object is null in a static context and displays an error dialog if so.
-     *
-     * <p>Delegates to {@link #checkNullOrBlankInternal(Object, String, String, Component)} with a
-     * null parent.
+     * Validates the given object for {@code null} or blank values. Displays a standardized error
+     * dialog if invalid.
      *
      * @param obj the object to validate
-     * @param methodName the calling method's name (for context in the dialog)
-     * @param name the object's name (used in the dialog)
-     * @return true if the object is null, false otherwise
-     */
-    public static boolean checkStaticNPE(Object obj, String methodName, String name) {
-        return checkNullOrBlankInternal(obj, methodName, name, null);
-    }
-
-    /**
-     * Validates that the given object is non-null and, if a String, not blank. Displays a
-     * standardized error dialog if invalid.
-     *
-     * @param obj the object to validate
-     * @param methodName the name of the calling method (used in the dialog)
-     * @param name the name of the parameter (used in the dialog)
-     * @param parent the parent component for the dialog (can be {@code null})
+     * @param methodName the name of the calling method
+     * @param name the name of the parameter
      * @return {@code true} if the object is invalid; {@code false} otherwise
      */
-    private static boolean checkNullOrBlankInternal(
-            Object obj, String methodName, String name, Component parent) {
+    private static boolean checkNullOrBlankInternal(Object obj, String methodName, String name) {
+        String errorType = null;
         if (obj == null) {
-            Popup.INSTANCE.showArgumentErrorDialog(parent, methodName, name, "null");
-            return true;
+            errorType = "null";
         } else if (obj instanceof String s && StringUtils.isBlank(s)) {
-            Popup.INSTANCE.showArgumentErrorDialog(parent, methodName, name, "blank");
-            return true;
+            errorType = "blank";
         }
-        return false;
+        if (errorType == null) {
+            return false;
+        }
+        Popup.INSTANCE.showArgumentErrorDialog(
+                FrameHelper.INSTANCE.getParentFrame(), methodName, name, errorType);
+        return true;
     }
 }

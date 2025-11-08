@@ -161,7 +161,7 @@ public class QrCodeColor {
      * @return a hexadecimal string in the format "#RRGGBB", e.g., "#FF00AA"
      */
     public String colorToHex(Color color) {
-        if (Checker.checkStaticNPE(color, "colorToHex", COLOR)) {
+        if (Checker.INSTANCE.checkNPE(color, "colorToHex", COLOR)) {
             return DEFAULT_HEX_COLOR;
         }
         return "#" + Integer.toHexString(color.getRGB()).substring(2).toUpperCase();

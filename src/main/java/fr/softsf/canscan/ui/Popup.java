@@ -34,9 +34,9 @@ public enum Popup {
      */
     public void showArgumentErrorDialog(
             Component parent, String methodName, String name, String typeDescription) {
-        if (Checker.checkStaticNPE(methodName, SHOW_ARGUMENT_ERROR_DIALOG, "methodName")
-                || Checker.checkStaticNPE(name, SHOW_ARGUMENT_ERROR_DIALOG, "name")
-                || Checker.checkStaticNPE(
+        if (Checker.INSTANCE.checkNPE(methodName, SHOW_ARGUMENT_ERROR_DIALOG, "methodName")
+                || Checker.INSTANCE.checkNPE(name, SHOW_ARGUMENT_ERROR_DIALOG, "name")
+                || Checker.INSTANCE.checkNPE(
                         typeDescription, SHOW_ARGUMENT_ERROR_DIALOG, "typeDescription")) {
             return;
         }

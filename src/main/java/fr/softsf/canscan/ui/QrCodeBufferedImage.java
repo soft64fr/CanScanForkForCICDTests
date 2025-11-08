@@ -101,14 +101,14 @@ public class QrCodeBufferedImage {
      */
     public BufferedImage generateQrCodeImage(String data, QrConfig config)
             throws WriterException, IOException {
-        if (Checker.checkStaticNPE(config, GENERATE_QR_CODE_IMAGE, CONFIG)
-                || Checker.checkStaticNPE(data, GENERATE_QR_CODE_IMAGE, "data")) {
+        if (Checker.INSTANCE.checkNPE(config, GENERATE_QR_CODE_IMAGE, CONFIG)
+                || Checker.INSTANCE.checkNPE(data, GENERATE_QR_CODE_IMAGE, "data")) {
             return null;
         }
         final int size = config.size();
         validateMemoryForImageSize(size);
         BitMatrix matrix = createMatrix(data, config.margin());
-        if (Checker.checkStaticNPE(matrix, GENERATE_QR_CODE_IMAGE, MATRIX)) {
+        if (Checker.INSTANCE.checkNPE(matrix, GENERATE_QR_CODE_IMAGE, MATRIX)) {
             return null;
         }
         BufferedImage qrImage = null;
@@ -218,7 +218,7 @@ public class QrCodeBufferedImage {
      * @throws WriterException If encoding fails.
      */
     private BitMatrix createMatrix(String text, int margin) throws WriterException {
-        if (Checker.checkStaticNPE(text, "createMatrix", "text")) {
+        if (Checker.INSTANCE.checkNPE(text, "createMatrix", "text")) {
             return null;
         }
         Map<EncodeHintType, Object> hints =
@@ -240,8 +240,8 @@ public class QrCodeBufferedImage {
      * @param bgColor The background color to fill.
      */
     private void fillBackground(Graphics2D g, int size, Color bgColor) {
-        if (Checker.checkStaticNPE(g, "fillBackground", "g")
-                || Checker.checkStaticNPE(bgColor, "fillBackground", BG_COLOR)) {
+        if (Checker.INSTANCE.checkNPE(g, "fillBackground", "g")
+                || Checker.INSTANCE.checkNPE(bgColor, "fillBackground", BG_COLOR)) {
             return;
         }
         g.setColor(bgColor);
@@ -260,9 +260,9 @@ public class QrCodeBufferedImage {
      *     logo ratio
      */
     private void drawModules(Graphics2D g, BitMatrix matrix, QrConfig config) {
-        if (Checker.checkStaticNPE(g, DRAW_MODULES, "g")
-                || Checker.checkStaticNPE(matrix, DRAW_MODULES, MATRIX)
-                || Checker.checkStaticNPE(config, DRAW_MODULES, CONFIG)) {
+        if (Checker.INSTANCE.checkNPE(g, DRAW_MODULES, "g")
+                || Checker.INSTANCE.checkNPE(matrix, DRAW_MODULES, MATRIX)
+                || Checker.INSTANCE.checkNPE(config, DRAW_MODULES, CONFIG)) {
             return;
         }
         int matrixWidth = matrix.getWidth();
@@ -299,9 +299,9 @@ public class QrCodeBufferedImage {
      * @return true if the module should be skipped, false otherwise
      */
     private boolean shouldSkipModule(int x, int y, BitMatrix matrix, ModuleContext ctx) {
-        if (Checker.checkStaticNPE(matrix, SHOULD_SKIP_MODULE, MATRIX)
-                || Checker.checkStaticNPE(ctx, SHOULD_SKIP_MODULE, "ctx")
-                || Checker.checkStaticNPE(ctx.config(), SHOULD_SKIP_MODULE, "ctx.config")) {
+        if (Checker.INSTANCE.checkNPE(matrix, SHOULD_SKIP_MODULE, MATRIX)
+                || Checker.INSTANCE.checkNPE(ctx, SHOULD_SKIP_MODULE, "ctx")
+                || Checker.INSTANCE.checkNPE(ctx.config(), SHOULD_SKIP_MODULE, "ctx.config")) {
             return true;
         }
         if (matrix.get(x, y)) {
@@ -335,8 +335,8 @@ public class QrCodeBufferedImage {
      */
     private void drawModule(
             Graphics2D g, int x, int y, double moduleSizeX, double moduleSizeY, QrConfig config) {
-        if (Checker.checkStaticNPE(g, "drawModule", "g")
-                || Checker.checkStaticNPE(config, "drawModule", CONFIG)) {
+        if (Checker.INSTANCE.checkNPE(g, "drawModule", "g")
+                || Checker.INSTANCE.checkNPE(config, "drawModule", CONFIG)) {
             return;
         }
         double cx = x * moduleSizeX;
@@ -421,8 +421,8 @@ public class QrCodeBufferedImage {
      * @param config Configuration containing size, colors, module shape, and margin.
      */
     public void drawFinderPatterns(Graphics2D g, int matrixWidth, QrConfig config) {
-        if (Checker.checkStaticNPE(g, "drawFinderPatterns", "g")
-                || Checker.checkStaticNPE(config, "drawFinderPatterns", CONFIG)) {
+        if (Checker.INSTANCE.checkNPE(g, "drawFinderPatterns", "g")
+                || Checker.INSTANCE.checkNPE(config, "drawFinderPatterns", CONFIG)) {
             return;
         }
         double moduleSizeX = (double) config.size() / matrixWidth;
@@ -476,8 +476,8 @@ public class QrCodeBufferedImage {
      * @throws IOException If reading the logo file fails or the file is not a valid image.
      */
     public void drawLogoIfPresent(Graphics2D g, QrConfig config) throws IOException {
-        if (Checker.checkStaticNPE(g, "drawLogoIfPresent", "g")
-                || Checker.checkStaticNPE(config, "drawLogoIfPresent", CONFIG)
+        if (Checker.INSTANCE.checkNPE(g, "drawLogoIfPresent", "g")
+                || Checker.INSTANCE.checkNPE(config, "drawLogoIfPresent", CONFIG)
                 || config.logoFile() == null
                 || !config.logoFile().exists()
                 || config.imageRatio() == 0) {
@@ -533,9 +533,10 @@ public class QrCodeBufferedImage {
      */
     private void drawRoundedFinderPatternAtPixel(
             Graphics2D g, double x, double y, double diameter, Color qrColor, Color bgColor) {
-        if (Checker.checkStaticNPE(g, DRAW_ROUNDED_FINDER_PATTERN_AT_PIXEL, "g")
-                || Checker.checkStaticNPE(qrColor, DRAW_ROUNDED_FINDER_PATTERN_AT_PIXEL, "qrColor")
-                || Checker.checkStaticNPE(
+        if (Checker.INSTANCE.checkNPE(g, DRAW_ROUNDED_FINDER_PATTERN_AT_PIXEL, "g")
+                || Checker.INSTANCE.checkNPE(
+                        qrColor, DRAW_ROUNDED_FINDER_PATTERN_AT_PIXEL, "qrColor")
+                || Checker.INSTANCE.checkNPE(
                         bgColor, DRAW_ROUNDED_FINDER_PATTERN_AT_PIXEL, BG_COLOR)) {
             return;
         }
@@ -576,9 +577,11 @@ public class QrCodeBufferedImage {
      */
     public void drawSquareFinderPatternAtPixel(
             Graphics2D g, double x, double y, double diameter, Color qrColor, Color bgColor) {
-        if (Checker.checkStaticNPE(g, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, "g")
-                || Checker.checkStaticNPE(qrColor, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, "qrColor")
-                || Checker.checkStaticNPE(bgColor, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, BG_COLOR)) {
+        if (Checker.INSTANCE.checkNPE(g, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, "g")
+                || Checker.INSTANCE.checkNPE(
+                        qrColor, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, "qrColor")
+                || Checker.INSTANCE.checkNPE(
+                        bgColor, DRAW_SQUARE_FINDER_PATTERN_AT_PIXEL, BG_COLOR)) {
             return;
         }
         g.setColor(qrColor);

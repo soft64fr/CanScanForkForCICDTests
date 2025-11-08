@@ -36,8 +36,8 @@ public enum BuildQRDataService {
      *     null} if input is invalid
      */
     public QrDataResult buildQrData(Mode mode, QrInput input) {
-        if (Checker.checkStaticNPE(mode, "buildQrData", "mode")
-                || Checker.checkStaticNPE(input, "buildQrData", "input")) {
+        if (Checker.INSTANCE.checkNPE(mode, "buildQrData", "mode")
+                || Checker.INSTANCE.checkNPE(input, "buildQrData", "input")) {
             return null;
         }
         return switch (mode) {
@@ -94,8 +94,8 @@ public enum BuildQRDataService {
      * @param value the field value to append
      */
     private void appendField(StringBuilder sb, String fieldName, String value) {
-        if (Checker.checkStaticNPE(sb, APPEND_FIELD, "sb")
-                || Checker.checkStaticNPE(fieldName, APPEND_FIELD, "fieldName")
+        if (Checker.INSTANCE.checkNPE(sb, APPEND_FIELD, "sb")
+                || Checker.INSTANCE.checkNPE(fieldName, APPEND_FIELD, "fieldName")
                 || StringUtils.isBlank(value)) {
             return;
         }
