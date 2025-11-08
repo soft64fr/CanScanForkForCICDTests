@@ -151,7 +151,11 @@ public class CanScan extends JFrame {
     final JCheckBox roundedModulesCheckBox = new JCheckBox();
     // Rendu dynamique
     private final JLabel qrCodeLabel = new JLabel("", SwingConstants.CENTER);
-
+    private final transient QrCodeBufferedImage qrCodeBufferedImage = new QrCodeBufferedImage();
+    private final transient QrCodeResize qrCodeResize =
+            new QrCodeResize(qrCodeBufferedImage, qrCodeLabel);
+    private final transient QrCodePreview qrCodePreview =
+            new QrCodePreview(qrCodeBufferedImage, qrCodeResize, qrCodeLabel);
     // SOUTH
     private final JPanel southSpacer = new JPanel();
 
@@ -181,8 +185,6 @@ public class CanScan extends JFrame {
         setResizable(true);
         // Init
         Loader.INSTANCE.init(qrCodeLabel);
-        QrCodeResize.INSTANCE.init(qrCodeLabel);
-        QrCodePreview.INSTANCE.init(qrCodeLabel);
         // Sliders
         marginSlider.setMajorTickSpacing(1);
         marginSlider.setPaintTicks(true);
@@ -340,15 +342,13 @@ public class CanScan extends JFrame {
         qrCodeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         qrCodeLabel.setVerticalAlignment(SwingConstants.CENTER);
         addWindowStateListener(
-                e ->
-                        SwingUtilities.invokeLater(
-                                () -> QrCodeResize.INSTANCE.updateQrCodeSize(getQrInput())));
+                e -> SwingUtilities.invokeLater(() -> qrCodeResize.updateQrCodeSize(getQrInput())));
         addComponentListener(
                 new ComponentAdapter() {
                     @Override
                     public void componentResized(ComponentEvent e) {
                         SwingUtilities.invokeLater(
-                                () -> QrCodeResize.INSTANCE.updateQrCodeSize(getQrInput()));
+                                () -> qrCodeResize.updateQrCodeSize(getQrInput()));
                     }
                 });
         // SOUTH (margin)
@@ -395,7 +395,7 @@ public class CanScan extends JFrame {
      * components and graphics resources.
      */
     private void freeQrOriginalAndQrCodeLabel() {
-        QrCodeBufferedImage.INSTANCE.freeQrOriginal();
+        qrCodeBufferedImage.freeQrOriginal();
         QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
     }
 
@@ -407,8 +407,8 @@ public class CanScan extends JFrame {
      */
     private void stopAllTimers() {
         Loader.INSTANCE.disposeWaitIconTimer();
-        QrCodeResize.INSTANCE.stop();
-        QrCodePreview.INSTANCE.stop();
+        qrCodeResize.stop();
+        qrCodePreview.stop();
     }
 
     /**
@@ -418,8 +418,8 @@ public class CanScan extends JFrame {
      * threads or memory leaks remain from unfinished background operations.
      */
     private void cancelAllWorkers() {
-        QrCodeResize.INSTANCE.cancelPreviousResizeWorker();
-        QrCodePreview.INSTANCE.cancelActivePreviewWorker();
+        qrCodeResize.cancelPreviousResizeWorker();
+        qrCodePreview.cancelActivePreviewWorker();
     }
 
     /**
@@ -807,9 +807,8 @@ public class CanScan extends JFrame {
             QrConfig config =
                     new QrConfig(
                             logoFile, size, imageRatio, qrColor, bgColor, roundedModules, margin);
-            BufferedImage qr =
-                    QrCodeBufferedImage.INSTANCE.generateQrCodeImage(qrData.data(), config);
-            QrCodeBufferedImage.INSTANCE.updateQrOriginal(qr);
+            BufferedImage qr = qrCodeBufferedImage.generateQrCodeImage(qrData.data(), config);
+            qrCodeBufferedImage.updateQrOriginal(qr);
             JFileChooser chooser = new JFileChooser();
             chooser.setDialogTitle("Enregistrer votre code QR en tant que PNG");
             chooser.setSelectedFile(new File(qrData.defaultFileName()));
@@ -869,15 +868,15 @@ public class CanScan extends JFrame {
      * worker to generate the QR code preview asynchronously.
      */
     private void updatePreviewQRCode() {
-        if (QrCodePreview.INSTANCE.isRunning()) {
-            QrCodePreview.INSTANCE.getPreviewDebounceTimer().restart();
+        if (qrCodePreview.isRunning()) {
+            qrCodePreview.getPreviewDebounceTimer().restart();
             return;
         }
         freeQrOriginalAndQrCodeLabel();
-        QrCodePreview.INSTANCE.updatePreviewDebounceTimer(
+        qrCodePreview.updatePreviewDebounceTimer(
                 new Timer(PREVIEW_DEBOUNCE_DELAY_MS, e -> resetAndStartPreviewWorker()));
-        QrCodePreview.INSTANCE.getPreviewDebounceTimer().setRepeats(false);
-        QrCodePreview.INSTANCE.getPreviewDebounceTimer().start();
+        qrCodePreview.getPreviewDebounceTimer().setRepeats(false);
+        qrCodePreview.getPreviewDebounceTimer().start();
     }
 
     /**
@@ -889,7 +888,7 @@ public class CanScan extends JFrame {
     private void resetAndStartPreviewWorker() {
         qrCodeLabel.setIcon(null);
         SwingUtilities.invokeLater(Loader.INSTANCE::startAndAdjustWaitIcon);
-        QrCodePreview.INSTANCE.launchPreviewWorker(getQrInput());
+        qrCodePreview.launchPreviewWorker(getQrInput());
     }
 
     /**

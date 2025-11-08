@@ -26,30 +26,37 @@ import fr.softsf.canscan.util.Checker;
 import fr.softsf.canscan.util.StringConstants;
 
 /**
- * Singleton responsible for managing asynchronous resizing of generated QR code images.
+ * Handles asynchronous resizing of generated QR code images in a Swing UI.
  *
- * <p>Runs resizing operations off the Event Dispatch Thread (EDT) to maintain UI responsiveness.
- * Debouncing, worker cancellation, and resource cleanup are handled automatically. Ensures
- * flicker-free updates when the UI or QR configuration changes.
+ * <p>Resize operations are executed off the Event Dispatch Thread (EDT) to preserve interface
+ * responsiveness. Built-in debounce control, worker cancellation, and resource management ensure
+ * efficient, flicker-free updates during frequent layout or configuration changes.
+ *
+ * <p>Each instance manages resizing for a specific {@link JLabel}, enabling multiple independent
+ * resizable QR components within the same application.
  */
-public enum QrCodeResize {
-    INSTANCE;
+public class QrCodeResize {
 
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private static final int LARGE_IMAGE_THRESHOLD = 1000;
     private static final int RESIZE_DEBOUNCE_DELAY_MS = 200;
+
     private Timer resizeDebounceTimer;
     private SwingWorker<ImageIcon, Void> resizeWorker;
-    private JLabel qrCodeLabel;
     private QrInput qrInput;
+    private final QrCodeBufferedImage qrCodeBufferedImage;
+    private final JLabel qrCodeLabel;
 
     /**
-     * Initializes this instance with the target {@link JLabel} where the resized QR code will be
-     * displayed.
+     * Creates a new asynchronous QR code resize manager for the specified label.
      *
-     * @param qrCodeLabel the label used for rendering the resized image
+     * @param qrCodeBufferedImage the source {@link QrCodeBufferedImage} used for resizing; must not
+     *     be {@code null}
+     * @param qrCodeLabel the Swing {@link JLabel} that displays the resized QR code; must not be
+     *     {@code null}
      */
-    public void init(JLabel qrCodeLabel) {
+    public QrCodeResize(QrCodeBufferedImage qrCodeBufferedImage, JLabel qrCodeLabel) {
+        this.qrCodeBufferedImage = qrCodeBufferedImage;
         this.qrCodeLabel = qrCodeLabel;
     }
 
@@ -131,7 +138,7 @@ public enum QrCodeResize {
      */
     private ImageIcon resizeImageInBackground(int squareSize) {
         if (squareSize <= 0
-                || QrCodeBufferedImage.INSTANCE.getQrOriginal() == null
+                || qrCodeBufferedImage.getQrOriginal() == null
                 || Thread.currentThread().isInterrupted()) {
             return null;
         }
@@ -144,13 +151,7 @@ public enum QrCodeResize {
                     squareSize > LARGE_IMAGE_THRESHOLD
                             ? RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR
                             : RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-            g2d.drawImage(
-                    QrCodeBufferedImage.INSTANCE.getQrOriginal(),
-                    0,
-                    0,
-                    squareSize,
-                    squareSize,
-                    null);
+            g2d.drawImage(qrCodeBufferedImage.getQrOriginal(), 0, 0, squareSize, squareSize, null);
         } finally {
             g2d.dispose();
         }
@@ -227,14 +228,13 @@ public enum QrCodeResize {
      */
     public void updateQrCodeSize(QrInput qrInput) {
         this.qrInput = qrInput;
-        if (QrCodeResize.INSTANCE.isRunning()) {
-            QrCodeResize.INSTANCE.getResizeDebounceTimer().restart();
+        if (isRunning()) {
+            getResizeDebounceTimer().restart();
             return;
         }
-        QrCodeResize.INSTANCE.updateResizeDebounceTimer(
-                new Timer(RESIZE_DEBOUNCE_DELAY_MS, e -> handleResize()));
-        QrCodeResize.INSTANCE.getResizeDebounceTimer().setRepeats(false);
-        QrCodeResize.INSTANCE.getResizeDebounceTimer().start();
+        updateResizeDebounceTimer(new Timer(RESIZE_DEBOUNCE_DELAY_MS, e -> handleResize()));
+        getResizeDebounceTimer().setRepeats(false);
+        getResizeDebounceTimer().start();
     }
 
     /**
@@ -252,7 +252,7 @@ public enum QrCodeResize {
         if (isInvalidQrData(qrData)) {
             return;
         }
-        if (QrCodeBufferedImage.INSTANCE.getQrOriginal() == null) {
+        if (qrCodeBufferedImage.getQrOriginal() == null) {
             return;
         }
         resetAndStartResizeWorker(squareSize);
@@ -268,7 +268,7 @@ public enum QrCodeResize {
         if (Checker.INSTANCE.checkNPE(qrData, "isInvalidQrData", StringConstants.QR_DATA.getValue())
                 || StringUtils.isBlank(qrData.data())) {
             Loader.INSTANCE.stopWaitIcon();
-            QrCodeBufferedImage.INSTANCE.freeQrOriginal();
+            qrCodeBufferedImage.freeQrOriginal();
             QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
             return true;
         }
@@ -283,10 +283,10 @@ public enum QrCodeResize {
      * @see #resetAndStartResizeWorker(int)
      */
     private void resetAndStartResizeWorker(int height) {
-        QrCodeResize.INSTANCE.cancelPreviousResizeWorker();
+        cancelPreviousResizeWorker();
         QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
         qrCodeLabel.setIcon(null);
         SwingUtilities.invokeLater(Loader.INSTANCE::startAndAdjustWaitIcon);
-        QrCodeResize.INSTANCE.launchResizeWorker(height);
+        launchResizeWorker(height);
     }
 }

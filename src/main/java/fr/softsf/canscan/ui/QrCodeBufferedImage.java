@@ -33,8 +33,7 @@ import fr.softsf.canscan.util.Checker;
  * Thread-safe singleton to hold a shared QR code {@link BufferedImage}. All access is synchronized
  * for thread safety.
  */
-public enum QrCodeBufferedImage {
-    INSTANCE;
+public class QrCodeBufferedImage {
 
     private static final double DEFAULT_GAP_BETWEEN_LOGO_AND_MODULES = 0.9;
     private static final String CONFIG = "config";

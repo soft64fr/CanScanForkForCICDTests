@@ -25,27 +25,41 @@ import fr.softsf.canscan.util.Checker;
 import fr.softsf.canscan.util.StringConstants;
 
 /**
- * Thread-safe singleton responsible for managing the asynchronous generation and display of QR code
- * previews within a Swing UI.
+ * Handles asynchronous generation and display of QR code previews in a Swing UI.
  *
- * <p>This class handles debounce timing, worker cancellation, background image generation, and
- * automatic UI updates. It ensures responsive, flicker-free rendering by offloading QR code
- * generation from the Event Dispatch Thread (EDT).
+ * <p>Preview generation runs off the Event Dispatch Thread (EDT) to maintain interface
+ * responsiveness. Built-in debounce control, worker cancellation, and background image generation
+ * ensure efficient, flicker-free updates during frequent input or configuration changes.
+ *
+ * <p>Each instance manages the preview lifecycle for a specific {@link JLabel} and works with a
+ * {@link QrCodeResize} instance to handle dynamic resizing. This design supports multiple
+ * independent QR preview components within the same application.
  */
-public enum QrCodePreview {
-    INSTANCE;
+public class QrCodePreview {
 
     private Timer previewDebounceTimer;
     private SwingWorker<BufferedImage, Void> previewWorker;
-    private JLabel qrCodeLabel;
     private QrInput qrInput;
+    private final QrCodeBufferedImage qrCodeBufferedImage;
+    private final QrCodeResize qrCodeResize;
+    private final JLabel qrCodeLabel;
 
     /**
-     * Initializes the preview system with the target label used to display the generated QR code.
+     * Creates a new asynchronous QR code preview manager for the specified label.
      *
-     * @param qrCodeLabel the label component that displays the QR preview
+     * @param qrCodeBufferedImage the {@link QrCodeBufferedImage} providing the source QR image;
+     *     must not be {@code null}
+     * @param qrCodeResize the {@link QrCodeResize} instance responsible for asynchronous resizing;
+     *     must not be {@code null}
+     * @param qrCodeLabel the Swing {@link JLabel} used to display the generated QR preview; must
+     *     not be {@code null}
      */
-    public void init(JLabel qrCodeLabel) {
+    public QrCodePreview(
+            QrCodeBufferedImage qrCodeBufferedImage,
+            QrCodeResize qrCodeResize,
+            JLabel qrCodeLabel) {
+        this.qrCodeBufferedImage = qrCodeBufferedImage;
+        this.qrCodeResize = qrCodeResize;
         this.qrCodeLabel = qrCodeLabel;
     }
 
@@ -144,9 +158,9 @@ public enum QrCodePreview {
                 }
                 return;
             }
-            QrCodeBufferedImage.INSTANCE.updateQrOriginal(img);
-            if (QrCodeBufferedImage.INSTANCE.getQrOriginal() != null) {
-                QrCodeResize.INSTANCE.updateQrCodeSize(qrInput);
+            qrCodeBufferedImage.updateQrOriginal(img);
+            if (qrCodeBufferedImage.getQrOriginal() != null) {
+                qrCodeResize.updateQrCodeSize(qrInput);
             } else {
                 qrCodeLabel.setIcon(null);
             }
@@ -202,7 +216,7 @@ public enum QrCodePreview {
             if (Thread.currentThread().isInterrupted()) {
                 return null;
             }
-            return QrCodeBufferedImage.INSTANCE.generateQrCodeImage(qrData.data(), config);
+            return qrCodeBufferedImage.generateQrCodeImage(qrData.data(), config);
         } catch (Exception ex) {
             if (Thread.currentThread().isInterrupted()) {
                 return null;
