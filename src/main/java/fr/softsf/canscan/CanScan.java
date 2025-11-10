@@ -419,6 +419,7 @@ public class CanScan extends JFrame {
         currentMode = mode;
         cardLayout.show(cardPanel, mode.text());
         qrCodePreview.updateQrCodePreview(getQrInput());
+        updateGenerateButtonState();
     }
 
     /**
