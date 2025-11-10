@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['showargumenterrordialogtests_0',['ShowArgumentErrorDialogTests',['../classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_argument_error_dialog_tests.html',1,'fr::softsf::canscan::PopupTest']]],
-  ['showdialogtests_1',['ShowDialogTests',['../classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_dialog_tests.html',1,'fr::softsf::canscan::PopupTest']]],
-  ['showyesnoconfirmdialogtests_2',['ShowYesNoConfirmDialogTests',['../classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_show_yes_no_confirm_dialog_tests.html',1,'fr::softsf::canscan::PopupTest']]],
-  ['singletontests_3',['SingletonTests',['../classfr_1_1softsf_1_1canscan_1_1_popup_test_1_1_singleton_tests.html',1,'fr::softsf::canscan::PopupTest']]],
-  ['stringconstants_4',['StringConstants',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html',1,'fr::softsf::canscan::util']]]
+  ['qrcodebufferedimage_0',['QrCodeBufferedImage',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html',1,'fr::softsf::canscan::ui']]],
+  ['qrcodecolor_1',['QrCodeColor',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html',1,'fr::softsf::canscan::ui']]],
+  ['qrcodeiconutil_2',['QrCodeIconUtil',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_icon_util.html',1,'fr::softsf::canscan::ui']]],
+  ['qrcodepreview_3',['QrCodePreview',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html',1,'fr::softsf::canscan::ui']]],
+  ['qrcoderesize_4',['QrCodeResize',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html',1,'fr::softsf::canscan::ui']]]
 ];

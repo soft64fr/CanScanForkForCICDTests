@@ -99,7 +99,7 @@ $(function(){initNavTree('classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize-members.html">List of all members</a>  </div>
@@ -107,92 +107,101 @@ $(function(){initNavTree('classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.
 </div><!--header-->
 <div class="contents">
 
-<p>Handles asynchronous resizing of generated QR code images in a Swing UI.  
+<p>Asynchronously resizes a generated QR code image for display in a Swing UI.  
  <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for fr.softsf.canscan.ui.QrCodeResize:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for fr.softsf.canscan.ui.QrCodeResize:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for fr.softsf.canscan.ui.QrCodeResize:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a63fb76099ea7780879e43ec3bfb01eb2" id="r_a63fb76099ea7780879e43ec3bfb01eb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63fb76099ea7780879e43ec3bfb01eb2">QrCodeResize</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> <a class="el" href="#a0b0ba2c30c4e7cd0e6464959dc434836">qrCodeBufferedImage</a>, JLabel <a class="el" href="#aef6a1d3741b690361245c9b7025d29de">qrCodeLabel</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> <a class="el" href="#aceb5a25333bc2d7a013d63d3813a1343">loader</a>)</td></tr>
-<tr class="memdesc:a63fb76099ea7780879e43ec3bfb01eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new asynchronous QR code resize manager for the specified label.  <br /></td></tr>
+<tr class="memitem:a63fb76099ea7780879e43ec3bfb01eb2" id="r_a63fb76099ea7780879e43ec3bfb01eb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63fb76099ea7780879e43ec3bfb01eb2">QrCodeResize</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> <a class="el" href="#a0b0ba2c30c4e7cd0e6464959dc434836">qrCodeBufferedImage</a>, JLabel <a class="el" href="#aef6a1d3741b690361245c9b7025d29de">qrCodeLabel</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a04f8c9adbc04ca3a35d5af7a55fc4da1">loader</a>)</td></tr>
+<tr class="memdesc:a63fb76099ea7780879e43ec3bfb01eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new QR code resize manager for a specific label.  <br /></td></tr>
 <tr class="separator:a63fb76099ea7780879e43ec3bfb01eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d6601bb69287724be51e8ffac0fc369" id="r_a8d6601bb69287724be51e8ffac0fc369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d6601bb69287724be51e8ffac0fc369">cancelPreviousResizeWorker</a> ()</td></tr>
-<tr class="memdesc:a8d6601bb69287724be51e8ffac0fc369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels any active resize worker and waits for proper termination.  <br /></td></tr>
-<tr class="separator:a8d6601bb69287724be51e8ffac0fc369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac7f346c52f752140984fa7a635336c" id="r_a9ac7f346c52f752140984fa7a635336c"><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac7f346c52f752140984fa7a635336c">getResizeDebounceTimer</a> ()</td></tr>
-<tr class="memdesc:a9ac7f346c52f752140984fa7a635336c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current debounce timer.  <br /></td></tr>
-<tr class="separator:a9ac7f346c52f752140984fa7a635336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43bcfdd826cb50331a01ba51bce05ed2" id="r_a43bcfdd826cb50331a01ba51bce05ed2"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43bcfdd826cb50331a01ba51bce05ed2">isRunning</a> ()</td></tr>
-<tr class="memdesc:a43bcfdd826cb50331a01ba51bce05ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a resize debounce timer is currently running.  <br /></td></tr>
-<tr class="separator:a43bcfdd826cb50331a01ba51bce05ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf6afa51d8b8667ff70777b0202d4af" id="r_aadf6afa51d8b8667ff70777b0202d4af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadf6afa51d8b8667ff70777b0202d4af">launchResizeWorker</a> (int height)</td></tr>
-<tr class="memdesc:aadf6afa51d8b8667ff70777b0202d4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launches a background worker that resizes the QR code image to the specified height.  <br /></td></tr>
-<tr class="separator:aadf6afa51d8b8667ff70777b0202d4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d0bf550b2174b4aa737e0fdae27f52" id="r_a01d0bf550b2174b4aa737e0fdae27f52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01d0bf550b2174b4aa737e0fdae27f52">stop</a> ()</td></tr>
-<tr class="memdesc:a01d0bf550b2174b4aa737e0fdae27f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the current debounce timer and clears its reference.  <br /></td></tr>
-<tr class="separator:a01d0bf550b2174b4aa737e0fdae27f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac168b5bcb9913de63928083f8f750d1e" id="r_ac168b5bcb9913de63928083f8f750d1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac168b5bcb9913de63928083f8f750d1e">updateQrCodeSize</a> (QrInput <a class="el" href="#a07fe389fb1c87a17a0b0600136f83d8e">qrInput</a>)</td></tr>
-<tr class="memdesc:ac168b5bcb9913de63928083f8f750d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates internal <code><a class="el" href="">QrInput</a></code> and schedules a debounced QR code resize.  <br /></td></tr>
-<tr class="separator:ac168b5bcb9913de63928083f8f750d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed47fcf709f5f89a80357729b2878fe7" id="r_aed47fcf709f5f89a80357729b2878fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed47fcf709f5f89a80357729b2878fe7">updateResizeDebounceTimer</a> (Timer <a class="el" href="#a310e7b2da350d360a93f0b92b141c3f9">resizeDebounceTimer</a>)</td></tr>
-<tr class="memdesc:aed47fcf709f5f89a80357729b2878fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the debounce timer with a new instance.  <br /></td></tr>
-<tr class="separator:aed47fcf709f5f89a80357729b2878fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7e78e427de1f6d99d6a382ee0e1dd1" id="r_a9a7e78e427de1f6d99d6a382ee0e1dd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a7e78e427de1f6d99d6a382ee0e1dd1">updateQrCodeResize</a> (QrInput <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a7a001383bbef6efe28a77ff329e84336">qrInput</a>)</td></tr>
+<tr class="memdesc:a9a7e78e427de1f6d99d6a382ee0e1dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current QR input and schedules a debounced resize operation.  <br /></td></tr>
+<tr class="separator:a9a7e78e427de1f6d99d6a382ee0e1dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html">fr.softsf.canscan.service.AbstractQrCodeWorker&lt; T &gt;</a></td></tr>
+<tr class="memitem:ab909d07b5c0970292ccd5cd8c99de0b9 inherit pub_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_ab909d07b5c0970292ccd5cd8c99de0b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab909d07b5c0970292ccd5cd8c99de0b9">disposeAllResourcesOnExit</a> ()</td></tr>
+<tr class="memdesc:ab909d07b5c0970292ccd5cd8c99de0b9 inherit pub_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources used by this worker.  <br /></td></tr>
+<tr class="separator:ab909d07b5c0970292ccd5cd8c99de0b9 inherit pub_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a2141e795770aa1577397e33f990d356c" id="r_a2141e795770aa1577397e33f990d356c"><td class="memItemLeft" align="right" valign="top">SwingWorker&lt; ImageIcon, Void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2141e795770aa1577397e33f990d356c">createResizeWorker</a> (int height)</td></tr>
-<tr class="memdesc:a2141e795770aa1577397e33f990d356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code><a class="el" href="">SwingWorker</a></code> to perform image resizing off the EDT and update the UI when the task completes successfully.  <br /></td></tr>
-<tr class="separator:a2141e795770aa1577397e33f990d356c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9962c344acd3a8046dff04e6da82aa07" id="r_a9962c344acd3a8046dff04e6da82aa07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9962c344acd3a8046dff04e6da82aa07">handleResize</a> ()</td></tr>
-<tr class="memdesc:a9962c344acd3a8046dff04e6da82aa07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the QR code resize process after the debounce delay.  <br /></td></tr>
-<tr class="separator:a9962c344acd3a8046dff04e6da82aa07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affac6f7db21e00ef84b3d804823c6b51" id="r_affac6f7db21e00ef84b3d804823c6b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affac6f7db21e00ef84b3d804823c6b51">handleResizeWorkerCompletion</a> (SwingWorker&lt; ImageIcon, Void &gt; worker)</td></tr>
-<tr class="memdesc:affac6f7db21e00ef84b3d804823c6b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles resize worker completion, ensuring that cancellation and stale worker checks are performed before updating the UI.  <br /></td></tr>
-<tr class="separator:affac6f7db21e00ef84b3d804823c6b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7bb188a82b4cd677a39d8b09dcd4ee4" id="r_aa7bb188a82b4cd677a39d8b09dcd4ee4"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7bb188a82b4cd677a39d8b09dcd4ee4">isInvalidQrData</a> (QrDataResult qrData)</td></tr>
-<tr class="memdesc:aa7bb188a82b4cd677a39d8b09dcd4ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether <code><a class="el" href="">QrDataResult</a></code> is invalid or null, and performs cleanup if necessary.  <br /></td></tr>
-<tr class="separator:aa7bb188a82b4cd677a39d8b09dcd4ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1093d8b446a9a20cb0d3a8275283a345" id="r_a1093d8b446a9a20cb0d3a8275283a345"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1093d8b446a9a20cb0d3a8275283a345">resetAndStartResizeWorker</a> (int height)</td></tr>
-<tr class="memdesc:a1093d8b446a9a20cb0d3a8275283a345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels any pending task, clears the current icon, starts the wait animation, and launches a new resize worker for the given height.  <br /></td></tr>
-<tr class="separator:a1093d8b446a9a20cb0d3a8275283a345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d652d45dd8f6c5a1715e7c19f27fad5" id="r_a9d652d45dd8f6c5a1715e7c19f27fad5"><td class="memItemLeft" align="right" valign="top">ImageIcon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d652d45dd8f6c5a1715e7c19f27fad5">resizeImageInBackground</a> (int squareSize)</td></tr>
-<tr class="memdesc:a9d652d45dd8f6c5a1715e7c19f27fad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs image resizing logic off the EDT.  <br /></td></tr>
-<tr class="separator:a9d652d45dd8f6c5a1715e7c19f27fad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab17675ecfb6fb7f64565b4114077940c" id="r_ab17675ecfb6fb7f64565b4114077940c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab17675ecfb6fb7f64565b4114077940c">clearResources</a> ()</td></tr>
+<tr class="memdesc:ab17675ecfb6fb7f64565b4114077940c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the current icon before starting a new resize task.  <br /></td></tr>
+<tr class="separator:ab17675ecfb6fb7f64565b4114077940c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c485f4bdbb739c841b3dee0640ac2aa" id="r_a1c485f4bdbb739c841b3dee0640ac2aa"><td class="memItemLeft" align="right" valign="top">SwingWorker&lt; ImageIcon, Void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c485f4bdbb739c841b3dee0640ac2aa">createWorker</a> ()</td></tr>
+<tr class="memdesc:a1c485f4bdbb739c841b3dee0640ac2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a background <code><a class="el" href="">SwingWorker</a></code> that scales the QR code image to the target size.  <br /></td></tr>
+<tr class="separator:a1c485f4bdbb739c841b3dee0640ac2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76b20cd869fedbc49a4e1491f14cc91d" id="r_a76b20cd869fedbc49a4e1491f14cc91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76b20cd869fedbc49a4e1491f14cc91d">onWorkerSuccess</a> (ImageIcon result)</td></tr>
+<tr class="memdesc:a76b20cd869fedbc49a4e1491f14cc91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the label icon when the worker successfully completes.  <br /></td></tr>
+<tr class="separator:a76b20cd869fedbc49a4e1491f14cc91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html">fr.softsf.canscan.service.AbstractQrCodeWorker&lt; T &gt;</a></td></tr>
+<tr class="memitem:ae07c871c10b66adced8fc7a02ccb5e58 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_ae07c871c10b66adced8fc7a02ccb5e58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ae07c871c10b66adced8fc7a02ccb5e58">AbstractQrCodeWorker</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a04f8c9adbc04ca3a35d5af7a55fc4da1">loader</a>)</td></tr>
+<tr class="memdesc:ae07c871c10b66adced8fc7a02ccb5e58 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the QR code worker with an optional loader.  <br /></td></tr>
+<tr class="separator:ae07c871c10b66adced8fc7a02ccb5e58 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af307a6f804bca23190b6408780c380d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_af307a6f804bca23190b6408780c380d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#af307a6f804bca23190b6408780c380d0">cancelWorker</a> ()</td></tr>
+<tr class="memdesc:af307a6f804bca23190b6408780c380d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels the current SwingWorker and clears its reference safely.  <br /></td></tr>
+<tr class="separator:af307a6f804bca23190b6408780c380d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace733ca9c4cf397695cc148a3a458253 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_ace733ca9c4cf397695cc148a3a458253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ace733ca9c4cf397695cc148a3a458253">onWorkerFailure</a> (Exception ex)</td></tr>
+<tr class="memdesc:ace733ca9c4cf397695cc148a3a458253 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the worker fails or is cancelled.  <br /></td></tr>
+<tr class="separator:ace733ca9c4cf397695cc148a3a458253 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cb6b962f384211a647d90a7c1214de inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_aa5cb6b962f384211a647d90a7c1214de"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#aa5cb6b962f384211a647d90a7c1214de">onWorkerSuccess</a> (T result)</td></tr>
+<tr class="memdesc:aa5cb6b962f384211a647d90a7c1214de inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the worker completes successfully with its result.  <br /></td></tr>
+<tr class="separator:aa5cb6b962f384211a647d90a7c1214de inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6558af04f7318a4f74547c95778fed7c inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_a6558af04f7318a4f74547c95778fed7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a6558af04f7318a4f74547c95778fed7c">resetAndStartWorker</a> (int delayMs)</td></tr>
+<tr class="memdesc:a6558af04f7318a4f74547c95778fed7c inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the unified workflow: cancel previous worker, stop debounce, clear resources, and start a new worker after the specified delay.  <br /></td></tr>
+<tr class="separator:a6558af04f7318a4f74547c95778fed7c inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11bed09d0e3e1f74e1fb72fdeec8245 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_ab11bed09d0e3e1f74e1fb72fdeec8245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab11bed09d0e3e1f74e1fb72fdeec8245">stopDebounceTimer</a> ()</td></tr>
+<tr class="memdesc:ab11bed09d0e3e1f74e1fb72fdeec8245 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops and clears the debounce timer.  <br /></td></tr>
+<tr class="separator:ab11bed09d0e3e1f74e1fb72fdeec8245 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59">stopLoaderIfPresent</a> ()</td></tr>
+<tr class="memdesc:a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the loader's wait indicator if assigned.  <br /></td></tr>
+<tr class="separator:a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aceb5a25333bc2d7a013d63d3813a1343" id="r_aceb5a25333bc2d7a013d63d3813a1343"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb5a25333bc2d7a013d63d3813a1343">loader</a></td></tr>
-<tr class="separator:aceb5a25333bc2d7a013d63d3813a1343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0ba2c30c4e7cd0e6464959dc434836" id="r_a0b0ba2c30c4e7cd0e6464959dc434836"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b0ba2c30c4e7cd0e6464959dc434836">qrCodeBufferedImage</a></td></tr>
 <tr class="separator:a0b0ba2c30c4e7cd0e6464959dc434836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef6a1d3741b690361245c9b7025d29de" id="r_aef6a1d3741b690361245c9b7025d29de"><td class="memItemLeft" align="right" valign="top">final JLabel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6a1d3741b690361245c9b7025d29de">qrCodeLabel</a></td></tr>
 <tr class="separator:aef6a1d3741b690361245c9b7025d29de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07fe389fb1c87a17a0b0600136f83d8e" id="r_a07fe389fb1c87a17a0b0600136f83d8e"><td class="memItemLeft" align="right" valign="top">QrInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07fe389fb1c87a17a0b0600136f83d8e">qrInput</a></td></tr>
-<tr class="separator:a07fe389fb1c87a17a0b0600136f83d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310e7b2da350d360a93f0b92b141c3f9" id="r_a310e7b2da350d360a93f0b92b141c3f9"><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310e7b2da350d360a93f0b92b141c3f9">resizeDebounceTimer</a></td></tr>
-<tr class="separator:a310e7b2da350d360a93f0b92b141c3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb87f10237ffc28ea242c14e47c056f0" id="r_afb87f10237ffc28ea242c14e47c056f0"><td class="memItemLeft" align="right" valign="top">SwingWorker&lt; ImageIcon, Void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb87f10237ffc28ea242c14e47c056f0">resizeWorker</a></td></tr>
-<tr class="separator:afb87f10237ffc28ea242c14e47c056f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a676446ef44c69cea458613146dcba613" id="r_a676446ef44c69cea458613146dcba613"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a676446ef44c69cea458613146dcba613">LARGE_IMAGE_THRESHOLD</a> = 1000</td></tr>
-<tr class="separator:a676446ef44c69cea458613146dcba613"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17473f2d666720665b9a1ef6da69e36a" id="r_a17473f2d666720665b9a1ef6da69e36a"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17473f2d666720665b9a1ef6da69e36a">QR_CODE_LABEL_DEFAULT_SIZE</a> = 50</td></tr>
-<tr class="separator:a17473f2d666720665b9a1ef6da69e36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff04e04f33ee4683eafb3f1f39f5225a" id="r_aff04e04f33ee4683eafb3f1f39f5225a"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff04e04f33ee4683eafb3f1f39f5225a">DEFAULT_SIZE</a> = 50</td></tr>
+<tr class="separator:aff04e04f33ee4683eafb3f1f39f5225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d84bb4e4b4fcaaa99202c8ead1744ee" id="r_a1d84bb4e4b4fcaaa99202c8ead1744ee"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d84bb4e4b4fcaaa99202c8ead1744ee">RESIZE_DEBOUNCE_DELAY_MS</a> = 200</td></tr>
 <tr class="separator:a1d84bb4e4b4fcaaa99202c8ead1744ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html">fr.softsf.canscan.service.AbstractQrCodeWorker&lt; T &gt;</a></td></tr>
+<tr class="memitem:ab4433f4351cdf4273e7e58c5420162fe inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_ab4433f4351cdf4273e7e58c5420162fe"><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab4433f4351cdf4273e7e58c5420162fe">debounceTimer</a></td></tr>
+<tr class="separator:ab4433f4351cdf4273e7e58c5420162fe inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f8c9adbc04ca3a35d5af7a55fc4da1 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_a04f8c9adbc04ca3a35d5af7a55fc4da1"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a04f8c9adbc04ca3a35d5af7a55fc4da1">loader</a></td></tr>
+<tr class="separator:a04f8c9adbc04ca3a35d5af7a55fc4da1 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a001383bbef6efe28a77ff329e84336 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_a7a001383bbef6efe28a77ff329e84336"><td class="memItemLeft" align="right" valign="top">QrInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a7a001383bbef6efe28a77ff329e84336">qrInput</a></td></tr>
+<tr class="separator:a7a001383bbef6efe28a77ff329e84336 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece6c4603e7d8d70bfb5d90bbc6adb9a inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker" id="r_aece6c4603e7d8d70bfb5d90bbc6adb9a"><td class="memItemLeft" align="right" valign="top">SwingWorker&lt; T, Void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#aece6c4603e7d8d70bfb5d90bbc6adb9a">worker</a></td></tr>
+<tr class="separator:aece6c4603e7d8d70bfb5d90bbc6adb9a inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles asynchronous resizing of generated QR code images in a Swing UI. </p>
-<p>Resize operations are executed off the Event Dispatch Thread (EDT) to preserve interface responsiveness. Built-in debounce control, worker cancellation, and resource management ensure efficient, flicker-free updates during frequent layout or configuration changes.</p>
-<p>Each instance manages resizing for a specific <code><a class="el" href="">JLabel</a></code>, enabling multiple independent resizable QR components within the same application. The optional <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a></code> allows the UI to display a loading indicator while the resize operation is in progress. </p>
+<div class="textblock"><p>Asynchronously resizes a generated QR code image for display in a Swing UI. </p>
+<p>Resize operations are executed off the Event Dispatch Thread (EDT) to maintain UI responsiveness. This class uses a debounce mechanism and background <code><a class="el" href="">SwingWorker</a></code> to avoid unnecessary scaling when multiple layout or configuration changes occur rapidly.</p>
+<p>Each instance manages resizing for a specific <code><a class="el" href="">JLabel</a></code>, working with a <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a></code> as the source image. The optional <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a></code> can show a wait/progress indicator while resizing is in progress.</p>
+<p>Resources are properly managed: previous icons are disposed, background workers are cancelled, and the loader is stopped to prevent memory leaks and ensure smooth UI updates. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a63fb76099ea7780879e43ec3bfb01eb2" name="a63fb76099ea7780879e43ec3bfb01eb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63fb76099ea7780879e43ec3bfb01eb2">&#9670;&#160;</a></span>QrCodeResize()</h2>
@@ -218,12 +227,13 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a new asynchronous QR code resize manager for the specified label. </p>
+<p>Constructs a new QR code resize manager for a specific label. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">qrCodeBufferedImage</td><td>the source <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a></code> used for resizing; must not be <code class="JavaDocCode">null</code> </td></tr>
-    <tr><td class="paramname">qrCodeLabel</td><td>the Swing <code><a class="el" href="">JLabel</a></code> that displays the resized QR code; must not be <code class="JavaDocCode">null</code> </td></tr>
-    <tr><td class="paramname">loader</td><td>optional <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a></code> used to indicate ongoing background processing; can be <code class="JavaDocCode">null</code> </td></tr>
+    <tr><td class="paramname">qrCodeBufferedImage</td><td>the source QR code image; must not be <code class="JavaDocCode">null</code> </td></tr>
+    <tr><td class="paramname">qrCodeLabel</td><td>the label where the resized QR code will be displayed; must not be <code class="JavaDocCode"><br/>
+    null</code> </td></tr>
+    <tr><td class="paramname">loader</td><td>optional loader to show a wait/progress indicator; can be <code class="JavaDocCode">null</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -231,28 +241,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8d6601bb69287724be51e8ffac0fc369" name="a8d6601bb69287724be51e8ffac0fc369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d6601bb69287724be51e8ffac0fc369">&#9670;&#160;</a></span>cancelPreviousResizeWorker()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.cancelPreviousResizeWorker </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cancels any active resize worker and waits for proper termination. </p>
-<p>Prevents multiple concurrent resize operations. </p>
-
-</div>
-</div>
-<a id="a2141e795770aa1577397e33f990d356c" name="a2141e795770aa1577397e33f990d356c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2141e795770aa1577397e33f990d356c">&#9670;&#160;</a></span>createResizeWorker()</h2>
+<a id="ab17675ecfb6fb7f64565b4114077940c" name="ab17675ecfb6fb7f64565b4114077940c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17675ecfb6fb7f64565b4114077940c">&#9670;&#160;</a></span>clearResources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,60 +251,28 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SwingWorker&lt; ImageIcon, Void &gt; fr.softsf.canscan.ui.QrCodeResize.createResizeWorker </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a <code><a class="el" href="">SwingWorker</a></code> to perform image resizing off the EDT and update the UI when the task completes successfully. </p>
-<p>Ensures the wait icon is stopped in all cases.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">height</td><td>the target height for resizing </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a new SwingWorker instance configured for resizing </dd></dl>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_a2141e795770aa1577397e33f990d356c_cgraph.svg" width="496" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a9ac7f346c52f752140984fa7a635336c" name="a9ac7f346c52f752140984fa7a635336c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac7f346c52f752140984fa7a635336c">&#9670;&#160;</a></span>getResizeDebounceTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Timer fr.softsf.canscan.ui.QrCodeResize.getResizeDebounceTimer </td>
+          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.clearResources </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the current debounce timer. </p>
-<dl class="section return"><dt>Returns</dt><dd>the active <code><a class="el" href="">Timer</a></code>, or <code class="JavaDocCode">null</code> if none </dd></dl>
+<p>Clears the current icon before starting a new resize task. </p>
+<p>Invoked automatically by the <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ae07c871c10b66adced8fc7a02ccb5e58">AbstractQrCodeWorker</a></code> workflow. </p>
+
+<p>Reimplemented from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a63c4787bd3dbba55917dde56aa4ef5bc">fr.softsf.canscan.service.AbstractQrCodeWorker&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a9962c344acd3a8046dff04e6da82aa07" name="a9962c344acd3a8046dff04e6da82aa07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9962c344acd3a8046dff04e6da82aa07">&#9670;&#160;</a></span>handleResize()</h2>
+<a id="a1c485f4bdbb739c841b3dee0640ac2aa" name="a1c485f4bdbb739c841b3dee0640ac2aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c485f4bdbb739c841b3dee0640ac2aa">&#9670;&#160;</a></span>createWorker()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +281,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.handleResize </td>
+          <td class="memname">SwingWorker&lt; ImageIcon, Void &gt; fr.softsf.canscan.ui.QrCodeResize.createWorker </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -331,25 +289,28 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handles the QR code resize process after the debounce delay. </p>
-<p>Validates input, available space, and launches a new resize task. </p>
+<p>Creates a background <code><a class="el" href="">SwingWorker</a></code> that scales the QR code image to the target size. </p>
+<p>Uses bilinear interpolation for smooth resizing. Cancels promptly if the thread is interrupted.</p>
+<dl class="section return"><dt>Returns</dt><dd>a configured <code><a class="el" href="">SwingWorker</a></code> that produces an <code><a class="el" href="">ImageIcon</a></code> for display </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a40caeb7994a66c7cfee85d78ce764026">fr.softsf.canscan.service.AbstractQrCodeWorker&lt; T &gt;</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_a9962c344acd3a8046dff04e6da82aa07_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_a1c485f4bdbb739c841b3dee0640ac2aa_cgraph.svg" width="100%" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="affac6f7db21e00ef84b3d804823c6b51" name="affac6f7db21e00ef84b3d804823c6b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affac6f7db21e00ef84b3d804823c6b51">&#9670;&#160;</a></span>handleResizeWorkerCompletion()</h2>
+<a id="a76b20cd869fedbc49a4e1491f14cc91d" name="a76b20cd869fedbc49a4e1491f14cc91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76b20cd869fedbc49a4e1491f14cc91d">&#9670;&#160;</a></span>onWorkerSuccess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,103 +319,49 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.handleResizeWorkerCompletion </td>
+          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.onWorkerSuccess </td>
           <td>(</td>
-          <td class="paramtype">SwingWorker&lt; ImageIcon, Void &gt;</td>          <td class="paramname"><span class="paramname"><em>worker</em></span></td><td>)</td>
+          <td class="paramtype">ImageIcon</td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handles resize worker completion, ensuring that cancellation and stale worker checks are performed before updating the UI. </p>
-<p>Flushes obsolete icons and reports any errors encountered during execution.</p>
+<p>Updates the label icon when the worker successfully completes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">worker</td><td>the completed SwingWorker instance </td></tr>
+    <tr><td class="paramname">result</td><td>the resized <code><a class="el" href="">ImageIcon</a></code>, or <code class="JavaDocCode">null</code> if the task was cancelled </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa7bb188a82b4cd677a39d8b09dcd4ee4" name="aa7bb188a82b4cd677a39d8b09dcd4ee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7bb188a82b4cd677a39d8b09dcd4ee4">&#9670;&#160;</a></span>isInvalidQrData()</h2>
+<a id="a9a7e78e427de1f6d99d6a382ee0e1dd1" name="a9a7e78e427de1f6d99d6a382ee0e1dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7e78e427de1f6d99d6a382ee0e1dd1">&#9670;&#160;</a></span>updateQrCodeResize()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boolean fr.softsf.canscan.ui.QrCodeResize.isInvalidQrData </td>
+          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.updateQrCodeResize </td>
           <td>(</td>
-          <td class="paramtype">QrDataResult</td>          <td class="paramname"><span class="paramname"><em>qrData</em></span></td><td>)</td>
+          <td class="paramtype">QrInput</td>          <td class="paramname"><span class="paramname"><em>qrInput</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Checks whether <code><a class="el" href="">QrDataResult</a></code> is invalid or null, and performs cleanup if necessary. </p>
+<p>Updates the current QR input and schedules a debounced resize operation. </p>
+<p>Any ongoing resize worker is cancelled and a new one is started after a short delay.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">qrData</td><td>the QR data to validate </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if invalid, false otherwise </dd></dl>
-
-</div>
-</div>
-<a id="a43bcfdd826cb50331a01ba51bce05ed2" name="a43bcfdd826cb50331a01ba51bce05ed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43bcfdd826cb50331a01ba51bce05ed2">&#9670;&#160;</a></span>isRunning()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean fr.softsf.canscan.ui.QrCodeResize.isRunning </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if a resize debounce timer is currently running. </p>
-<dl class="section return"><dt>Returns</dt><dd><code class="JavaDocCode">true</code> if active, otherwise <code class="JavaDocCode">false</code> </dd></dl>
-
-</div>
-</div>
-<a id="aadf6afa51d8b8667ff70777b0202d4af" name="aadf6afa51d8b8667ff70777b0202d4af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadf6afa51d8b8667ff70777b0202d4af">&#9670;&#160;</a></span>launchResizeWorker()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.launchResizeWorker </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Launches a background worker that resizes the QR code image to the specified height. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">height</td><td>the desired image height in pixels </td></tr>
+    <tr><td class="paramname">qrInput</td><td>the latest QR code configuration </td></tr>
   </table>
   </dd>
 </dl>
@@ -463,167 +370,14 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_aadf6afa51d8b8667ff70777b0202d4af_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_a9a7e78e427de1f6d99d6a382ee0e1dd1_cgraph.svg" width="100%" height="502"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-
-</div>
-</div>
-<a id="a1093d8b446a9a20cb0d3a8275283a345" name="a1093d8b446a9a20cb0d3a8275283a345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1093d8b446a9a20cb0d3a8275283a345">&#9670;&#160;</a></span>resetAndStartResizeWorker()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.resetAndStartResizeWorker </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Cancels any pending task, clears the current icon, starts the wait animation, and launches a new resize worker for the given height. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">height</td><td>target height for the resized image </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a1093d8b446a9a20cb0d3a8275283a345" title="Cancels any pending task, clears the current icon, starts the wait animation, and launches a new resi...">resetAndStartResizeWorker(int)</a> </dd></dl>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_a1093d8b446a9a20cb0d3a8275283a345_cgraph.svg" width="100%" height="415"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a9d652d45dd8f6c5a1715e7c19f27fad5" name="a9d652d45dd8f6c5a1715e7c19f27fad5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d652d45dd8f6c5a1715e7c19f27fad5">&#9670;&#160;</a></span>resizeImageInBackground()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ImageIcon fr.softsf.canscan.ui.QrCodeResize.resizeImageInBackground </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>squareSize</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Performs image resizing logic off the EDT. </p>
-<p>Uses interpolation based on target size for optimal quality and speed. Cancels promptly if the thread is interrupted.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">squareSize</td><td>the target height for the resized QR code </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>an <code><a class="el" href="">ImageIcon</a></code> containing the resized image, or <code class="JavaDocCode">null</code> if cancelled or invalid </dd></dl>
-
-</div>
-</div>
-<a id="a01d0bf550b2174b4aa737e0fdae27f52" name="a01d0bf550b2174b4aa737e0fdae27f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d0bf550b2174b4aa737e0fdae27f52">&#9670;&#160;</a></span>stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.stop </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stops the current debounce timer and clears its reference. </p>
-
-</div>
-</div>
-<a id="ac168b5bcb9913de63928083f8f750d1e" name="ac168b5bcb9913de63928083f8f750d1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac168b5bcb9913de63928083f8f750d1e">&#9670;&#160;</a></span>updateQrCodeSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.updateQrCodeSize </td>
-          <td>(</td>
-          <td class="paramtype">QrInput</td>          <td class="paramname"><span class="paramname"><em>qrInput</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates internal <code><a class="el" href="">QrInput</a></code> and schedules a debounced QR code resize. </p>
-<p>Cancels any active resize and triggers a new one after a short delay.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">qrInput</td><td>latest QR code configuration </td></tr>
-  </table>
-  </dd>
-</dl>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize_ac168b5bcb9913de63928083f8f750d1e_cgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aed47fcf709f5f89a80357729b2878fe7" name="aed47fcf709f5f89a80357729b2878fe7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed47fcf709f5f89a80357729b2878fe7">&#9670;&#160;</a></span>updateResizeDebounceTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fr.softsf.canscan.ui.QrCodeResize.updateResizeDebounceTimer </td>
-          <td>(</td>
-          <td class="paramtype">Timer</td>          <td class="paramname"><span class="paramname"><em>resizeDebounceTimer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the debounce timer with a new instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resizeDebounceTimer</td><td>the timer to assign </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a676446ef44c69cea458613146dcba613" name="a676446ef44c69cea458613146dcba613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a676446ef44c69cea458613146dcba613">&#9670;&#160;</a></span>LARGE_IMAGE_THRESHOLD</h2>
+<a id="aff04e04f33ee4683eafb3f1f39f5225a" name="aff04e04f33ee4683eafb3f1f39f5225a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff04e04f33ee4683eafb3f1f39f5225a">&#9670;&#160;</a></span>DEFAULT_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -632,51 +386,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final int fr.softsf.canscan.ui.QrCodeResize.LARGE_IMAGE_THRESHOLD = 1000</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aceb5a25333bc2d7a013d63d3813a1343" name="aceb5a25333bc2d7a013d63d3813a1343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb5a25333bc2d7a013d63d3813a1343">&#9670;&#160;</a></span>loader</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> fr.softsf.canscan.ui.QrCodeResize.loader</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a17473f2d666720665b9a1ef6da69e36a" name="a17473f2d666720665b9a1ef6da69e36a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17473f2d666720665b9a1ef6da69e36a">&#9670;&#160;</a></span>QR_CODE_LABEL_DEFAULT_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int fr.softsf.canscan.ui.QrCodeResize.QR_CODE_LABEL_DEFAULT_SIZE = 50</td>
+          <td class="memname">final int fr.softsf.canscan.ui.QrCodeResize.DEFAULT_SIZE = 50</td>
         </tr>
       </table>
   </td>
@@ -732,28 +442,6 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a07fe389fb1c87a17a0b0600136f83d8e" name="a07fe389fb1c87a17a0b0600136f83d8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07fe389fb1c87a17a0b0600136f83d8e">&#9670;&#160;</a></span>qrInput</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QrInput fr.softsf.canscan.ui.QrCodeResize.qrInput</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a1d84bb4e4b4fcaaa99202c8ead1744ee" name="a1d84bb4e4b4fcaaa99202c8ead1744ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d84bb4e4b4fcaaa99202c8ead1744ee">&#9670;&#160;</a></span>RESIZE_DEBOUNCE_DELAY_MS</h2>
 
@@ -776,50 +464,6 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a310e7b2da350d360a93f0b92b141c3f9" name="a310e7b2da350d360a93f0b92b141c3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310e7b2da350d360a93f0b92b141c3f9">&#9670;&#160;</a></span>resizeDebounceTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Timer fr.softsf.canscan.ui.QrCodeResize.resizeDebounceTimer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afb87f10237ffc28ea242c14e47c056f0" name="afb87f10237ffc28ea242c14e47c056f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb87f10237ffc28ea242c14e47c056f0">&#9670;&#160;</a></span>resizeWorker</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SwingWorker&lt;ImageIcon, Void&gt; fr.softsf.canscan.ui.QrCodeResize.resizeWorker</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/fr/softsf/canscan/ui/<a class="el" href="_qr_code_resize_8java.html">QrCodeResize.java</a></li>
 </ul>
@@ -829,7 +473,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">QrCodeResize</a></li>
-    <li class="footer">Generated on Sat Nov 8 2025 18:02:10 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Mon Nov 10 2025 12:35:36 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

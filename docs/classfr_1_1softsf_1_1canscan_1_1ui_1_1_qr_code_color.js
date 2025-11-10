@@ -1,6 +1,6 @@
 var classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color =
 [
-    [ "chooseColor", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a773849f88470687b9ce372cb278ff7f2", null ],
+    [ "chooseColor", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a3daf47c690e7e9ffaeeaca46f18e65a5", null ],
     [ "colorToHex", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a6e471a263428b03ae94124805629228e", null ],
     [ "createColorIcon", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a77f0fa64996390a23753e06964d5bdb3", null ],
     [ "disposeButtonIcon", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a90b951053218f84d455569a3a29a4b52", null ],

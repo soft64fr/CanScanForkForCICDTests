@@ -103,23 +103,16 @@ $(function(){initNavTree('_qr_code_resize_8java.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">QrCodeResize.java File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>import java.awt.Dimension;</code><br />
-<code>import java.awt.Graphics2D;</code><br />
+<div class="textblock"><code>import java.awt.Graphics2D;</code><br />
 <code>import java.awt.RenderingHints;</code><br />
 <code>import java.awt.image.BufferedImage;</code><br />
 <code>import java.util.concurrent.CancellationException;</code><br />
 <code>import java.util.concurrent.ExecutionException;</code><br />
 <code>import javax.swing.ImageIcon;</code><br />
 <code>import javax.swing.JLabel;</code><br />
-<code>import javax.swing.SwingUtilities;</code><br />
 <code>import javax.swing.SwingWorker;</code><br />
-<code>import javax.swing.Timer;</code><br />
-<code>import org.apache.commons.lang3.StringUtils;</code><br />
-<code>import fr.softsf.canscan.model.QrDataResult;</code><br />
 <code>import fr.softsf.canscan.model.QrInput;</code><br />
-<code>import fr.softsf.canscan.service.BuildQRDataService;</code><br />
-<code>import fr.softsf.canscan.util.Checker;</code><br />
-<code>import fr.softsf.canscan.util.StringConstants;</code><br />
+<code>import fr.softsf.canscan.service.AbstractQrCodeWorker;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for QrCodeResize.java:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -131,7 +124,7 @@ $(function(){initNavTree('_qr_code_resize_8java.html',''); initResizable(true); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html">fr.softsf.canscan.ui.QrCodeResize</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles asynchronous resizing of generated QR code images in a Swing UI.  <a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously resizes a generated QR code image for display in a Swing UI.  <a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -145,7 +138,7 @@ Packages</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_91390426c0f30a4fef59e9ae252d2f44.html">fr</a></li><li class="navelem"><a class="el" href="dir_df66706d7efa0a9fd8002f7f6346de3d.html">softsf</a></li><li class="navelem"><a class="el" href="dir_a68d62d5e8ea96def72cbc0a88628e3e.html">canscan</a></li><li class="navelem"><a class="el" href="dir_d17b1239c51b19a478b128996d2b5dcc.html">ui</a></li><li class="navelem"><a class="el" href="_qr_code_resize_8java.html">QrCodeResize.java</a></li>
-    <li class="footer">Generated on Sat Nov 8 2025 18:02:10 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Mon Nov 10 2025 12:35:36 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

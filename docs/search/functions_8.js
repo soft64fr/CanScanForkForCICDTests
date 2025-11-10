@@ -10,7 +10,5 @@ var searchData=
   ['isinbottomleftpattern_7',['isInBottomLeftPattern',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#acdbacde2b4cabcb6003fbf7ac3699852',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
   ['isinpositionpattern_8',['isInPositionPattern',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a4bc72b6a6cf4ca35f82d4cd2899c7818',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
   ['isintopleftpattern_9',['isInTopLeftPattern',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a3951aad146f1247d0b23eae74de9e5dd',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
-  ['isintoprightpattern_10',['isInTopRightPattern',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#ad31e256d4159e4a6a791b995c9629863',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
-  ['isinvalidqrdata_11',['isInvalidQrData',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#aa7bb188a82b4cd677a39d8b09dcd4ee4',1,'fr::softsf::canscan::ui::QrCodeResize']]],
-  ['isrunning_12',['isRunning',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a173cce533fb1e9bad9f28887bf5b2cbd',1,'fr.softsf.canscan.ui.QrCodePreview.isRunning()'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a43bcfdd826cb50331a01ba51bce05ed2',1,'fr.softsf.canscan.ui.QrCodeResize.isRunning()']]]
+  ['isintoprightpattern_10',['isInTopRightPattern',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#ad31e256d4159e4a6a791b995c9629863',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
 ];

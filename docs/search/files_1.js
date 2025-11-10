@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['canscan_2ejava_0',['CanScan.java',['../_can_scan_8java.html',1,'']]],
-  ['canscantest_2ejava_1',['CanScanTest.java',['../_can_scan_test_8java.html',1,'']]],
-  ['checker_2ejava_2',['Checker.java',['../_checker_8java.html',1,'']]]
+  ['browserhelper_2ejava_0',['BrowserHelper.java',['../_browser_helper_8java.html',1,'']]],
+  ['buildqrdataservice_2ejava_1',['BuildQRDataService.java',['../_build_q_r_data_service_8java.html',1,'']]]
 ];

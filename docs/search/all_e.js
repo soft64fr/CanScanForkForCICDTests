@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['qr_5fcode_5flabel_5fdefault_5fsize_0',['QR_CODE_LABEL_DEFAULT_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae3a5da8bb7f2aeaf903dbd156f6e9c3e',1,'fr.softsf.canscan.CanScan.QR_CODE_LABEL_DEFAULT_SIZE'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a17473f2d666720665b9a1ef6da69e36a',1,'fr.softsf.canscan.ui.QrCodeResize.QR_CODE_LABEL_DEFAULT_SIZE']]],
+  ['qr_5fcode_5flabel_5fdefault_5fsize_0',['QR_CODE_LABEL_DEFAULT_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae3a5da8bb7f2aeaf903dbd156f6e9c3e',1,'fr::softsf::canscan::CanScan']]],
   ['qr_5fdata_1',['QR_DATA',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a713ac340dc7968c894857d47bf029b9e',1,'fr::softsf::canscan::util::StringConstants']]],
   ['qrcodebufferedimage_2',['QrCodeBufferedImage',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html',1,'fr::softsf::canscan::ui']]],
   ['qrcodebufferedimage_3',['qrCodeBufferedImage',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a80dee7dd2663784754490d076d0ebe96',1,'fr.softsf.canscan.CanScan.qrCodeBufferedImage'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a10fe032690cc5bd0933186383818f76f',1,'fr.softsf.canscan.ui.QrCodePreview.qrCodeBufferedImage'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a0b0ba2c30c4e7cd0e6464959dc434836',1,'fr.softsf.canscan.ui.QrCodeResize.qrCodeBufferedImage']]],
@@ -26,7 +26,7 @@ var searchData=
   ['qrdataresult_23',['QrDataResult',['../namespacefr_1_1softsf_1_1canscan_1_1model.html#a0694c357710efef6b0c71664b54183c7',1,'fr::softsf::canscan::model']]],
   ['qrdataresult_2ejava_24',['QrDataResult.java',['../_qr_data_result_8java.html',1,'']]],
   ['qrinput_25',['QrInput',['../namespacefr_1_1softsf_1_1canscan_1_1model.html#ac6274d67b9dd1206460be9fb6c5c93d6',1,'fr::softsf::canscan::model']]],
-  ['qrinput_26',['qrInput',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a1ef747a81fdea43489b94cb45baa6ad2',1,'fr.softsf.canscan.ui.QrCodePreview.qrInput'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a07fe389fb1c87a17a0b0600136f83d8e',1,'fr.softsf.canscan.ui.QrCodeResize.qrInput']]],
+  ['qrinput_26',['qrInput',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a7a001383bbef6efe28a77ff329e84336',1,'fr::softsf::canscan::service::AbstractQrCodeWorker']]],
   ['qrinput_2ejava_27',['QrInput.java',['../_qr_input_8java.html',1,'']]],
   ['qroriginal_28',['qrOriginal',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a766ca34c8bfb6f0cba213b399758f4e4',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
 ];

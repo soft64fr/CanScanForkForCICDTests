@@ -1,0 +1,17 @@
+<map id="fr.softsf.canscan.ui.QrCodePreview.updateQrCodePreview" name="fr.softsf.canscan.ui.QrCodePreview.updateQrCodePreview">
+<area shape="rect" id="Node000001" title="Updates and schedules a debounced QR code preview refresh." alt="" coords="5,72,208,115"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a6558af04f7318a4f74547c95778fed7c" title="Executes the unified workflow: cancel previous worker, stop debounce, clear resources,..." alt="" coords="256,64,496,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,91,240,91,240,96,208,96"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a40caeb7994a66c7cfee85d78ce764026" title="Creates and returns a new SwingWorker for the current operation." alt="" coords="544,39,781,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="496,77,528,73,529,78,497,82"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ad2923dae15a1315f89f6df73d846e87d" title="Resets the current worker and associated resources." alt="" coords="548,105,778,148"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="497,105,532,109,532,114,496,110"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#af307a6f804bca23190b6408780c380d0" title="Cancels the current SwingWorker and clears its reference safely." alt="" coords="848,5,1088,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="752,102,780,91,804,74,828,58,844,51,846,56,831,62,807,79,783,96,754,107"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a63c4787bd3dbba55917dde56aa4ef5bc" title="Clears any allocated data, icons, or buffers before starting a new task." alt="" coords="842,72,1094,115"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="778,111,827,106,827,111,779,117"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab11bed09d0e3e1f74e1fb72fdeec8245" title="Stops and clears the debounce timer." alt="" coords="829,139,1107,181"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="779,137,814,141,814,146,778,142"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59" title="Stops the loader&#39;s wait indicator if assigned." alt="" coords="856,205,1080,264"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="716,146,830,191,850,198,849,203,828,196,714,151"/>
+</map>

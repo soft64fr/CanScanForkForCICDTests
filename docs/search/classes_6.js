@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nativeimageconfigsimulator_0',['NativeImageConfigSimulator',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html',1,'fr::softsf::canscan']]]
+  ['mode_0',['Mode',['../enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html',1,'fr::softsf::canscan::model']]]
 ];

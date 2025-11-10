@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intconstants_0',['IntConstants',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_int_constants.html',1,'fr::softsf::canscan::util']]]
+  ['framehelper_0',['FrameHelper',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html',1,'fr::softsf::canscan::util']]]
 ];

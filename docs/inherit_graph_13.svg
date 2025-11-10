@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html" target="_top" xlink:title="Utility class for managing QR code colors and color&#45;related UI operations.">
+<g id="a_Node000000"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" target="_top" xlink:title="Thread&#45;safe singleton to hold a shared QR code BufferedImage.">
 <polygon fill="white" stroke="#666666" points="136.75,-32 0,-32 0,0 136.75,0 136.75,-32"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.QrCode</text>
-<text text-anchor="middle" x="68.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Color</text>
+<text text-anchor="middle" x="68.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">BufferedImage</text>
 </a>
 </g>
 </g>

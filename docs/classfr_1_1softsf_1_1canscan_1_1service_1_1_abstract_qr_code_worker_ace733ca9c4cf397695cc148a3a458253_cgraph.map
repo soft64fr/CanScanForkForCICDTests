@@ -1,0 +1,13 @@
+<map id="fr.softsf.canscan.service.AbstractQrCodeWorker.onWorkerFailure" name="fr.softsf.canscan.service.AbstractQrCodeWorker.onWorkerFailure">
+<area shape="rect" id="Node000001" title="Called when the worker fails or is cancelled." alt="" coords="5,105,260,148"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ad2923dae15a1315f89f6df73d846e87d" title="Resets the current worker and associated resources." alt="" coords="308,105,538,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,124,292,124,292,129,260,129"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#af307a6f804bca23190b6408780c380d0" title="Cancels the current SwingWorker and clears its reference safely." alt="" coords="605,5,844,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,102,585,57,610,50,611,55,587,63,473,107"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a63c4787bd3dbba55917dde56aa4ef5bc" title="Clears any allocated data, icons, or buffers before starting a new task." alt="" coords="599,72,850,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="538,111,583,106,584,112,539,117"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab11bed09d0e3e1f74e1fb72fdeec8245" title="Stops and clears the debounce timer." alt="" coords="586,139,863,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="539,137,571,140,570,146,538,142"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59" title="Stops the loader&#39;s wait indicator if assigned." alt="" coords="612,205,837,264"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="475,146,587,191,606,197,605,203,585,196,473,151"/>
+</map>

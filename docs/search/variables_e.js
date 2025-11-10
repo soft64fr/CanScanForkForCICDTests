@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['qr_5fcode_5flabel_5fdefault_5fsize_0',['QR_CODE_LABEL_DEFAULT_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae3a5da8bb7f2aeaf903dbd156f6e9c3e',1,'fr.softsf.canscan.CanScan.QR_CODE_LABEL_DEFAULT_SIZE'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a17473f2d666720665b9a1ef6da69e36a',1,'fr.softsf.canscan.ui.QrCodeResize.QR_CODE_LABEL_DEFAULT_SIZE']]],
+  ['qr_5fcode_5flabel_5fdefault_5fsize_0',['QR_CODE_LABEL_DEFAULT_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae3a5da8bb7f2aeaf903dbd156f6e9c3e',1,'fr::softsf::canscan::CanScan']]],
   ['qr_5fdata_1',['QR_DATA',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a713ac340dc7968c894857d47bf029b9e',1,'fr::softsf::canscan::util::StringConstants']]],
   ['qrcodebufferedimage_2',['qrCodeBufferedImage',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a80dee7dd2663784754490d076d0ebe96',1,'fr.softsf.canscan.CanScan.qrCodeBufferedImage'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a10fe032690cc5bd0933186383818f76f',1,'fr.softsf.canscan.ui.QrCodePreview.qrCodeBufferedImage'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a0b0ba2c30c4e7cd0e6464959dc434836',1,'fr.softsf.canscan.ui.QrCodeResize.qrCodeBufferedImage']]],
   ['qrcodecolor_3',['qrCodeColor',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a7431e56e66fd3038341d7807e3c27509',1,'fr.softsf.canscan.CanScan.qrCodeColor'],['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#a231201fadd3c5a8dae616ec00c8e402f',1,'fr.softsf.canscan.CanScanTest.qrCodeColor']]],
@@ -11,6 +11,6 @@ var searchData=
   ['qrcoderesize_8',['qrCodeResize',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#afe6c08ac95245250baf3bab5744f3167',1,'fr.softsf.canscan.CanScan.qrCodeResize'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a697116f648d90e2e96a67c4a9d6a0409',1,'fr.softsf.canscan.ui.QrCodePreview.qrCodeResize']]],
   ['qrcolor_9',['qrColor',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a043320b69991577de80f783375257a4a',1,'fr::softsf::canscan::CanScan']]],
   ['qrcolorbutton_10',['qrColorButton',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2241fd6885a5901d2bc0480eca92611a',1,'fr::softsf::canscan::CanScan']]],
-  ['qrinput_11',['qrInput',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_preview.html#a1ef747a81fdea43489b94cb45baa6ad2',1,'fr.softsf.canscan.ui.QrCodePreview.qrInput'],['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_resize.html#a07fe389fb1c87a17a0b0600136f83d8e',1,'fr.softsf.canscan.ui.QrCodeResize.qrInput']]],
+  ['qrinput_11',['qrInput',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a7a001383bbef6efe28a77ff329e84336',1,'fr::softsf::canscan::service::AbstractQrCodeWorker']]],
   ['qroriginal_12',['qrOriginal',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a766ca34c8bfb6f0cba213b399758f4e4',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
 ];

@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html" target="_top" xlink:title="Singleton service for checking application version against GitHub releases.">
+<g id="a_Node000000"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_build_q_r_data_service.html" target="_top" xlink:title="Service for generating QR code content and default filenames.">
 <polygon fill="white" stroke="#666666" points="127,-32 0,-32 0,0 127,0 127,-32"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.service.</text>
-<text text-anchor="middle" x="63.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">VersionService</text>
+<text text-anchor="middle" x="63.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">BuildQRDataService</text>
 </a>
 </g>
 </g>

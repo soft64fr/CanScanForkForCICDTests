@@ -1,0 +1,13 @@
+<map id="fr.softsf.canscan.service.AbstractQrCodeWorker.disposeAllResourcesOnExit" name="fr.softsf.canscan.service.AbstractQrCodeWorker.disposeAllResourcesOnExit">
+<area shape="rect" id="Node000001" title="Releases all resources used by this worker." alt="" coords="5,97,226,156"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ad2923dae15a1315f89f6df73d846e87d" title="Resets the current worker and associated resources." alt="" coords="274,105,504,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,124,258,124,258,129,226,129"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#af307a6f804bca23190b6408780c380d0" title="Cancels the current SwingWorker and clears its reference safely." alt="" coords="571,5,810,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,102,551,57,576,50,577,55,553,63,439,107"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a63c4787bd3dbba55917dde56aa4ef5bc" title="Clears any allocated data, icons, or buffers before starting a new task." alt="" coords="565,72,816,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="504,111,549,106,550,112,505,117"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#ab11bed09d0e3e1f74e1fb72fdeec8245" title="Stops and clears the debounce timer." alt="" coords="552,139,829,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="505,137,537,140,536,146,504,142"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_qr_code_worker.html#a3ecd1b3ddd1dbf2c2a1e9487ae4bfd59" title="Stops the loader&#39;s wait indicator if assigned." alt="" coords="578,205,803,264"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="441,146,553,191,572,197,571,203,551,196,439,151"/>
+</map>

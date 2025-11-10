@@ -1,21 +1,15 @@
 <map id="fr.softsf.canscan.CanScan.initializeAutomaticQRCodeRendering" name="fr.softsf.canscan.CanScan.initializeAutomaticQRCodeRendering">
-<area shape="rect" id="Node000001" title="Sets up automatic QR code preview updates for all input fields and controls." alt="" coords="5,39,234,81"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9856545d05ef553c8dfddd95a850a360" title="Creates a minimal DocumentListener that executes the given action on any document change." alt="" coords="282,5,502,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,43,267,39,267,45,234,49"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9ac2e28615c970404a4408245e62a6fc" title="Schedules a debounced QR code preview update based on the current input and settings." alt="" coords="282,72,502,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,71,266,75,266,81,234,77"/>
-<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aba5b2671745886284c444b8e3bec80e2" title="Frees the QR code image and its label icon to release memory." alt="" coords="554,39,757,81"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="502,77,538,72,538,77,503,82"/>
-<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a42d6a5e11bc8f147bed036366316564f" title="Clears the current QR code display and starts a background worker to generate a new preview." alt="" coords="550,105,760,148"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="503,105,535,109,534,114,502,110"/>
-<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2d26dcd1ae708eae46dba8952351aa1a" title="Builds and returns a QrInput object containing all current user inputs and settings." alt="" coords="808,105,1008,148"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="761,124,792,124,792,129,761,129"/>
-<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" title="Calculates the available height for QR code rendering." alt="" coords="1056,5,1289,48"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="952,102,1055,58,1075,50,1077,56,1057,62,954,107"/>
-<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" title="Validates and returns the current QR code margin from the margin slider." alt="" coords="1059,72,1286,115"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1008,111,1043,107,1044,112,1009,117"/>
-<area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider." alt="" coords="1059,139,1286,181"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1009,137,1044,141,1043,146,1008,142"/>
-<area shape="rect" id="Node000010" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" title="Validates and returns the QR code size from the corresponding text field." alt="" coords="1059,205,1286,248"/>
-<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="954,146,1057,191,1077,198,1075,203,1055,196,952,151"/>
+<area shape="rect" id="Node000001" title="Sets up automatic QR code preview updates for all input fields and controls." alt="" coords="5,139,234,181"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2d26dcd1ae708eae46dba8952351aa1a" title="Builds and returns a QrInput object containing all current user inputs and settings." alt="" coords="292,105,491,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,143,276,138,277,143,235,149"/>
+<area shape="rect" id="Node000007" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9856545d05ef553c8dfddd95a850a360" title="Creates a minimal DocumentListener that executes the given action on any document change." alt="" coords="282,172,501,215"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="235,171,266,175,266,181,234,177"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" title="Calculates the available height for QR code rendering." alt="" coords="549,5,782,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,102,548,58,569,51,570,56,550,62,441,107"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" title="Validates and returns the current QR code margin from the margin slider." alt="" coords="552,72,779,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="491,112,537,106,537,112,492,117"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider." alt="" coords="552,139,779,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="492,136,537,142,537,147,491,141"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" title="Validates and returns the QR code size from the corresponding text field." alt="" coords="552,205,779,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="475,146,502,158,526,175,550,191,564,197,562,202,548,196,523,179,500,162,473,151"/>
 </map>

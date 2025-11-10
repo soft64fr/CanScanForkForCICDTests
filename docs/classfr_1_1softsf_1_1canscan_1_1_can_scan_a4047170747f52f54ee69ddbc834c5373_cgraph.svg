@@ -47,9 +47,9 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 971;
+var viewWidth = 591;
 var viewHeight = 190;
-var sectionId = 'dynsection-13';
+var sectionId = 'dynsection-10';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -59,19 +59,19 @@ var sectionId = 'dynsection-13';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Sets up automatic QR code preview updates for all input fields and controls.">
-<polygon fill="#999999" stroke="#666666" points="171.25,-157 0,-157 0,-125 171.25,-125 171.25,-157"/>
-<text text-anchor="start" x="8" y="-143.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.initialize</text>
-<text text-anchor="middle" x="85.62" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">AutomaticQRCodeRendering</text>
+<polygon fill="#999999" stroke="#666666" points="171.25,-82 0,-82 0,-50 171.25,-50 171.25,-82"/>
+<text text-anchor="start" x="8" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.initialize</text>
+<text text-anchor="middle" x="85.62" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">AutomaticQRCodeRendering</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9856545d05ef553c8dfddd95a850a360" target="_top" xlink:title="Creates a minimal DocumentListener that executes the given action on any document change.">
-<polygon fill="white" stroke="#666666" points="372.12,-182 207.62,-182 207.62,-150 372.12,-150 372.12,-182"/>
-<text text-anchor="start" x="215.62" y="-168.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.simple</text>
-<text text-anchor="middle" x="289.88" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">DocumentListener</text>
+<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2d26dcd1ae708eae46dba8952351aa1a" target="_top" xlink:title="Builds and returns a QrInput object containing all current user inputs and settings.">
+<polygon fill="white" stroke="#666666" points="364.25,-107 214.75,-107 214.75,-75 364.25,-75 364.25,-107"/>
+<text text-anchor="start" x="222.75" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.get</text>
+<text text-anchor="middle" x="289.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">QrInput</text>
 </a>
 </g>
 </g>
@@ -79,160 +79,103 @@ var sectionId = 'dynsection-13';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M171.52,-151.49C179.69,-152.5 188.01,-153.53 196.26,-154.55"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="195.58,-157.99 205.93,-155.75 196.44,-151.05 195.58,-157.99"/>
-</a>
-</g>
-</g>
-<!-- Node3 -->
-<g id="Node000003" class="node">
-<title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9ac2e28615c970404a4408245e62a6fc" target="_top" xlink:title="Schedules a debounced QR code preview update based on the current input and settings.">
-<polygon fill="white" stroke="#666666" points="372.5,-132 207.25,-132 207.25,-100 372.5,-100 372.5,-132"/>
-<text text-anchor="start" x="215.25" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.update</text>
-<text text-anchor="middle" x="289.88" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreviewQRCode</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2_Node000001_Node000003" class="edge">
-<title>Node1&#45;&gt;Node3</title>
-<g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M171.52,-130.51C179.45,-129.53 187.53,-128.53 195.53,-127.54"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="195.79,-131.03 205.29,-126.33 194.93,-124.09 195.79,-131.03"/>
-</a>
-</g>
-</g>
-<!-- Node4 -->
-<g id="Node000004" class="node">
-<title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aba5b2671745886284c444b8e3bec80e2" target="_top" xlink:title="Frees the QR code image and its label icon to release memory.">
-<polygon fill="white" stroke="#666666" points="563.62,-157 411.12,-157 411.12,-125 563.62,-125 563.62,-157"/>
-<text text-anchor="start" x="419.12" y="-143.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.free</text>
-<text text-anchor="middle" x="487.38" y="-131.5" font-family="Helvetica,sans-Serif" font-size="10.00">QrOriginalAndQrCodeLabel</text>
-</a>
-</g>
-</g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3_Node000003_Node000004" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M372.93,-126.49C381.75,-127.62 390.74,-128.77 399.61,-129.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="398.89,-133.34 409.26,-131.14 399.78,-126.4 398.89,-133.34"/>
-</a>
-</g>
-</g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a42d6a5e11bc8f147bed036366316564f" target="_top" xlink:title="Clears the current QR code display and starts a background worker to generate a new preview.">
-<polygon fill="white" stroke="#666666" points="566.25,-107 408.5,-107 408.5,-75 566.25,-75 566.25,-107"/>
-<text text-anchor="start" x="416.5" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.reset</text>
-<text text-anchor="middle" x="487.38" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndStartPreviewWorker</text>
-</a>
-</g>
-</g>
-<!-- Node3&#45;&gt;Node5 -->
-<g id="edge4_Node000003_Node000005" class="edge">
-<title>Node3&#45;&gt;Node5</title>
-<g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M372.93,-105.51C380.89,-104.49 388.99,-103.45 397.01,-102.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="397.3,-105.92 406.77,-101.18 396.41,-98.98 397.3,-105.92"/>
-</a>
-</g>
-</g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2d26dcd1ae708eae46dba8952351aa1a" target="_top" xlink:title="Builds and returns a QrInput object containing all current user inputs and settings.">
-<polygon fill="white" stroke="#666666" points="751.75,-107 602.25,-107 602.25,-75 751.75,-75 751.75,-107"/>
-<text text-anchor="start" x="610.25" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.get</text>
-<text text-anchor="middle" x="677" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">QrInput</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5_Node000005_Node000006" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M566.59,-91C574.42,-91 582.41,-91 590.32,-91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="590.31,-94.5 600.31,-91 590.31,-87.5 590.31,-94.5"/>
+<path fill="none" stroke="#63b8ff" d="M171.65,-76.53C182.1,-77.82 192.78,-79.15 203.23,-80.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="202.6,-83.89 212.95,-81.64 203.46,-76.94 202.6,-83.89"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" target="_top" xlink:title="Calculates the available height for QR code rendering.">
-<polygon fill="white" stroke="#666666" points="962.75,-182 787.75,-182 787.75,-150 962.75,-150 962.75,-182"/>
-<text text-anchor="start" x="795.75" y="-168.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.calculate</text>
-<text text-anchor="middle" x="875.25" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrHeight</text>
+<g id="a_Node000007"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9856545d05ef553c8dfddd95a850a360" target="_top" xlink:title="Creates a minimal DocumentListener that executes the given action on any document change.">
+<polygon fill="white" stroke="#666666" points="371.75,-57 207.25,-57 207.25,-25 371.75,-25 371.75,-57"/>
+<text text-anchor="start" x="215.25" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.simple</text>
+<text text-anchor="middle" x="289.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">DocumentListener</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge6_Node000006_Node000007" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M710.61,-107.38C732.17,-117.82 761.24,-131.19 787.75,-141 792.62,-142.8 797.69,-144.56 802.82,-146.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="801.36,-149.46 811.95,-149.17 803.49,-142.79 801.36,-149.46"/>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge6_Node000001_Node000007" class="edge">
+<title>Node1&#45;&gt;Node7</title>
+<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M171.65,-55.47C179.56,-54.49 187.61,-53.49 195.58,-52.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="195.8,-56.01 205.29,-51.3 194.94,-49.06 195.8,-56.01"/>
 </a>
 </g>
 </g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" target="_top" xlink:title="Validates and returns the current QR code margin from the margin slider.">
-<polygon fill="white" stroke="#666666" points="960.12,-132 790.38,-132 790.38,-100 960.12,-100 960.12,-132"/>
-<text text-anchor="start" x="798.38" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
-<text text-anchor="middle" x="875.25" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetMargin</text>
+<!-- Node3 -->
+<g id="Node000003" class="node">
+<title>Node3</title>
+<g id="a_Node000003"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" target="_top" xlink:title="Calculates the available height for QR code rendering.">
+<polygon fill="white" stroke="#666666" points="582.75,-182 407.75,-182 407.75,-150 582.75,-150 582.75,-182"/>
+<text text-anchor="start" x="415.75" y="-168.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.calculate</text>
+<text text-anchor="middle" x="495.25" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrHeight</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node8 -->
-<g id="edge7_Node000006_Node000008" class="edge">
-<title>Node6&#45;&gt;Node8</title>
-<g id="a_edge7_Node000006_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M752.19,-100.45C760.89,-101.56 769.86,-102.7 778.8,-103.84"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="778.22,-107.3 788.58,-105.09 779.1,-100.35 778.22,-107.3"/>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge2_Node000002_Node000003" class="edge">
+<title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M325.97,-107.46C349,-117.82 379.82,-131.05 407.75,-141 412.73,-142.78 417.91,-144.52 423.14,-146.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="421.89,-149.48 432.48,-149.13 423.98,-142.8 421.89,-149.48"/>
 </a>
 </g>
 </g>
-<!-- Node9 -->
-<g id="Node000009" class="node">
-<title>Node9</title>
-<g id="a_Node000009"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" target="_top" xlink:title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider.">
-<polygon fill="white" stroke="#666666" points="960.12,-82 790.38,-82 790.38,-50 960.12,-50 960.12,-82"/>
-<text text-anchor="start" x="798.38" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
-<text text-anchor="middle" x="875.25" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetRatio</text>
+<!-- Node4 -->
+<g id="Node000004" class="node">
+<title>Node4</title>
+<g id="a_Node000004"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" target="_top" xlink:title="Validates and returns the current QR code margin from the margin slider.">
+<polygon fill="white" stroke="#666666" points="580.12,-132 410.38,-132 410.38,-100 580.12,-100 580.12,-132"/>
+<text text-anchor="start" x="418.38" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
+<text text-anchor="middle" x="495.25" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetMargin</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node9 -->
-<g id="edge8_Node000006_Node000009" class="edge">
-<title>Node6&#45;&gt;Node9</title>
-<g id="a_edge8_Node000006_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M752.19,-81.55C760.89,-80.44 769.86,-79.3 778.8,-78.16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="779.1,-81.65 788.58,-76.91 778.22,-74.7 779.1,-81.65"/>
+<!-- Node2&#45;&gt;Node4 -->
+<g id="edge3_Node000002_Node000004" class="edge">
+<title>Node2&#45;&gt;Node4</title>
+<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M364.63,-100.1C375.73,-101.46 387.3,-102.88 398.76,-104.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="398.31,-107.75 408.66,-105.5 399.16,-100.81 398.31,-107.75"/>
 </a>
 </g>
 </g>
-<!-- Node10 -->
-<g id="Node000010" class="node">
-<title>Node10</title>
-<g id="a_Node000010"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" target="_top" xlink:title="Validates and returns the QR code size from the corresponding text field.">
-<polygon fill="white" stroke="#666666" points="960.12,-32 790.38,-32 790.38,0 960.12,0 960.12,-32"/>
-<text text-anchor="start" x="798.38" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
-<text text-anchor="middle" x="875.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetSize</text>
+<!-- Node5 -->
+<g id="Node000005" class="node">
+<title>Node5</title>
+<g id="a_Node000005"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" target="_top" xlink:title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider.">
+<polygon fill="white" stroke="#666666" points="580.12,-82 410.38,-82 410.38,-50 580.12,-50 580.12,-82"/>
+<text text-anchor="start" x="418.38" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
+<text text-anchor="middle" x="495.25" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetRatio</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node10 -->
-<g id="edge9_Node000006_Node000010" class="edge">
-<title>Node6&#45;&gt;Node10</title>
-<g id="a_edge9_Node000006_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M710.61,-74.62C732.17,-64.18 761.24,-50.81 787.75,-41 792.62,-39.2 797.69,-37.44 802.82,-35.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="803.49,-39.21 811.95,-32.83 801.36,-32.54 803.49,-39.21"/>
+<!-- Node2&#45;&gt;Node5 -->
+<g id="edge4_Node000002_Node000005" class="edge">
+<title>Node2&#45;&gt;Node5</title>
+<g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M364.63,-81.9C375.73,-80.54 387.3,-79.12 398.76,-77.72"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="399.16,-81.19 408.66,-76.5 398.31,-74.25 399.16,-81.19"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" target="_top" xlink:title="Validates and returns the QR code size from the corresponding text field.">
+<polygon fill="white" stroke="#666666" points="580.12,-32 410.38,-32 410.38,0 580.12,0 580.12,-32"/>
+<text text-anchor="start" x="418.38" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.validate</text>
+<text text-anchor="middle" x="495.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">AndGetSize</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node6 -->
+<g id="edge5_Node000002_Node000006" class="edge">
+<title>Node2&#45;&gt;Node6</title>
+<g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M351.2,-74.6C358.26,-72.03 365.25,-69.16 371.75,-66 389.27,-57.48 390.16,-49.37 407.75,-41 411.07,-39.42 414.5,-37.92 418.01,-36.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="419.16,-39.81 427.28,-33 416.68,-33.26 419.16,-39.81"/>
 </a>
 </g>
 </g>
