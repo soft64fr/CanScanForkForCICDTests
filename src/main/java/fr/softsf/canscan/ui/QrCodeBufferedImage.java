@@ -71,11 +71,8 @@ public class QrCodeBufferedImage {
         }
     }
 
-    /**
-     * Releases the current QR code image and its resources. Must be called on the EDT if Swing
-     * components are involved.
-     */
-    public synchronized void freeQrOriginal() {
+    /** Releases the current QR code image and its resources. */
+    public void freeQrOriginal() {
         synchronized (imageLock) {
             if (qrOriginal != null) {
                 qrOriginal.flush();
