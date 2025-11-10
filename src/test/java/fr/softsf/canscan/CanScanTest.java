@@ -171,7 +171,7 @@ class CanScanTest {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(Color.RED);
-            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true, null);
+            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true);
             assertEquals(Color.RED, chosen);
             assertEquals("#FF0000", button.getText());
         }
@@ -184,7 +184,7 @@ class CanScanTest {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(Color.BLUE);
-            Color chosen = qrCodeColor.chooseColor(button, Color.WHITE, false, null);
+            Color chosen = qrCodeColor.chooseColor(button, Color.WHITE, false);
             assertEquals(Color.BLUE, chosen);
             assertEquals("#0000FF", button.getText());
         }
@@ -197,7 +197,7 @@ class CanScanTest {
             chooserMock
                     .when(() -> JColorChooser.showDialog(any(), anyString(), any()))
                     .thenReturn(null);
-            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true, null);
+            Color chosen = qrCodeColor.chooseColor(button, Color.BLACK, true);
             assertNull(chosen);
             assertEquals("Noir", button.getText());
         }

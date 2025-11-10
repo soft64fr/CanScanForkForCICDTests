@@ -38,6 +38,7 @@ import fr.softsf.canscan.util.StringConstants;
  */
 public class QrCodePreview {
 
+    private static final int PREVIEW_DEBOUNCE_DELAY_MS = 200;
     private Timer previewDebounceTimer;
     private SwingWorker<BufferedImage, Void> previewWorker;
     private QrInput qrInput;
@@ -83,6 +84,7 @@ public class QrCodePreview {
      * @param previewDebounceTimer the new debounce timer to apply
      */
     public void updatePreviewDebounceTimer(Timer previewDebounceTimer) {
+        stop();
         cancelActivePreviewWorker();
         this.previewDebounceTimer = previewDebounceTimer;
     }
@@ -165,7 +167,7 @@ public class QrCodePreview {
             }
             qrCodeBufferedImage.updateQrOriginal(img);
             if (qrCodeBufferedImage.getQrOriginal() != null) {
-                qrCodeResize.updateQrCodeSize(qrInput);
+                qrCodeResize.updateQrCodeResize(qrInput);
             } else {
                 qrCodeLabel.setIcon(null);
             }
@@ -255,5 +257,40 @@ public class QrCodePreview {
             // Expected: cancellation or execution failure
         }
         previewWorker = null;
+    }
+
+    /**
+     * Schedules a debounced update of the QR code preview to avoid excessive regenerations.
+     *
+     * <p>If a preview generation is already in progress, the debounce timer is restarted.
+     * Otherwise, the current preview is cleared and a new background worker is launched to generate
+     * the QR code preview after a delay of {@value #PREVIEW_DEBOUNCE_DELAY_MS} ms.
+     *
+     * @param qrInput All current user inputs and settings used to generate the preview.
+     */
+    public void updateQrCodePreview(QrInput qrInput) {
+        this.qrInput = qrInput;
+        if (isRunning()) {
+            getPreviewDebounceTimer().restart();
+            return;
+        }
+        qrCodeBufferedImage.freeQrOriginal();
+        QrCodeIconUtil.INSTANCE.disposeIcon(qrCodeLabel);
+        updatePreviewDebounceTimer(
+                new Timer(PREVIEW_DEBOUNCE_DELAY_MS, e -> resetAndStartPreviewWorker()));
+        getPreviewDebounceTimer().setRepeats(false);
+        getPreviewDebounceTimer().start();
+    }
+
+    /**
+     * Clears the current QR code display and starts a background worker to generate a new preview.
+     *
+     * <p>Resets the preview icon, starts the loading animation, and launches the asynchronous task
+     * to render the QR code based on the latest input and configuration.
+     */
+    private void resetAndStartPreviewWorker() {
+        qrCodeLabel.setIcon(null);
+        SwingUtilities.invokeLater(loader::startAndAdjustWaitIcon);
+        launchPreviewWorker(qrInput);
     }
 }

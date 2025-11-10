@@ -81,6 +81,7 @@ public class QrCodeResize {
      * @param resizeDebounceTimer the timer to assign
      */
     public void updateResizeDebounceTimer(Timer resizeDebounceTimer) {
+        stop();
         this.resizeDebounceTimer = resizeDebounceTimer;
     }
 
@@ -232,7 +233,7 @@ public class QrCodeResize {
      *
      * @param qrInput latest QR code configuration
      */
-    public void updateQrCodeSize(QrInput qrInput) {
+    public void updateQrCodeResize(QrInput qrInput) {
         this.qrInput = qrInput;
         if (isRunning()) {
             getResizeDebounceTimer().restart();

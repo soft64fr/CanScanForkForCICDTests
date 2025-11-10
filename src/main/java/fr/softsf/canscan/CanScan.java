@@ -43,7 +43,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
-import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentListener;
 
@@ -99,7 +98,6 @@ public class CanScan extends JFrame {
     private static final String ADD_ROW = "addRow";
     private static final int GENERATE_BUTTON_EXTRA_HEIGHT = 35;
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
-    private static final int PREVIEW_DEBOUNCE_DELAY_MS = 200;
     private static final String SIZE_FIELD_DEFAULT = "400";
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
@@ -288,20 +286,18 @@ public class CanScan extends JFrame {
         qrCodeColor.initializeColorButton(bgColorButton, Color.WHITE, false);
         qrColorButton.addActionListener(
                 e -> {
-                    Color newColor =
-                            qrCodeColor.chooseColor(
-                                    qrColorButton, qrColor, true, this::updatePreviewQRCode);
+                    Color newColor = qrCodeColor.chooseColor(qrColorButton, qrColor, true);
                     if (newColor != null) {
                         qrColor = newColor;
+                        qrCodePreview.updateQrCodePreview(getQrInput());
                     }
                 });
         bgColorButton.addActionListener(
                 e -> {
-                    Color newColor =
-                            qrCodeColor.chooseColor(
-                                    bgColorButton, bgColor, false, this::updatePreviewQRCode);
+                    Color newColor = qrCodeColor.chooseColor(bgColorButton, bgColor, false);
                     if (newColor != null) {
                         bgColor = newColor;
+                        qrCodePreview.updateQrCodePreview(getQrInput());
                     }
                 });
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -343,13 +339,15 @@ public class CanScan extends JFrame {
         qrCodeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         qrCodeLabel.setVerticalAlignment(SwingConstants.CENTER);
         addWindowStateListener(
-                e -> SwingUtilities.invokeLater(() -> qrCodeResize.updateQrCodeSize(getQrInput())));
+                e ->
+                        SwingUtilities.invokeLater(
+                                () -> qrCodeResize.updateQrCodeResize(getQrInput())));
         addComponentListener(
                 new ComponentAdapter() {
                     @Override
                     public void componentResized(ComponentEvent e) {
                         SwingUtilities.invokeLater(
-                                () -> qrCodeResize.updateQrCodeSize(getQrInput()));
+                                () -> qrCodeResize.updateQrCodeResize(getQrInput()));
                     }
                 });
         // SOUTH (margin)
@@ -462,7 +460,7 @@ public class CanScan extends JFrame {
         }
         currentMode = mode;
         cardLayout.show(cardPanel, mode.text());
-        updatePreviewQRCode();
+        qrCodePreview.updateQrCodePreview(getQrInput());
     }
 
     /**
@@ -543,7 +541,8 @@ public class CanScan extends JFrame {
      * validate input and enable or disable the generate button accordingly.
      */
     private void initializeAutomaticQRCodeRendering() {
-        DocumentListener docListener = simpleDocumentListener(this::updatePreviewQRCode);
+        DocumentListener docListener =
+                simpleDocumentListener(() -> qrCodePreview.updateQrCodePreview(getQrInput()));
         DocumentListener validationListener =
                 simpleDocumentListener(this::updateGenerateButtonState);
         JTextField[] textFields = {
@@ -555,9 +554,10 @@ public class CanScan extends JFrame {
         freeField.getDocument().addDocumentListener(docListener);
         nameField.getDocument().addDocumentListener(validationListener);
         freeField.getDocument().addDocumentListener(validationListener);
-        marginSlider.addChangeListener(e -> updatePreviewQRCode());
-        ratioSlider.addChangeListener(e -> updatePreviewQRCode());
-        roundedModulesCheckBox.addActionListener(e -> updatePreviewQRCode());
+        marginSlider.addChangeListener(e -> qrCodePreview.updateQrCodePreview(getQrInput()));
+        ratioSlider.addChangeListener(e -> qrCodePreview.updateQrCodePreview(getQrInput()));
+        roundedModulesCheckBox.addActionListener(
+                e -> qrCodePreview.updateQrCodePreview(getQrInput()));
     }
 
     /**
@@ -787,37 +787,6 @@ public class CanScan extends JFrame {
                                     ioe.getMessage(),
                                     StringConstants.ERREUR.getValue()));
         }
-    }
-
-    /**
-     * Schedules a debounced QR code preview update based on the current input and settings.
-     *
-     * <p>If a preview generation is already in progress, restarts the debounce timer to avoid
-     * excessive regeneration. Otherwise, clears the current preview and launches a new background
-     * worker to generate the QR code preview asynchronously.
-     */
-    private void updatePreviewQRCode() {
-        if (qrCodePreview.isRunning()) {
-            qrCodePreview.getPreviewDebounceTimer().restart();
-            return;
-        }
-        freeQrOriginalAndQrCodeLabel();
-        qrCodePreview.updatePreviewDebounceTimer(
-                new Timer(PREVIEW_DEBOUNCE_DELAY_MS, e -> resetAndStartPreviewWorker()));
-        qrCodePreview.getPreviewDebounceTimer().setRepeats(false);
-        qrCodePreview.getPreviewDebounceTimer().start();
-    }
-
-    /**
-     * Clears the current QR code display and starts a background worker to generate a new preview.
-     *
-     * <p>Resets the preview icon, starts the loading animation, and launches the asynchronous task
-     * to render the QR code based on the latest input and configuration.
-     */
-    private void resetAndStartPreviewWorker() {
-        qrCodeLabel.setIcon(null);
-        SwingUtilities.invokeLater(loader::startAndAdjustWaitIcon);
-        qrCodePreview.launchPreviewWorker(getQrInput());
     }
 
     /**

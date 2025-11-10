@@ -41,11 +41,9 @@ public class QrCodeColor {
      * @param button the button to update with the new color
      * @param currentColor the current color to display initially
      * @param isQrColor true if this is for QR modules, false for background
-     * @param onColorChange callback to execute when color changes
      * @return the selected color, or null if cancelled
      */
-    public Color chooseColor(
-            JButton button, Color currentColor, boolean isQrColor, Runnable onColorChange) {
+    public Color chooseColor(JButton button, Color currentColor, boolean isQrColor) {
         if (Checker.INSTANCE.checkNPE(button, CHOOSE_COLOR, BUTTON)
                 || Checker.INSTANCE.checkNPE(currentColor, CHOOSE_COLOR, "currentColor")) {
             return null;
@@ -56,9 +54,6 @@ public class QrCodeColor {
                         FrameHelper.INSTANCE.getParentFrame(), title, currentColor);
         if (chosen != null) {
             updateButtonWithColor(button, chosen);
-            if (onColorChange != null) {
-                onColorChange.run();
-            }
         }
         return chosen;
     }
