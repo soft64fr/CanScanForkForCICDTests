@@ -10,7 +10,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -444,7 +443,12 @@ public class CanScan extends JFrame {
         grid.gridx = 0;
         grid.weightx = 1;
         grid.gridy = -1;
-        addRow(mecardPanel, grid, "Nom, prénom", "Saisir le nom et prénom.", nameField);
+        addRow(
+                mecardPanel,
+                grid,
+                "<html><b>Nom, prénom</b></html>",
+                "Saisir le nom et prénom.",
+                nameField);
         addRow(mecardPanel, grid, "Organisation", "Saisir le nom de l'entreprise.", orgField);
         addRow(mecardPanel, grid, "Téléphone", "Saisir le numéro de téléphone.", phoneField);
         addRow(mecardPanel, grid, "Email", "Saisir le mail.", emailField);
@@ -488,7 +492,7 @@ public class CanScan extends JFrame {
         addRow(
                 freePanel,
                 grid,
-                "Saisie libre",
+                "<html><b>Saisie libre</b></html>",
                 "Saisir le texte correspondant au code QR.",
                 freeScrollPane);
     }
@@ -616,9 +620,6 @@ public class CanScan extends JFrame {
         gbc.weightx = 0;
         JLabel label = new JLabel(labelText);
         label.setToolTipText(tooltipText);
-        if (component == nameField || component == freeScrollPane) {
-            label.setFont(label.getFont().deriveFont(Font.BOLD));
-        }
         panel.add(label, gbc);
         gbc.gridx = 1;
         gbc.weightx = 1;
