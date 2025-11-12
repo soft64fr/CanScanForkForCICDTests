@@ -371,26 +371,16 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Disposes of the CanScan window, ensuring all resources are explicitly released.
+     * Closes the CanScan window and releases all QR code–related resources.
      *
-     * <p>Stops timers, cancels background workers, and frees image resources before delegating to
-     * {@link JFrame#dispose()} to prevent memory leaks and lingering threads.
+     * <p>Stops background tasks and frees image data to ensure a clean shutdown without memory
+     * leaks, then delegates to {@link JFrame#dispose()}.
      */
     @Override
     public void dispose() {
-        disposeAllResourcesOnExit();
-        super.dispose();
-    }
-
-    /**
-     * Releases all resources used by the QR code system.
-     *
-     * <p>Stops timers, cancels workers, and frees image data to ensure a clean shutdown and prevent
-     * memory leaks when closing the application.
-     */
-    private void disposeAllResourcesOnExit() {
         qrCodeResize.disposeAllResourcesOnExit();
         qrCodePreview.disposeAllResourcesOnExit();
+        super.dispose();
     }
 
     /**
