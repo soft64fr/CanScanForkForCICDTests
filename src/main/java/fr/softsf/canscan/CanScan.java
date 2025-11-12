@@ -231,7 +231,7 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "<html><b>Mode</b></html>",
-                "Format du code QR à générer.",
+                "Le format du code QR à générer.",
                 modePanel);
         JPanel freePanel = new JPanel(new GridBagLayout());
         initFreeCard(freePanel, new GridBagConstraints());
@@ -247,7 +247,12 @@ public class CanScan extends JFrame {
         northPanel.add(cardPanel, grid);
         // COMMON
         grid.gridwidth = GridBagConstraints.BOTH;
-        addRow(northPanel, grid, "Logo", "Chemin du fichier logo (PNG, JPG, ou JPEG).", logoField);
+        addRow(
+                northPanel,
+                grid,
+                "Logo",
+                "Le chemin du fichier logo (PNG, JPG, ou JPEG).",
+                logoField);
         browseButton.addActionListener(this::browseLogo);
         grid.gridx = 2;
         grid.weightx = 0;
@@ -257,7 +262,7 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "Taille du logo ⚠",
-                "<html>Pourcentage du logo dans le code QR."
+                "<html>Le pourcentage du logo dans le code QR."
                         + "<br>⚠ Peut gêner la détection.</html>",
                 ratioSlider);
         addRow(
@@ -304,7 +309,7 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "Dimension ⚠",
-                "<html>Côté du code QR en pixels."
+                "<html>Le côté du code QR en pixels."
                         + "<br>⚠ Peut dégrader les performances de l'application.</html>",
                 sizeField);
         addRow(
@@ -444,18 +449,24 @@ public class CanScan extends JFrame {
                 mecardPanel,
                 grid,
                 "<html><b>Nom, prénom</b></html>",
-                "Mettre une virgule pour une organisation.",
+                "Mettre une virgule seule pour une organisation.",
                 nameField);
         addRow(mecardPanel, grid, "Organisation", "Le nom de l'entreprise.", orgField);
         addRow(
                 mecardPanel,
                 grid,
                 "Téléphone",
-                "Préférer le format international (+33…).",
+                "<html>Préférer le format international <b>+33…</b></html>.",
                 phoneField);
         addRow(mecardPanel, grid, "Courriel", "", emailField);
         addRow(mecardPanel, grid, "Adresse", "L'adresse postale.", adrField);
-        addRow(mecardPanel, grid, "Lien", "Une URL (site web, profil, etc.).", urlField);
+        addRow(
+                mecardPanel,
+                grid,
+                "Lien",
+                "<html>L'URL complète du site web.<br>Par exemple :"
+                        + " <b>https://soft64.fr</b></html>",
+                urlField);
     }
 
     /**
@@ -490,7 +501,7 @@ public class CanScan extends JFrame {
                 freePanel,
                 grid,
                 "<html><b>Texte</b></html>",
-                "Données brutes à encoder.",
+                "Les données brutes à encoder.",
                 freeScrollPane);
     }
 
