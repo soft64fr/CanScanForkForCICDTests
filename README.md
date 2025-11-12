@@ -30,8 +30,8 @@ Générez en un instant un code QR pour **ajouter un contact** ou **ce que vous 
 ## 📑 Contenu
 
 - ✨ [Fonctionnalités](#-fonctionnalités)
-  - [Champs MECARD](#les-champs-mecard)
-  - [Champ libre](#le-champ-libre-requis)
+  - [Champs MECARD](#les-champs-de-la-mecard)
+  - [Champ libre](#le-champ-de-la-saisie-libre-requis)
   - [Personnalisation](#réglages-disponibles)
   - [Aperçu](#aperçu)
   - [Export](#export)
@@ -49,37 +49,37 @@ Générez en un instant un code QR pour **ajouter un contact** ou **ce que vous 
 
 ## ✨ Fonctionnalités
 
-### Les champs MECARD
+### Les champs de la MeCard
 - **Nom, prénom** : Identité du contact (requis)
 - **Téléphone** : Numéro de téléphone
-- **Email** : Adresse électronique
+- **Courriel** : Adresse électronique
 - **Organisation** : Nom de l'entreprise
 - **Adresse** : Adresse postale
-- **Lien / URL** : URL de site ou profil
+- **Lien** : URL de site ou profil
 - **Logo** : Image centrale
 
-### Le champ libre (requis)
+### Le champ de la Saisie libre (requis)
 
 📚 [Documentation complète des formats ZXing](https://github.com/zxing/zxing/wiki/Barcode-Contents)
 
-| Type               | Champ libre à saisir | Action sur mobile |
-|--|-|-|
-| 🌐 Site internet   | `https://soft64.fr` | Ouvre le navigateur |
-| 📞 Téléphone       | `tel:+33123456789` | Lance l’appel |
+| Type               | Texte à saisir                   | Action sur mobile |
+|--|----------------------------------|-|
+| 🌐 Site internet   | `https://soft64.fr`              | Ouvre le navigateur |
+| 📞 Téléphone       | `tel:+33123456789`               | Lance l’appel |
 | 📧 Email           | `mailto:contact@example.com?...` | Ouvre l’app Mail |
-| 📅 Calendrier      | `BEGIN:VEVENT...END:VEVENT` | Ajoute au calendrier |
-| 📶 Wi-Fi           | `WIFI:T:...;;` | Connexion Wi-Fi |
-| 📍 Géolocalisation | `geo:48.8566,2.3522` | Ouvre l’app Cartes |
-| 👤 Contact         | `BEGIN:VCARD...END:VCARD` | Ajoute au répertoire |
-| 💬 SMS             | `SMSTO:+33...` | Ouvre l’app Messages |
-| 📝 Texte brut      | `Un texte à copier` | Affiche le texte |
+| 📅 Calendrier      | `BEGIN:VEVENT...END:VEVENT`      | Ajoute au calendrier |
+| 📶 Wi-Fi           | `WIFI:T:...;;`                   | Connexion Wi-Fi |
+| 📍 Géolocalisation | `geo:48.8566,2.3522`             | Ouvre l’app Cartes |
+| 👤 Contact         | `BEGIN:VCARD...END:VCARD`        | Ajoute au répertoire |
+| 💬 SMS             | `SMSTO:+33...`                   | Ouvre l’app Messages |
+| 📝 Texte brut      | `Un texte à copier`              | Affiche le texte |
 
 ### Réglages disponibles
-- **Dimension** : 400x400px par défaut ⚡️
+- **Taille du logo** : 27% par défaut ⚠️
 - **Marge** : 3 par défaut ⚠️
-- **Logo** : 27% de visibilité ⚠️
-- **Couleur modules** : Noir ⚠️
-- **Couleur fond** : Blanc ⚠️
+- **Couleur du fond** : Blanc ⚠️
+- **Couleur des modules** : Noir ⚠️
+- **Dimension** : 400x400px par défaut ⚡️
 - **Modules ronds** : Optionnel ⚠️
 
 > ⚡️ Trop grande dimension = baisse de performance

@@ -40,6 +40,8 @@ import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentListener;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.formdev.flatlaf.intellijthemes.FlatCobalt2IJTheme;
 
 import fr.softsf.canscan.model.Mode;
@@ -85,7 +87,7 @@ public class CanScan extends JFrame {
     private static final int TEXT_FIELDS_COLUMNS = 25;
     private static final int MULTILINE_TEXT_FIELDS_ROWS = 10;
     private static final int RADIO_BUTTON_GAP = 20;
-    private static final int DEFAULT_LABEL_WIDTH = 140;
+    private static final int DEFAULT_LABEL_WIDTH = 110;
     private static final String ADD_ROW = "addRow";
     private static final int GENERATE_BUTTON_EXTRA_HEIGHT = 35;
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
@@ -225,7 +227,12 @@ public class CanScan extends JFrame {
         worker.execute();
         mecardRadio.addActionListener(e -> switchMode(Mode.MECARD));
         freeRadio.addActionListener(e -> switchMode(Mode.FREE));
-        addRow(northPanel, grid, "Code QR", "Choisir le type de code QR à générer.", modePanel);
+        addRow(
+                northPanel,
+                grid,
+                "<html><b>Mode</b></html>",
+                "Format du code QR à générer.",
+                modePanel);
         JPanel freePanel = new JPanel(new GridBagLayout());
         initFreeCard(freePanel, new GridBagConstraints());
         JPanel mecardPanel = new JPanel(new GridBagLayout());
@@ -240,12 +247,7 @@ public class CanScan extends JFrame {
         northPanel.add(cardPanel, grid);
         // COMMON
         grid.gridwidth = GridBagConstraints.BOTH;
-        addRow(
-                northPanel,
-                grid,
-                "Chemin du logo",
-                "Saisir le chemin vers votre logo ou ne rien mettre.",
-                logoField);
+        addRow(northPanel, grid, "Logo", "Chemin du fichier logo (PNG, JPG, ou JPEG).", logoField);
         browseButton.addActionListener(this::browseLogo);
         grid.gridx = 2;
         grid.weightx = 0;
@@ -254,25 +256,17 @@ public class CanScan extends JFrame {
         addRow(
                 northPanel,
                 grid,
-                "Dimension en pixels ⚠",
-                "<html>Saisir la dimension du côté du code QR en pixels.<br>⚠ Une dimension trop"
-                        + " grande surcharge la mémoire et dégrade les performances de"
-                        + " l'application.</html>",
-                sizeField);
+                "Taille du logo ⚠",
+                "<html>Pourcentage du logo dans le code QR."
+                        + "<br>⚠ Peut gêner la détection.</html>",
+                ratioSlider);
         addRow(
                 northPanel,
                 grid,
                 "Marge ⚠",
-                "<html>Marge extérieure entre 0 et 10."
-                        + "<br>⚠ Risque de gêner la détection.</html>",
+                "<html>La marge extérieure entre 0 et 10."
+                        + "<br>⚠ Peut gêner la détection.</html>",
                 marginSlider);
-        addRow(
-                northPanel,
-                grid,
-                "Visibilité du logo ⚠",
-                "<html>Pourcentage de visibilité du logo par rapport au code QR."
-                        + "<br>⚠ Risque de gêner la détection.</html>",
-                ratioSlider);
         JPanel colorPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         qrCodeColor.initializeColorButton(qrColorButton, Color.BLACK, true);
@@ -304,16 +298,20 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "Couleurs ⚠",
-                "<html>Saisir la couleur du fond et des modules.<br>⚠ Le code QR ne fonctionnera"
-                        + " que si le contraste est suffisant.</html>",
+                "Le code QR ne fonctionnera que si le contraste est suffisant.",
                 colorPanel);
-
+        addRow(
+                northPanel,
+                grid,
+                "Dimension ⚠",
+                "<html>Côté du code QR en pixels."
+                        + "<br>⚠ Peut dégrader les performances de l'application.</html>",
+                sizeField);
         addRow(
                 northPanel,
                 grid,
                 "Modules ronds ⚠",
-                "<html>Activer les modules arrondis du code QR.<br>⚠ Risque de gêner la"
-                        + " détection.</html>",
+                "<html>Arrondir les modules.<br>⚠ Peut gêner la détection.</html>",
                 roundedModulesCheckBox);
         grid.gridy += 1;
         // Generate
@@ -324,7 +322,6 @@ public class CanScan extends JFrame {
         generateButton.setMinimumSize(d);
         generateButton.setPreferredSize(d);
         generateButton.setMaximumSize(d);
-        generateButton.setToolTipText("Enregistrer le code QR");
         generateButton.addActionListener(this::generateQrCode);
         generateButton.setEnabled(false);
         northPanel.add(generateButton, grid);
@@ -447,18 +444,18 @@ public class CanScan extends JFrame {
                 mecardPanel,
                 grid,
                 "<html><b>Nom, prénom</b></html>",
-                "Saisir le nom et prénom.",
+                "Mettre une virgule pour une organisation.",
                 nameField);
-        addRow(mecardPanel, grid, "Organisation", "Saisir le nom de l'entreprise.", orgField);
-        addRow(mecardPanel, grid, "Téléphone", "Saisir le numéro de téléphone.", phoneField);
-        addRow(mecardPanel, grid, "Email", "Saisir le mail.", emailField);
-        addRow(mecardPanel, grid, "Adresse", "Saisir l'adresse postale.", adrField);
+        addRow(mecardPanel, grid, "Organisation", "Le nom de l'entreprise.", orgField);
         addRow(
                 mecardPanel,
                 grid,
-                "Lien / URL",
-                "Saisir le lien (site web, profil, portfolio, réseau social, etc.).",
-                urlField);
+                "Téléphone",
+                "Préférer le format international (+33…).",
+                phoneField);
+        addRow(mecardPanel, grid, "Courriel", "", emailField);
+        addRow(mecardPanel, grid, "Adresse", "L'adresse postale.", adrField);
+        addRow(mecardPanel, grid, "Lien", "Une URL (site web, profil, etc.).", urlField);
     }
 
     /**
@@ -492,8 +489,8 @@ public class CanScan extends JFrame {
         addRow(
                 freePanel,
                 grid,
-                "<html><b>Saisie libre</b></html>",
-                "Saisir le texte correspondant au code QR.",
+                "<html><b>Texte</b></html>",
+                "Données brutes à encoder.",
                 freeScrollPane);
     }
 
@@ -593,14 +590,16 @@ public class CanScan extends JFrame {
     /**
      * Adds a labeled component row to a panel using GridBagLayout.
      *
-     * <p>The row consists of a JLabel with a tooltip and the specified JComponent. Optionally, the
-     * label font is set to bold for specific components like the name field or free text area.
+     * <p>The row consists of a JLabel with optional tooltip text and the specified JComponent. The
+     * label is created with the provided text, and if a non-blank tooltip is given, it is set on
+     * the label. Both the label and the component are then added to the panel using the provided
+     * GridBagConstraints.
      *
      * @param panel the container panel to which the row will be added
      * @param gbc the GridBagConstraints used for layout configuration
-     * @param labelText the text to display in the label
-     * @param tooltipText the tooltip text for the label
-     * @param component the JComponent to add next to the label
+     * @param labelText the text to display in the label (must not be null)
+     * @param tooltipText the tooltip text for the label (optional, may be null or blank)
+     * @param component the JComponent to add next to the label (must not be null)
      */
     private void addRow(
             JPanel panel,
@@ -611,15 +610,16 @@ public class CanScan extends JFrame {
         if (Checker.INSTANCE.checkNPE(panel, ADD_ROW, "panel")
                 || Checker.INSTANCE.checkNPE(gbc, ADD_ROW, "gbc")
                 || Checker.INSTANCE.checkNPE(component, ADD_ROW, "component")
-                || Checker.INSTANCE.checkNPE(labelText, ADD_ROW, "labelText")
-                || Checker.INSTANCE.checkNPE(tooltipText, ADD_ROW, "tooltipText")) {
+                || Checker.INSTANCE.checkNPE(labelText, ADD_ROW, "labelText")) {
             return;
         }
         gbc.gridx = 0;
         gbc.gridy += 1;
         gbc.weightx = 0;
         JLabel label = new JLabel(labelText);
-        label.setToolTipText(tooltipText);
+        if (StringUtils.isNotBlank(tooltipText)) {
+            label.setToolTipText(tooltipText);
+        }
         panel.add(label, gbc);
         gbc.gridx = 1;
         gbc.weightx = 1;

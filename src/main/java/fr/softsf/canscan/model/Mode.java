@@ -5,24 +5,19 @@
  */
 package fr.softsf.canscan.model;
 
-/**
- * Defines the application operation modes.
- *
- * <ul>
- *   <li>MECARD – structured format mode
- *   <li>FREE – unrestricted input mode
- * </ul>
- */
+/** Application operation modes. */
 public enum Mode {
-    MECARD,
-    FREE;
+    MECARD("Contact (MeCard)"),
+    FREE("Saisie libre");
 
-    /**
-     * Returns the name of the mode as a string.
-     *
-     * @return the mode name
-     */
+    private final String label;
+
+    Mode(String label) {
+        this.label = label;
+    }
+
+    /** Returns the mode label. */
     public String text() {
-        return name();
+        return label;
     }
 }

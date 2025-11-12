@@ -87,12 +87,7 @@ public class QrCodeColor {
         }
         button.setIconTextGap(BUTTON_COLOR_ICON_TEXT_GAP);
         updateButtonWithColor(button, color);
-        String tooltip =
-                isQrColor
-                        ? "<html>Couleur des modules.<br>⚠ Le code QR ne fonctionnera que "
-                                + "si le contraste avec le fond est suffisant.</html>"
-                        : "<html>Couleur du fond.<br>⚠ Le code QR ne fonctionnera que "
-                                + "si le contraste avec les modules est suffisant.</html>";
+        String tooltip = isQrColor ? "Couleur des modules." : "Couleur du fond.";
         button.setToolTipText(tooltip);
     }
 
