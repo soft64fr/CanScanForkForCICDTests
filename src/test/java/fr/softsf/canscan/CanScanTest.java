@@ -52,14 +52,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
-/**
- * Test suite for {@link CanScan}.
- *
- * <p>Note: These tests validate the QR data generation logic using various contact field
- * combinations. They do not cover full UI behavior or static method mocking. For complete UI
- * testing, consider using AssertJ Swing or manual integration tests.
- */
-@DisplayName("CanScan QR Data Tests")
+@DisplayName("*** CanScan tests ***")
 class CanScanTest {
 
     private CanScan generator;
@@ -72,17 +65,17 @@ class CanScanTest {
     void setUp() {
         generator = new CanScan();
         qrCodeColor = new QrCodeColor();
-        generator.nameField.setText("John");
-        generator.phoneField.setText("0123456789");
-        generator.emailField.setText("john@example.com");
-        generator.orgField.setText("Org");
-        generator.adrField.setText("Addr");
-        generator.urlField.setText("https://example.com");
-        generator.logoField.setText("");
-        generator.sizeField.setText("400");
-        generator.marginSlider.setValue(3);
-        generator.ratioSlider.setValue((int) (0.27 * 100));
-        generator.roundedModulesCheckBox.setSelected(true);
+        generator.setNameFieldTextForTests();
+        generator.setPhoneFieldTextForTests();
+        generator.setEmailFieldTextForTests();
+        generator.setOrgFieldTextForTests();
+        generator.setAdrFieldTextForTests();
+        generator.setUrlFieldTextForTests();
+        generator.setLogoFieldTextForTests();
+        generator.setSizeFieldTextForTests("400");
+        generator.setMarginSliderValueForTests(3);
+        generator.setRatioSliderValueForTests((int) (0.27 * 100));
+        generator.setRoundedModulesSelectedForTests();
         QrCodeBufferedImage qrCodeBufferedImage = mock(QrCodeBufferedImage.class);
         qrService = new GenerateAndSaveService(qrCodeBufferedImage);
     }
@@ -214,17 +207,17 @@ class CanScanTest {
         doReturn(fakeFile).when(spyGenerator).chooseLogoFile();
         ActionEvent e = mock(ActionEvent.class);
         spyGenerator.browseLogo(e);
-        assertTrue(spyGenerator.logoField.getText().endsWith("fake-logo.png"));
+        assertTrue(spyGenerator.getLogoFieldTextForTests().endsWith("fake-logo.png"));
     }
 
     @Test
     void givenFileSelectionCancelled_whenBrowseLogo_thenLogoFieldUnchanged() {
         CanScan spyGenerator = spy(generator);
         doReturn(null).when(spyGenerator).chooseLogoFile();
-        spyGenerator.logoField.setText("");
+        spyGenerator.setLogoFieldTextForTests();
         ActionEvent e = mock(ActionEvent.class);
         spyGenerator.browseLogo(e);
-        assertEquals("", spyGenerator.logoField.getText());
+        assertEquals("", spyGenerator.getLogoFieldTextForTests());
     }
 
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
@@ -237,14 +230,14 @@ class CanScanTest {
     })
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) {
-        generator.sizeField.setText(input);
+        generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSize();
         assertEquals(expected, result);
     }
 
     @Test
     void givenValidMargin4_whenMarginFieldCheck_thenGetMarginUpdatedTo4() {
-        generator.marginSlider.setValue(4);
+        generator.setMarginSliderValueForTests(4);
         generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(4, getFieldValue(marginField));
@@ -252,7 +245,7 @@ class CanScanTest {
 
     @Test
     void givenNegativeMargin_whenMarginFieldCheck_thenGetMarginSetTo0() {
-        generator.marginSlider.setValue(-2);
+        generator.setMarginSliderValueForTests(-2);
         generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(0, getFieldValue(marginField));
@@ -260,7 +253,7 @@ class CanScanTest {
 
     @Test
     void givenMarginAboveMaximum_whenMarginFieldCheck_thenGetMarginSetTo10() {
-        generator.marginSlider.setValue(15);
+        generator.setMarginSliderValueForTests(15);
         generator.validateAndGetMargin();
         Field marginField = getField("margin");
         assertEquals(10, getFieldValue(marginField));
@@ -270,7 +263,7 @@ class CanScanTest {
     @CsvSource({"0,   0.0", "50,  0.5", "100, 1.0"})
     void givenRatioPercent_whenRatioFieldCheck_thenGetRatioSetCorrectly(
             int sliderValue, double expectedRatio) {
-        generator.ratioSlider.setValue(sliderValue);
+        generator.setRatioSliderValueForTests(sliderValue);
         generator.validateAndGetRatio();
         Field ratioField = getField("imageRatio");
         double actualRatio = (double) getFieldValue(ratioField);

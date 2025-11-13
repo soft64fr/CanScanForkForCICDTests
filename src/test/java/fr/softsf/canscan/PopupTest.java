@@ -19,11 +19,11 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mockStatic;
 
-@DisplayName("Popup Tests (rationalized version)")
+@DisplayName("*** Popup tests ***")
 class PopupTest {
 
     @Nested
-    @DisplayName("showArgumentErrorDialog Tests")
+    @DisplayName("showArgumentErrorDialog tests")
     class ShowArgumentErrorDialogTests {
 
         @Test
@@ -50,7 +50,7 @@ class PopupTest {
     }
 
     @Nested
-    @DisplayName("showDialog Tests")
+    @DisplayName("showDialog tests")
     class ShowDialogTests {
 
         @Test
@@ -87,7 +87,7 @@ class PopupTest {
     }
 
     @Nested
-    @DisplayName("showYesNoConfirmDialog Tests")
+    @DisplayName("showYesNoConfirmDialog tests")
     class ShowYesNoConfirmDialogTests {
 
         @Test
@@ -112,7 +112,7 @@ class PopupTest {
     }
 
     @Nested
-    @DisplayName("Singleton behavior Tests")
+    @DisplayName("Singleton behavior tests")
     class SingletonTests {
 
         @Test

@@ -108,22 +108,23 @@ public class CanScan extends JFrame {
 
     private Mode currentMode = Mode.MECARD;
     // UI Components
-    JRadioButton mecardRadio = new JRadioButton(Mode.MECARD.text());
-    JRadioButton freeRadio = new JRadioButton(Mode.FREE.text());
-    JButton update = new JButton("\uD83D\uDD04");
-    JTextField nameField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField phoneField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField emailField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField orgField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField adrField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField urlField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextArea freeField = new JTextArea("");
-    final JScrollPane freeScrollPane = new JScrollPane(freeField);
-    final JTextField logoField = new JTextField(TEXT_FIELDS_COLUMNS);
-    final JTextField sizeField = new JTextField(SIZE_FIELD_DEFAULT, TEXT_FIELDS_COLUMNS);
-    final JSlider marginSlider = new JSlider(0, MINIMUM_QR_CODE_SIZE, margin);
-    final JSlider ratioSlider = new JSlider(0, MAX_PERCENTAGE, (int) (imageRatio * MAX_PERCENTAGE));
-    final JCheckBox roundedModulesCheckBox = new JCheckBox();
+    private final JRadioButton mecardRadio = new JRadioButton(Mode.MECARD.text());
+    private final JRadioButton freeRadio = new JRadioButton(Mode.FREE.text());
+    private final JButton update = new JButton("\uD83D\uDD04");
+    private final JTextField nameField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField phoneField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField emailField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField orgField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField adrField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField urlField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextArea freeField = new JTextArea("");
+    private final JScrollPane freeScrollPane = new JScrollPane(freeField);
+    private final JTextField logoField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField sizeField = new JTextField(SIZE_FIELD_DEFAULT, TEXT_FIELDS_COLUMNS);
+    private final JSlider marginSlider = new JSlider(0, MINIMUM_QR_CODE_SIZE, margin);
+    private final JSlider ratioSlider =
+            new JSlider(0, MAX_PERCENTAGE, (int) (imageRatio * MAX_PERCENTAGE));
+    private final JCheckBox roundedModulesCheckBox = new JCheckBox();
     // Containers
     private final JPanel northPanelWrapper = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
     private final CardLayout cardLayout = new CardLayout();
@@ -167,6 +168,66 @@ public class CanScan extends JFrame {
         add(scrollPane, BorderLayout.CENTER);
         initializeWindow();
         initializeComponentNames();
+    }
+
+    /** Sets the name field text for testing. */
+    void setNameFieldTextForTests() {
+        nameField.setText("John");
+    }
+
+    /** Sets the phone field text for testing. */
+    void setPhoneFieldTextForTests() {
+        phoneField.setText("0123456789");
+    }
+
+    /** Sets the email field text for testing. */
+    void setEmailFieldTextForTests() {
+        emailField.setText("john@example.com");
+    }
+
+    /** Sets the organization field text for testing. */
+    void setOrgFieldTextForTests() {
+        orgField.setText("Org");
+    }
+
+    /** Sets the address field text for testing. */
+    void setAdrFieldTextForTests() {
+        adrField.setText("Addr");
+    }
+
+    /** Sets the URL field text for testing. */
+    void setUrlFieldTextForTests() {
+        urlField.setText("https://example.com");
+    }
+
+    /** Returns the logo field text for testing. */
+    String getLogoFieldTextForTests() {
+        return logoField.getText();
+    }
+
+    /** Sets the logo field text for testing. */
+    void setLogoFieldTextForTests() {
+        logoField.setText("");
+    }
+
+    /** Sets the size field text for testing. */
+    void setSizeFieldTextForTests(String text) {
+        sizeField.setText(text);
+    }
+
+    /** Sets the margin slider value for testing. */
+    void setMarginSliderValueForTests(int value) {
+        marginSlider.setValue(value);
+    }
+
+    /** Sets the ratio slider value for testing. */
+    void setRatioSliderValueForTests(int value) {
+        ratioSlider.setValue(value);
+    }
+
+    /** Sets the rounded modules checkbox state for testing. */
+    void setRoundedModulesSelectedForTests() {
+        roundedModulesCheckBox.setSelected(true);
     }
 
     /**

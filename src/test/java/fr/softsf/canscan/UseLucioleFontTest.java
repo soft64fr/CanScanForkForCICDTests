@@ -9,12 +9,14 @@ import java.awt.Font;
 import javax.swing.UIManager;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import fr.softsf.canscan.util.UseLucioleFont;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("*** Use Luciole font tests ***")
 class UseLucioleFontTest {
 
     @BeforeEach
