@@ -7,7 +7,7 @@ package fr.softsf.canscan.model;
 
 /** Application operation modes. */
 public enum Mode {
-    MECARD("Contact (MeCard)"),
+    MECARD("Contact"),
     FREE("Saisie libre");
 
     private final String label;

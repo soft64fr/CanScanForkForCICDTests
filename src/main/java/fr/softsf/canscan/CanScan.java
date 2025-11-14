@@ -108,8 +108,10 @@ public class CanScan extends JFrame {
 
     private Mode currentMode = Mode.MECARD;
     // UI Components
-    private final JRadioButton mecardRadio = new JRadioButton(Mode.MECARD.text());
-    private final JRadioButton freeRadio = new JRadioButton(Mode.FREE.text());
+    private final JRadioButton mecardRadio =
+            new JRadioButton("<html><b>" + Mode.MECARD.text() + "</b></html>");
+    private final JRadioButton freeRadio =
+            new JRadioButton("<html><b>" + Mode.FREE.text() + "</b></html>");
     private final JButton update = new JButton("\uD83D\uDD04");
     private final JTextField nameField = new JTextField(TEXT_FIELDS_COLUMNS);
     private final JTextField phoneField = new JTextField(TEXT_FIELDS_COLUMNS);
@@ -350,7 +352,8 @@ public class CanScan extends JFrame {
                 northPanel,
                 grid,
                 "<html><b>Mode</b></html>",
-                "Le format du code QR à générer.",
+                "<html>Le format du code QR à générer :<br>"
+                        + "Un contact MeCard ou la saisie libre.</html>",
                 modePanel);
     }
 

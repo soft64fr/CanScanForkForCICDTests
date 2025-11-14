@@ -325,8 +325,12 @@ class CanScanTest {
     }
 
     @Test
-    void givenMecardMode_whenGetModeText_thenReturnMECARD() {
-        assertEquals("Contact (MeCard)", Mode.MECARD.text());
+    void givenMecardMode_whenGetModeText_thenReturnContact() {
+        assertEquals("Contact", Mode.MECARD.text());
+    }
+
+    @Test
+    void givenFreeMode_whenGetModeText_thenReturnSaisieLibre() {
         assertEquals("Saisie libre", Mode.FREE.text());
     }
 
