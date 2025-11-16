@@ -1,27 +1,7 @@
 var searchData=
 [
-  ['setadrfieldtextfortests_0',['setAdrFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a480afb2507eb780dcc6f77c0a4334d59',1,'fr::softsf::canscan::CanScan']]],
-  ['setemailfieldtextfortests_1',['setEmailFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a968f0f590c2211f78d1f832a2ee40b55',1,'fr::softsf::canscan::CanScan']]],
-  ['setlogofieldtextfortests_2',['setLogoFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa770b51cbc0a4a201711b936bd4748b8',1,'fr::softsf::canscan::CanScan']]],
-  ['setmarginslidervaluefortests_3',['setMarginSliderValueForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9f8732331b81ec5fcadbb39c9389a016',1,'fr::softsf::canscan::CanScan']]],
-  ['setnamefieldtextfortests_4',['setNameFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a8affcfaf13c69cd340e48e3e7d10ae86',1,'fr::softsf::canscan::CanScan']]],
-  ['setorgfieldtextfortests_5',['setOrgFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a56273b7ccb4290c7d7aad2132452902e',1,'fr::softsf::canscan::CanScan']]],
-  ['setphonefieldtextfortests_6',['setPhoneFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a323e90f802787c388da8a03c9b6e47d7',1,'fr::softsf::canscan::CanScan']]],
-  ['setratioslidertooltipvalue_7',['setRatioSliderTooltipValue',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abbe4fb71ad979d6affed0b2c9629b832',1,'fr::softsf::canscan::CanScan']]],
-  ['setratioslidervaluefortests_8',['setRatioSliderValueForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#abf1cb04881a0e23f0b843eed12ce05c7',1,'fr::softsf::canscan::CanScan']]],
-  ['setroundedmodulesselectedfortests_9',['setRoundedModulesSelectedForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a07d13a0cff9f6a08c3d17f0770746139',1,'fr::softsf::canscan::CanScan']]],
-  ['setsizefieldtextfortests_10',['setSizeFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab93eb7e856d16e731c3df3a5d50e3ac9',1,'fr::softsf::canscan::CanScan']]],
-  ['setup_11',['setUp',['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#ac4409e24be0dfc3605386cb93b51e730',1,'fr.softsf.canscan.CanScanTest.setUp()'],['../classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html#aaee4c5fc3e9cb616b1b69a47d83fa360',1,'fr.softsf.canscan.UseLucioleFontTest.setUp()']]],
-  ['seturlfieldtextfortests_12',['setUrlFieldTextForTests',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#af8ca8fca38ccbc56063f1cce9e5b7528',1,'fr::softsf::canscan::CanScan']]],
-  ['shouldskipmodule_13',['shouldSkipModule',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a1e86fe28f725b960843bc242bb77f286',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
-  ['showargumenterrordialog_14',['showArgumentErrorDialog',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#ae1f8dbbff9a3488c51207419023aeed5',1,'fr::softsf::canscan::ui::Popup']]],
-  ['showdialog_15',['showDialog',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a040e0888b79953e8a0587d2893585a49',1,'fr::softsf::canscan::ui::Popup']]],
-  ['showyesnoconfirmdialog_16',['showYesNoConfirmDialog',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a0e7649b6619ff2d614ba88f403ef79c0',1,'fr::softsf::canscan::ui::Popup']]],
-  ['simpledocumentlistener_17',['simpleDocumentListener',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9856545d05ef553c8dfddd95a850a360',1,'fr::softsf::canscan::CanScan']]],
-  ['startandadjustwaiticon_18',['startAndAdjustWaitIcon',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a8b17c2c41f01ae0056fc78037c0922c0',1,'fr::softsf::canscan::ui::Loader']]],
-  ['stopdebouncetimer_19',['stopDebounceTimer',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a5ebccb20366b1496129ad831a399c8d0',1,'fr::softsf::canscan::service::AbstractDynamicQrCodeWorker']]],
-  ['stoploaderifpresent_20',['stopLoaderIfPresent',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a2bb0edd8d59bde00a1f5a60f7fcc02f9',1,'fr::softsf::canscan::service::AbstractDynamicQrCodeWorker']]],
-  ['stopwaiticon_21',['stopWaitIcon',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a7db844fe9a47d8286890e795c2462d0f',1,'fr::softsf::canscan::ui::Loader']]],
-  ['stringconstants_22',['StringConstants',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a1893cd304efa09d08238bbfc416f1003',1,'fr::softsf::canscan::util::StringConstants']]],
-  ['switchmode_23',['switchMode',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a428c742b098fa27d4c8984c1030c238d',1,'fr::softsf::canscan::CanScan']]]
+  ['text_0',['text',['../enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#a16a898a11ca939056bd7b275f11ea54c',1,'fr::softsf::canscan::model::Mode']]],
+  ['tryopenbrowser_1',['tryOpenBrowser',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#a3d7f19c3819936ea08d925c0c7592aae',1,'fr::softsf::canscan::util::BrowserHelper']]],
+  ['typechar_2',['typeChar',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a4c1895b6327fef325b1b0c8047bcfcb7',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['typestring_3',['typeString',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#acc5424a9d2c1d44c93a045868f58a5ff',1,'fr::softsf::canscan::NativeImageConfigSimulator']]]
 ];

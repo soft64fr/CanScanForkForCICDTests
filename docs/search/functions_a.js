@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a3452eff1010c69d3f01d23dc2fac7e8e',1,'fr.softsf.canscan.CanScan.main()'],['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ab8c7880da3362ba3c790d51a0918e774',1,'fr.softsf.canscan.NativeImageConfigSimulator.main()']]],
-  ['mecard_1',['mecard',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aed7e3048974882318a6519d8d36e8ec0',1,'fr::softsf::canscan::CanScan']]],
-  ['mode_2',['Mode',['../enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#adad452c36f778ab7a24ab05e07bd5317',1,'fr::softsf::canscan::model::Mode']]],
-  ['modulecontext_3',['ModuleContext',['../namespacefr_1_1softsf_1_1canscan_1_1model.html#aec9e84dae3335503158e003e471ad2e1',1,'fr::softsf::canscan::model']]]
+  ['nametypingsimulation_0',['nameTypingSimulation',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ae2840980d77f2806ab5f1bd471186ed3',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['northpanelgridbagconstraints_1',['northPanelGridBagConstraints',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aeb5550da33925e95999aae23f525f7c5',1,'fr::softsf::canscan::CanScan']]],
+  ['npechecklatestversion_2',['npeCheckLatestVersion',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c',1,'fr::softsf::canscan::service::VersionService']]]
 ];

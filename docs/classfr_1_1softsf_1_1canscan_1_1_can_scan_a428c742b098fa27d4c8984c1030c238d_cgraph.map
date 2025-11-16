@@ -6,7 +6,7 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="257,191,318,191,318,196,257,196"/>
 <area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a11fd9295c4843e6e68f9d1e4a710b906" title="Validates the current input fields and toggles the state of the generate button." alt="" coords="305,239,525,281"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="192,205,307,232,306,237,191,210"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" title="Calculates the available height for QR code rendering." alt="" coords="573,5,806,48"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a381368b99c4a0857c6abe6349b2c6d27" title="Calculates the available height for QR code rendering." alt="" coords="573,5,806,48"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,102,572,58,593,51,594,56,574,62,465,107"/>
 <area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" title="Validates and returns the current QR code margin from the margin slider." alt="" coords="576,72,803,115"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="514,112,561,106,562,112,515,117"/>

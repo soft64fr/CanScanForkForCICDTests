@@ -100,6 +100,7 @@ $(function(){initNavTree('classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize-members.html">List of all members</a>  </div>
@@ -126,9 +127,9 @@ $(function(){initNavTree('classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5794836a5d16ca259a4d776fca4ee307" id="r_a5794836a5d16ca259a4d776fca4ee307"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5794836a5d16ca259a4d776fca4ee307">DynamicQrCodeResize</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> <a class="el" href="#a71c8ca55f7ce60b1a40e977cb6d23321">qrCodeBufferedImage</a>, JLabel <a class="el" href="#abd2137f48bc13e6186a366b11aef6853">qrCodeLabel</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a10d885f20eddd96e808861eb1edf6f5a">loader</a>)</td></tr>
-<tr class="memdesc:a5794836a5d16ca259a4d776fca4ee307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new QR code resize manager for a specific label.  <br /></td></tr>
-<tr class="separator:a5794836a5d16ca259a4d776fca4ee307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e2f7fd0452d62e4152b1b3bce84962" id="r_a59e2f7fd0452d62e4152b1b3bce84962"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e2f7fd0452d62e4152b1b3bce84962">DynamicQrCodeResize</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> <a class="el" href="#a71c8ca55f7ce60b1a40e977cb6d23321">qrCodeBufferedImage</a>, JLabel <a class="el" href="#abd2137f48bc13e6186a366b11aef6853">qrCodeLabel</a>, JProgressBar <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#af3a395c803a67d260c755319715920aa">loader</a>)</td></tr>
+<tr class="memdesc:a59e2f7fd0452d62e4152b1b3bce84962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new QR code resize manager for a specific label.  <br /></td></tr>
+<tr class="separator:a59e2f7fd0452d62e4152b1b3bce84962"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a172db71a52390eeb8dad5a45397b2d5c" id="r_a172db71a52390eeb8dad5a45397b2d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a172db71a52390eeb8dad5a45397b2d5c">updateQrCodeResize</a> (QrInput <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a826b0d287862122b2f0a8ff591030376">qrInput</a>)</td></tr>
 <tr class="memdesc:a172db71a52390eeb8dad5a45397b2d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current QR input and schedules a debounced resize operation.  <br /></td></tr>
 <tr class="separator:a172db71a52390eeb8dad5a45397b2d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,12 +147,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:ada7b38c99111fb30e0d174245d9ec009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a background <code><a class="el" href="">SwingWorker</a></code> that scales the QR code image to the target size.  <br /></td></tr>
 <tr class="separator:ada7b38c99111fb30e0d174245d9ec009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5fa4ce42b3b8b1820d00263fae5811a" id="r_af5fa4ce42b3b8b1820d00263fae5811a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5fa4ce42b3b8b1820d00263fae5811a">onWorkerSuccess</a> (ImageIcon result)</td></tr>
-<tr class="memdesc:af5fa4ce42b3b8b1820d00263fae5811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the label icon when the worker successfully completes.  <br /></td></tr>
+<tr class="memdesc:af5fa4ce42b3b8b1820d00263fae5811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the QR code label with the generated icon and adjusts the loader size to maintain visual alignment once the worker completes successfully.  <br /></td></tr>
 <tr class="separator:af5fa4ce42b3b8b1820d00263fae5811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a></td></tr>
-<tr class="memitem:a279c53c3f486e10279171c89ca955035 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a279c53c3f486e10279171c89ca955035"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a279c53c3f486e10279171c89ca955035">AbstractDynamicQrCodeWorker</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a> <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a10d885f20eddd96e808861eb1edf6f5a">loader</a>)</td></tr>
-<tr class="memdesc:a279c53c3f486e10279171c89ca955035 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the QR code worker with an optional loader.  <br /></td></tr>
-<tr class="separator:a279c53c3f486e10279171c89ca955035 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d2b28ece44f98d55ca49259949b438 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a21d2b28ece44f98d55ca49259949b438"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a21d2b28ece44f98d55ca49259949b438">AbstractDynamicQrCodeWorker</a> (JProgressBar <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#af3a395c803a67d260c755319715920aa">loader</a>)</td></tr>
+<tr class="memdesc:a21d2b28ece44f98d55ca49259949b438 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the QR code worker with a required loader.  <br /></td></tr>
+<tr class="separator:a21d2b28ece44f98d55ca49259949b438 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a827422a0dbc6c5ece6981cdecccbd287 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a827422a0dbc6c5ece6981cdecccbd287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a827422a0dbc6c5ece6981cdecccbd287">cancelWorker</a> ()</td></tr>
 <tr class="memdesc:a827422a0dbc6c5ece6981cdecccbd287 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels the current SwingWorker and clears its reference safely.  <br /></td></tr>
 <tr class="separator:a827422a0dbc6c5ece6981cdecccbd287 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,9 +171,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a5ebccb20366b1496129ad831a399c8d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a5ebccb20366b1496129ad831a399c8d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a5ebccb20366b1496129ad831a399c8d0">stopDebounceTimer</a> ()</td></tr>
 <tr class="memdesc:a5ebccb20366b1496129ad831a399c8d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops and clears the debounce timer.  <br /></td></tr>
 <tr class="separator:a5ebccb20366b1496129ad831a399c8d0 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bb0edd8d59bde00a1f5a60f7fcc02f9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a2bb0edd8d59bde00a1f5a60f7fcc02f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a2bb0edd8d59bde00a1f5a60f7fcc02f9">stopLoaderIfPresent</a> ()</td></tr>
-<tr class="memdesc:a2bb0edd8d59bde00a1f5a60f7fcc02f9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the loader's wait indicator if assigned.  <br /></td></tr>
-<tr class="separator:a2bb0edd8d59bde00a1f5a60f7fcc02f9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99151891dd8d4592131c224c1de25ad9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a99151891dd8d4592131c224c1de25ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a99151891dd8d4592131c224c1de25ad9">stopLoader</a> ()</td></tr>
+<tr class="memdesc:a99151891dd8d4592131c224c1de25ad9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the loader's wait indicator.  <br /></td></tr>
+<tr class="separator:a99151891dd8d4592131c224c1de25ad9 inherit pro_methods_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1a5407bdacb801150472634031f72984" id="r_a1a5407bdacb801150472634031f72984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a5407bdacb801150472634031f72984">updateLoaderSize</a> (int size)</td></tr>
+<tr class="memdesc:a1a5407bdacb801150472634031f72984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the loader to a square dimension based on the given value and refreshes its parent container to ensure proper layout and rendering.  <br /></td></tr>
+<tr class="separator:a1a5407bdacb801150472634031f72984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -193,8 +200,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a></td></tr>
 <tr class="memitem:aa6aa81f8a0ec676fcc794c616b764553 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_aa6aa81f8a0ec676fcc794c616b764553"><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#aa6aa81f8a0ec676fcc794c616b764553">debounceTimer</a></td></tr>
 <tr class="separator:aa6aa81f8a0ec676fcc794c616b764553 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d885f20eddd96e808861eb1edf6f5a inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a10d885f20eddd96e808861eb1edf6f5a"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a10d885f20eddd96e808861eb1edf6f5a">loader</a></td></tr>
-<tr class="separator:a10d885f20eddd96e808861eb1edf6f5a inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a395c803a67d260c755319715920aa inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_af3a395c803a67d260c755319715920aa"><td class="memItemLeft" align="right" valign="top">final JProgressBar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#af3a395c803a67d260c755319715920aa">loader</a></td></tr>
+<tr class="separator:af3a395c803a67d260c755319715920aa inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a826b0d287862122b2f0a8ff591030376 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a826b0d287862122b2f0a8ff591030376"><td class="memItemLeft" align="right" valign="top">QrInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a826b0d287862122b2f0a8ff591030376">qrInput</a></td></tr>
 <tr class="separator:a826b0d287862122b2f0a8ff591030376 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b200aa7da5dd7aef60d8d151c3e1050 inherit pro_attribs_classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker" id="r_a9b200aa7da5dd7aef60d8d151c3e1050"><td class="memItemLeft" align="right" valign="top">SwingWorker&lt; T, Void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a9b200aa7da5dd7aef60d8d151c3e1050">worker</a></td></tr>
@@ -203,11 +210,11 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Asynchronously resizes a generated QR code image for display in a Swing UI. </p>
 <p>Resize operations are executed off the Event Dispatch Thread (EDT) to maintain UI responsiveness. This class uses a debounce mechanism and background <code><a class="el" href="">SwingWorker</a></code> to avoid unnecessary scaling when multiple layout or configuration changes occur rapidly.</p>
-<p>Each instance manages resizing for a specific <code><a class="el" href="">JLabel</a></code>, working with a <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a></code> as the source image. The optional <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a></code> can show a wait/progress indicator while resizing is in progress.</p>
+<p>Each instance manages resizing for a specific <code><a class="el" href="">JLabel</a></code>, working with a <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a></code> as the source image. The optional <code><a class="el" href="">JProgressBar</a></code> can show a wait/progress indicator while resizing is in progress.</p>
 <p>Resources are properly managed: previous icons are disposed, background workers are cancelled, and the loader is stopped to prevent memory leaks and ensure smooth UI updates. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5794836a5d16ca259a4d776fca4ee307" name="a5794836a5d16ca259a4d776fca4ee307"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5794836a5d16ca259a4d776fca4ee307">&#9670;&#160;</a></span>DynamicQrCodeResize()</h2>
+<a id="a59e2f7fd0452d62e4152b1b3bce84962" name="a59e2f7fd0452d62e4152b1b3bce84962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e2f7fd0452d62e4152b1b3bce84962">&#9670;&#160;</a></span>DynamicQrCodeResize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +232,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html">Loader</a></td>          <td class="paramname"><span class="paramname"><em>loader</em></span>&#160;)</td>
+          <td class="paramtype">JProgressBar</td>          <td class="paramname"><span class="paramname"><em>loader</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,7 +243,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">qrCodeBufferedImage</td><td>the source QR code image; must not be <code class="JavaDocCode">null</code> </td></tr>
     <tr><td class="paramname">qrCodeLabel</td><td>the label where the resized QR code will be displayed; must not be <code class="JavaDocCode"><br/>
     null</code> </td></tr>
-    <tr><td class="paramname">loader</td><td>optional loader to show a wait/progress indicator; can be <code class="JavaDocCode">null</code> </td></tr>
+    <tr><td class="paramname">loader</td><td>loader to show a wait/progress indicator </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,7 +275,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clears the current icon before starting a new resize task. </p>
-<p>Invoked automatically by the <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a279c53c3f486e10279171c89ca955035">AbstractDynamicQrCodeWorker</a></code> workflow. </p>
+<p>Invoked automatically by the <code><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a21d2b28ece44f98d55ca49259949b438">AbstractDynamicQrCodeWorker</a></code> workflow. </p>
 
 <p>Reimplemented from <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a49e1caf8da3d33dde4b1d7e351aecd19">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a>.</p>
 
@@ -335,10 +342,50 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Updates the label icon when the worker successfully completes. </p>
+<p>Updates the QR code label with the generated icon and adjusts the loader size to maintain visual alignment once the worker completes successfully. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>the resized <code><a class="el" href="">ImageIcon</a></code>, or <code class="JavaDocCode">null</code> if the task was cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize_af5fa4ce42b3b8b1820d00263fae5811a_cgraph.svg" width="492" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1a5407bdacb801150472634031f72984" name="a1a5407bdacb801150472634031f72984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a5407bdacb801150472634031f72984">&#9670;&#160;</a></span>updateLoaderSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fr.softsf.canscan.ui.DynamicQrCodeResize.updateLoaderSize </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes the loader to a square dimension based on the given value and refreshes its parent container to ensure proper layout and rendering. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the target width and height for the loader </td></tr>
   </table>
   </dd>
 </dl>
@@ -368,11 +415,11 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize_a172db71a52390eeb8dad5a45397b2d5c_cgraph.svg" width="100%" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -476,7 +523,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html">DynamicQrCodeResize</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 10:58:53 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sun Nov 16 2025 19:45:03 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

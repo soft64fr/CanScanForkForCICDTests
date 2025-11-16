@@ -128,6 +128,7 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <li>COLOR&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a89dd7e23eedd2f64c255a733aa538b68">fr.softsf.canscan.ui.QrCodeColor</a></li>
 <li>COLOR_BUTTONS_GAP&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#acbdb1d243b0ddb6b60a3d48b31cf3999">fr.softsf.canscan.CanScan</a></li>
 <li>CONFIG&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a0558c9a75e7239ae1970fa51287a8626">fr.softsf.canscan.ui.QrCodeBufferedImage</a></li>
+<li>config&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#abc916ae2062efd108ca4d0a9263e7ecf">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
 <li>currentMode&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a45c69814709eaf34be6c0e10a89fe75b">fr.softsf.canscan.CanScan</a></li>
 </ul>
 
@@ -152,6 +153,8 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <li>emailField&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a7bded55948bf3fcf33afff1d1511dc85">fr.softsf.canscan.CanScan</a></li>
 <li>ERREUR&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a57702b92a57b308eb26b45a2c1754ea4">fr.softsf.canscan.util.StringConstants</a></li>
 <li>ERROR&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#aaace37facd56525bd1e9154b70dc315e">fr.softsf.canscan.util.BrowserHelper</a></li>
+<li>errorMessage&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#ad7f29237df506039035c35b82268bd08">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
+<li>errorTitle&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#a5242083b5919a9b3cb0ce32a7020a065">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
 </ul>
 
 
@@ -187,14 +190,15 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>imageLock&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a0a8fc73c35ba697eca82b631b3538871">fr.softsf.canscan.ui.QrCodeBufferedImage</a></li>
 <li>imageRatio&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aafe584b7ed133f9669807fb766b40987">fr.softsf.canscan.CanScan</a></li>
-<li>INSTANCE&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a16946f7236bce84291d0bf3e888f1b1f">fr.softsf.canscan.service.DataBuilderService</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a7d9402e34eb40e2392f9a0b5b29a1216">fr.softsf.canscan.service.VersionService</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a2028e054e6e2915740c95a5fc3f2c439">fr.softsf.canscan.ui.MyPopup</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_icon_util.html#a1d3adc85ec191cd900cb3faaf239ea6c">fr.softsf.canscan.ui.QrCodeIconUtil</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#a609d047cf99ed8248d57ad4d44bb443a">fr.softsf.canscan.util.BrowserHelper</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a25f48e8a37521a74796a669eadad04f9">fr.softsf.canscan.util.Checker</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html#a8fb6354acb5ffa36a97918500c4e72b9">fr.softsf.canscan.util.FrameHelper</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html#a09831bbdd31eff0b6d243cbbfc683796">fr.softsf.canscan.util.UseLucioleFont</a></li>
+<li>INSTANCE&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a16946f7236bce84291d0bf3e888f1b1f">fr.softsf.canscan.service.DataBuilderService</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a7d9402e34eb40e2392f9a0b5b29a1216">fr.softsf.canscan.service.VersionService</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html#ab11ba5434437f14e1d0906f124658fad">fr.softsf.canscan.ui.MyPopup</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_icon_util.html#a1d3adc85ec191cd900cb3faaf239ea6c">fr.softsf.canscan.ui.QrCodeIconUtil</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html#a609d047cf99ed8248d57ad4d44bb443a">fr.softsf.canscan.util.BrowserHelper</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a25f48e8a37521a74796a669eadad04f9">fr.softsf.canscan.util.Checker</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html#a8fb6354acb5ffa36a97918500c4e72b9">fr.softsf.canscan.util.FrameHelper</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html#a09831bbdd31eff0b6d243cbbfc683796">fr.softsf.canscan.util.UseLucioleFont</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>label&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#a4ec349f24fc336f708090bdc19e8ecf7">fr.softsf.canscan.model.Mode</a></li>
 <li>LATEST_RELEASES_REPO_URL&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a881930c8642c5c884fded894088eb552">fr.softsf.canscan.CanScan</a>, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#aa38cce1b3bbf57882dcc4c21f7512cb4">fr.softsf.canscan.service.VersionService</a></li>
-<li>loader&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa0d0e0832459ed82263c36dd65193f01">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a10d885f20eddd96e808861eb1edf6f5a">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a></li>
+<li>loader&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a92b1eb5654d57a1e4d1918aec94bbb0b">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#af3a395c803a67d260c755319715920aa">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#a1b7664e0a6b0c21603dfa5561e1c453a">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
+<li>LOADER_SIZE_OFFSET&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_int_constants.html#aa365b9d616cbe057e8db053f95b40149">fr.softsf.canscan.util.IntConstants</a></li>
 <li>logoField&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a7a6df1515192c53219894766a3f4071c">fr.softsf.canscan.CanScan</a></li>
 </ul>
 
@@ -223,6 +227,9 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
 <li>organization&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae2db96a248bbf617af9ae3129dca1cd2">fr.softsf.canscan.CanScan</a></li>
 <li>orgField&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2dc19323952c9652bf831f4e727b4989">fr.softsf.canscan.CanScan</a></li>
+<li>outputFile&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#a8913950b4b12379f6d321c8a7795d068">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
+<li>OVERLAY_PANEL_ALIGNMENT&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa4f189e57cd8044c892af3dfa4d45e0b">fr.softsf.canscan.CanScan</a></li>
+<li>overlayPanelForQrCodeLabelAndLoader&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#adb6464ab7566fdd8c264c144d2b358bf">fr.softsf.canscan.CanScan</a></li>
 </ul>
 
 
@@ -235,15 +242,14 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <h3><a id="index_q" name="index_q"></a>- q -</h3><ul>
 <li>QR_CODE_LABEL_DEFAULT_SIZE&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ae3a5da8bb7f2aeaf903dbd156f6e9c3e">fr.softsf.canscan.CanScan</a></li>
 <li>QR_DATA&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_string_constants.html#a713ac340dc7968c894857d47bf029b9e">fr.softsf.canscan.util.StringConstants</a></li>
-<li>qrCodeBufferedImage&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a80dee7dd2663784754490d076d0ebe96">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#ad660d1b7ba508af046a3acd6f35e7b67">fr.softsf.canscan.service.GenerateAndSaveService</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a1625714beca4337adf4c968cde8bc862">fr.softsf.canscan.ui.DynamicQrCodePreview</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html#a71c8ca55f7ce60b1a40e977cb6d23321">fr.softsf.canscan.ui.DynamicQrCodeResize</a></li>
+<li>qrCodeBufferedImage&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a80dee7dd2663784754490d076d0ebe96">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#ad660d1b7ba508af046a3acd6f35e7b67">fr.softsf.canscan.service.GenerateAndSaveService</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#a1858fa98094f00190efa5fb7a1ff9b12">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a1625714beca4337adf4c968cde8bc862">fr.softsf.canscan.ui.DynamicQrCodePreview</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html#a71c8ca55f7ce60b1a40e977cb6d23321">fr.softsf.canscan.ui.DynamicQrCodeResize</a></li>
 <li>qrCodeColor&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a7431e56e66fd3038341d7807e3c27509">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#a231201fadd3c5a8dae616ec00c8e402f">fr.softsf.canscan.CanScanTest</a></li>
-<li>qrCodeLabel&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac7221699a8aa1d73cc7c9de900b24636">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a7026d5a3db441dfea25f90fc88fcc629">fr.softsf.canscan.ui.DynamicQrCodePreview</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html#abd2137f48bc13e6186a366b11aef6853">fr.softsf.canscan.ui.DynamicQrCodeResize</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a8c77462ab919be37cd719987ab3e85b0">fr.softsf.canscan.ui.Loader</a></li>
-<li>qrCodeLabelFont&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a2f58ee0b378a33c5da22737e92cad742">fr.softsf.canscan.ui.Loader</a></li>
-<li>qrCodeLabelFontMetrics&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a18d06949c611c1c5645febdfc57e6518">fr.softsf.canscan.ui.Loader</a></li>
+<li>qrCodeLabel&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ac7221699a8aa1d73cc7c9de900b24636">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a7026d5a3db441dfea25f90fc88fcc629">fr.softsf.canscan.ui.DynamicQrCodePreview</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html#abd2137f48bc13e6186a366b11aef6853">fr.softsf.canscan.ui.DynamicQrCodeResize</a></li>
 <li>qrCodePreview&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a51391a064405a337990dac77881e8da8">fr.softsf.canscan.CanScan</a></li>
 <li>qrCodeResize&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a48bdd1461f2a0a876e4561514c29fdf6">fr.softsf.canscan.CanScan</a>, <a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a2159274d70b769a3399eb9a0dbae8a8d">fr.softsf.canscan.ui.DynamicQrCodePreview</a></li>
 <li>qrColor&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a043320b69991577de80f783375257a4a">fr.softsf.canscan.CanScan</a></li>
 <li>qrColorButton&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2241fd6885a5901d2bc0480eca92611a">fr.softsf.canscan.CanScan</a></li>
+<li>qrData&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_qr_generate_and_save_worker.html#a20bda604d5610dee40bbcb2c63e45085">fr.softsf.canscan.service.QrGenerateAndSaveWorker</a></li>
 <li>qrInput&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a826b0d287862122b2f0a8ff591030376">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a></li>
 <li>qrOriginal&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a766ca34c8bfb6f0cba213b399758f4e4">fr.softsf.canscan.ui.QrCodeBufferedImage</a></li>
 <li>qrService&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#a7b0362a634cae5cb2b1387378e7019be">fr.softsf.canscan.CanScanTest</a></li>
@@ -260,7 +266,7 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>SHOULD_SKIP_MODULE&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#abec43c216ca3996056f1274c68e2094e">fr.softsf.canscan.ui.QrCodeBufferedImage</a></li>
-<li>SHOW_ARGUMENT_ERROR_DIALOG&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_popup.html#a5cf0ef8c85da7c4efdb139aa29858221">fr.softsf.canscan.ui.MyPopup</a></li>
+<li>SHOW_ARGUMENT_ERROR_DIALOG&#160;:&#160;<a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html#a17250365f2ef881053e4f079bd421502">fr.softsf.canscan.ui.MyPopup</a></li>
 <li>SIZE_FIELD_DEFAULT&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2eeed49947c5553ac3c60fa5a9c00d0f">fr.softsf.canscan.CanScan</a></li>
 <li>sizeField&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a33d7e0d017188e732c23f30053c19490">fr.softsf.canscan.CanScan</a></li>
 <li>southSpacer&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a94662f11008aae918883b2b7acd79c4f">fr.softsf.canscan.CanScan</a></li>
@@ -290,9 +296,6 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>WAIT_FRAMES&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a901734944614897d725f61193e684974">fr.softsf.canscan.ui.Loader</a></li>
-<li>WAIT_ICON_DELAY_MS&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#ac20d3d02445e4289b3a7c414f64d0d3a">fr.softsf.canscan.ui.Loader</a></li>
-<li>waitIconTimer&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html#a3c9787b032cbf87c9f263df00cc029dc">fr.softsf.canscan.ui.Loader</a></li>
 <li>worker&#160;:&#160;<a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a9b200aa7da5dd7aef60d8d151c3e1050">fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;</a></li>
 </ul>
 </div><!-- contents -->
@@ -300,7 +303,7 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 14 2025 10:58:53 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sun Nov 16 2025 19:45:03 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

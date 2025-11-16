@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,272,227,272,227,277,195,277"/>
 <area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a5ea567d314cb76b8c4c4abebca360bee" title="Called when the worker fails or is cancelled." alt="" coords="541,175,767,233"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="489,242,525,233,526,238,490,247"/>
-<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a2bb0edd8d59bde00a1f5a60f7fcc02f9" title="Stops the loader&#39;s wait indicator if assigned." alt="" coords="1111,253,1348,312"/>
+<area shape="rect" id="Node000008" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a99151891dd8d4592131c224c1de25ad9" title="Stops the loader&#39;s wait indicator." alt="" coords="1111,253,1348,312"/>
 <area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="494,273,1095,279,1095,284,494,278"/>
 <area shape="rect" id="Node000009" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a6d926dddd5758aeb10dde0d050c45a3b" title="Called when the worker completes successfully with its result." alt="" coords="541,312,767,371"/>
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="494,301,527,309,525,314,493,307"/>

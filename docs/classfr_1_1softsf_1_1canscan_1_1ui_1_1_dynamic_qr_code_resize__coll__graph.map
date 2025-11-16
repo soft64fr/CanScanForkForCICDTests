@@ -1,9 +1,7 @@
 <map id="fr.softsf.canscan.ui.DynamicQrCodeResize" name="fr.softsf.canscan.ui.DynamicQrCodeResize">
-<area shape="rect" id="Node000001" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="149,1904,351,2245"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,861,234,1336"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,1350,230,1904,225,1905,151,1351"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" title="Manages an animated loading indicator for a JLabel component." alt="" coords="21,5,218,293"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,293,122,845,117,845,117,293"/>
-<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="258,357,504,1840"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,1840,278,1888,273,1887,279,1839"/>
+<area shape="rect" id="Node000001" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="145,1552,355,1931"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,491,234,1003"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,1017,228,1552,223,1553,153,1018"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="258,5,504,1488"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,1488,280,1535,275,1535,281,1487"/>
 </map>

@@ -121,15 +121,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a237e9a0b7d2610a719a4d6770e0e3ab2" id="r_a237e9a0b7d2610a719a4d6770e0e3ab2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a237e9a0b7d2610a719a4d6770e0e3ab2">GenerateAndSaveService</a> (<a class="el" href="classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html">QrCodeBufferedImage</a> <a class="el" href="#ad660d1b7ba508af046a3acd6f35e7b67">qrCodeBufferedImage</a>)</td></tr>
 <tr class="memdesc:a237e9a0b7d2610a719a4d6770e0e3ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html" title="Service dedicated to QR code generation and saving.">GenerateAndSaveService</a> with the given QR code image generator.  <br /></td></tr>
 <tr class="separator:a237e9a0b7d2610a719a4d6770e0e3ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b8b66c59381c743697c9e8700b3dae" id="r_ab1b8b66c59381c743697c9e8700b3dae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1b8b66c59381c743697c9e8700b3dae">generateAndSave</a> (QrDataResult qrData, QrConfig config)</td></tr>
-<tr class="memdesc:ab1b8b66c59381c743697c9e8700b3dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and saves a QR code as a PNG file using the provided data and configuration.  <br /></td></tr>
-<tr class="separator:ab1b8b66c59381c743697c9e8700b3dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479ebf9d697747efbd2cd14695ef83b1" id="r_a479ebf9d697747efbd2cd14695ef83b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a479ebf9d697747efbd2cd14695ef83b1">generateAndSave</a> (QrDataResult qrData, QrConfig config, JProgressBar loader)</td></tr>
+<tr class="memdesc:a479ebf9d697747efbd2cd14695ef83b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and saves a QR code as a PNG file using the provided data and configuration.  <br /></td></tr>
+<tr class="separator:a479ebf9d697747efbd2cd14695ef83b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:adf363b081ce6f875faf15b76cf701bc3" id="r_adf363b081ce6f875faf15b76cf701bc3"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf363b081ce6f875faf15b76cf701bc3">checkNPEInputs</a> (QrDataResult qrData, QrConfig config, JProgressBar loader)</td></tr>
+<tr class="memdesc:adf363b081ce6f875faf15b76cf701bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all required inputs are non-null.  <br /></td></tr>
+<tr class="separator:adf363b081ce6f875faf15b76cf701bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7183f24b962abed6d650fee50fdeaa46" id="r_a7183f24b962abed6d650fee50fdeaa46"><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7183f24b962abed6d650fee50fdeaa46">chooseOutputFile</a> (QrDataResult qrData)</td></tr>
 <tr class="memdesc:a7183f24b962abed6d650fee50fdeaa46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a JFileChooser to select the output PNG file and handles file name conflicts.  <br /></td></tr>
 <tr class="separator:a7183f24b962abed6d650fee50fdeaa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823b1c588d50ad7a5d260b29bcb066a1" id="r_a823b1c588d50ad7a5d260b29bcb066a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a823b1c588d50ad7a5d260b29bcb066a1">executeQrGeneration</a> (QrDataResult qrData, QrConfig config, JProgressBar loader, File outputFile)</td></tr>
+<tr class="memdesc:a823b1c588d50ad7a5d260b29bcb066a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes QR code generation asynchronously using a SwingWorker.  <br /></td></tr>
+<tr class="separator:a823b1c588d50ad7a5d260b29bcb066a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a723bdc3c23de4858c0a30864298fdacd" id="r_a723bdc3c23de4858c0a30864298fdacd"><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a723bdc3c23de4858c0a30864298fdacd">getSelectedPngFile</a> (JFileChooser chooser)</td></tr>
 <tr class="memdesc:a723bdc3c23de4858c0a30864298fdacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures the selected file has a ".png" extension.  <br /></td></tr>
 <tr class="separator:a723bdc3c23de4858c0a30864298fdacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +177,51 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adf363b081ce6f875faf15b76cf701bc3" name="adf363b081ce6f875faf15b76cf701bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf363b081ce6f875faf15b76cf701bc3">&#9670;&#160;</a></span>checkNPEInputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean fr.softsf.canscan.service.GenerateAndSaveService.checkNPEInputs </td>
+          <td>(</td>
+          <td class="paramtype">QrDataResult</td>          <td class="paramname"><span class="paramname"><em>qrData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QrConfig</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JProgressBar</td>          <td class="paramname"><span class="paramname"><em>loader</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that all required inputs are non-null. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qrData</td><td>the QR code data to validate </td></tr>
+    <tr><td class="paramname">config</td><td>the configuration to validate </td></tr>
+    <tr><td class="paramname">loader</td><td>the progress bar to validate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if all inputs are valid, false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a7183f24b962abed6d650fee50fdeaa46" name="a7183f24b962abed6d650fee50fdeaa46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7183f24b962abed6d650fee50fdeaa46">&#9670;&#160;</a></span>chooseOutputFile()</h2>
 
@@ -212,8 +263,58 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1b8b66c59381c743697c9e8700b3dae" name="ab1b8b66c59381c743697c9e8700b3dae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1b8b66c59381c743697c9e8700b3dae">&#9670;&#160;</a></span>generateAndSave()</h2>
+<a id="a823b1c588d50ad7a5d260b29bcb066a1" name="a823b1c588d50ad7a5d260b29bcb066a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823b1c588d50ad7a5d260b29bcb066a1">&#9670;&#160;</a></span>executeQrGeneration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fr.softsf.canscan.service.GenerateAndSaveService.executeQrGeneration </td>
+          <td>(</td>
+          <td class="paramtype">QrDataResult</td>          <td class="paramname"><span class="paramname"><em>qrData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QrConfig</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JProgressBar</td>          <td class="paramname"><span class="paramname"><em>loader</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">File</td>          <td class="paramname"><span class="paramname"><em>outputFile</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes QR code generation asynchronously using a SwingWorker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qrData</td><td>the QR code data </td></tr>
+    <tr><td class="paramname">config</td><td>the visual configuration </td></tr>
+    <tr><td class="paramname">loader</td><td>the progress bar to hide after completion </td></tr>
+    <tr><td class="paramname">outputFile</td><td>the file where the QR code will be saved </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a479ebf9d697747efbd2cd14695ef83b1" name="a479ebf9d697747efbd2cd14695ef83b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479ebf9d697747efbd2cd14695ef83b1">&#9670;&#160;</a></span>generateAndSave()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,17 +327,23 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QrConfig</td>          <td class="paramname"><span class="paramname"><em>config</em></span>&#160;)</td>
+          <td class="paramtype">QrConfig</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JProgressBar</td>          <td class="paramname"><span class="paramname"><em>loader</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Generates and saves a QR code as a PNG file using the provided data and configuration. </p>
-<p>Validates the input data, applies visual settings (colors, margin, logo, module style), generates the QR code image, and opens a file chooser to save the file. Handles file name conflicts and shows user feedback dialogs for success, errors, or exceptions.</p>
+<p>Validates input data, applies visual settings, generates the QR code image, and saves it to a user-selected file location. All operations are performed asynchronously to prevent UI blocking.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">qrData</td><td>the QR code data; must not be null </td></tr>
-    <tr><td class="paramname">config</td><td>the QR code visual configuration; must not be null </td></tr>
+    <tr><td class="paramname">config</td><td>the visual configuration; must not be null </td></tr>
+    <tr><td class="paramname">loader</td><td>the progress indicator to display during generation </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,7 +352,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service_ab1b8b66c59381c743697c9e8700b3dae_cgraph.svg" width="100%" height="414"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service_a479ebf9d697747efbd2cd14695ef83b1_cgraph.svg" width="100%" height="452"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -351,7 +458,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1service.html">service</a></li><li class="navelem"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html">GenerateAndSaveService</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 10:58:53 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sun Nov 16 2025 19:45:03 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

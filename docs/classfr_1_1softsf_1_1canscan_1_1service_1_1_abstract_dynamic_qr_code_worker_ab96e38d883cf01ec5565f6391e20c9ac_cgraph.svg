@@ -93,11 +93,11 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a2bb0edd8d59bde00a1f5a60f7fcc02f9" target="_top" xlink:title="Stops the loader&#39;s wait indicator if assigned.">
+<g id="a_Node000005"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a99151891dd8d4592131c224c1de25ad9" target="_top" xlink:title="Stops the loader&#39;s wait indicator.">
 <polygon fill="white" stroke="#666666" points="399.88,-44 221.88,-44 221.88,0 399.88,0 399.88,-44"/>
 <text text-anchor="start" x="229.88" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.service.</text>
 <text text-anchor="start" x="229.88" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractDynamicQrCodeWorker.stop</text>
-<text text-anchor="middle" x="310.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoaderIfPresent</text>
+<text text-anchor="middle" x="310.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Loader</text>
 </a>
 </g>
 </g>

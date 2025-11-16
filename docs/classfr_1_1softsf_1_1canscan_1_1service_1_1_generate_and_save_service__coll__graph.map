@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.service.GenerateAndSaveService" name="fr.softsf.canscan.service.GenerateAndSaveService">
-<area shape="rect" id="Node000001" title="Service dedicated to QR code generation and saving." alt="" coords="5,1552,256,1835"/>
+<area shape="rect" id="Node000001" title="Service dedicated to QR code generation and saving." alt="" coords="5,1552,256,1989"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="8,5,253,1488"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,1488,134,1535,128,1535,128,1488"/>
 </map>

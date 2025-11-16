@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['abstractdynamicqrcodeworker_0',['AbstractDynamicQrCodeWorker',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html',1,'fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;'],['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a279c53c3f486e10279171c89ca955035',1,'fr.softsf.canscan.service.AbstractDynamicQrCodeWorker.AbstractDynamicQrCodeWorker()']]],
+  ['abstractdynamicqrcodeworker_0',['AbstractDynamicQrCodeWorker',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html',1,'fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;'],['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html#a21d2b28ece44f98d55ca49259949b438',1,'fr.softsf.canscan.service.AbstractDynamicQrCodeWorker.AbstractDynamicQrCodeWorker()']]],
   ['abstractdynamicqrcodeworker_2ejava_1',['AbstractDynamicQrCodeWorker.java',['../_abstract_dynamic_qr_code_worker_8java.html',1,'']]],
   ['abstractdynamicqrcodeworker_3c_20bufferedimage_20_3e_2',['AbstractDynamicQrCodeWorker&lt; BufferedImage &gt;',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html',1,'fr::softsf::canscan::service']]],
   ['abstractdynamicqrcodeworker_3c_20imageicon_20_3e_3',['AbstractDynamicQrCodeWorker&lt; ImageIcon &gt;',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html',1,'fr::softsf::canscan::service']]],

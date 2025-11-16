@@ -49,7 +49,7 @@
 <script type="application/ecmascript">
 var viewWidth = 609;
 var viewHeight = 215;
-var sectionId = 'dynsection-20';
+var sectionId = 'dynsection-22';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -124,10 +124,10 @@ var sectionId = 'dynsection-20';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" target="_top" xlink:title="Calculates the available height for QR code rendering.">
+<g id="a_Node000003"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a381368b99c4a0857c6abe6349b2c6d27" target="_top" xlink:title="Calculates the available height for QR code rendering.">
 <polygon fill="white" stroke="#666666" points="600.75,-207 425.75,-207 425.75,-175 600.75,-175 600.75,-207"/>
 <text text-anchor="start" x="433.75" y="-193.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.calculate</text>
-<text text-anchor="middle" x="513.25" y="-181.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrHeight</text>
+<text text-anchor="middle" x="513.25" y="-181.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrCodeLabelHeight</text>
 </a>
 </g>
 </g>

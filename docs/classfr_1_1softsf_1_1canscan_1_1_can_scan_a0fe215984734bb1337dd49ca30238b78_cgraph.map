@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.CanScan.setLoaderSize" name="fr.softsf.canscan.CanScan.setLoaderSize">
+<area shape="rect" id="Node000001" title="Sets the loader size so it matches the QR code label height and remains centered." alt="" coords="5,5,205,48"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a381368b99c4a0857c6abe6349b2c6d27" title="Calculates the available height for QR code rendering." alt="" coords="253,5,486,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,24,237,24,237,29,205,29"/>
+</map>

@@ -32,10 +32,10 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a22606ca129489c778fbbe17cb8b70697" target="_top" xlink:title="Calculates the available height for QR code rendering.">
+<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a381368b99c4a0857c6abe6349b2c6d27" target="_top" xlink:title="Calculates the available height for QR code rendering.">
 <polygon fill="white" stroke="#666666" points="360.5,-182 185.5,-182 185.5,-150 360.5,-150 360.5,-182"/>
 <text text-anchor="start" x="193.5" y="-168.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan.calculate</text>
-<text text-anchor="middle" x="273" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrHeight</text>
+<text text-anchor="middle" x="273" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">AvailableQrCodeLabelHeight</text>
 </a>
 </g>
 </g>

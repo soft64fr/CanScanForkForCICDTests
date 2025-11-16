@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1700;
+var viewWidth = 1714;
 var viewHeight = 108;
 var sectionId = 'dynsection-0';
 </script>
@@ -268,8 +268,8 @@ var sectionId = 'dynsection-0';
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="1692,-26 1561.25,-26 1561.25,-6 1692,-6 1692,-26"/>
-<text text-anchor="middle" x="1626.62" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.MyPopup</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="1705.75,-26 1561.5,-26 1561.5,-6 1705.75,-6 1705.75,-26"/>
+<text text-anchor="middle" x="1633.62" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.MyPopup</text>
 </a>
 </g>
 </g>
@@ -277,8 +277,8 @@ var sectionId = 'dynsection-0';
 <g id="edge12_Node000001_Node000013" class="edge">
 <title>Node1&#45;&gt;Node13</title>
 <g id="a_edge12_Node000001_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M917.97,-80.59C1051.67,-75.92 1324.03,-63.17 1552.62,-32 1559.45,-31.07 1566.58,-29.89 1573.62,-28.6"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1574.26,-32.04 1583.42,-26.72 1572.94,-25.17 1574.26,-32.04"/>
+<path fill="none" stroke="#63b8ff" d="M917.91,-80.15C1051.53,-74.84 1323.77,-61.24 1552.62,-32 1560.34,-31.01 1568.43,-29.77 1576.39,-28.42"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1576.77,-31.91 1586.01,-26.73 1575.56,-25.02 1576.77,-31.91"/>
 </a>
 </g>
 </g>

@@ -1,15 +1,12 @@
 <map id="fr.softsf.canscan.ui.DynamicQrCodePreview" name="fr.softsf.canscan.ui.DynamicQrCodePreview">
-<area shape="rect" id="Node000001" title="Asynchronously generates and displays a QR code preview in a Swing UI." alt="" coords="188,2768,446,3125"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,1864,234,2339"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,2353,165,2527,184,2616,206,2703,229,2767,224,2769,201,2705,178,2618,160,2528,135,2354"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" title="Manages an animated loading indicator for a JLabel component." alt="" coords="42,5,240,293"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,293,114,317,114,333,121,1847,115,1847,108,333,108,317,111,293"/>
-<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="140,861,369,1336"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="161,293,227,844,221,845,155,293"/>
-<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="393,357,638,1840"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="550,1840,540,2052,519,2272,503,2383,484,2492,461,2600,433,2705,417,2753,411,2751,428,2703,456,2598,479,2491,498,2382,514,2272,535,2052,544,1839"/>
-<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="216,2363,418,2704"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="396,1818,383,1842,369,1854,363,1858,357,1865,345,1902,334,1951,321,2073,315,2211,315,2346,310,2346,310,2211,316,2073,329,1950,339,1901,353,1863,359,1854,366,1850,379,1838,391,1815"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="320,2703,320,2751,314,2751,314,2703"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="267,1351,310,2339,311,2363,306,2363,305,2339,262,1351"/>
+<area shape="rect" id="Node000001" title="Asynchronously generates and displays a QR code preview in a Swing UI." alt="" coords="146,2128,419,2485"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,1552,234,2064"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,2077,227,2127,222,2129,205,2079"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html" title="Thread&#45;safe singleton to hold a shared QR code BufferedImage." alt="" coords="161,5,406,1488"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,1488,285,2111,280,2111,280,1488"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="440,1619,650,1997"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="393,1487,408,1527,416,1539,425,1551,453,1603,449,1605,420,1553,411,1542,403,1529,388,1489"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="459,1998,425,2065,398,2114,393,2112,420,2063,454,1996"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_abstract_dynamic_qr_code_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="431,491,659,1003"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="548,1018,548,1619,542,1619,542,1018"/>
 </map>

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['updatebuttonstate_0',['updateButtonState',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac3765b9aae65297cd9337c852ee2fb30',1,'fr::softsf::canscan::service::VersionService']]],
-  ['updatebuttonwithcolor_1',['updateButtonWithColor',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_color.html#a57b7c1d957a1be01fa4be2f095baac42',1,'fr::softsf::canscan::ui::QrCodeColor']]],
-  ['updategeneratebuttonstate_2',['updateGenerateButtonState',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a11fd9295c4843e6e68f9d1e4a710b906',1,'fr::softsf::canscan::CanScan']]],
-  ['updateqrcodepreview_3',['updateQrCodePreview',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a3513b0e268d35de4c98ffacb2ef9e0cd',1,'fr::softsf::canscan::ui::DynamicQrCodePreview']]],
-  ['updateqrcoderesize_4',['updateQrCodeResize',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_resize.html#a172db71a52390eeb8dad5a45397b2d5c',1,'fr::softsf::canscan::ui::DynamicQrCodeResize']]],
-  ['updateqroriginal_5',['updateQrOriginal',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a0deda0d03dac97a001937f604b9a415e',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]]
+  ['validateandgetmargin_0',['validateAndGetMargin',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c',1,'fr::softsf::canscan::CanScan']]],
+  ['validateandgetratio_1',['validateAndGetRatio',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d',1,'fr::softsf::canscan::CanScan']]],
+  ['validateandgetsize_2',['validateAndGetSize',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684',1,'fr::softsf::canscan::CanScan']]],
+  ['validatememoryforimagesize_3',['validateMemoryForImageSize',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_qr_code_buffered_image.html#a6a52b83afbff300934e8cfe7d454cac1',1,'fr::softsf::canscan::ui::QrCodeBufferedImage']]],
+  ['versionservice_4',['VersionService',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a71d28e7931c7ded96b9bc7adb07f674c',1,'fr::softsf::canscan::service::VersionService']]]
 ];

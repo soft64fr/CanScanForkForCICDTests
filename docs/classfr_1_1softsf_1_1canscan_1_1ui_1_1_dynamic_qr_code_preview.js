@@ -1,6 +1,6 @@
 var classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview =
 [
-    [ "DynamicQrCodePreview", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a46ceb287ccbf1f33355c1dfde0012899", null ],
+    [ "DynamicQrCodePreview", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#aa7fdc627927af18a2aa6aa7905dac80b", null ],
     [ "buildPreviewImage", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a21198a66d871f708a8759fb6b6e0c74b", null ],
     [ "clearResources", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#ad56c29c83187543cfeb27af95dd89cd6", null ],
     [ "createWorker", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_dynamic_qr_code_preview.html#a6f85c3dfbf82c86a0e3441f0a8cc1037", null ],

@@ -1,0 +1,13 @@
+<map id="fr.softsf.canscan.service.GenerateAndSaveService.generateAndSave" name="fr.softsf.canscan.service.GenerateAndSaveService.generateAndSave">
+<area shape="rect" id="Node000001" title="Generates and saves a QR code as a PNG file using the provided data and configuration." alt="" coords="5,64,231,123"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#adf363b081ce6f875faf15b76cf701bc3" title="Validates that all required inputs are non&#45;null." alt="" coords="280,5,554,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,66,303,49,304,55,232,71"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#a7183f24b962abed6d650fee50fdeaa46" title="Opens a JFileChooser to select the output PNG file and handles file name conflicts." alt="" coords="279,72,556,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,91,263,91,263,96,231,96"/>
+<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#a823b1c588d50ad7a5d260b29bcb066a1" title="Executes QR code generation asynchronously using a SwingWorker." alt="" coords="307,139,528,197"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="232,119,292,134,291,139,230,124"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#a723bdc3c23de4858c0a30864298fdacd" title="Ensures the selected file has a &quot;.png&quot; extension." alt="" coords="604,23,848,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="556,72,588,68,589,73,557,77"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#aeced3cbaf2f2c3a709ed5096aa543526" title="Resolves potential file name conflicts by checking if the specified file already exists." alt="" coords="618,105,835,164"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="557,109,603,115,602,121,556,115"/>
+</map>

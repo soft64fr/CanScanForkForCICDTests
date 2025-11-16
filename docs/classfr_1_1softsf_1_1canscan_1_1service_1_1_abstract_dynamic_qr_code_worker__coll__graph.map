@@ -1,5 +1,3 @@
 <map id="fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;" name="fr.softsf.canscan.service.AbstractDynamicQrCodeWorker&lt; T &gt;">
-<area shape="rect" id="Node000001" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,357,234,832"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_loader.html" title="Manages an animated loading indicator for a JLabel component." alt="" coords="21,5,218,293"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,293,122,341,117,341,117,293"/>
+<area shape="rect" id="Node000001" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="5,5,234,517"/>
 </map>
