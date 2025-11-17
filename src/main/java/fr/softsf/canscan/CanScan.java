@@ -11,10 +11,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.FontMetrics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -22,11 +20,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,17 +33,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.OverlayLayout;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentListener;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.formdev.flatlaf.intellijthemes.FlatCobalt2IJTheme;
 
+import fr.softsf.canscan.model.MecardJFields;
 import fr.softsf.canscan.model.Mode;
 import fr.softsf.canscan.model.QrConfig;
 import fr.softsf.canscan.model.QrDataResult;
@@ -60,56 +54,40 @@ import fr.softsf.canscan.ui.DynamicQrCodeResize;
 import fr.softsf.canscan.ui.MyPopup;
 import fr.softsf.canscan.ui.QrCodeBufferedImage;
 import fr.softsf.canscan.ui.QrCodeColor;
+import fr.softsf.canscan.ui.UiComponentsConfiguration;
 import fr.softsf.canscan.util.BrowserHelper;
 import fr.softsf.canscan.util.Checker;
+import fr.softsf.canscan.util.DoubleConstants;
+import fr.softsf.canscan.util.FloatConstants;
 import fr.softsf.canscan.util.IntConstants;
 import fr.softsf.canscan.util.StringConstants;
 import fr.softsf.canscan.util.UseLucioleFont;
+import fr.softsf.canscan.util.ValidationFieldHelper;
 
 /**
- * CanScan — a Swing-based application for generating QR codes.
+ * CanScan — Swing application for QR code generation.
  *
- * <p>Supports two modes:
+ * <p>Provides two modes:
  *
  * <ul>
- *   <li><b>MECARD</b> — generate a QR code from structured contact data (name, phone, email, etc.).
- *   <li><b>Free</b> — generate a QR code from arbitrary text or URLs.
+ *   <li><b>MECARD</b> — structured contact data.
+ *   <li><b>Free</b> — arbitrary text or URLs.
  * </ul>
- *
- * <p>Includes live preview, optional logo embedding, adjustable size, colors, margins, and module
- * style (rounded or square). Uses ZXing for QR generation and FlatLaf for modern UI styling.
  */
 public class CanScan extends JFrame {
 
-    private static final double DEFAULT_IMAGE_RATIO = 0.27;
-    private static final int DEFAULT_QR_CODE_SIZE = 400;
-    private static final int MAX_PERCENTAGE = 100;
-    private static final int MAJOR_TICK_SPACING = 25;
-    private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
-    private static final int MINIMUM_QR_CODE_SIZE = 10;
-    private static final int TEXT_FIELDS_COLUMNS = 25;
-    private static final int MULTILINE_TEXT_FIELDS_ROWS = 10;
-    private static final int RADIO_BUTTON_GAP = 20;
-    private static final int DEFAULT_LABEL_WIDTH = 110;
-    private static final String ADD_ROW = "addRow";
-    private static final int GENERATE_BUTTON_EXTRA_HEIGHT = 35;
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
-    private static final String SIZE_FIELD_DEFAULT = "400";
     private static final String LATEST_RELEASES_REPO_URL =
             "https://github.com/Lob2018/CanScan/releases/latest";
-    private static final int COLOR_BUTTONS_GAP = 10;
-    private static final int MARGIN_MAXIMUM_VALUE = 10;
-    private static final double GBC_COLOR_BUTTONS_WEIGHT_X = 0.5;
-    private static final float OVERLAY_PANEL_ALIGNMENT = 0.5f;
-
+    private static final int MINIMUM_QR_CODE_SIZE = 10;
+    private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
-    private double imageRatio = DEFAULT_IMAGE_RATIO;
+    private double imageRatio = DoubleConstants.DEFAULT_IMAGE_RATIO.getValue();
     private static String version;
     private static String name;
     private static String organization;
-
     private Mode currentMode = Mode.MECARD;
     // UI Components
     private final JRadioButton mecardRadio =
@@ -117,19 +95,29 @@ public class CanScan extends JFrame {
     private final JRadioButton freeRadio =
             new JRadioButton("<html><b>" + Mode.FREE.text() + "</b></html>");
     private final JButton update = new JButton("\uD83D\uDD04");
-    private final JTextField nameField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField phoneField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField emailField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField orgField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField adrField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField urlField = new JTextField(TEXT_FIELDS_COLUMNS);
+    private final JTextField nameField =
+            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField phoneField =
+            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField emailField =
+            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField orgField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField adrField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField urlField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
     private final JTextArea freeField = new JTextArea("");
     private final JScrollPane freeScrollPane = new JScrollPane(freeField);
-    private final JTextField logoField = new JTextField(TEXT_FIELDS_COLUMNS);
-    private final JTextField sizeField = new JTextField(SIZE_FIELD_DEFAULT, TEXT_FIELDS_COLUMNS);
+    private final JTextField logoField =
+            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final JTextField sizeField =
+            new JTextField(
+                    StringConstants.DEFAULT_QR_CODE_DIMENSION_FIELD.getValue(),
+                    IntConstants.TEXT_FIELDS_COLUMNS.getValue());
     private final JSlider marginSlider = new JSlider(0, MINIMUM_QR_CODE_SIZE, margin);
     private final JSlider ratioSlider =
-            new JSlider(0, MAX_PERCENTAGE, (int) (imageRatio * MAX_PERCENTAGE));
+            new JSlider(
+                    0,
+                    IntConstants.MAX_PERCENTAGE.getValue(),
+                    (int) (imageRatio * IntConstants.MAX_PERCENTAGE.getValue()));
     private final JCheckBox roundedModulesCheckBox = new JCheckBox();
     private final JProgressBar loader = new JProgressBar();
     // Containers
@@ -155,9 +143,8 @@ public class CanScan extends JFrame {
     /**
      * Initializes the CanScan GUI.
      *
-     * <p>Constructs the main window and orchestrates its setup by delegating to dedicated
-     * initialization methods. Configures layout, panels, input fields, QR code preview, and window
-     * behavior to provide a complete user interface.
+     * <p>Builds the main window and delegates setup to dedicated initialization methods,
+     * configuring layout, panels, input fields, QR preview, and window behavior.
      */
     public CanScan() {
         super(initializeTitle());
@@ -242,10 +229,9 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Loads application metadata from the `version.properties` file.
+     * Loads application metadata from `version.properties`.
      *
-     * <p>Sets the static fields for the application version, name, and organization. Displays an
-     * error dialog if the properties file cannot be read.
+     * <p>Initializes static fields for version, name, and organization.
      */
     private static void getManifestKeys() {
         Properties props = new Properties();
@@ -266,12 +252,11 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Constructs the application window title using metadata from the version properties.
+     * Builds the application window title from version metadata.
      *
-     * <p>Combines the application name, version, and organization into a formatted string for
-     * display in the window title.
+     * <p>Combines the application name, version, and organization into a formatted string.
      *
-     * @return a formatted title string, e.g., "📱 CanScan v1.0.0.0 • Soft64.fr"
+     * @return the formatted title, e.g., "📱 CanScan v1.0.0.0 • Soft64.fr"
      */
     private static String initializeTitle() {
         getManifestKeys();
@@ -284,15 +269,8 @@ public class CanScan extends JFrame {
      * <p>Sets tick spacing, labels, and listeners to update tooltips dynamically.
      */
     protected void initializeSliders() {
-        marginSlider.setMajorTickSpacing(1);
-        marginSlider.setPaintTicks(true);
-        marginSlider.setPaintLabels(true);
-        ratioSlider.setMajorTickSpacing(MAJOR_TICK_SPACING);
-        ratioSlider.setMinorTickSpacing(1);
-        ratioSlider.setPaintTicks(true);
-        ratioSlider.setPaintLabels(true);
-        ratioSlider.addChangeListener(e -> setRatioSliderTooltipValue());
-        setRatioSliderTooltipValue();
+        UiComponentsConfiguration.INSTANCE.configureMarginSlider(marginSlider, margin);
+        UiComponentsConfiguration.INSTANCE.configureRatioSlider(ratioSlider, imageRatio);
     }
 
     /**
@@ -303,7 +281,9 @@ public class CanScan extends JFrame {
      */
     private JPanel initializeNorthPanel() {
         JPanel northPanel = new JPanel(new GridBagLayout());
-        northPanel.setMaximumSize(new Dimension(DEFAULT_LABEL_WIDTH * 3, northPanel.getHeight()));
+        northPanel.setMaximumSize(
+                new Dimension(
+                        IntConstants.DEFAULT_LABEL_WIDTH.getValue() * 3, northPanel.getHeight()));
         northPanel.setBorder(
                 new EmptyBorder(
                         IntConstants.DEFAULT_GAP.getValue(),
@@ -312,7 +292,7 @@ public class CanScan extends JFrame {
                         IntConstants.DEFAULT_GAP.getValue()));
         GridBagConstraints grid = northPanelGridBagConstraints();
         GridBagLayout layout = (GridBagLayout) northPanel.getLayout();
-        layout.columnWidths = new int[] {DEFAULT_LABEL_WIDTH, 0};
+        layout.columnWidths = new int[] {IntConstants.DEFAULT_LABEL_WIDTH.getValue(), 0};
         addNorthPanelModeSelection(northPanel, grid);
         addNorthPanelCardPanels(northPanel, grid);
         addNorthPanelCommonFields(northPanel, grid);
@@ -326,13 +306,7 @@ public class CanScan extends JFrame {
      * <p>Defines insets, fill behavior, and initial grid positions.
      */
     private GridBagConstraints northPanelGridBagConstraints() {
-        GridBagConstraints grid = new GridBagConstraints();
-        grid.insets = new Insets(3, 3, 3, 3);
-        grid.fill = GridBagConstraints.HORIZONTAL;
-        grid.gridx = 0;
-        grid.gridy = -1;
-        grid.weightx = 1;
-        return grid;
+        return UiComponentsConfiguration.INSTANCE.createDefaultConstraints();
     }
 
     /**
@@ -341,43 +315,20 @@ public class CanScan extends JFrame {
      * <p>Configures radio buttons, update button, and mode switching listeners.
      */
     private void addNorthPanelModeSelection(JPanel northPanel, GridBagConstraints grid) {
-        JPanel modePanel = new JPanel(new BorderLayout());
-        mecardRadio.setSelected(true);
         ButtonGroup group = new ButtonGroup();
-        group.add(mecardRadio);
-        group.add(freeRadio);
-        JPanel radioButtonsPanel = radioButtonsPanel();
-        modePanel.add(radioButtonsPanel, BorderLayout.WEST);
-        modePanel.add(update, BorderLayout.EAST);
+        JPanel modePanel =
+                UiComponentsConfiguration.INSTANCE.createModePanel(
+                        mecardRadio, freeRadio, update, group);
         configureUpdateButton();
         mecardRadio.addActionListener(e -> switchMode(Mode.MECARD));
         freeRadio.addActionListener(e -> switchMode(Mode.FREE));
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "<html><b>Mode</b></html>",
                 "<html>Le format du code QR à générer :<br>"
                         + "Un contact MeCard ou la saisie libre.</html>",
                 modePanel);
-    }
-
-    /**
-     * Creates the radio button panel for mode selection.
-     *
-     * <p>Aligns MECARD and Free options side by side.
-     */
-    private JPanel radioButtonsPanel() {
-        JPanel radioButtonsPanel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbcRadio = new GridBagConstraints();
-        gbcRadio.gridx = 0;
-        gbcRadio.gridy = 0;
-        gbcRadio.insets = new Insets(0, 0, 0, RADIO_BUTTON_GAP);
-        gbcRadio.anchor = GridBagConstraints.CENTER;
-        radioButtonsPanel.add(mecardRadio, gbcRadio);
-        gbcRadio.gridx = 1;
-        gbcRadio.insets = new Insets(0, 0, 0, 0);
-        radioButtonsPanel.add(freeRadio, gbcRadio);
-        return radioButtonsPanel;
     }
 
     /**
@@ -422,7 +373,7 @@ public class CanScan extends JFrame {
      * <p>Includes logo path, margin, ratio, colors, size, and rounded modules options.
      */
     private void addNorthPanelCommonFields(JPanel northPanel, GridBagConstraints grid) {
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Logo",
@@ -433,34 +384,34 @@ public class CanScan extends JFrame {
         grid.weightx = 0;
         northPanel.add(browseButton, grid);
         grid.gridy += 1;
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Taille du logo ⚠",
                 "<html>Le pourcentage du logo dans le code QR.<br>⚠ Peut gêner la"
                         + " détection.</html>",
                 ratioSlider);
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Marge ⚠",
                 "<html>La marge extérieure entre 0 et 10.<br>⚠ Peut gêner la détection.</html>",
                 marginSlider);
         JPanel colorPanel = colorPanel();
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Couleurs ⚠",
                 "Le code QR ne fonctionnera que si le contraste est suffisant.",
                 colorPanel);
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Dimension ⚠",
                 "<html>Le côté du code QR en pixels.<br>⚠ Une trop grande taille, peut dégrader les"
                         + " performances de l'application.</html>",
                 sizeField);
-        addRow(
+        UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
                 "Modules ronds ⚠",
@@ -474,8 +425,6 @@ public class CanScan extends JFrame {
      * <p>Initializes buttons, listeners, and updates preview on color changes.
      */
     private JPanel colorPanel() {
-        JPanel colorPanel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
         qrCodeColor.initializeColorButton(qrColorButton, Color.BLACK, true);
         qrCodeColor.initializeColorButton(bgColorButton, Color.WHITE, false);
         qrColorButton.addActionListener(
@@ -494,14 +443,7 @@ public class CanScan extends JFrame {
                         qrCodePreview.updateQrCodePreview(getQrInput());
                     }
                 });
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = GBC_COLOR_BUTTONS_WEIGHT_X;
-        gbc.insets = new Insets(0, 0, 0, COLOR_BUTTONS_GAP);
-        colorPanel.add(bgColorButton, gbc);
-        gbc.gridx = 1;
-        gbc.insets = new Insets(0, 0, 0, 0);
-        colorPanel.add(qrColorButton, gbc);
-        return colorPanel;
+        return UiComponentsConfiguration.INSTANCE.createColorPanel(qrColorButton, bgColorButton);
     }
 
     /**
@@ -511,62 +453,28 @@ public class CanScan extends JFrame {
      */
     private void addNorthPanelGenerateButton(JPanel northPanel, GridBagConstraints grid) {
         grid.gridy += 1;
-        Dimension d =
-                new Dimension(
-                        generateButton.getWidth(),
-                        generateButton.getHeight() + GENERATE_BUTTON_EXTRA_HEIGHT);
-        generateButton.setMinimumSize(d);
-        generateButton.setPreferredSize(d);
-        generateButton.setMaximumSize(d);
-        generateButton.addActionListener(this::generateQrCode);
-        generateButton.setEnabled(false);
+        UiComponentsConfiguration.INSTANCE.configureGenerateButton(
+                generateButton, this::generateQrCode);
         northPanel.add(generateButton, grid);
     }
 
-    /** Creates the overlay panel containing the loader and the QR code label. */
-    private JPanel createQrCodeLabelAndLoaderOverlayPanel(JProgressBar loader) {
-        loader.putClientProperty("FlatLaf.style", "arc:0");
-        loader.setBorder(BorderFactory.createEmptyBorder());
-        loader.setIndeterminate(true);
-        loader.setOpaque(false);
-        loader.setAlignmentX(OVERLAY_PANEL_ALIGNMENT);
-        loader.setAlignmentY(OVERLAY_PANEL_ALIGNMENT);
-        JPanel overlayPanel = new JPanel();
-        overlayPanel.setLayout(new OverlayLayout(overlayPanel));
-        overlayPanel.setOpaque(false);
-        overlayPanel.add(loader);
-        overlayPanel.add(qrCodeLabel);
-        return overlayPanel;
-    }
-
     /**
-     * Initializes and assembles the main application panel.
+     * Builds the main panel with header, QR preview overlay, and spacer.
      *
-     * <p>This method configures the QR code display area, including an overlay combining the QR
-     * label and a loading indicator. The overlay is created via {@link
-     * #createQrCodeLabelAndLoaderOverlayPanel(JProgressBar)}. Resize listeners are registered to
-     * ensure both the QR code and loader are dynamically resized and remain perfectly aligned when
-     * the window or components change size.
+     * <p>Registers resize listeners and enables automatic QR preview updates.
      *
-     * <p>The final layout uses a BorderLayout with:
+     * <p><strong>Layout:</strong> NORTH: header • CENTER: preview overlay • SOUTH: spacer
      *
-     * <ul>
-     *   <li>NORTH: header panel (titles, fields, etc.),
-     *   <li>CENTER: overlay panel containing the QR code and loader centered in a transparent
-     *       panel,
-     *   <li>SOUTH: vertical spacer.
-     * </ul>
-     *
-     * @return the fully constructed main panel, ready for display
+     * @return the main {@link JPanel}
      */
     private JPanel initializeMainPanel() {
-        JPanel overlayPanelForQrCodeLabelAndLoader;
         qrCodeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         qrCodeLabel.setVerticalAlignment(SwingConstants.CENTER);
         qrCodeLabel.setOpaque(false);
-        qrCodeLabel.setAlignmentX(OVERLAY_PANEL_ALIGNMENT);
-        qrCodeLabel.setAlignmentY(OVERLAY_PANEL_ALIGNMENT);
-        overlayPanelForQrCodeLabelAndLoader = createQrCodeLabelAndLoaderOverlayPanel(loader);
+        qrCodeLabel.setAlignmentX(FloatConstants.OVERLAY_PANEL_ALIGNMENT.getValue());
+        qrCodeLabel.setAlignmentY(FloatConstants.OVERLAY_PANEL_ALIGNMENT.getValue());
+        JPanel overlayPanelForQrCodeLabelAndLoader =
+                UiComponentsConfiguration.INSTANCE.createQrCodeOverlayPanel(loader, qrCodeLabel);
         Runnable resize = () -> qrCodeResize.updateQrCodeResize(getQrInput());
         addWindowStateListener(e -> SwingUtilities.invokeLater(resize));
         addComponentListener(
@@ -639,12 +547,8 @@ public class CanScan extends JFrame {
      * <p>Used in testing and configuration generation to reference GUI elements reliably.
      */
     private void initializeComponentNames() {
-        nameField.setName("nameField");
-        browseButton.setName("browseButton");
-        ratioSlider.setName("ratioSlider");
-        qrColorButton.setName("qrColorButton");
-        freeRadio.setName("freeRadio");
-        freeField.setName("freeField");
+        UiComponentsConfiguration.INSTANCE.assignComponentNames(
+                nameField, browseButton, ratioSlider, qrColorButton, freeRadio, freeField);
     }
 
     /**
@@ -661,12 +565,11 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Switches the application between MECARD and FREE QR code modes.
+     * Switches the application between MECARD and FREE modes.
      *
-     * <p>Updates the displayed input panel and refreshes the QR code preview to reflect the
-     * selected mode.
+     * <p>Updates the visible input panel and refreshes the QR preview accordingly.
      *
-     * @param mode the {@link Mode} to switch to; if null, no action is performed
+     * @param mode the selected {@link Mode}; ignored if null
      */
     private void switchMode(Mode mode) {
         if (Checker.INSTANCE.checkNPE(mode, "switchMode", "mode")) {
@@ -679,101 +582,54 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Initializes the MECARD input panel with labeled text fields for structured contact
-     * information.
+     * Populates the MECARD panel with structured contact fields.
      *
-     * <p>The panel will include fields for name, organization, phone, email, address, and URL,
-     * arranged using {@link GridBagLayout}.
+     * <p>Includes name, organization, phone, email, address, and URL, arranged with {@link
+     * GridBagLayout}.
      *
-     * @param mecardPanel the {@link JPanel} to populate with MECARD input fields
-     * @param grid the {@link GridBagConstraints} used to position components within the panel
+     * @param mecardPanel the panel to populate
+     * @param grid layout constraints
      */
     private void mecard(JPanel mecardPanel, GridBagConstraints grid) {
         if (Checker.INSTANCE.checkNPE(mecardPanel, "mecard", "mecardPanel")
                 || Checker.INSTANCE.checkNPE(grid, "mecard", "grid")) {
             return;
         }
-        GridBagLayout layout = (GridBagLayout) mecardPanel.getLayout();
-        layout.columnWidths = new int[] {DEFAULT_LABEL_WIDTH, 0};
-        grid.fill = GridBagConstraints.HORIZONTAL;
-        grid.gridx = 0;
-        grid.weightx = 1;
-        grid.gridy = -1;
-        addRow(
+        UiComponentsConfiguration.INSTANCE.populateMecardPanel(
                 mecardPanel,
                 grid,
-                "<html><b>Nom, prénom</b></html>",
-                "Mettre une virgule seule pour une organisation.",
-                nameField);
-        addRow(mecardPanel, grid, "Organisation", "Le nom de l'entreprise.", orgField);
-        addRow(
-                mecardPanel,
-                grid,
-                "Téléphone",
-                "<html>Préférer le format international <b>+33…</b></html>.",
-                phoneField);
-        addRow(mecardPanel, grid, "Courriel", "", emailField);
-        addRow(mecardPanel, grid, "Adresse", "L'adresse postale.", adrField);
-        addRow(
-                mecardPanel,
-                grid,
-                "Lien",
-                "<html>L'URL complète du site web.<br>Par exemple :"
-                        + " <b>https://soft64.fr</b></html>",
-                urlField);
+                new MecardJFields(nameField, orgField, phoneField, emailField, adrField, urlField));
     }
 
     /**
-     * Initializes the FREE mode input panel with a multiline text area for arbitrary text or URLs.
+     * Populates the FREE panel with a multiline text area for arbitrary text or URLs.
      *
-     * <p>The text area is wrapped in a scroll pane, with line wrapping and preferred size
-     * configured for comfortable editing. Uses {@link GridBagLayout} for layout management.
+     * <p>Uses a scroll pane with line wrapping and {@link GridBagLayout} for layout.
      *
-     * @param freePanel the {@link JPanel} to populate with the free text input area
-     * @param grid the {@link GridBagConstraints} used to position components within the panel
+     * @param freePanel the panel to populate
+     * @param grid layout constraints
      */
     private void freeCard(JPanel freePanel, GridBagConstraints grid) {
         if (Checker.INSTANCE.checkNPE(freePanel, "freeCard", "freePanel")
                 || Checker.INSTANCE.checkNPE(grid, "freeCard", "grid")) {
             return;
         }
-        GridBagLayout layout = (GridBagLayout) freePanel.getLayout();
-        layout.columnWidths = new int[] {DEFAULT_LABEL_WIDTH, 0};
-        grid.fill = GridBagConstraints.HORIZONTAL;
-        grid.gridx = 0;
-        grid.weightx = 1;
-        grid.gridy = -1;
-        freeField.setWrapStyleWord(true);
-        freeField.setLineWrap(true);
-        FontMetrics fm = freeField.getFontMetrics(freeField.getFont());
-        int charHeight = fm.getHeight();
-        int charWidth = fm.charWidth('W');
-        Dimension size =
-                new Dimension(
-                        charWidth * TEXT_FIELDS_COLUMNS, charHeight * MULTILINE_TEXT_FIELDS_ROWS);
-        freeScrollPane.setPreferredSize(size);
-        freeScrollPane.setMinimumSize(size);
-        freeScrollPane.setMaximumSize(size);
-        addRow(
-                freePanel,
-                grid,
-                "<html><b>Texte</b></html>",
-                "Les données brutes à encoder.",
-                freeScrollPane);
+        UiComponentsConfiguration.INSTANCE.populateFreePanel(
+                freePanel, grid, freeField, freeScrollPane);
     }
 
     /**
-     * Sets up automatic QR code preview updates for all input fields and controls.
+     * Attaches automatic QR code preview updates to all input fields and controls.
      *
-     * <p>Any change in text fields, sliders, or the "rounded modules" checkbox triggers an
-     * immediate update of the QR code preview without saving to a file. Also attaches a listener to
-     * validate input and enable or disable the generate button accordingly.
+     * <p>Any change in text fields, sliders, or the "rounded modules" checkbox refreshes the QR
+     * code preview and validates input to update the generate button state.
      */
     private void automaticQRCodeRenderingForFieldsAndControls() {
         DocumentListener docListener =
-                simpleDocumentListener(() -> qrCodePreview.updateQrCodePreview(getQrInput()));
+                UiComponentsConfiguration.createDocumentListener(
+                        () -> qrCodePreview.updateQrCodePreview(getQrInput()));
         DocumentListener validationListener =
-                simpleDocumentListener(this::updateGenerateButtonState);
+                UiComponentsConfiguration.createDocumentListener(this::updateGenerateButtonState);
         JTextField[] textFields = {
             nameField, phoneField, emailField, orgField, adrField, urlField, logoField, sizeField
         };
@@ -790,14 +646,10 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Validates the current input fields and toggles the state of the generate button.
+     * Updates the generate button state based on input validation.
      *
-     * <p>Disables the button if the required fields are empty:
-     *
-     * <ul>
-     *   <li>MECARD mode: {@code nameField} must be non-empty.
-     *   <li>FREE mode: {@code freeField} must be non-empty.
-     * </ul>
+     * <p>Disables the button if the required fields are empty: MECARD → {@code nameField}, FREE →
+     * {@code freeField}.
      */
     private void updateGenerateButtonState() {
         boolean isFreeFieldEmpty = freeField.getText().trim().isEmpty();
@@ -806,92 +658,6 @@ public class CanScan extends JFrame {
                 currentMode == Mode.MECARD && isNameFieldEmpty
                         || currentMode == Mode.FREE && isFreeFieldEmpty;
         generateButton.setEnabled(!disable);
-    }
-
-    /**
-     * Creates a minimal {@link DocumentListener} that executes the given action on any document
-     * change.
-     *
-     * <p>The action is triggered on insertions, removals, or style/attribute changes in the
-     * document.
-     *
-     * @param action the {@link Runnable} to execute on document updates
-     * @return a {@link DocumentListener} that invokes the action, or {@code null} if the action is
-     *     null
-     */
-    private static DocumentListener simpleDocumentListener(Runnable action) {
-        if (Checker.INSTANCE.checkNPE(action, "simpleDocumentListener", "action")) {
-            return null;
-        }
-        return new javax.swing.event.DocumentListener() {
-            private void update() {
-                SwingUtilities.invokeLater(action);
-            }
-
-            @Override
-            public void insertUpdate(javax.swing.event.DocumentEvent e) {
-                update();
-            }
-
-            @Override
-            public void removeUpdate(javax.swing.event.DocumentEvent e) {
-                update();
-            }
-
-            @Override
-            public void changedUpdate(javax.swing.event.DocumentEvent e) {
-                update();
-            }
-        };
-    }
-
-    /**
-     * Updates the tooltip of the ratio slider to reflect its current value as a percentage.
-     *
-     * <p>Provides immediate feedback to the user on the selected logo visibility ratio when
-     * hovering over the slider.
-     */
-    private void setRatioSliderTooltipValue() {
-        ratioSlider.setToolTipText(ratioSlider.getValue() + "%");
-    }
-
-    /**
-     * Adds a labeled component row to a panel using GridBagLayout.
-     *
-     * <p>The row consists of a JLabel with optional tooltip text and the specified JComponent. The
-     * label is created with the provided text, and if a non-blank tooltip is given, it is set on
-     * the label. Both the label and the component are then added to the panel using the provided
-     * GridBagConstraints.
-     *
-     * @param panel the container panel to which the row will be added
-     * @param gbc the GridBagConstraints used for layout configuration
-     * @param labelText the text to display in the label (must not be null)
-     * @param tooltipText the tooltip text for the label (optional, may be null or blank)
-     * @param component the JComponent to add next to the label (must not be null)
-     */
-    private void addRow(
-            JPanel panel,
-            GridBagConstraints gbc,
-            String labelText,
-            String tooltipText,
-            JComponent component) {
-        if (Checker.INSTANCE.checkNPE(panel, ADD_ROW, "panel")
-                || Checker.INSTANCE.checkNPE(gbc, ADD_ROW, "gbc")
-                || Checker.INSTANCE.checkNPE(component, ADD_ROW, "component")
-                || Checker.INSTANCE.checkNPE(labelText, ADD_ROW, "labelText")) {
-            return;
-        }
-        gbc.gridx = 0;
-        gbc.gridy += 1;
-        gbc.weightx = 0;
-        JLabel label = new JLabel(labelText);
-        if (StringUtils.isNotBlank(tooltipText)) {
-            label.setToolTipText(tooltipText);
-        }
-        panel.add(label, gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1;
-        panel.add(component, gbc);
     }
 
     /**
@@ -912,13 +678,13 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Opens a file chooser dialog to select a logo image.
+     * Opens a file chooser for PNG, JPG, or JPEG logos.
      *
-     * <p>Only PNG, JPG, and JPEG files are allowed. Can be overridden for testing purposes.
+     * <p>Package-private for testing; can be overridden or mocked.
      *
-     * @return the selected File, or {@code null} if the user cancels the selection
+     * @return the selected file, or {@code null} if canceled
      */
-    protected File chooseLogoFile() {
+    File chooseLogoFile() {
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Sélectionner le logo (PNG, JPG, ou JPEG)");
         chooser.setFileFilter(
@@ -931,12 +697,8 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Builds the QR code data and configuration from the current input fields, then delegates the
-     * generation and saving of the QR code to {@link GenerateAndSaveService}.
-     *
-     * <p>Collects input from MECARD or FREE fields, applies visual settings (colors, size, margin,
-     * logo, rounded modules), and passes them to the QR service for QR code generation and file
-     * saving.
+     * Generates a QR code from current input fields and visual settings, then saves it via {@link
+     * GenerateAndSaveService}.
      *
      * @param e the triggering {@link ActionEvent}
      */
@@ -983,12 +745,9 @@ public class CanScan extends JFrame {
     }
 
     /**
-     * Builds and returns a {@link QrInput} object containing all current user inputs and settings.
+     * Collects current input and visual settings into a {@link QrInput} for QR code generation.
      *
-     * <p>Aggregates data from MECARD or FREE fields, visual settings (colors, size, margin, logo,
-     * rounded modules), and layout parameters to configure QR code generation.
-     *
-     * @return a fully populated {@link QrInput} instance for QR code generation
+     * @return a populated {@link QrInput} instance
      */
     private QrInput getQrInput() {
         return new QrInput(
@@ -1010,76 +769,25 @@ public class CanScan extends JFrame {
                 roundedModulesCheckBox.isSelected());
     }
 
-    /**
-     * Validates and returns the current image-to-QR ratio from the ratio slider.
-     *
-     * <p>If the slider value is out of the valid range [0, 1] or cannot be parsed, the default
-     * ratio {@link #DEFAULT_IMAGE_RATIO} is used.
-     *
-     * @return the validated image ratio as a double between 0 and 1
-     */
+    /** Validates and returns the current image-to-QR ratio from the ratio slider. */
     double validateAndGetRatio() {
-        try {
-            imageRatio = (double) ratioSlider.getValue() / MAX_PERCENTAGE;
-            if (imageRatio < 0 || imageRatio > 1) {
-                imageRatio = DEFAULT_IMAGE_RATIO;
-            }
-        } catch (NumberFormatException ex) {
-            imageRatio = DEFAULT_IMAGE_RATIO;
-        }
+        imageRatio = ValidationFieldHelper.INSTANCE.validateAndGetRatio(ratioSlider);
         return imageRatio;
     }
 
-    /**
-     * Validates and returns the current QR code margin from the margin slider.
-     *
-     * <p>The value is clamped to the range [0, {@link #MARGIN_MAXIMUM_VALUE}]. If parsing fails,
-     * the default margin {@link #margin} is used.
-     *
-     * @return the validated margin value in pixels
-     */
+    /** Validates and returns the current QR code margin from the margin slider. */
     int validateAndGetMargin() {
-        try {
-            margin = marginSlider.getValue();
-            if (margin < 0) {
-                margin = 0;
-            }
-            if (margin > MARGIN_MAXIMUM_VALUE) {
-                margin = MARGIN_MAXIMUM_VALUE;
-            }
-        } catch (NumberFormatException ex) {
-            margin = 3;
-        }
+        margin = ValidationFieldHelper.INSTANCE.validateAndGetMargin(marginSlider);
         return margin;
     }
 
-    /**
-     * Validates and returns the QR code size from the corresponding text field.
-     *
-     * <p>If the input is invalid or smaller than {@link #MINIMUM_QR_CODE_SIZE}, it defaults to
-     * {@link #DEFAULT_QR_CODE_SIZE}. Updates the text field if parsing fails.
-     *
-     * @return the validated QR code size in pixels
-     */
+    /** Validates and returns the QR code size from the corresponding text field. */
     int validateAndGetSize() {
-        int size;
-        try {
-            size = Integer.parseInt(sizeField.getText());
-            if (size < MINIMUM_QR_CODE_SIZE) {
-                size = MINIMUM_QR_CODE_SIZE;
-            }
-        } catch (NumberFormatException ex) {
-            size = DEFAULT_QR_CODE_SIZE;
-            sizeField.setText(SIZE_FIELD_DEFAULT);
-        }
-        return size;
+        return ValidationFieldHelper.INSTANCE.validateAndGetSize(sizeField);
     }
 
     /**
-     * Application entry point.
-     *
-     * <p>Sets up the FlatCobalt2 theme, initializes the Luciole font, and launches the CanScan GUI
-     * on the Event Dispatch Thread (EDT).
+     * Application entry point. Initializes the UI theme, font, and launches the GUI on the EDT.
      *
      * @param args command-line arguments (ignored)
      */

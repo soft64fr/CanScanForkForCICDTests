@@ -10,7 +10,8 @@ public enum StringConstants {
     QR_DATA("qrData"),
     ERREUR("Erreur"),
     GENERATE_QR_CODE("generateQrCode"),
-    GENERATE_AND_SAVE_QR_CODE("generateAndSaveQrCode");
+    GENERATE_AND_SAVE_QR_CODE("generateAndSaveQrCode"),
+    DEFAULT_QR_CODE_DIMENSION_FIELD("400");
 
     private final String value;
 

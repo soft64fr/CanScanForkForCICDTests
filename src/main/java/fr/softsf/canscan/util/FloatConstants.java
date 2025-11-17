@@ -5,21 +5,17 @@
  */
 package fr.softsf.canscan.util;
 
-/** Int constants. */
-public enum IntConstants {
-    DEFAULT_GAP(15),
-    LOADER_SIZE_OFFSET(2),
-    MAX_PERCENTAGE(100),
-    TEXT_FIELDS_COLUMNS(25),
-    DEFAULT_LABEL_WIDTH(110);
+/** Float constants. */
+public enum FloatConstants {
+    OVERLAY_PANEL_ALIGNMENT(0.5f);
 
-    private final int value;
+    private final float value;
 
-    IntConstants(int value) {
+    FloatConstants(float value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public float getValue() {
         return value;
     }
 }
