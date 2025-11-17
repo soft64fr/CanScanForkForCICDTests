@@ -268,7 +268,7 @@ public class CanScan extends JFrame {
      *
      * <p>Sets tick spacing, labels, and listeners to update tooltips dynamically.
      */
-    protected void initializeSliders() {
+    private void initializeSliders() {
         UiComponentsConfiguration.INSTANCE.configureMarginSlider(marginSlider, margin);
         UiComponentsConfiguration.INSTANCE.configureRatioSlider(ratioSlider, imageRatio);
     }
@@ -280,6 +280,23 @@ public class CanScan extends JFrame {
      * <p>Uses a GridBagLayout with consistent spacing and borders.
      */
     private JPanel initializeNorthPanel() {
+        JPanel northPanel = getNorthJPanel();
+        GridBagConstraints grid = northPanelGridBagConstraints();
+        GridBagLayout layout = (GridBagLayout) northPanel.getLayout();
+        layout.columnWidths = new int[] {IntConstants.DEFAULT_LABEL_WIDTH.getValue(), 0};
+        addNorthPanelModeSelection(northPanel, grid);
+        addNorthPanelCardPanels(northPanel, grid);
+        addNorthPanelCommonFields(northPanel, grid);
+        addNorthPanelGenerateButton(northPanel, grid);
+        return northPanel;
+    }
+
+    /**
+     * Creates the base north panel with layout, maximum width, and padding applied.
+     *
+     * @return a preconfigured north {@link JPanel}
+     */
+    private static JPanel getNorthJPanel() {
         JPanel northPanel = new JPanel(new GridBagLayout());
         northPanel.setMaximumSize(
                 new Dimension(
@@ -290,13 +307,6 @@ public class CanScan extends JFrame {
                         IntConstants.DEFAULT_GAP.getValue(),
                         IntConstants.DEFAULT_GAP.getValue(),
                         IntConstants.DEFAULT_GAP.getValue()));
-        GridBagConstraints grid = northPanelGridBagConstraints();
-        GridBagLayout layout = (GridBagLayout) northPanel.getLayout();
-        layout.columnWidths = new int[] {IntConstants.DEFAULT_LABEL_WIDTH.getValue(), 0};
-        addNorthPanelModeSelection(northPanel, grid);
-        addNorthPanelCardPanels(northPanel, grid);
-        addNorthPanelCommonFields(northPanel, grid);
-        addNorthPanelGenerateButton(northPanel, grid);
         return northPanel;
     }
 
