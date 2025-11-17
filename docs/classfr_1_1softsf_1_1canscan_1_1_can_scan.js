@@ -17,6 +17,7 @@ var classfr_1_1softsf_1_1canscan_1_1_can_scan =
     [ "getLogoFieldTextForTests", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a35dc553a27bacbc3156e90afeda25336", null ],
     [ "getManifestKeys", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aefe4d08d96fdc7b2097daf4033bbbb9c", null ],
     [ "getMarginFieldIntForTests", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ace71c953591d075db668442eceabb760", null ],
+    [ "getNorthJPanel", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada8edc3d5abda489ce9f75a0613cfc71", null ],
     [ "getQrInput", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a180290bc488e2346592ded98ccc4b1f3", null ],
     [ "initializeComponentNames", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a070115929fdc69b249d21866a00a47cc", null ],
     [ "initializeMainPanel", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a14263ca931024d56cd9bed4af4b74c25", null ],

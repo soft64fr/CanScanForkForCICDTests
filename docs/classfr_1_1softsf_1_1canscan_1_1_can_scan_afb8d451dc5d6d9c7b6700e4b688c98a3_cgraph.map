@@ -1,15 +1,17 @@
 <map id="fr.softsf.canscan.CanScan.initializeNorthPanel" name="fr.softsf.canscan.CanScan.initializeNorthPanel">
-<area shape="rect" id="Node000001" title="Builds the north panel containing mode selection, card panels, common fields, and the generate button..." alt="" coords="5,175,234,217"/>
+<area shape="rect" id="Node000001" title="Builds the north panel containing mode selection, card panels, common fields, and the generate button..." alt="" coords="5,208,234,251"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab2e018ca62c7497c29e84f42ae870daa" title="Adds MECARD and Free card panels to the north panel." alt="" coords="286,41,488,84"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,172,209,133,280,94,294,88,297,92,283,98,211,137,152,176"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,205,200,150,239,120,280,94,291,88,294,93,283,98,242,124,203,154,144,209"/>
 <area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a94ab4df98de0d05977e6a65ab75f89f0" title="Adds common input fields to the north panel." alt="" coords="286,108,488,151"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="207,171,283,152,285,158,209,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="170,205,281,160,299,154,301,159,283,165,172,210"/>
 <area shape="rect" id="Node000012" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9f205dfdb266d5d7f8f8899b69742663" title="Adds the generate button to the north panel." alt="" coords="286,175,488,217"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="234,193,270,193,270,199,234,199"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="234,212,270,208,271,213,235,218"/>
 <area shape="rect" id="Node000013" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa469763b92dd7cbc6dfdb9aaa0116b33" title="Adds mode selection controls (MECARD/Free) to the north panel." alt="" coords="286,241,488,284"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="209,215,285,234,283,240,207,221"/>
-<area shape="rect" id="Node000018" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aeb5550da33925e95999aae23f525f7c5" title="Creates default GridBagConstraints for consistent layout configuration." alt="" coords="282,308,492,351"/>
-<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="152,216,211,255,283,294,297,300,294,304,280,298,209,259,150,220"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="235,241,271,246,270,251,234,246"/>
+<area shape="rect" id="Node000018" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ada8edc3d5abda489ce9f75a0613cfc71" title="Creates the base north panel with layout, maximum width, and padding applied." alt="" coords="287,308,486,351"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="172,249,283,294,301,300,299,305,281,298,170,254"/>
+<area shape="rect" id="Node000019" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aeb5550da33925e95999aae23f525f7c5" title="Creates default GridBagConstraints for consistent layout configuration." alt="" coords="282,375,492,417"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="144,249,203,304,242,334,283,360,294,366,291,371,280,365,239,339,200,308,140,253"/>
 <area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a38d65dd319daee1c3288690c17e43ca5" title="Populates the FREE panel with a multiline text area for arbitrary text or URLs." alt="" coords="550,5,781,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="488,44,561,32,562,38,489,49"/>
 <area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aed7e3048974882318a6519d8d36e8ec0" title="Populates the MECARD panel with structured contact fields." alt="" coords="554,56,778,83"/>

@@ -135,41 +135,41 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="351.62" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">~</text>
 <text text-anchor="start" x="361.62" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">void setOrgFieldTextForTests()</text>
 <text text-anchor="start" x="361.62" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
-<text text-anchor="start" x="352" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="361.62" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">void initializeSliders()</text>
-<text text-anchor="start" x="353.12" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelCardPanels</text>
-<text text-anchor="start" x="361.62" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">(JPanel northPanel, GridBagConstraints grid)</text>
-<text text-anchor="start" x="353.12" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelCommon</text>
-<text text-anchor="start" x="361.62" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">Fields(JPanel northPanel,</text>
-<text text-anchor="start" x="361.62" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GridBagConstraints grid)</text>
-<text text-anchor="start" x="353.12" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelGenerate</text>
-<text text-anchor="start" x="361.62" y="-250.5" font-family="Helvetica,sans-Serif" font-size="10.00">Button(JPanel northPanel,</text>
-<text text-anchor="start" x="361.62" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GridBagConstraints grid)</text>
-<text text-anchor="start" x="353.12" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelModeSelection</text>
-<text text-anchor="start" x="361.62" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">(JPanel northPanel, GridBagConstraints grid)</text>
-<text text-anchor="start" x="353.12" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">void automaticQRCodeRendering</text>
-<text text-anchor="start" x="361.62" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForFieldsAndControls()</text>
-<text text-anchor="start" x="353.12" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">int calculateAvailableQr</text>
-<text text-anchor="start" x="361.62" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeLabelHeight()</text>
+<text text-anchor="start" x="353.12" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelCardPanels</text>
+<text text-anchor="start" x="361.62" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">(JPanel northPanel, GridBagConstraints grid)</text>
+<text text-anchor="start" x="353.12" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelCommon</text>
+<text text-anchor="start" x="361.62" y="-306.5" font-family="Helvetica,sans-Serif" font-size="10.00">Fields(JPanel northPanel,</text>
+<text text-anchor="start" x="361.62" y="-294.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GridBagConstraints grid)</text>
+<text text-anchor="start" x="353.12" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelGenerate</text>
+<text text-anchor="start" x="361.62" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">Button(JPanel northPanel,</text>
+<text text-anchor="start" x="361.62" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GridBagConstraints grid)</text>
+<text text-anchor="start" x="353.12" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">void addNorthPanelModeSelection</text>
+<text text-anchor="start" x="361.62" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">(JPanel northPanel, GridBagConstraints grid)</text>
+<text text-anchor="start" x="353.12" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">void automaticQRCodeRendering</text>
+<text text-anchor="start" x="361.62" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForFieldsAndControls()</text>
+<text text-anchor="start" x="353.12" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">int calculateAvailableQr</text>
+<text text-anchor="start" x="361.62" y="-170.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeLabelHeight()</text>
+<text text-anchor="start" x="353.12" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">JPanel colorPanel()</text>
 <text text-anchor="start" x="353.12" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">JPanel colorPanel()</text>
+<text text-anchor="start" x="361.62" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">void configureUpdateButton()</text>
 <text text-anchor="start" x="353.12" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">void configureUpdateButton()</text>
-<text text-anchor="start" x="353.12" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">void freeCard(JPanel</text>
-<text text-anchor="start" x="361.62" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00"> freePanel, GridBagConstraints grid)</text>
-<text text-anchor="start" x="353.12" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">void generateQrCode</text>
-<text text-anchor="start" x="361.62" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">(ActionEvent e)</text>
-<text text-anchor="start" x="361.62" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
+<text text-anchor="start" x="361.62" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">void freeCard(JPanel</text>
+<text text-anchor="start" x="361.62" y="-110.5" font-family="Helvetica,sans-Serif" font-size="10.00"> freePanel, GridBagConstraints grid)</text>
+<text text-anchor="start" x="353.12" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">void generateQrCode</text>
+<text text-anchor="start" x="361.62" y="-82.5" font-family="Helvetica,sans-Serif" font-size="10.00">(ActionEvent e)</text>
+<text text-anchor="start" x="361.62" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
+<text text-anchor="start" x="353.12" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="361.62" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">static void getManifestKeys()</text>
 <text text-anchor="start" x="353.12" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="361.62" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">static void getManifestKeys()</text>
+<text text-anchor="start" x="361.62" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">static JPanel getNorthJPanel()</text>
 <text text-anchor="start" x="353.12" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
 <text text-anchor="start" x="361.62" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">static String initialize</text>
 <text text-anchor="start" x="361.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Title()</text>

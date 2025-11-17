@@ -17,11 +17,12 @@ var searchData=
   ['minimum_5fqr_5fcode_5fsize_14',['MINIMUM_QR_CODE_SIZE',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aefe23a4ece414d914191c04f39e5d6b1',1,'fr::softsf::canscan::CanScan']]],
   ['mode_15',['Mode',['../enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html',1,'fr.softsf.canscan.model.Mode'],['../enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#adad452c36f778ab7a24ab05e07bd5317',1,'fr.softsf.canscan.model.Mode.Mode()']]],
   ['mode_2ejava_16',['Mode.java',['../_mode_8java.html',1,'']]],
-  ['modulecontext_17',['ModuleContext',['../namespacefr_1_1softsf_1_1canscan_1_1model.html#a3c0c10eef363d788444e34095d56bb86',1,'fr::softsf::canscan::model']]],
-  ['modulecontext_2ejava_18',['ModuleContext.java',['../_module_context_8java.html',1,'']]],
-  ['multiline_5ftext_5ffields_5frows_19',['MULTILINE_TEXT_FIELDS_ROWS',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a34d041c1f968ed8160ec44cb6e15ab22',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
-  ['mypopup_20',['MyPopup',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html',1,'fr::softsf::canscan::ui']]],
-  ['mypopup_2ejava_21',['MyPopup.java',['../_my_popup_8java.html',1,'']]],
-  ['mypopuptest_22',['MyPopupTest',['../classfr_1_1softsf_1_1canscan_1_1_my_popup_test.html',1,'fr::softsf::canscan']]],
-  ['mypopuptest_2ejava_23',['MyPopupTest.java',['../_my_popup_test_8java.html',1,'']]]
+  ['module_2dinfo_2ejava_17',['module-info.java',['../module-info_8java.html',1,'']]],
+  ['modulecontext_18',['ModuleContext',['../namespacefr_1_1softsf_1_1canscan_1_1model.html#a3c0c10eef363d788444e34095d56bb86',1,'fr::softsf::canscan::model']]],
+  ['modulecontext_2ejava_19',['ModuleContext.java',['../_module_context_8java.html',1,'']]],
+  ['multiline_5ftext_5ffields_5frows_20',['MULTILINE_TEXT_FIELDS_ROWS',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a34d041c1f968ed8160ec44cb6e15ab22',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
+  ['mypopup_21',['MyPopup',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html',1,'fr::softsf::canscan::ui']]],
+  ['mypopup_2ejava_22',['MyPopup.java',['../_my_popup_8java.html',1,'']]],
+  ['mypopuptest_23',['MyPopupTest',['../classfr_1_1softsf_1_1canscan_1_1_my_popup_test.html',1,'fr::softsf::canscan']]],
+  ['mypopuptest_2ejava_24',['MyPopupTest.java',['../_my_popup_test_8java.html',1,'']]]
 ];
