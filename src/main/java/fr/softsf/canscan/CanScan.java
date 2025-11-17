@@ -81,7 +81,7 @@ public class CanScan extends JFrame {
     private static final int MINIMUM_QR_CODE_SIZE = 10;
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private static final String NORTH_PANEL = "northPanel";
-    private static final String VERSION =ApplicationMetadata.INSTANCE.getVersion();
+    private static final String VERSION = ApplicationMetadata.INSTANCE.getVersion();
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
