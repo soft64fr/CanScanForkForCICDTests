@@ -19,6 +19,7 @@ import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Properties;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -81,6 +82,7 @@ public class CanScan extends JFrame {
             "https://github.com/Lob2018/CanScan/releases/latest";
     private static final int MINIMUM_QR_CODE_SIZE = 10;
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
+    private static final String NORTH_PANEL = "northPanel";
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
@@ -158,6 +160,7 @@ public class CanScan extends JFrame {
         northPanelWrapper.add(northPanel);
         JPanel mainPanel = initializeMainPanel();
         JScrollPane scrollPane = initializeScrollPane(mainPanel);
+        Objects.requireNonNull(scrollPane);
         add(scrollPane, BorderLayout.CENTER);
         initializeWindow();
         initializeComponentNames();
@@ -325,6 +328,10 @@ public class CanScan extends JFrame {
      * <p>Configures radio buttons, update button, and mode switching listeners.
      */
     private void addNorthPanelModeSelection(JPanel northPanel, GridBagConstraints grid) {
+        if (Checker.INSTANCE.checkNPE(northPanel, "addNorthPanelModeSelection", NORTH_PANEL)
+                || Checker.INSTANCE.checkNPE(grid, "addNorthPanelModeSelection", "grid")) {
+            return;
+        }
         ButtonGroup group = new ButtonGroup();
         JPanel modePanel =
                 UiComponentsConfiguration.INSTANCE.createModePanel(
@@ -363,6 +370,10 @@ public class CanScan extends JFrame {
      * <p>Initializes both panels and registers them in the card layout.
      */
     private void addNorthPanelCardPanels(JPanel northPanel, GridBagConstraints grid) {
+        if (Checker.INSTANCE.checkNPE(northPanel, "addNorthPanelCardPanels", NORTH_PANEL)
+                || Checker.INSTANCE.checkNPE(grid, "addNorthPanelCardPanels", "grid")) {
+            return;
+        }
         JPanel freePanel = new JPanel(new GridBagLayout());
         freeCard(freePanel, new GridBagConstraints());
         JPanel mecardPanel = new JPanel(new GridBagLayout());
@@ -383,6 +394,10 @@ public class CanScan extends JFrame {
      * <p>Includes logo path, margin, ratio, colors, size, and rounded modules options.
      */
     private void addNorthPanelCommonFields(JPanel northPanel, GridBagConstraints grid) {
+        if (Checker.INSTANCE.checkNPE(northPanel, "addNorthPanelCommonFields", NORTH_PANEL)
+                || Checker.INSTANCE.checkNPE(grid, "addNorthPanelCommonFields", "grid")) {
+            return;
+        }
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
@@ -462,6 +477,10 @@ public class CanScan extends JFrame {
      * <p>Configures size, action listener, and initial disabled state.
      */
     private void addNorthPanelGenerateButton(JPanel northPanel, GridBagConstraints grid) {
+        if (Checker.INSTANCE.checkNPE(northPanel, "addNorthPanelGenerateButton", NORTH_PANEL)
+                || Checker.INSTANCE.checkNPE(grid, "addNorthPanelGenerateButton", "grid")) {
+            return;
+        }
         grid.gridy += 1;
         UiComponentsConfiguration.INSTANCE.configureGenerateButton(
                 generateButton, this::generateQrCode);
@@ -532,6 +551,9 @@ public class CanScan extends JFrame {
      * <p>Removes borders and configures smooth vertical scrolling.
      */
     private JScrollPane initializeScrollPane(JPanel mainPanel) {
+        if (Checker.INSTANCE.checkNPE(mainPanel, "initializeScrollPane", "mainPanel")) {
+            return null;
+        }
         JScrollPane scrollPane = new JScrollPane(mainPanel);
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(VERTICAL_SCROLL_UNIT_INCREMENT);
