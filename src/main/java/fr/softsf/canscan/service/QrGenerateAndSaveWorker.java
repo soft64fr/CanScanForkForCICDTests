@@ -97,7 +97,10 @@ public class QrGenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
     private void handleBackgroundError(Throwable e) {
         errorTitle = StringConstants.ERREUR.getValue();
         if (e instanceof WriterException) {
-            errorMessage = "Pas de génération du QR Code\n" + e.getMessage();
+            errorMessage =
+                    e.getMessage().equals("Data too big")
+                            ? "Réduire la quantité de données, pour pouvoir enregistrer\n"
+                            : "Pas de génération du QR Code\n" + e.getMessage();
         } else if (e instanceof IOException) {
             errorMessage = "Pas de lecture/écriture de fichier\n" + e.getMessage();
         } else if (e instanceof OutOfMemoryError) {

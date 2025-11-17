@@ -175,13 +175,27 @@ public class DynamicQrCodePreview extends AbstractDynamicQrCodeWorker<BufferedIm
             if (Thread.currentThread().isInterrupted()) {
                 return null;
             }
-            SwingUtilities.invokeLater(
-                    () ->
-                            MyPopup.INSTANCE.showDialog(
-                                    "Pas de rendu du code QR\n",
-                                    ex.getMessage(),
-                                    StringConstants.ERREUR.getValue()));
+            showPreviewErrorMessage(ex);
             return null;
         }
+    }
+
+    /**
+     * Displays an error dialog on the EDT based on the given exception.
+     *
+     * <p>If the exception message is {@code "Data too big"}, a specific user-friendly hint is
+     * shown. Otherwise, a generic QR rendering error message is displayed.
+     *
+     * @param ex the exception that caused the QR generation failure
+     */
+    private void showPreviewErrorMessage(Exception ex) {
+        SwingUtilities.invokeLater(
+                () ->
+                        MyPopup.INSTANCE.showDialog(
+                                ex.getMessage().equals("Data too big")
+                                        ? "Réduire la quantité de données\n"
+                                        : "Pas de rendu du code QR\n",
+                                ex.getMessage(),
+                                StringConstants.ERREUR.getValue()));
     }
 }
