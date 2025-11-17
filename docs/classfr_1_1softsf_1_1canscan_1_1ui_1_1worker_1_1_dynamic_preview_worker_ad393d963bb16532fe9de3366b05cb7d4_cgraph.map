@@ -1,5 +1,7 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicPreviewWorker.buildPreviewImage" name="fr.softsf.canscan.ui.worker.DynamicPreviewWorker.buildPreviewImage">
-<area shape="rect" id="Node000001" title="Builds and returns the QR code preview image based on the current WholeFields." alt="" coords="5,13,281,56"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a6aae1ee68e2d4201c3bd2716f5bd23e9" title="Displays an error dialog on the EDT based on the given exception." alt="" coords="329,5,572,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,32,313,32,313,37,281,37"/>
+<area shape="rect" id="Node000001" title="Builds and returns the QR code preview image based on the current WholeFields." alt="" coords="5,43,281,85"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a4e8c2ddc5168882770fb4255f808fd61" title="Creates and returns the shared QR generation settings derived from the current WholeFields." alt="" coords="329,5,600,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,45,313,42,313,47,282,51"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a6aae1ee68e2d4201c3bd2716f5bd23e9" title="Displays an error dialog on the EDT based on the given exception." alt="" coords="343,72,586,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,77,327,83,327,88,281,83"/>
 </map>

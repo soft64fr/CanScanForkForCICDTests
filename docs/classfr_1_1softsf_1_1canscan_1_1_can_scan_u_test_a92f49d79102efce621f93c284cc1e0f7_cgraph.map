@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.CanScanUTest.givenQrImage_whenDrawFinderPatterns_thenAllThreePatternsDrawn" name="fr.softsf.canscan.CanScanUTest.givenQrImage_whenDrawFinderPatterns_thenAllThreePatternsDrawn">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,252,89"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#a5724cc65ce9613fa741b437515143b51" title="Renders the three QR code finder patterns at the corners using the specified style." alt="" coords="300,39,488,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,57,284,57,284,63,252,63"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#a8c9390de6c95571f3660c32e90662535" title="Draws a QR code finder pattern with rounded corners at the specified pixel coordinates." alt="" coords="536,5,797,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="488,46,520,42,521,47,489,51"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adc8966dc4ad0994973f517355dee4c00" title="Draws a standard square QR code finder pattern at the specified pixel coordinates." alt="" coords="542,72,792,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="489,69,526,74,526,79,488,74"/>
+</map>

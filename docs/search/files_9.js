@@ -6,5 +6,5 @@ var searchData=
   ['module_2dinfo_2ejava_3',['module-info.java',['../module-info_8java.html',1,'']]],
   ['modulecontext_2ejava_4',['ModuleContext.java',['../_module_context_8java.html',1,'']]],
   ['mypopup_2ejava_5',['MyPopup.java',['../_my_popup_8java.html',1,'']]],
-  ['mypopuptest_2ejava_6',['MyPopupTest.java',['../_my_popup_test_8java.html',1,'']]]
+  ['mypopuputest_2ejava_6',['MyPopupUTest.java',['../_my_popup_u_test_8java.html',1,'']]]
 ];

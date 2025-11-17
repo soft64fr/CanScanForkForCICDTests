@@ -13,7 +13,7 @@ var searchData=
   ['urlfield_10',['urlField',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9495ee2cc95cb2ac38fc6fd2e58e5844',1,'fr::softsf::canscan::CanScan']]],
   ['useluciolefont_11',['UseLucioleFont',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html',1,'fr::softsf::canscan::util']]],
   ['useluciolefont_2ejava_12',['UseLucioleFont.java',['../_use_luciole_font_8java.html',1,'']]],
-  ['useluciolefonttest_13',['UseLucioleFontTest',['../classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html',1,'fr::softsf::canscan']]],
-  ['useluciolefonttest_2ejava_14',['UseLucioleFontTest.java',['../_use_luciole_font_test_8java.html',1,'']]],
+  ['useluciolefontutest_13',['UseLucioleFontUTest',['../classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_u_test.html',1,'fr::softsf::canscan']]],
+  ['useluciolefontutest_2ejava_14',['UseLucioleFontUTest.java',['../_use_luciole_font_u_test_8java.html',1,'']]],
   ['utiles_15',['Liens utiles',['../index.html#Liens_utiles',1,'']]]
 ];

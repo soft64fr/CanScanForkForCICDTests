@@ -15,6 +15,7 @@ var annotated_dup =
           [ "service", "namespacefr_1_1softsf_1_1canscan_1_1service.html", [
             [ "DataBuilderService", "enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html", "enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service" ],
             [ "GenerateAndSaveService", "classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html", "classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service" ],
+            [ "GenerateAndSaveServiceUTest", "classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service_u_test.html", "classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service_u_test" ],
             [ "VersionService", "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html", "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service" ]
           ] ],
           [ "ui", "namespacefr_1_1softsf_1_1canscan_1_1ui.html", [
@@ -38,10 +39,10 @@ var annotated_dup =
             [ "ValidationFieldHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper" ]
           ] ],
           [ "CanScan", "classfr_1_1softsf_1_1canscan_1_1_can_scan.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan" ],
-          [ "CanScanTest", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan_test" ],
-          [ "MyPopupTest", "classfr_1_1softsf_1_1canscan_1_1_my_popup_test.html", "classfr_1_1softsf_1_1canscan_1_1_my_popup_test" ],
+          [ "CanScanUTest", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test" ],
+          [ "MyPopupUTest", "classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test.html", "classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test" ],
           [ "NativeImageConfigSimulator", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html", "classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator" ],
-          [ "UseLucioleFontTest", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test.html", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_test" ]
+          [ "UseLucioleFontUTest", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_u_test.html", "classfr_1_1softsf_1_1canscan_1_1_use_luciole_font_u_test" ]
         ] ]
       ] ]
     ] ]

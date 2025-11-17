@@ -1,0 +1,7 @@
+<map id="fr.softsf.canscan.CanScanUTest.givenSmallQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly" name="fr.softsf.canscan.CanScanUTest.givenSmallQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,237,97"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#abe028cb3381791e1ae35aaedbdf52e9b" title=" " alt="" coords="290,5,468,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,42,274,37,275,43,238,48"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ade10f89c4a09ef2a68d99169cbf5f4fb" title="Draws the logo at the center of the QR code if a valid logo file is provided." alt="" coords="285,72,473,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,72,270,77,269,82,237,78"/>
+</map>

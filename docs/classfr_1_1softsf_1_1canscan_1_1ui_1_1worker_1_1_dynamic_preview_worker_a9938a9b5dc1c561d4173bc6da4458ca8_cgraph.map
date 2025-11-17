@@ -1,9 +1,11 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicPreviewWorker.createWorker" name="fr.softsf.canscan.ui.worker.DynamicPreviewWorker.createWorker">
-<area shape="rect" id="Node000001" title="Creates a background SwingWorker that generates the QR code preview image." alt="" coords="5,51,248,93"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#ad393d963bb16532fe9de3366b05cb7d4" title="Builds and returns the QR code preview image based on the current WholeFields." alt="" coords="296,13,571,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,55,280,51,280,56,248,60"/>
-<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html#ae09c6bc40e1028b0cbe43c6115750c05" title=" " alt="" coords="322,80,545,139"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="248,84,306,91,306,96,248,89"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a6aae1ee68e2d4201c3bd2716f5bd23e9" title="Displays an error dialog on the EDT based on the given exception." alt="" coords="619,5,862,64"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="571,32,603,32,603,37,571,37"/>
+<area shape="rect" id="Node000001" title="Creates a background SwingWorker that generates the QR code preview image." alt="" coords="5,80,248,123"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#ad393d963bb16532fe9de3366b05cb7d4" title="Builds and returns the QR code preview image based on the current WholeFields." alt="" coords="296,43,571,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,84,280,80,280,85,248,89"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html#ae09c6bc40e1028b0cbe43c6115750c05" title=" " alt="" coords="322,109,545,168"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="248,113,306,121,306,126,248,119"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a4e8c2ddc5168882770fb4255f808fd61" title="Creates and returns the shared QR generation settings derived from the current WholeFields." alt="" coords="619,5,890,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="571,45,603,42,604,47,572,51"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#a6aae1ee68e2d4201c3bd2716f5bd23e9" title="Displays an error dialog on the EDT based on the given exception." alt="" coords="633,72,876,131"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="572,77,618,83,617,88,571,83"/>
 </map>

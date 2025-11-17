@@ -9,5 +9,5 @@ var searchData=
   ['qrcolorbutton_6',['qrColorButton',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a2241fd6885a5901d2bc0480eca92611a',1,'fr::softsf::canscan::CanScan']]],
   ['qrdata_7',['qrData',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_generate_and_save_worker.html#a6c4c9f2015290bfe9a558ffacaffeaae',1,'fr::softsf::canscan::ui::worker::GenerateAndSaveWorker']]],
   ['qroriginal_8',['qrOriginal',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ae2917a5fd7e2a533d324d9368f4e2d5d',1,'fr::softsf::canscan::ui::EncodedImage']]],
-  ['qrservice_9',['qrService',['../classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#a7b0362a634cae5cb2b1387378e7019be',1,'fr::softsf::canscan::CanScanTest']]]
+  ['qrservice_9',['qrService',['../classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service_u_test.html#adaa84ca2054fb9000c8dbe37f5cb0528',1,'fr::softsf::canscan::service::GenerateAndSaveServiceUTest']]]
 ];

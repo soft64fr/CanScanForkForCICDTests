@@ -1,0 +1,5 @@
+var classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test_1_1_show_argument_error_dialog_tests =
+[
+    [ "givenNullParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException", "classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test_1_1_show_argument_error_dialog_tests.html#ada7444a7b5f05505d71c6ffb83950b86", null ],
+    [ "givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException", "classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test_1_1_show_argument_error_dialog_tests.html#ab6e3e1eda0f7f92ef5d0a1c52ec9428d", null ]
+];

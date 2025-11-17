@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.worker.GenerateAndSaveWorker" name="fr.softsf.canscan.ui.worker.GenerateAndSaveWorker">
-<area shape="rect" id="Node000001" title="SwingWorker that generates and saves QR codes in a background thread." alt="" coords="5,139,251,661"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="34,5,222,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,106,131,139,126,139,126,106"/>
+<area shape="rect" id="Node000001" title="SwingWorker that generates and saves QR codes in a background thread." alt="" coords="5,139,252,699"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,223,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,106,132,139,126,139,126,106"/>
 </map>

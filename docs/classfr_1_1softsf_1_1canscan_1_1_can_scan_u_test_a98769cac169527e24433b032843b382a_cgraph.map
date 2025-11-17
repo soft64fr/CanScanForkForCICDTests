@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.CanScanUTest.givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin" name="fr.softsf.canscan.CanScanUTest.givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,215,80"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adc8966dc4ad0994973f517355dee4c00" title="Draws a standard square QR code finder pattern at the specified pixel coordinates." alt="" coords="263,21,513,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,40,247,40,247,45,215,45"/>
+</map>

@@ -23,6 +23,6 @@ var searchData=
   ['multiline_5ftext_5ffields_5frows_20',['MULTILINE_TEXT_FIELDS_ROWS',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a34d041c1f968ed8160ec44cb6e15ab22',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
   ['mypopup_21',['MyPopup',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html',1,'fr::softsf::canscan::ui']]],
   ['mypopup_2ejava_22',['MyPopup.java',['../_my_popup_8java.html',1,'']]],
-  ['mypopuptest_23',['MyPopupTest',['../classfr_1_1softsf_1_1canscan_1_1_my_popup_test.html',1,'fr::softsf::canscan']]],
-  ['mypopuptest_2ejava_24',['MyPopupTest.java',['../_my_popup_test_8java.html',1,'']]]
+  ['mypopuputest_23',['MyPopupUTest',['../classfr_1_1softsf_1_1canscan_1_1_my_popup_u_test.html',1,'fr::softsf::canscan']]],
+  ['mypopuputest_2ejava_24',['MyPopupUTest.java',['../_my_popup_u_test_8java.html',1,'']]]
 ];

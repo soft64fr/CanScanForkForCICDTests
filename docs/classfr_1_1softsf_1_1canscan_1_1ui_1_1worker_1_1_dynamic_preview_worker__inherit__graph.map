@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicPreviewWorker" name="fr.softsf.canscan.ui.worker.DynamicPreviewWorker">
-<area shape="rect" id="Node000001" title="Asynchronously generates and displays a QR code preview in a Swing UI." alt="" coords="5,1159,278,1612"/>
+<area shape="rect" id="Node000001" title="Asynchronously generates and displays a QR code preview in a Swing UI." alt="" coords="5,1159,278,1633"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html" title=" " alt="" coords="36,581,248,1109"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,1124,144,1159,139,1159,139,1124"/>
 <area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="37,5,246,517"/>

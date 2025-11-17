@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.service.GenerateAndSaveService.resolveFileNameConflictForTests" name="fr.softsf.canscan.service.GenerateAndSaveService.resolveFileNameConflictForTests">
+<area shape="rect" id="Node000001" title="Resolves file name conflicts for testing." alt="" coords="5,5,223,64"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1service_1_1_generate_and_save_service.html#aeced3cbaf2f2c3a709ed5096aa543526" title="Resolves potential file name conflicts by checking if the specified file already exists." alt="" coords="271,5,488,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,32,255,32,255,37,223,37"/>
+</map>
