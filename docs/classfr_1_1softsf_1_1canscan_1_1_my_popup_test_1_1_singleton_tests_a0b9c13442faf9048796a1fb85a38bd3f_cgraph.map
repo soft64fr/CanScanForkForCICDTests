@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.MyPopupTest.SingletonTests.givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique" name="fr.softsf.canscan.MyPopupTest.SingletonTests.givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique">
+<map id="fr.softsf.canscan.MyPopupUTest.SingletonTests.givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique" name="fr.softsf.canscan.MyPopupUTest.SingletonTests.givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,29,275,104"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="87,28,90,18,100,10,117,5,140,3,168,6,185,13,183,18,166,11,140,8,118,10,103,15,95,21,92,30"/>
 </map>

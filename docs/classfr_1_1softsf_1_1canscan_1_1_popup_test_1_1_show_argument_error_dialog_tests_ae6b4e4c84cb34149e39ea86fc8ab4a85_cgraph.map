@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.MyPopupTest.ShowArgumentErrorDialogTests.givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException" name="fr.softsf.canscan.MyPopupTest.ShowArgumentErrorDialogTests.givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException">
+<map id="fr.softsf.canscan.MyPopupUTest.ShowArgumentErrorDialogTests.givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException" name="fr.softsf.canscan.MyPopupUTest.ShowArgumentErrorDialogTests.givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,29,314,104"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="99,28,103,18,115,10,133,5,160,3,191,6,211,13,209,18,190,11,159,8,134,10,117,15,107,21,104,30"/>
 </map>

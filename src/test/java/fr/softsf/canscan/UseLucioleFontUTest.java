@@ -17,7 +17,7 @@ import fr.softsf.canscan.util.UseLucioleFont;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("*** Use Luciole font tests ***")
-class UseLucioleFontTest {
+class UseLucioleFontUTest {
 
     @BeforeEach
     void setUp() {

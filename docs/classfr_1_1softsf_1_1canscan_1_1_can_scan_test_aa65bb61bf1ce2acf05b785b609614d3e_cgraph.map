@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.CanScanTest.givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated" name="fr.softsf.canscan.CanScanTest.givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated">
+<map id="fr.softsf.canscan.CanScanUTest.givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated" name="fr.softsf.canscan.CanScanUTest.givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,27,274,85"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ab418aab8165b2e96ce08f98422655cde" title="Opens a file chooser to select a logo image and updates the logo text field." alt="" coords="322,13,573,40"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,41,306,37,306,43,274,46"/>

@@ -11,13 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +31,6 @@ import fr.softsf.canscan.model.EncodedData;
 import fr.softsf.canscan.model.Mode;
 import fr.softsf.canscan.model.WholeFields;
 import fr.softsf.canscan.service.DataBuilderService;
-import fr.softsf.canscan.service.GenerateAndSaveService;
 import fr.softsf.canscan.ui.ColorOperation;
 import fr.softsf.canscan.ui.EncodedImage;
 
@@ -50,14 +46,12 @@ import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
 @DisplayName("*** CanScan tests ***")
-class CanScanTest {
+class CanScanUTest {
 
     private CanScan generator;
     private ColorOperation colorOperation;
-    private GenerateAndSaveService qrService;
 
     @TempDir File tempDir;
 
@@ -71,13 +65,10 @@ class CanScanTest {
         generator.setOrgFieldTextForTests();
         generator.setAdrFieldTextForTests();
         generator.setUrlFieldTextForTests();
-        generator.setLogoFieldTextForTests();
+        generator.setLogoFieldTextForTests("");
         generator.setSizeFieldTextForTests("400");
         generator.setMarginSliderValueForTests(3);
         generator.setRatioSliderValueForTests((int) (0.27 * 100));
-        generator.setRoundedModulesSelectedForTests();
-        EncodedImage encodedImage = mock(EncodedImage.class);
-        qrService = new GenerateAndSaveService(encodedImage);
     }
 
     @Test
@@ -214,10 +205,10 @@ class CanScanTest {
     void givenFileSelectionCancelled_whenBrowseLogo_thenLogoFieldUnchanged() {
         CanScan spyGenerator = spy(generator);
         doReturn(null).when(spyGenerator).chooseLogoFile();
-        spyGenerator.setLogoFieldTextForTests();
+        spyGenerator.setLogoFieldTextForTests("logoField");
         ActionEvent e = mock(ActionEvent.class);
         spyGenerator.browseLogo(e);
-        assertEquals("", spyGenerator.getLogoFieldTextForTests());
+        assertEquals("logoField", spyGenerator.getLogoFieldTextForTests());
     }
 
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
@@ -267,24 +258,17 @@ class CanScanTest {
     }
 
     @Test
-    void givenMecardMode_whenSwitchToFreeMode_thenCurrentModeIsFree() throws Exception {
-        Method switchMode = CanScan.class.getDeclaredMethod("switchMode", Mode.class);
-        switchMode.setAccessible(true);
-        switchMode.invoke(generator, Mode.FREE);
-        Field currentModeField = CanScan.class.getDeclaredField("currentMode");
-        currentModeField.setAccessible(true);
-        assertEquals(Mode.FREE, currentModeField.get(generator));
+    void givenMecardMode_whenSwitchToFreeMode_thenCurrentModeIsFree() {
+        generator.setCurrentModeForTests(Mode.MECARD);
+        generator.switchModeForTests(Mode.FREE);
+        assertEquals(Mode.FREE, generator.getCurrentModeForTests());
     }
 
     @Test
-    void givenFreeMode_whenSwitchToMecardMode_thenCurrentModeIsMecard() throws Exception {
-        Method switchMode = CanScan.class.getDeclaredMethod("switchMode", Mode.class);
-        switchMode.setAccessible(true);
-        switchMode.invoke(generator, Mode.FREE);
-        switchMode.invoke(generator, Mode.MECARD);
-        Field currentModeField = CanScan.class.getDeclaredField("currentMode");
-        currentModeField.setAccessible(true);
-        assertEquals(Mode.MECARD, currentModeField.get(generator));
+    void givenFreeMode_whenSwitchToMecardMode_thenCurrentModeIsMecard() {
+        generator.setCurrentModeForTests(Mode.FREE);
+        generator.switchModeForTests(Mode.MECARD);
+        assertEquals(Mode.MECARD, generator.getCurrentModeForTests());
     }
 
     @Test
@@ -347,44 +331,6 @@ class CanScanTest {
         Color custom = new Color(128, 64, 192);
         String hex = colorOperation.colorToHex(custom);
         assertEquals("#8040C0", hex);
-    }
-
-    @Test
-    void givenFileWithPngExtension_whenGetSelectedPngFile_thenReturnSameFile() throws Exception {
-        Method getSelectedPngFile =
-                GenerateAndSaveService.class.getDeclaredMethod(
-                        "getSelectedPngFile", JFileChooser.class);
-        getSelectedPngFile.setAccessible(true);
-        JFileChooser chooser = mock(JFileChooser.class);
-        File testFile = new File(tempDir, "test.png");
-        when(chooser.getSelectedFile()).thenReturn(testFile);
-        File result = (File) getSelectedPngFile.invoke(qrService, chooser);
-        assertTrue(result.getName().endsWith(".png"));
-    }
-
-    @Test
-    void givenFileWithoutPngExtension_whenGetSelectedPngFile_thenReturnFileWithPngExtension()
-            throws Exception {
-        Method getSelectedPngFile =
-                GenerateAndSaveService.class.getDeclaredMethod(
-                        "getSelectedPngFile", JFileChooser.class);
-        getSelectedPngFile.setAccessible(true);
-        JFileChooser chooser = mock(JFileChooser.class);
-        File testFile = new File(tempDir, "test");
-        when(chooser.getSelectedFile()).thenReturn(testFile);
-        File result = (File) getSelectedPngFile.invoke(qrService, chooser);
-        assertTrue(result.getName().endsWith(".png"));
-    }
-
-    @Test
-    void givenNonExistingFile_whenResolveFileNameConflict_thenReturnSameFile() throws Exception {
-        Method resolveFileNameConflict =
-                GenerateAndSaveService.class.getDeclaredMethod(
-                        "resolveFileNameConflict", File.class);
-        resolveFileNameConflict.setAccessible(true);
-        File testFile = new File(tempDir, "nonexistent.png");
-        File result = (File) resolveFileNameConflict.invoke(qrService, testFile);
-        assertEquals(testFile, result);
     }
 
     @Test

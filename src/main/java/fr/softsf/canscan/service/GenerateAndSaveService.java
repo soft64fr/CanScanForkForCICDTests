@@ -166,4 +166,14 @@ public class GenerateAndSaveService {
         }
         return file;
     }
+
+    /** Returns the selected PNG file for testing. */
+    File getSelectedFileForTests(JFileChooser chooser) {
+        return getSelectedPngFile(chooser);
+    }
+
+    /** Resolves file name conflicts for testing. */
+    File resolveFileNameConflictForTests(File file) {
+        return resolveFileNameConflict(file);
+    }
 }

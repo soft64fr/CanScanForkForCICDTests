@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.CanScanTest.givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanTest.givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException">
+<map id="fr.softsf.canscan.CanScanUTest.givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException" name="fr.softsf.canscan.CanScanUTest.givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,23,248,97"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#adbb5179aab9252237d61ebd2333824c1" title=" " alt="" coords="301,5,478,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,42,285,37,286,43,249,47"/>

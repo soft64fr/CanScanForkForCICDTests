@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.CanScanTest.givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage" name="fr.softsf.canscan.CanScanTest.givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage">
+<map id="fr.softsf.canscan.CanScanUTest.givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage" name="fr.softsf.canscan.CanScanUTest.givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,227,334,285"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#aa3deebd610599088a79dcc90b3b980fd" title="Generates a QR code image with optional logo and styling." alt="" coords="382,235,570,277"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,253,366,253,366,259,334,259"/>

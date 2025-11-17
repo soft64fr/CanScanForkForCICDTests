@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.CanScanTest.givenMarginAboveMaximum_whenMarginFieldCheck_thenMarginSetTo10" name="fr.softsf.canscan.CanScanTest.givenMarginAboveMaximum_whenMarginFieldCheck_thenMarginSetTo10">
+<map id="fr.softsf.canscan.CanScanUTest.givenMarginAboveMaximum_whenMarginFieldCheck_thenMarginSetTo10" name="fr.softsf.canscan.CanScanUTest.givenMarginAboveMaximum_whenMarginFieldCheck_thenMarginSetTo10">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,289,89"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#a9c4bb9d3fd58f73154f0ff3b6df248f8" title=" " alt="" coords="337,5,514,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,40,321,36,321,42,289,46"/>

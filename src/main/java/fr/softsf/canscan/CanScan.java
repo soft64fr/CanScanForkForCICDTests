@@ -202,8 +202,8 @@ public class CanScan extends JFrame {
     }
 
     /** Sets the logo field text for testing. */
-    void setLogoFieldTextForTests() {
-        logoField.setText("");
+    void setLogoFieldTextForTests(String text) {
+        logoField.setText(text);
     }
 
     /** Sets the size field text for testing. */
@@ -226,9 +226,19 @@ public class CanScan extends JFrame {
         ratioSlider.setValue(value);
     }
 
-    /** Sets the rounded modules checkbox state for testing. */
-    void setRoundedModulesSelectedForTests() {
-        roundedModulesCheckBox.setSelected(true);
+    /** Returns the current mode for testing. */
+    Mode getCurrentModeForTests() {
+        return currentMode;
+    }
+
+    /** Sets the current mode for testing. */
+    void setCurrentModeForTests(Mode mode) {
+        this.currentMode = mode;
+    }
+
+    /** Switches the mode for testing. */
+    void switchModeForTests(Mode mode) {
+        switchMode(mode);
     }
 
     /**

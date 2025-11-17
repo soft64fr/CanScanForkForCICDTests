@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mockStatic;
 
 @DisplayName("*** MyPopup tests ***")
-class MyPopupTest {
+class MyPopupUTest {
 
     @Nested
     @DisplayName("showArgumentErrorDialog tests")

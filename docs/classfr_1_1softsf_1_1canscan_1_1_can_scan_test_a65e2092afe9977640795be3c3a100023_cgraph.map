@@ -1,4 +1,4 @@
-<map id="fr.softsf.canscan.CanScanTest.givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully" name="fr.softsf.canscan.CanScanTest.givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully">
+<map id="fr.softsf.canscan.CanScanUTest.givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully" name="fr.softsf.canscan.CanScanUTest.givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,253,89"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan_test.html#adbb5179aab9252237d61ebd2333824c1" title=" " alt="" coords="306,5,484,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,42,291,37,291,42,253,47"/>
