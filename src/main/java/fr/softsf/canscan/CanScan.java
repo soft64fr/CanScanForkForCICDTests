@@ -17,10 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Objects;
-import java.util.Properties;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -60,6 +57,7 @@ import fr.softsf.canscan.ui.MyPopup;
 import fr.softsf.canscan.ui.UiComponentsConfiguration;
 import fr.softsf.canscan.ui.worker.DynamicPreviewWorker;
 import fr.softsf.canscan.ui.worker.DynamicResizeWorker;
+import fr.softsf.canscan.util.ApplicationMetadata;
 import fr.softsf.canscan.util.BrowserHelper;
 import fr.softsf.canscan.util.Checker;
 import fr.softsf.canscan.util.UseLucioleFont;
@@ -83,13 +81,11 @@ public class CanScan extends JFrame {
     private static final int MINIMUM_QR_CODE_SIZE = 10;
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private static final String NORTH_PANEL = "northPanel";
+    private static final String VERSION =ApplicationMetadata.INSTANCE.getVersion();
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
     private double imageRatio = DoubleConstants.DEFAULT_IMAGE_RATIO.getValue();
-    private static String version;
-    private static String name;
-    private static String organization;
     private Mode currentMode = Mode.MECARD;
     // UI Components
     private final JRadioButton mecardRadio =
@@ -149,7 +145,7 @@ public class CanScan extends JFrame {
      * configuring layout, panels, input fields, QR preview, and window behavior.
      */
     public CanScan() {
-        super(initializeTitle());
+        super(ApplicationMetadata.INSTANCE.initializeTitle());
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(
                 new BorderLayout(
@@ -239,41 +235,6 @@ public class CanScan extends JFrame {
     /** Switches the mode for testing. */
     void switchModeForTests(Mode mode) {
         switchMode(mode);
-    }
-
-    /**
-     * Loads application metadata from `version.properties`.
-     *
-     * <p>Initializes static fields for version, name, and organization.
-     */
-    private static void getManifestKeys() {
-        Properties props = new Properties();
-        try (InputStream in =
-                CanScan.class.getClassLoader().getResourceAsStream("version.properties")) {
-            if (in != null) {
-                props.load(in);
-            }
-        } catch (IOException e) {
-            MyPopup.INSTANCE.showDialog(
-                    "Le fichier version.properties est illisible\n",
-                    e.getMessage(),
-                    StringConstants.ERREUR.getValue());
-        }
-        version = props.getProperty("app.version");
-        name = props.getProperty("app.name");
-        organization = props.getProperty("app.organization");
-    }
-
-    /**
-     * Builds the application window title from version metadata.
-     *
-     * <p>Combines the application name, version, and organization into a formatted string.
-     *
-     * @return the formatted title, e.g., "📱 CanScan v1.0.0.0 • Soft64.fr"
-     */
-    private static String initializeTitle() {
-        getManifestKeys();
-        return String.format("\uD83D\uDCF1 %s v%s • %s", name, version, organization);
     }
 
     /**
@@ -370,7 +331,7 @@ public class CanScan extends JFrame {
         update.addActionListener(
                 e -> BrowserHelper.INSTANCE.openInBrowser(LATEST_RELEASES_REPO_URL));
         SwingWorker<Boolean, Void> worker =
-                VersionService.INSTANCE.checkLatestVersion(version, update);
+                VersionService.INSTANCE.checkLatestVersion(VERSION, update);
         worker.execute();
     }
 
@@ -705,8 +666,6 @@ public class CanScan extends JFrame {
     /**
      * Opens a file chooser to select a logo image and updates the logo text field.
      *
-     * <p>If a file is selected, its absolute path is set in {@code logoField}.
-     *
      * @param e the ActionEvent that triggered the file chooser
      */
     void browseLogo(ActionEvent e) {
@@ -721,8 +680,6 @@ public class CanScan extends JFrame {
 
     /**
      * Opens a file chooser for PNG, JPG, or JPEG logos.
-     *
-     * <p>Package-private for testing; can be overridden or mocked.
      *
      * @return the selected file, or {@code null} if canceled
      */
