@@ -32,6 +32,7 @@ var annotated_dup =
             [ "UiComponentsConfiguration", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration" ]
           ] ],
           [ "util", "namespacefr_1_1softsf_1_1canscan_1_1util.html", [
+            [ "ApplicationMetadata", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata" ],
             [ "BrowserHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper" ],
             [ "Checker", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker" ],
             [ "FrameHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper" ],

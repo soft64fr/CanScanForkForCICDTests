@@ -7,6 +7,7 @@ var hierarchy =
     [ "fr.softsf.canscan.ui.worker.AbstractDynamicWorker< ImageIcon >", "classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html", [
       [ "fr.softsf.canscan.ui.worker.DynamicResizeWorker", "classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html", null ]
     ] ],
+    [ "fr.softsf.canscan.util.ApplicationMetadata", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html", null ],
     [ "fr.softsf.canscan.util.BrowserHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html", null ],
     [ "fr.softsf.canscan.CanScanUTest", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html", null ],
     [ "fr.softsf.canscan.util.Checker", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html", null ],

@@ -1,5 +1,6 @@
 var namespacefr_1_1softsf_1_1canscan_1_1util =
 [
+    [ "ApplicationMetadata", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata" ],
     [ "BrowserHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper" ],
     [ "Checker", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker" ],
     [ "FrameHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper" ],

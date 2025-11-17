@@ -13,8 +13,10 @@ var searchData=
   ['adrfield_10',['adrField',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#adf41f9e36bb3c7c4d42d04ff049e4ed6',1,'fr::softsf::canscan::CanScan']]],
   ['append_5ffield_11',['APPEND_FIELD',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a1fd8ee4810d0a7bf772db7d26ddfe10e',1,'fr::softsf::canscan::service::DataBuilderService']]],
   ['appendfield_12',['appendField',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a6fa530a9b7142a30788a1d82023e7253',1,'fr::softsf::canscan::service::DataBuilderService']]],
-  ['assertequals_13',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
-  ['assigncomponentnames_14',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#aab7497027f7f4fdf86ecf319d1a86e1f',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
-  ['automaticqrcoderenderingforfieldsandcontrols_15',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]],
-  ['available_5fmemory_5fto_5fgenerate_5fimage_16',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#aeddb5a0d54970dbf2482e2d42c5bc588',1,'fr::softsf::canscan::ui::EncodedImage']]]
+  ['applicationmetadata_13',['ApplicationMetadata',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html',1,'fr.softsf.canscan.util.ApplicationMetadata'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html#a1faf35eb0737612d393d9bbefe917b57',1,'fr.softsf.canscan.util.ApplicationMetadata.ApplicationMetadata()']]],
+  ['applicationmetadata_2ejava_14',['ApplicationMetadata.java',['../_application_metadata_8java.html',1,'']]],
+  ['assertequals_15',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['assigncomponentnames_16',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#aab7497027f7f4fdf86ecf319d1a86e1f',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
+  ['automaticqrcoderenderingforfieldsandcontrols_17',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]],
+  ['available_5fmemory_5fto_5fgenerate_5fimage_18',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#aeddb5a0d54970dbf2482e2d42c5bc588',1,'fr::softsf::canscan::ui::EncodedImage']]]
 ];

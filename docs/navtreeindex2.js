@@ -1,12 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad2f4fef7b92fee167354dd11065d34e2":[2,0,0,0,0,3,2,19],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad546711c6b1241e86366f6a3fba89570":[1,0,0,0,0,3,2,22],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad546711c6b1241e86366f6a3fba89570":[2,0,0,0,0,3,2,22],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad9c110f5741892021ca83f6f9d5ed97e":[1,0,0,0,0,3,2,32],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad9c110f5741892021ca83f6f9d5ed97e":[2,0,0,0,0,3,2,32],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adb8f0f0054bd69ff15d01dacba5561ad":[1,0,0,0,0,3,2,7],
-"classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adb8f0f0054bd69ff15d01dacba5561ad":[2,0,0,0,0,3,2,7],
 "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adc8966dc4ad0994973f517355dee4c00":[1,0,0,0,0,3,2,6],
 "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#adc8966dc4ad0994973f517355dee4c00":[2,0,0,0,0,3,2,6],
 "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ade10f89c4a09ef2a68d99169cbf5f4fb":[1,0,0,0,0,3,2,2],
@@ -249,5 +242,12 @@ var NAVTREEINDEX2 =
 "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a71d28e7931c7ded96b9bc7adb07f674c":[2,0,0,0,0,2,3,0],
 "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a7d9402e34eb40e2392f9a0b5b29a1216":[1,0,0,0,0,2,3,9],
 "enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a7d9402e34eb40e2392f9a0b5b29a1216":[2,0,0,0,0,2,3,9],
-"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c":[1,0,0,0,0,2,3,2]
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c":[1,0,0,0,0,2,3,2],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c":[2,0,0,0,0,2,3,2],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#aa38cce1b3bbf57882dcc4c21f7512cb4":[1,0,0,0,0,2,3,10],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#aa38cce1b3bbf57882dcc4c21f7512cb4":[2,0,0,0,0,2,3,10],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac33081fce6838f0514f1afad3770ad68":[1,0,0,0,0,2,3,11],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac33081fce6838f0514f1afad3770ad68":[2,0,0,0,0,2,3,11],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac3765b9aae65297cd9337c852ee2fb30":[1,0,0,0,0,2,3,4],
+"enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac3765b9aae65297cd9337c852ee2fb30":[2,0,0,0,0,2,3,4]
 };

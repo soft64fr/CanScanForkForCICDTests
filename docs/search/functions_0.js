@@ -7,7 +7,8 @@ var searchData=
   ['addnorthpanelmodeselection_4',['addNorthPanelModeSelection',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa469763b92dd7cbc6dfdb9aaa0116b33',1,'fr::softsf::canscan::CanScan']]],
   ['addrow_5',['addRow',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
   ['appendfield_6',['appendField',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a6fa530a9b7142a30788a1d82023e7253',1,'fr::softsf::canscan::service::DataBuilderService']]],
-  ['assertequals_7',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
-  ['assigncomponentnames_8',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#aab7497027f7f4fdf86ecf319d1a86e1f',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
-  ['automaticqrcoderenderingforfieldsandcontrols_9',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]]
+  ['applicationmetadata_7',['ApplicationMetadata',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html#a1faf35eb0737612d393d9bbefe917b57',1,'fr::softsf::canscan::util::ApplicationMetadata']]],
+  ['assertequals_8',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['assigncomponentnames_9',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#aab7497027f7f4fdf86ecf319d1a86e1f',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
+  ['automaticqrcoderenderingforfieldsandcontrols_10',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]]
 ];
