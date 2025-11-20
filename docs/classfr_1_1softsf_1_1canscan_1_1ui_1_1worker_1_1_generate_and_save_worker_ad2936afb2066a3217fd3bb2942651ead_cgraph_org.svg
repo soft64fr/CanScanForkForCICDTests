@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Generates the QR code image and saves it to the output file.">
+<g id="a_Node000001"><a xlink:title="Generates the QR code, saves it, and copies data to the clipboard.">
 <polygon fill="#999999" stroke="#666666" points="199.75,-66 0,-66 0,-34 199.75,-34 199.75,-66"/>
 <text text-anchor="start" x="8" y="-52.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.worker.</text>
 <text text-anchor="middle" x="99.88" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">GenerateAndSaveWorker.doInBackground</text>

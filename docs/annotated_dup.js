@@ -27,6 +27,9 @@ var annotated_dup =
             ] ],
             [ "ColorOperation", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation" ],
             [ "EncodedImage", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image" ],
+            [ "FlatLafDatePicker", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_date_picker.html", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_date_picker" ],
+            [ "FlatLafTimePicker", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_time_picker.html", "classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_time_picker" ],
+            [ "IFlatLafStyledForLGoodDatePicker", "interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html", "interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker" ],
             [ "LabelIconUtil", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_label_icon_util.html", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_label_icon_util" ],
             [ "MyPopup", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup.html", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_my_popup" ],
             [ "UiComponentsConfiguration", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html", "enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration" ]
@@ -35,6 +38,8 @@ var annotated_dup =
             [ "ApplicationMetadata", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata" ],
             [ "BrowserHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_browser_helper" ],
             [ "Checker", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker" ],
+            [ "CoordinateHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_coordinate_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_coordinate_helper" ],
+            [ "DateHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_date_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_date_helper" ],
             [ "FrameHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_frame_helper" ],
             [ "UseLucioleFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font" ],
             [ "ValidationFieldHelper", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper.html", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper" ]

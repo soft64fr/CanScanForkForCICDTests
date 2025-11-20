@@ -3,7 +3,7 @@ var classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test =
     [ "createTestLogoFile", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#abe028cb3381791e1ae35aaedbdf52e9b", null ],
     [ "createTestLogoFileWithAlpha", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a0654b250ea4e9956adb2bd4b7e3fa4ed", null ],
     [ "executeWithoutDialog", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a394e123c7a9931f51091b30804dff8cd", null ],
-    [ "givenAllBlankFields_whenBuildMecard_thenReturnEmptyMecardStructure", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a99e656974051621e1fa1245a4568cf98", null ],
+    [ "givenAllBlankFields_whenBuildMecard_thenReturnEmptyString", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#aa89bfab60fb54b69bb494e3d56617a0e", null ],
     [ "givenAllContactFields_whenBuildMecard_thenReturnCompleteMecardString", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a91155bebda982c1fe4d99e3c60852f27", null ],
     [ "givenBlackColor_whenConvertToHex_thenReturn000000", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a8be9572b95e5d69d6c8e10bf1444309e", null ],
     [ "givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin", "classfr_1_1softsf_1_1canscan_1_1_can_scan_u_test.html#a98769cac169527e24433b032843b382a", null ],

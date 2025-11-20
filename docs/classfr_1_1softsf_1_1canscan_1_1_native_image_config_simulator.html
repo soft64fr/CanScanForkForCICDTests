@@ -150,6 +150,9 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:ae2840980d77f2806ab5f1bd471186ed3" id="r_ae2840980d77f2806ab5f1bd471186ed3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2840980d77f2806ab5f1bd471186ed3">nameTypingSimulation</a> (JTextField nameField, Robot robot)  throws Exception </td></tr>
 <tr class="memdesc:ae2840980d77f2806ab5f1bd471186ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates typing "Test" into a <code><a class="el" href="">JTextField</a></code> and verifies the input using a <code><a class="el" href="">Robot</a></code>.  <br /></td></tr>
 <tr class="separator:ae2840980d77f2806ab5f1bd471186ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a408544bcaf9c2fb999521466aa9d2233" id="r_a408544bcaf9c2fb999521466aa9d2233"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a408544bcaf9c2fb999521466aa9d2233">pressDown</a> (Robot robot)</td></tr>
+<tr class="memdesc:a408544bcaf9c2fb999521466aa9d2233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates pressing the Down arrow key using the provided <code><a class="el" href="">Robot</a></code>, followed by a short delay.  <br /></td></tr>
+<tr class="separator:a408544bcaf9c2fb999521466aa9d2233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4d4463dc9177237a8de0a7b6713e7cf" id="r_ab4d4463dc9177237a8de0a7b6713e7cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d4463dc9177237a8de0a7b6713e7cf">pressEnter</a> (Robot robot)</td></tr>
 <tr class="memdesc:ab4d4463dc9177237a8de0a7b6713e7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates pressing the Enter key using the provided <code><a class="el" href="">Robot</a></code>, followed by a short delay.  <br /></td></tr>
 <tr class="separator:ab4d4463dc9177237a8de0a7b6713e7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +162,9 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a2a0b386576bdaa60bf8af058bc26310d" id="r_a2a0b386576bdaa60bf8af058bc26310d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a0b386576bdaa60bf8af058bc26310d">runE2ESimulation</a> (Container rootContainer)</td></tr>
 <tr class="memdesc:a2a0b386576bdaa60bf8af058bc26310d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the full end-to-end UI simulation for Native Image configuration using a <code><a class="el" href="">Robot</a></code>.  <br /></td></tr>
 <tr class="separator:a2a0b386576bdaa60bf8af058bc26310d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346e85bc50a5fd264ba680c0c5a3d51a" id="r_a346e85bc50a5fd264ba680c0c5a3d51a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a346e85bc50a5fd264ba680c0c5a3d51a">selectABeginTime</a> (JRadioButton meetRadio, TimePicker meetBeginTimePicker, Robot robot)  throws Exception </td></tr>
+<tr class="memdesc:a346e85bc50a5fd264ba680c0c5a3d51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates activating the meeting mode and selecting a start time through the TimePicker.  <br /></td></tr>
+<tr class="separator:a346e85bc50a5fd264ba680c0c5a3d51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c1895b6327fef325b1b0c8047bcfcb7" id="r_a4c1895b6327fef325b1b0c8047bcfcb7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c1895b6327fef325b1b0c8047bcfcb7">typeChar</a> (Robot robot, char c)</td></tr>
 <tr class="memdesc:a4c1895b6327fef325b1b0c8047bcfcb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates typing a single character using the Robot class.  <br /></td></tr>
 <tr class="separator:a4c1895b6327fef325b1b0c8047bcfcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -686,6 +692,39 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a408544bcaf9c2fb999521466aa9d2233" name="a408544bcaf9c2fb999521466aa9d2233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a408544bcaf9c2fb999521466aa9d2233">&#9670;&#160;</a></span>pressDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fr.softsf.canscan.NativeImageConfigSimulator.pressDown </td>
+          <td>(</td>
+          <td class="paramtype">Robot</td>          <td class="paramname"><span class="paramname"><em>robot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simulates pressing the Down arrow key using the provided <code><a class="el" href="">Robot</a></code>, followed by a short delay. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">robot</td><td>the Robot instance used to perform the key press </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab4d4463dc9177237a8de0a7b6713e7cf" name="ab4d4463dc9177237a8de0a7b6713e7cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4d4463dc9177237a8de0a7b6713e7cf">&#9670;&#160;</a></span>pressEnter()</h2>
 
@@ -811,6 +850,64 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a346e85bc50a5fd264ba680c0c5a3d51a" name="a346e85bc50a5fd264ba680c0c5a3d51a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346e85bc50a5fd264ba680c0c5a3d51a">&#9670;&#160;</a></span>selectABeginTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fr.softsf.canscan.NativeImageConfigSimulator.selectABeginTime </td>
+          <td>(</td>
+          <td class="paramtype">JRadioButton</td>          <td class="paramname"><span class="paramname"><em>meetRadio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TimePicker</td>          <td class="paramname"><span class="paramname"><em>meetBeginTimePicker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Robot</td>          <td class="paramname"><span class="paramname"><em>robot</em></span>&#160;) throws Exception</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simulates activating the meeting mode and selecting a start time through the TimePicker. </p>
+<p>Opens the time menu, chooses the first value using keyboard navigation, and verifies the resulting selected time.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meetRadio</td><td>the radio button used to enable meeting mode </td></tr>
+    <tr><td class="paramname">meetBeginTimePicker</td><td>the TimePicker used to select the start time </td></tr>
+    <tr><td class="paramname">robot</td><td>the Robot used for UI interaction </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>if UI interaction fails or validation does not match </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator_a346e85bc50a5fd264ba680c0c5a3d51a_cgraph.svg" width="550" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a4c1895b6327fef325b1b0c8047bcfcb7" name="a4c1895b6327fef325b1b0c8047bcfcb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c1895b6327fef325b1b0c8047bcfcb7">&#9670;&#160;</a></span>typeChar()</h2>
 
@@ -886,11 +983,11 @@ Static Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator_acc5424a9d2c1d44c93a045868f58a5ff_cgraph.svg" width="480" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -905,7 +1002,7 @@ Static Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html">NativeImageConfigSimulator</a></li>
-    <li class="footer">Generated on Mon Nov 17 2025 20:26:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Thu Nov 20 2025 23:12:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

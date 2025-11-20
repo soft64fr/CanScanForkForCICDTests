@@ -11,12 +11,14 @@ var searchData=
   ['addnorthpanelmodeselection_8',['addNorthPanelModeSelection',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa469763b92dd7cbc6dfdb9aaa0116b33',1,'fr::softsf::canscan::CanScan']]],
   ['addrow_9',['addRow',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
   ['adrfield_10',['adrField',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#adf41f9e36bb3c7c4d42d04ff049e4ed6',1,'fr::softsf::canscan::CanScan']]],
-  ['append_5ffield_11',['APPEND_FIELD',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a1fd8ee4810d0a7bf772db7d26ddfe10e',1,'fr::softsf::canscan::service::DataBuilderService']]],
-  ['appendfield_12',['appendField',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a6fa530a9b7142a30788a1d82023e7253',1,'fr::softsf::canscan::service::DataBuilderService']]],
+  ['append_5ffield_5fwith_5fspecified_5fseparator_11',['APPEND_FIELD_WITH_SPECIFIED_SEPARATOR',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#aec1d2527c2f3a4a80cec34c89660f335',1,'fr::softsf::canscan::service::DataBuilderService']]],
+  ['appendfieldwithspecifiedseparator_12',['appendFieldWithSpecifiedSeparator',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a427b65a2a7a0d4b70e7687541dbbc408',1,'fr::softsf::canscan::service::DataBuilderService']]],
   ['applicationmetadata_13',['ApplicationMetadata',['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html',1,'fr.softsf.canscan.util.ApplicationMetadata'],['../enumfr_1_1softsf_1_1canscan_1_1util_1_1_application_metadata.html#a1faf35eb0737612d393d9bbefe917b57',1,'fr.softsf.canscan.util.ApplicationMetadata.ApplicationMetadata()']]],
   ['applicationmetadata_2ejava_14',['ApplicationMetadata.java',['../_application_metadata_8java.html',1,'']]],
-  ['assertequals_15',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
-  ['assigncomponentnames_16',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#aab7497027f7f4fdf86ecf319d1a86e1f',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
-  ['automaticqrcoderenderingforfieldsandcontrols_17',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]],
-  ['available_5fmemory_5fto_5fgenerate_5fimage_18',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#aeddb5a0d54970dbf2482e2d42c5bc588',1,'fr::softsf::canscan::ui::EncodedImage']]]
+  ['applytheme_15',['applyTheme',['../interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#a5fdca55f301a7bc8db1f4dbf6caaa635',1,'fr::softsf::canscan::ui::IFlatLafStyledForLGoodDatePicker']]],
+  ['assertequals_16',['assertEquals',['../classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d',1,'fr::softsf::canscan::NativeImageConfigSimulator']]],
+  ['assigncomponentnames_17',['assignComponentNames',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#adf7bea7b10b7a06a2211e8ef15c73654',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
+  ['attachlimiteddocumentlistener_18',['attachLimitedDocumentListener',['../enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#afe8da76131acc9dd19a15d7f22ca9ef1',1,'fr::softsf::canscan::ui::UiComponentsConfiguration']]],
+  ['automaticqrcoderenderingforfieldsandcontrols_19',['automaticQRCodeRenderingForFieldsAndControls',['../classfr_1_1softsf_1_1canscan_1_1_can_scan.html#ad470e3c0750cf142dc611b1aeeda3a97',1,'fr::softsf::canscan::CanScan']]],
+  ['available_5fmemory_5fto_5fgenerate_5fimage_20',['AVAILABLE_MEMORY_TO_GENERATE_IMAGE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#aeddb5a0d54970dbf2482e2d42c5bc588',1,'fr::softsf::canscan::ui::EncodedImage']]]
 ];

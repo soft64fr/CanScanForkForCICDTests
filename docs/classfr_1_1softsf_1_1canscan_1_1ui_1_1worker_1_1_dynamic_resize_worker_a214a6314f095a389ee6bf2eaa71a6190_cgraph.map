@@ -1,5 +1,7 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicResizeWorker.updateQrCodeResize" name="fr.softsf.canscan.ui.worker.DynamicResizeWorker.updateQrCodeResize">
-<area shape="rect" id="Node000001" title="Updates the current QR input and schedules a debounced resize operation." alt="" coords="5,5,249,64"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html#abd8ce1ed48ee82ef39d7d169a051faf6" title=" " alt="" coords="297,5,533,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,32,281,32,281,37,249,37"/>
+<area shape="rect" id="Node000001" title="Updates the current QR input, resize the loader, and schedules a debounced resize operation." alt="" coords="5,43,249,101"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html#abd8ce1ed48ee82ef39d7d169a051faf6" title=" " alt="" coords="310,5,546,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,54,294,49,295,54,249,60"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html#a5299a7f976198123d1da10f8d27af9a4" title="Resizes the loader to a square dimension based on the given value and refreshes its parent container ..." alt="" coords="297,88,560,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,84,281,88,281,94,249,90"/>
 </map>

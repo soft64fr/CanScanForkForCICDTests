@@ -32,7 +32,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html#a778f14bcb991d77eb99de3ed95d9a15f" target="_top" xlink:title="Resizes the loader to a square dimension based on the given value and refreshes its parent container ...">
+<g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html#a5299a7f976198123d1da10f8d27af9a4" target="_top" xlink:title="Resizes the loader to a square dimension based on the given value and refreshes its parent container ...">
 <polygon fill="white" stroke="#666666" points="432.5,-32 235,-32 235,0 432.5,0 432.5,-32"/>
 <text text-anchor="start" x="243" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.worker.</text>
 <text text-anchor="middle" x="333.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">DynamicResizeWorker.updateLoaderSize</text>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Creates and populates FREE text input panel.">
+<g id="a_Node000001"><a xlink:title="Creates and populates a FREE text input panel.">
 <polygon fill="#999999" stroke="#666666" points="168.25,-57 0,-57 0,-25 168.25,-25 168.25,-57"/>
 <text text-anchor="start" x="8" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.UiComponents</text>
 <text text-anchor="middle" x="84.12" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration.populateFreePanel</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" target="_top" xlink:title="Adds labeled row to panel using GridBagLayout.">
+<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" target="_top" xlink:title="Adds a labeled row to a panel using GridBagLayout.">
 <polygon fill="white" stroke="#666666" points="375.88,-82 207.62,-82 207.62,-50 375.88,-50 375.88,-82"/>
 <text text-anchor="start" x="215.62" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.UiComponents</text>
 <text text-anchor="middle" x="291.75" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration.addRow</text>
@@ -40,7 +40,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a3d8dc40e728c516a45d968f9c20a4ff0" target="_top" xlink:title="Configures text area for free text input with wrapping and size.">
+<g id="a_Node000003"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a3d8dc40e728c516a45d968f9c20a4ff0" target="_top" xlink:title="Configures a JTextArea for free text input with word wrapping and a fixed size.">
 <polygon fill="white" stroke="#666666" points="379.25,-32 204.25,-32 204.25,0 379.25,0 379.25,-32"/>
 <text text-anchor="start" x="212.25" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.UiComponents</text>
 <text text-anchor="middle" x="291.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration.configureFreeTextArea</text>

@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicResizeWorker.onWorkerSuccess" name="fr.softsf.canscan.ui.worker.DynamicResizeWorker.onWorkerSuccess">
 <area shape="rect" id="Node000001" title="Updates the QR code label with the generated icon and adjusts the loader size to maintain visual alig..." alt="" coords="5,5,271,48"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html#a778f14bcb991d77eb99de3ed95d9a15f" title="Resizes the loader to a square dimension based on the given value and refreshes its parent container ..." alt="" coords="319,5,582,48"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_resize_worker.html#a5299a7f976198123d1da10f8d27af9a4" title="Resizes the loader to a square dimension based on the given value and refreshes its parent container ..." alt="" coords="319,5,582,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,24,303,24,303,29,271,29"/>
 </map>

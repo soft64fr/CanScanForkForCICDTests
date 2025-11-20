@@ -1,7 +1,7 @@
 <map id="fr.softsf.canscan.ui.UiComponentsConfiguration.populateFreePanel" name="fr.softsf.canscan.ui.UiComponentsConfiguration.populateFreePanel">
-<area shape="rect" id="Node000001" title="Creates and populates FREE text input panel." alt="" coords="5,39,230,81"/>
-<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" title="Adds labeled row to panel using GridBagLayout." alt="" coords="282,5,506,48"/>
+<area shape="rect" id="Node000001" title="Creates and populates a FREE text input panel." alt="" coords="5,39,230,81"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" title="Adds a labeled row to a panel using GridBagLayout." alt="" coords="282,5,506,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,44,266,39,267,45,230,49"/>
-<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a3d8dc40e728c516a45d968f9c20a4ff0" title="Configures text area for free text input with wrapping and size." alt="" coords="278,72,511,115"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a3d8dc40e728c516a45d968f9c20a4ff0" title="Configures a JTextArea for free text input with word wrapping and a fixed size." alt="" coords="278,72,511,115"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,71,262,75,262,80,230,76"/>
 </map>

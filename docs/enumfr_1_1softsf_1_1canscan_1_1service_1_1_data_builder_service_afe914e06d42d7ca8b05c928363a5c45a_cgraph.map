@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.service.DataBuilderService.buildMeet" name="fr.softsf.canscan.service.DataBuilderService.buildMeet">
+<area shape="rect" id="Node000001" title="Builds an iCalendar (VCALENDAR) formatted string representing a meeting (VEVENT)." alt="" coords="5,13,199,56"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a427b65a2a7a0d4b70e7687541dbbc408" title="Appends a MECARD field in the format fieldName:value&lt;separator&gt; if the value is non&#45;blank." alt="" coords="247,5,454,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,32,231,32,231,37,199,37"/>
+</map>

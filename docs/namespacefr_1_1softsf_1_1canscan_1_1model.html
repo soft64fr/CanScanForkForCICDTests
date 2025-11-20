@@ -121,12 +121,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a5e9d06ce59a729606040036143bafd66" id="r_a5e9d06ce59a729606040036143bafd66"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e9d06ce59a729606040036143bafd66">MecardJFields</a> (JTextField nameField, JTextField orgField, JTextField phoneField, JTextField emailField, JTextField adrField, JTextField urlField)</td></tr>
 <tr class="memdesc:a5e9d06ce59a729606040036143bafd66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates all MECARD input fields for QR code generation.  <br /></td></tr>
 <tr class="separator:a5e9d06ce59a729606040036143bafd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8591dea2b7e8c25c951331861b6a1a7e" id="r_a8591dea2b7e8c25c951331861b6a1a7e"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8591dea2b7e8c25c951331861b6a1a7e">MeetJFields</a> (JTextField meetTitleField, JTextField meetUIdField, JTextField meetNameField, DatePicker meetBeginDatePicker, TimePicker meetBeginTimePicker, DatePicker meetEndDatePicker, TimePicker meetEndTimePicker, JTextField meetLatField, JTextField meetLongField)</td></tr>
+<tr class="memdesc:a8591dea2b7e8c25c951331861b6a1a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates all MEET fields for QR code generation.  <br /></td></tr>
+<tr class="separator:a8591dea2b7e8c25c951331861b6a1a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0c10eef363d788444e34095d56bb86" id="r_a3c0c10eef363d788444e34095d56bb86"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c0c10eef363d788444e34095d56bb86">ModuleContext</a> (<a class="el" href="#abf69832bf730a181f86508dc823333a7">CommonFields</a> config, int matrixWidth, int matrixHeight, int whiteBoxX, int whiteBoxY, int whiteBoxSize)</td></tr>
 <tr class="memdesc:a3c0c10eef363d788444e34095d56bb86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context for QR module rendering, including configuration, matrix dimensions, and logo area.  <br /></td></tr>
 <tr class="separator:a3c0c10eef363d788444e34095d56bb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe4dd484d882665b288b7a32f53e10ea" id="r_afe4dd484d882665b288b7a32f53e10ea"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe4dd484d882665b288b7a32f53e10ea">WholeFields</a> (int availableHeightForQrCode, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html">Mode</a> currentMode, String free, String name, String org, String tel, String email, String adr, String url, String logoPath, int size, int margin, double ratio, Color qrColor, Color bgColor, boolean isRoundedModules)</td></tr>
-<tr class="memdesc:afe4dd484d882665b288b7a32f53e10ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input data structure for QR code generation and rendering.  <br /></td></tr>
-<tr class="separator:afe4dd484d882665b288b7a32f53e10ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade078294142dba87e944b149ce5d87d2" id="r_ade078294142dba87e944b149ce5d87d2"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade078294142dba87e944b149ce5d87d2">NativeImageUiComponents</a> (JTextField nameField, JButton browseButton, JSlider ratioSlider, JButton qrColorButton, JRadioButton freeRadio, JRadioButton meetRadio, JTextArea freeField, TimePicker meetBeginTimePicker)</td></tr>
+<tr class="memdesc:ade078294142dba87e944b149ce5d87d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates GUI components used for simulating Native Image configuration behavior in UI tests and previews.  <br /></td></tr>
+<tr class="separator:ade078294142dba87e944b149ce5d87d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2996a4ea469202fb4965d618eda30940" id="r_a2996a4ea469202fb4965d618eda30940"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2996a4ea469202fb4965d618eda30940">WholeFields</a> (int availableHeightForQrCode, <a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html">Mode</a> currentMode, String free, String name, String org, String tel, String email, String adr, String url, String meetTitle, String meetUId, String meetName, String meetBeginDateTime, String meetEndDateTime, String meetLat, String meetLong, String logoPath, int size, int margin, double ratio, Color qrColor, Color bgColor, boolean isRoundedModules)</td></tr>
+<tr class="memdesc:a2996a4ea469202fb4965d618eda30940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input data structure for QR code generation and rendering.  <br /></td></tr>
+<tr class="separator:a2996a4ea469202fb4965d618eda30940"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="abf69832bf730a181f86508dc823333a7" name="abf69832bf730a181f86508dc823333a7"></a>
@@ -261,6 +267,78 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8591dea2b7e8c25c951331861b6a1a7e" name="a8591dea2b7e8c25c951331861b6a1a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8591dea2b7e8c25c951331861b6a1a7e">&#9670;&#160;</a></span>MeetJFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">record fr.softsf.canscan.model.MeetJFields </td>
+          <td>(</td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>meetTitleField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>meetUIdField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>meetNameField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DatePicker</td>          <td class="paramname"><span class="paramname"><em>meetBeginDatePicker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TimePicker</td>          <td class="paramname"><span class="paramname"><em>meetBeginTimePicker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DatePicker</td>          <td class="paramname"><span class="paramname"><em>meetEndDatePicker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TimePicker</td>          <td class="paramname"><span class="paramname"><em>meetEndTimePicker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>meetLatField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>meetLongField</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encapsulates all MEET fields for QR code generation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meetTitleField</td><td>text field for the event summary/title </td></tr>
+    <tr><td class="paramname">meetUIdField</td><td>text field for the unique event identifier </td></tr>
+    <tr><td class="paramname">meetNameField</td><td>text field for the organizer's name </td></tr>
+    <tr><td class="paramname">meetBeginDatePicker</td><td>date picker for the event start date </td></tr>
+    <tr><td class="paramname">meetBeginTimePicker</td><td>time picker for the event start time </td></tr>
+    <tr><td class="paramname">meetEndDatePicker</td><td>date picker for the event end date </td></tr>
+    <tr><td class="paramname">meetEndTimePicker</td><td>time picker for the event end time </td></tr>
+    <tr><td class="paramname">meetLatField</td><td>text field for latitude (GEO/LOCATION) </td></tr>
+    <tr><td class="paramname">meetLongField</td><td>text field for longitude (GEO/LOCATION) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3c0c10eef363d788444e34095d56bb86" name="a3c0c10eef363d788444e34095d56bb86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c0c10eef363d788444e34095d56bb86">&#9670;&#160;</a></span>ModuleContext()</h2>
 
@@ -322,8 +400,64 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afe4dd484d882665b288b7a32f53e10ea" name="afe4dd484d882665b288b7a32f53e10ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe4dd484d882665b288b7a32f53e10ea">&#9670;&#160;</a></span>WholeFields()</h2>
+<a id="ade078294142dba87e944b149ce5d87d2" name="ade078294142dba87e944b149ce5d87d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade078294142dba87e944b149ce5d87d2">&#9670;&#160;</a></span>NativeImageUiComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">record fr.softsf.canscan.model.NativeImageUiComponents </td>
+          <td>(</td>
+          <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>nameField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JButton</td>          <td class="paramname"><span class="paramname"><em>browseButton</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JSlider</td>          <td class="paramname"><span class="paramname"><em>ratioSlider</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JButton</td>          <td class="paramname"><span class="paramname"><em>qrColorButton</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JRadioButton</td>          <td class="paramname"><span class="paramname"><em>freeRadio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JRadioButton</td>          <td class="paramname"><span class="paramname"><em>meetRadio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextArea</td>          <td class="paramname"><span class="paramname"><em>freeField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TimePicker</td>          <td class="paramname"><span class="paramname"><em>meetBeginTimePicker</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encapsulates GUI components used for simulating Native Image configuration behavior in UI tests and previews. </p>
+<p>Provides a method to assign unique names to each component to allow test frameworks to reliably identify them. </p>
+<p>Assigns unique names to all non-null components for automated tests.</p>
+<p>This ensures that each component can be reliably identified by UI testing frameworks or native image simulators.</p>
+
+</div>
+</div>
+<a id="a2996a4ea469202fb4965d618eda30940" name="a2996a4ea469202fb4965d618eda30940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2996a4ea469202fb4965d618eda30940">&#9670;&#160;</a></span>WholeFields()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,6 +510,41 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetTitle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetUId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetBeginDateTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetEndDateTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetLat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetLong</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>logoPath</em></span>, </td>
         </tr>
         <tr>
@@ -412,36 +581,53 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Input data structure for QR code generation and rendering. </p>
-<p>Encapsulates user-provided content and visual configuration for generating a QR code. Supports both MECARD (structured contact) and FREE (arbitrary text) modes.</p>
+<p>Encapsulates all user-provided content and common configuration required to generate a QR code. Supports multiple encoding profiles, including:</p>
+<ul>
+<li>
+MECARD (structured contact information) </li>
+<li>
+MEETING (event / meeting data) </li>
+<li>
+FREE (arbitrary text) </li>
+</ul>
 <p>This record is immutable and aggregates:</p>
 <ul>
 <li>
 Contact details (MECARD mode) </li>
 <li>
+Meeting/event metadata (MEETING mode) </li>
+<li>
 Free-form text (FREE mode) </li>
 <li>
-Visual customization (colors, logo, modules) </li>
+Common customization (colors, logo, modules) </li>
 <li>
 Size and layout options </li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">availableHeightForQrCode</td><td>vertical space available for rendering in the UI </td></tr>
-    <tr><td class="paramname">currentMode</td><td>encoding mode: <code><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#acfb9406c32974c8e4591625a131bf90c">Mode#MECARD</a></code> or <code><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#a8be52de21c11c45113aa4af8104c064e">Mode#FREE</a></code> </td></tr>
-    <tr><td class="paramname">free</td><td>free-form text content (used in FREE mode) </td></tr>
-    <tr><td class="paramname">name</td><td>contact full name (MECARD mode) </td></tr>
-    <tr><td class="paramname">org</td><td>organization or company (MECARD mode) </td></tr>
-    <tr><td class="paramname">tel</td><td>telephone number (MECARD mode) </td></tr>
-    <tr><td class="paramname">email</td><td>email address (MECARD mode) </td></tr>
-    <tr><td class="paramname">adr</td><td>postal address (MECARD mode) </td></tr>
-    <tr><td class="paramname">url</td><td>website or profile URL (MECARD mode) </td></tr>
+    <tr><td class="paramname">currentMode</td><td>encoding mode: <code><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#acfb9406c32974c8e4591625a131bf90c">Mode#MECARD</a></code>, <code><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#a6c13357de454786b15537be56c99c191">Mode#MEET</a></code>, <code><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1model_1_1_mode.html#a8be52de21c11c45113aa4af8104c064e">Mode#FREE</a></code></td></tr>
+    <tr><td class="paramname">name</td><td>full name </td></tr>
+    <tr><td class="paramname">org</td><td>organization or company </td></tr>
+    <tr><td class="paramname">tel</td><td>telephone number </td></tr>
+    <tr><td class="paramname">email</td><td>email address </td></tr>
+    <tr><td class="paramname">adr</td><td>postal address </td></tr>
+    <tr><td class="paramname">url</td><td>website or profile URL</td></tr>
+    <tr><td class="paramname">meetTitle</td><td>meeting title </td></tr>
+    <tr><td class="paramname">meetUId</td><td>unique meeting identifier </td></tr>
+    <tr><td class="paramname">meetName</td><td>organizer or meeting name </td></tr>
+    <tr><td class="paramname">meetBeginDateTime</td><td>start date and time UTC (19970715T040000Z) </td></tr>
+    <tr><td class="paramname">meetEndDateTime</td><td>end date and time UTC (19970715T040000Z) </td></tr>
+    <tr><td class="paramname">meetLat</td><td>latitude for meeting location </td></tr>
+    <tr><td class="paramname">meetLong</td><td>longitude for meeting location</td></tr>
+    <tr><td class="paramname">free</td><td>free-form text content</td></tr>
     <tr><td class="paramname">logoPath</td><td>optional logo file path to embed in the QR code </td></tr>
-    <tr><td class="paramname">size</td><td>target dimension (pixels) of the QR code image </td></tr>
-    <tr><td class="paramname">margin</td><td>quiet zone around the QR code (modules) </td></tr>
+    <tr><td class="paramname">size</td><td>target image size in pixels </td></tr>
+    <tr><td class="paramname">margin</td><td>quiet zone in modules </td></tr>
     <tr><td class="paramname">ratio</td><td>logo visibility ratio (0.0–1.0) </td></tr>
-    <tr><td class="paramname">qrColor</td><td>color of QR code modules </td></tr>
+    <tr><td class="paramname">qrColor</td><td>QR modules color </td></tr>
     <tr><td class="paramname">bgColor</td><td>background color </td></tr>
-    <tr><td class="paramname">isRoundedModules</td><td>whether modules are rendered with rounded corners </td></tr>
+    <tr><td class="paramname">isRoundedModules</td><td>whether modules are drawn with rounded corners </td></tr>
   </table>
   </dd>
 </dl>
@@ -454,7 +640,7 @@ Size and layout options </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1model.html">model</a></li>
-    <li class="footer">Generated on Mon Nov 17 2025 20:26:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Thu Nov 20 2025 23:12:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

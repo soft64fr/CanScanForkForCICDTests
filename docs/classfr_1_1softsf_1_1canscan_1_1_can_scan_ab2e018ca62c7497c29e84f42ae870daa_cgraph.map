@@ -1,7 +1,9 @@
 <map id="fr.softsf.canscan.CanScan.addNorthPanelCardPanels" name="fr.softsf.canscan.CanScan.addNorthPanelCardPanels">
-<area shape="rect" id="Node000001" title="Adds MECARD and Free card panels to the north panel." alt="" coords="5,23,208,65"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a38d65dd319daee1c3288690c17e43ca5" title="Populates the FREE panel with a multiline text area for arbitrary text or URLs." alt="" coords="256,5,487,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,32,240,29,240,34,208,37"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aed7e3048974882318a6519d8d36e8ec0" title="Populates the MECARD panel with structured contact fields." alt="" coords="259,56,484,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,51,244,54,244,60,208,56"/>
+<area shape="rect" id="Node000001" title="Adds MECARD MEET FREE card panels to the north panel." alt="" coords="5,48,208,91"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a38d65dd319daee1c3288690c17e43ca5" title="Populates the FREE panel with a multiline text area." alt="" coords="259,5,490,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,48,285,33,286,38,209,53"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aed7e3048974882318a6519d8d36e8ec0" title="Populates the MECARD panel with contact fields." alt="" coords="263,56,487,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,67,247,67,247,72,208,72"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#aa211e37381e1a96b368390e86cddb879" title="Populates the MEET panel with meet fields." alt="" coords="256,107,494,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,86,286,101,285,106,208,91"/>
 </map>

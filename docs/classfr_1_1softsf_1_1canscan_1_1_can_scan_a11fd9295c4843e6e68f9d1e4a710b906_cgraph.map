@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.CanScan.updateGenerateButtonState" name="fr.softsf.canscan.CanScan.updateGenerateButtonState">
+<area shape="rect" id="Node000001" title="Enables or disables the &quot;Generate&quot; button based on required fields for the current mode." alt="" coords="5,5,226,48"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a3ce6e8b8bd62f20e8e8b9a744976c695" title="Determines whether the &quot;Generate&quot; button should be disabled for the current mode." alt="" coords="274,5,493,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,24,258,24,258,29,226,29"/>
+</map>

@@ -135,6 +135,8 @@ $(function(){initNavTree('_can_scan_8java.html',''); initResizable(true); });
 <code>import javax.swing.border.EmptyBorder;</code><br />
 <code>import javax.swing.event.DocumentListener;</code><br />
 <code>import com.formdev.flatlaf.intellijthemes.FlatCobalt2IJTheme;</code><br />
+<code>import com.github.lgooddatepicker.components.DatePicker;</code><br />
+<code>import com.github.lgooddatepicker.components.TimePicker;</code><br />
 <code>import fr.softsf.canscan.constant.DoubleConstants;</code><br />
 <code>import fr.softsf.canscan.constant.FloatConstants;</code><br />
 <code>import fr.softsf.canscan.constant.IntConstants;</code><br />
@@ -142,13 +144,17 @@ $(function(){initNavTree('_can_scan_8java.html',''); initResizable(true); });
 <code>import fr.softsf.canscan.model.CommonFields;</code><br />
 <code>import fr.softsf.canscan.model.EncodedData;</code><br />
 <code>import fr.softsf.canscan.model.MecardJFields;</code><br />
+<code>import fr.softsf.canscan.model.MeetJFields;</code><br />
 <code>import fr.softsf.canscan.model.Mode;</code><br />
+<code>import fr.softsf.canscan.model.NativeImageUiComponents;</code><br />
 <code>import fr.softsf.canscan.model.WholeFields;</code><br />
 <code>import fr.softsf.canscan.service.DataBuilderService;</code><br />
 <code>import fr.softsf.canscan.service.GenerateAndSaveService;</code><br />
 <code>import fr.softsf.canscan.service.VersionService;</code><br />
 <code>import fr.softsf.canscan.ui.ColorOperation;</code><br />
 <code>import fr.softsf.canscan.ui.EncodedImage;</code><br />
+<code>import fr.softsf.canscan.ui.FlatLafDatePicker;</code><br />
+<code>import fr.softsf.canscan.ui.FlatLafTimePicker;</code><br />
 <code>import fr.softsf.canscan.ui.MyPopup;</code><br />
 <code>import fr.softsf.canscan.ui.UiComponentsConfiguration;</code><br />
 <code>import fr.softsf.canscan.ui.worker.DynamicPreviewWorker;</code><br />
@@ -156,13 +162,15 @@ $(function(){initNavTree('_can_scan_8java.html',''); initResizable(true); });
 <code>import fr.softsf.canscan.util.ApplicationMetadata;</code><br />
 <code>import fr.softsf.canscan.util.BrowserHelper;</code><br />
 <code>import fr.softsf.canscan.util.Checker;</code><br />
+<code>import fr.softsf.canscan.util.CoordinateHelper;</code><br />
+<code>import fr.softsf.canscan.util.DateHelper;</code><br />
 <code>import fr.softsf.canscan.util.UseLucioleFont;</code><br />
 <code>import fr.softsf.canscan.util.ValidationFieldHelper;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html">fr.softsf.canscan.CanScan</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan — Swing application for QR code generation.">CanScan</a> — Swing application for QR code generation.  <a href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html" title="CanScan — Swing QR code generator with MECARD, MEET, and FREE modes.">CanScan</a> — Swing QR code generator with MECARD, MEET, and FREE modes.  <a href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -176,7 +184,7 @@ Packages</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_91390426c0f30a4fef59e9ae252d2f44.html">fr</a></li><li class="navelem"><a class="el" href="dir_df66706d7efa0a9fd8002f7f6346de3d.html">softsf</a></li><li class="navelem"><a class="el" href="dir_a68d62d5e8ea96def72cbc0a88628e3e.html">canscan</a></li><li class="navelem"><a class="el" href="_can_scan_8java.html">CanScan.java</a></li>
-    <li class="footer">Generated on Mon Nov 17 2025 20:26:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Thu Nov 20 2025 23:12:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

@@ -11,9 +11,12 @@ var searchData=
   ['browserhelper_2ejava_8',['BrowserHelper.java',['../_browser_helper_8java.html',1,'']]],
   ['builddata_9',['buildData',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#a554f1d10b2c39ead1bd26e5453cfbcbc',1,'fr::softsf::canscan::service::DataBuilderService']]],
   ['buildmecard_10',['buildMecard',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#ae4a03098abc5bc1f7a6142403703680e',1,'fr::softsf::canscan::service::DataBuilderService']]],
-  ['buildpreviewimage_11',['buildPreviewImage',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#ad393d963bb16532fe9de3366b05cb7d4',1,'fr::softsf::canscan::ui::worker::DynamicPreviewWorker']]],
-  ['button_12',['BUTTON',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#aff624de7ed30dff4c4ed29ce2684c1d7',1,'fr::softsf::canscan::ui::ColorOperation']]],
-  ['button_5fcolor_5ficon_5ftext_5fgap_13',['BUTTON_COLOR_ICON_TEXT_GAP',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#af65c169183eabf70bfed75ed37347c93',1,'fr::softsf::canscan::ui::ColorOperation']]],
-  ['button_5ficon_5fcolor_5fsize_14',['BUTTON_ICON_COLOR_SIZE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#a82e42fe89273f7fde06abf402b8e9a72',1,'fr::softsf::canscan::ui::ColorOperation']]],
-  ['bytes_5fper_5fkilobyte_15',['BYTES_PER_KILOBYTE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad546711c6b1241e86366f6a3fba89570',1,'fr::softsf::canscan::ui::EncodedImage']]]
+  ['buildmeet_11',['buildMeet',['../enumfr_1_1softsf_1_1canscan_1_1service_1_1_data_builder_service.html#afe914e06d42d7ca8b05c928363a5c45a',1,'fr::softsf::canscan::service::DataBuilderService']]],
+  ['buildpreviewimage_12',['buildPreviewImage',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_dynamic_preview_worker.html#ad393d963bb16532fe9de3366b05cb7d4',1,'fr::softsf::canscan::ui::worker::DynamicPreviewWorker']]],
+  ['button_13',['BUTTON',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#aff624de7ed30dff4c4ed29ce2684c1d7',1,'fr::softsf::canscan::ui::ColorOperation']]],
+  ['button_5fbackground_14',['BUTTON_BACKGROUND',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_date_picker.html#a9e9abe4273b0658a021ec33049bb0e00',1,'fr::softsf::canscan::ui::FlatLafDatePicker']]],
+  ['button_5fcolor_5ficon_5ftext_5fgap_15',['BUTTON_COLOR_ICON_TEXT_GAP',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#af65c169183eabf70bfed75ed37347c93',1,'fr::softsf::canscan::ui::ColorOperation']]],
+  ['button_5fforeground_16',['BUTTON_FOREGROUND',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_date_picker.html#aa134894ce919b9c6ad2b8258223be17c',1,'fr::softsf::canscan::ui::FlatLafDatePicker']]],
+  ['button_5ficon_5fcolor_5fsize_17',['BUTTON_ICON_COLOR_SIZE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_color_operation.html#a82e42fe89273f7fde06abf402b8e9a72',1,'fr::softsf::canscan::ui::ColorOperation']]],
+  ['bytes_5fper_5fkilobyte_18',['BYTES_PER_KILOBYTE',['../classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#ad546711c6b1241e86366f6a3fba89570',1,'fr::softsf::canscan::ui::EncodedImage']]]
 ];

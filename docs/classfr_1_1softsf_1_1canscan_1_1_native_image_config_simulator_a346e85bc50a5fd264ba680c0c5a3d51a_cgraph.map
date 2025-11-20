@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.NativeImageConfigSimulator.selectABeginTime" name="fr.softsf.canscan.NativeImageConfigSimulator.selectABeginTime">
+<area shape="rect" id="Node000001" title="Simulates activating the meeting mode and selecting a start time through the TimePicker." alt="" coords="5,72,266,115"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#aaadd03094f00bbe2258c6e9742be224d" title="Compares two strings and prints the test result with a label." alt="" coords="314,5,544,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,69,316,49,318,55,233,74"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#a408544bcaf9c2fb999521466aa9d2233" title="Simulates pressing the Down arrow key using the provided Robot, followed by a short delay." alt="" coords="319,72,539,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,91,303,91,303,96,266,96"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_native_image_config_simulator.html#ab4d4463dc9177237a8de0a7b6713e7cf" title="Simulates pressing the Enter key using the provided Robot, followed by a short delay." alt="" coords="320,139,538,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,113,318,132,316,137,232,118"/>
+</map>

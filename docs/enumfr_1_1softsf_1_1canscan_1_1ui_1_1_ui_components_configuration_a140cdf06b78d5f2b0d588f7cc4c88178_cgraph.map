@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.ui.UiComponentsConfiguration.createModePanel" name="fr.softsf.canscan.ui.UiComponentsConfiguration.createModePanel">
+<area shape="rect" id="Node000001" title="Creates a mode selection panel containing radio buttons for different modes and an update button." alt="" coords="5,5,230,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#ab45098dd8251281a2e9968a760ff8d1e" title="Creates a panel containing the given radio buttons arranged horizontally with spacing." alt="" coords="278,5,528,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,24,262,24,262,29,230,29"/>
+</map>

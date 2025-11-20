@@ -1,0 +1,9 @@
+<map id="src/main/java/fr/softsf/canscan/model/MeetJFields.java" name="src/main/java/fr/softsf/canscan/model/MeetJFields.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="205,5,421,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,104,160,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,51,131,101,129,96,258,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="184,96,443,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="316,48,316,81,310,81,310,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="468,96,727,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="381,46,517,88,515,93,379,51"/>
+</map>

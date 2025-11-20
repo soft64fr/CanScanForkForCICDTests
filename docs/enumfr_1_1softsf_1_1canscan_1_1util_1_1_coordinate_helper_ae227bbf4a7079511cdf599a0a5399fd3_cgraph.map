@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.util.CoordinateHelper.parseAndTruncate" name="fr.softsf.canscan.util.CoordinateHelper.parseAndTruncate">
+<area shape="rect" id="Node000001" title="Parses and truncates a coordinate string." alt="" coords="5,72,213,115"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_coordinate_helper.html#ac699036c792ca55aa735f90208bf8784" title="Clears the field and returns empty string." alt="" coords="261,5,468,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,69,265,50,266,55,194,74"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_coordinate_helper.html#ac77028615e42948dee3bc8cfa1b9e3dd" title="Checks if a coordinate value is within valid range." alt="" coords="261,72,468,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,91,245,91,245,96,213,96"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_coordinate_helper.html#a338999645531baf26c056cd4021e4cbe" title="Truncates coordinate decimals toward zero." alt="" coords="261,139,468,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,113,266,132,265,137,193,118"/>
+</map>

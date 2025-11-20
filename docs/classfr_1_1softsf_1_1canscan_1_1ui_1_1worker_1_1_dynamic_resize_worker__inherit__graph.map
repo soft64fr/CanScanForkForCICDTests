@@ -1,7 +1,7 @@
 <map id="fr.softsf.canscan.ui.worker.DynamicResizeWorker" name="fr.softsf.canscan.ui.worker.DynamicResizeWorker">
-<area shape="rect" id="Node000001" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="9,1143,239,1543"/>
+<area shape="rect" id="Node000001" title="Asynchronously resizes a generated QR code image for display in a Swing UI." alt="" coords="9,1143,239,1527"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html" title=" " alt="" coords="5,581,243,1093"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,1109,127,1143,122,1143,122,1109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,1108,127,1143,122,1143,122,1108"/>
 <area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_abstract_dynamic_worker.html" title="Base class managing asynchronous QR code tasks with a unified workflow." alt="" coords="20,5,229,517"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,532,127,582,122,582,122,532"/>
 </map>

@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1constant_1_1_string_constants.html" target="_top" xlink:title="String constants for messages and identifiers.">
+<g id="a_Node000000"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1constant_1_1_int_constants.html" target="_top" xlink:title="Int constants.">
 <polygon fill="white" stroke="#666666" points="133,-32 0,-32 0,0 133,0 133,-32"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.constant.</text>
-<text text-anchor="middle" x="66.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">StringConstants</text>
+<text text-anchor="middle" x="66.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntConstants</text>
 </a>
 </g>
 </g>

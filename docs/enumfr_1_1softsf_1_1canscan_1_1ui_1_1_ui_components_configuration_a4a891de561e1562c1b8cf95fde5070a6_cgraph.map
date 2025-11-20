@@ -1,0 +1,9 @@
+<map id="fr.softsf.canscan.ui.UiComponentsConfiguration.populateMeetPanel" name="fr.softsf.canscan.ui.UiComponentsConfiguration.populateMeetPanel">
+<area shape="rect" id="Node000001" title="Creates and populates a MEET input panel with labeled input fields for event details." alt="" coords="5,72,230,115"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" title="Adds a labeled row to a panel using GridBagLayout." alt="" coords="286,5,510,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,69,290,50,291,55,211,74"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#ac9ea0d588053a3972a0ee2109047483c" title="Creates a panel with latitude and longitude text fields side by side, distributed evenly with a gap." alt="" coords="278,72,519,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,91,262,91,262,96,230,96"/>
+<area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#ada3bfab8e6aa405b332906856e43c1b8" title="Creates a panel with date/time fields side by side, distributed evenly with a gap." alt="" coords="284,139,512,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,113,291,132,290,137,210,118"/>
+</map>

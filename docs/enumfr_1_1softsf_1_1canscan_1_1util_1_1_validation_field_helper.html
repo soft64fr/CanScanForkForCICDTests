@@ -113,7 +113,7 @@ $(function(){initNavTree('enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_fie
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper__coll__graph.svg" width="200" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper__coll__graph.svg" width="200" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaff068b1bff4bf25788efcc15e5c64f9" id="r_aaff068b1bff4bf25788efcc15e5c64f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff068b1bff4bf25788efcc15e5c64f9">validateAndGetMargin</a> (JSlider marginSlider)</td></tr>
 <tr class="memdesc:aaff068b1bff4bf25788efcc15e5c64f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates and returns QR code margin from slider.  <br /></td></tr>
 <tr class="separator:aaff068b1bff4bf25788efcc15e5c64f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd183a49a851ea170719823b8da605a" id="r_a9dd183a49a851ea170719823b8da605a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dd183a49a851ea170719823b8da605a">validateAndGetMeetUID</a> (String meetTitle)</td></tr>
+<tr class="memdesc:a9dd183a49a851ea170719823b8da605a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sanitized, uppercase, domain-suffixed UID based on a meeting title.  <br /></td></tr>
+<tr class="separator:a9dd183a49a851ea170719823b8da605a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ce70bd385c21c1601782c192b1289cd" id="r_a6ce70bd385c21c1601782c192b1289cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce70bd385c21c1601782c192b1289cd">validateAndGetRatio</a> (JSlider ratioSlider)</td></tr>
 <tr class="memdesc:a6ce70bd385c21c1601782c192b1289cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates and returns image-to-QR ratio from slider.  <br /></td></tr>
 <tr class="separator:a6ce70bd385c21c1601782c192b1289cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +171,33 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>validated margin between 0 and 10 </dd></dl>
+
+</div>
+</div>
+<a id="a9dd183a49a851ea170719823b8da605a" name="a9dd183a49a851ea170719823b8da605a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dd183a49a851ea170719823b8da605a">&#9670;&#160;</a></span>validateAndGetMeetUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String fr.softsf.canscan.util.ValidationFieldHelper.validateAndGetMeetUID </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>meetTitle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a sanitized, uppercase, domain-suffixed UID based on a meeting title. </p>
+<p>Transforms the input title by removing accents, whitespace, and unsafe characters, keeping only Unicode letters, digits, underscores, and hyphens. The resulting string is uppercased and concatenated with the application domain suffix. The original title is not modified.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meetTitle</td><td>the meeting title used as source text </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a normalized and domain-qualified UID </dd></dl>
 
 </div>
 </div>
@@ -313,7 +343,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1util.html">util</a></li><li class="navelem"><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_validation_field_helper.html">ValidationFieldHelper</a></li>
-    <li class="footer">Generated on Mon Nov 17 2025 20:26:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Thu Nov 20 2025 23:12:56 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

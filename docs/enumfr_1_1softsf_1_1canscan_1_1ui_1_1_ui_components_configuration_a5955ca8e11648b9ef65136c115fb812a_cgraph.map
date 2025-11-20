@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.UiComponentsConfiguration.populateMecardPanel" name="fr.softsf.canscan.ui.UiComponentsConfiguration.populateMecardPanel">
-<area shape="rect" id="Node000001" title="Creates and populates MECARD input panel." alt="" coords="5,5,233,48"/>
-<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" title="Adds labeled row to panel using GridBagLayout." alt="" coords="281,5,505,48"/>
+<area shape="rect" id="Node000001" title="Creates and populates a MECARD input panel with labeled input fields." alt="" coords="5,5,233,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" title="Adds a labeled row to a panel using GridBagLayout." alt="" coords="281,5,505,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,24,265,24,265,29,233,29"/>
 </map>

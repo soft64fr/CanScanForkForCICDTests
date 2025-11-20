@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.worker.GenerateAndSaveWorker.doInBackground" name="fr.softsf.canscan.ui.worker.GenerateAndSaveWorker.doInBackground">
-<area shape="rect" id="Node000001" title="Generates the QR code image and saves it to the output file." alt="" coords="5,43,272,85"/>
+<area shape="rect" id="Node000001" title="Generates the QR code, saves it, and copies data to the clipboard." alt="" coords="5,43,272,85"/>
 <area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_generate_and_save_worker.html#a2d4b1f01e6489f60867560f2aed28c8d" title="Captures error details for later display to the user." alt="" coords="320,5,627,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,46,304,43,304,48,272,52"/>
 <area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1worker_1_1_generate_and_save_worker.html#a89d496a84cfe7207ad45c649f3877c10" title="Saves the QR code image to a PNG file." alt="" coords="351,72,596,131"/>

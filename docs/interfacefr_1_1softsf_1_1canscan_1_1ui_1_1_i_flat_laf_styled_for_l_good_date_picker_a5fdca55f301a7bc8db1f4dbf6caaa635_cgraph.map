@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.ui.IFlatLafStyledForLGoodDatePicker.applyTheme" name="fr.softsf.canscan.ui.IFlatLafStyledForLGoodDatePicker.applyTheme">
+<area shape="rect" id="Node000001" title="Applies FlatLaf styling to the internal JTextField." alt="" coords="5,13,279,56"/>
+<area shape="rect" id="Node000002" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aefd53a813e3651ae14f3ef740410bade" title="Returns the internal JTextField used by the LGoodDatePicker." alt="" coords="327,5,547,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,32,311,32,311,37,279,37"/>
+</map>

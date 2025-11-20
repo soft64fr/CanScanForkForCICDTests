@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Creates and populates MECARD input panel.">
+<g id="a_Node000001"><a xlink:title="Creates and populates a MECARD input panel with labeled input fields.">
 <polygon fill="#999999" stroke="#666666" points="170.5,-32 0,-32 0,0 170.5,0 170.5,-32"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.UiComponents</text>
 <text text-anchor="middle" x="85.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration.populateMecardPanel</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" target="_top" xlink:title="Adds labeled row to panel using GridBagLayout.">
+<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a15f235f9284faf8c8a343544a8d98d23" target="_top" xlink:title="Adds a labeled row to a panel using GridBagLayout.">
 <polygon fill="white" stroke="#666666" points="374.75,-32 206.5,-32 206.5,0 374.75,0 374.75,-32"/>
 <text text-anchor="start" x="214.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.UiComponents</text>
 <text text-anchor="middle" x="290.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration.addRow</text>
