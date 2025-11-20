@@ -12,6 +12,7 @@ import java.awt.Robot;
 import java.awt.Window;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.util.Locale;
 import java.util.Objects;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
@@ -50,6 +51,7 @@ public class NativeImageConfigSimulator {
         System.out.println(
                 "\n[e2e INFO] Demarrage de la generation de configuration Native Image...");
         try {
+            Locale.setDefault(Locale.FRANCE);
             FlatCobalt2IJTheme.setup();
             UseLucioleFont.INSTANCE.initialize();
         } catch (Exception e) {
