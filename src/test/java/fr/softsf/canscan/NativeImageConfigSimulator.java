@@ -124,18 +124,18 @@ public class NativeImageConfigSimulator {
     }
 
     /**
-     * Activates meeting mode, selects the first available time via the TimePicker,
-     * and verifies that the displayed time matches the expected format (24h "00:00" or 12h "12:00am").
+     * Simulates activating the meeting mode and selecting a start time through the TimePicker.
+     * Opens the time menu, chooses the first value using keyboard navigation, and verifies the
+     * resulting selected time.
      *
-     * @param meetRadio radio button to enable meeting mode
-     * @param meetBeginTimePicker TimePicker used to select the start time
-     * @param robot Robot used for UI interaction
-     * @throws Exception if interaction or validation fails
+     * @param meetRadio the radio button used to enable meeting mode
+     * @param meetBeginTimePicker the TimePicker used to select the start time
+     * @param robot the Robot used for UI interaction
+     * @throws Exception if UI interaction fails or validation does not match
      */
     private static void selectABeginTime(
             JRadioButton meetRadio, TimePicker meetBeginTimePicker, Robot robot) throws Exception {
-        String frExpected = "00:00";
-        String usExpected = "12:00am";
+        String expected = "00:00";
         Point meetRadioLocation = meetRadio.getLocationOnScreen();
         robot.mouseMove(meetRadioLocation.x + 10, meetRadioLocation.y + 10);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -149,9 +149,7 @@ public class NativeImageConfigSimulator {
         pressDown(robot);
         pressEnter(robot);
         String actual = meetBeginTimePicker.getComponentTimeTextField().getText();
-        assertEquals("\n=== Test 6 : Verification du selecteur horaire ===\n",
-                actual.equals(frExpected)?frExpected:usExpected
-                , actual);
+        assertEquals("\n=== Test 6 : Verification du selecteur horaire ===\n", expected, actual);
     }
 
     /**

@@ -6,9 +6,11 @@
 package fr.softsf.canscan.ui;
 
 import java.awt.Dimension;
+import java.util.Locale;
 import javax.swing.JTextField;
 
 import com.github.lgooddatepicker.components.TimePicker;
+import com.github.lgooddatepicker.components.TimePickerSettings;
 
 /**
  * TimePicker component with FlatLaf styling applied and automatically maintained.
@@ -20,9 +22,16 @@ public class FlatLafTimePicker extends TimePicker implements IFlatLafStyledForLG
 
     /** Creates a new FlatLafTimePicker with styling applied and listener installed. */
     public FlatLafTimePicker() {
-        super();
+        super(createSettings());
         applyTheme();
         installThemeListener();
+    }
+
+    /** Prepares TimePickerSettings with French locale and 24h format. */
+    private static TimePickerSettings createSettings() {
+        TimePickerSettings settings = new TimePickerSettings(Locale.FRANCE);
+        settings.use24HourClockFormat();
+        return settings;
     }
 
     /**
