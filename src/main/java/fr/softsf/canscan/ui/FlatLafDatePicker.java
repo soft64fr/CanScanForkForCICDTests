@@ -14,41 +14,49 @@ import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
 
 /**
- * DatePicker component with FlatLaf styling applied and automatically maintained.
- *
- * <p>The internal text field and calendar colors are styled according to UIManager defaults. A
- * listener ensures styling is reapplied when font, background, or foreground changes.
- *
- * <p><b>Note:</b> The thin border shown when hovering over calendar labels (days) is applied
- * internally by LGoodDatePicker and cannot be removed via the public API. Only the hover background
- * color can be customized.
+ * DatePicker component with FlatLaf styling applied and maintained. Provides: - FlatLaf-based
+ * colors and borders via customized DatePickerSettings. - Automatic application of UIManager
+ * defaults to the internal text field and calendar. - Preferred size adjusted to match standard
+ * text field height.
  */
 public class FlatLafDatePicker extends DatePicker implements IFlatLafStyledForLGoodDatePicker {
 
-    private static final String TEXT_FIELD_BACKGROUND = "TextField.background";
     private static final String BUTTON_FOREGROUND = "Button.foreground";
     private static final String BUTTON_BACKGROUND = "Button.background";
+    private static final String TEXT_FIELD_BACKGROUND = "TextField.background";
+    private static final String TEXT_FIELD_FOREGROUND = "TextField.foreground";
 
-    /** Creates a new FlatLafDatePicker with styling applied and listener installed. */
+    /** Creates a new FlatLafDatePicker with FlatLaf styling applied. */
     public FlatLafDatePicker() {
         super(createSettings());
         applyTheme();
-        installThemeListener();
     }
 
-    /** Prepares DatePickerSettings with FlatLaf colors and borders. */
+    /** Configures DatePickerSettings with FlatLaf colors and borders. */
     private static DatePickerSettings createSettings() {
         DatePickerSettings settings = new DatePickerSettings();
+        settings.setColor(
+                DatePickerSettings.DateArea.DatePickerTextInvalidDate,
+                UIManager.getColor("CheckBox.icon.selectedBackground"));
+        settings.setColor(
+                DatePickerSettings.DateArea.DatePickerTextValidDate,
+                UIManager.getColor(TEXT_FIELD_FOREGROUND));
+        settings.setColor(
+                DatePickerSettings.DateArea.TextFieldBackgroundInvalidDate,
+                UIManager.getColor(TEXT_FIELD_BACKGROUND));
+        settings.setColor(
+                DatePickerSettings.DateArea.TextFieldBackgroundValidDate,
+                UIManager.getColor(TEXT_FIELD_BACKGROUND));
         settings.setColor(
                 DatePickerSettings.DateArea.BackgroundOverallCalendarPanel,
                 UIManager.getColor("Panel.background"));
         settings.setColorBackgroundWeekdayLabels(UIManager.getColor("Panel.background"), false);
         settings.setColor(
                 DatePickerSettings.DateArea.CalendarTextWeekdays,
-                UIManager.getColor("TextField.foreground"));
+                UIManager.getColor(TEXT_FIELD_FOREGROUND));
         settings.setColor(
                 DatePickerSettings.DateArea.CalendarTextNormalDates,
-                UIManager.getColor("TextField.foreground"));
+                UIManager.getColor(TEXT_FIELD_FOREGROUND));
         settings.setColor(
                 DatePickerSettings.DateArea.CalendarBackgroundNormalDates,
                 UIManager.getColor(TEXT_FIELD_BACKGROUND));
@@ -82,11 +90,13 @@ public class FlatLafDatePicker extends DatePicker implements IFlatLafStyledForLG
         return settings;
     }
 
+    /** Returns the internal JTextField of the DatePicker. */
     @Override
     public JTextField getInternalTextField() {
         return getComponentDateTextField();
     }
 
+    /** Returns preferred size with height adjusted to standard text field height. */
     @Override
     public Dimension getPreferredSize() {
         return computePreferredSize(super.getPreferredSize());

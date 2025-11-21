@@ -11,27 +11,22 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
- * Interface providing FlatLaf styling support for LGoodDatePicker components.
- *
- * <p>Supplies a default text field height, applies FlatLaf theme to the internal text field, and
- * optionally installs a listener to reapply styling when LookAndFeel defaults change.
+ * Utility interface to apply FlatLaf styling to LGoodDatePicker components. Provides: - Standard
+ * text field height for consistent sizing. - Access to the internal JTextField of the picker. -
+ * Methods to adjust preferred size and reapply FlatLaf styling from UIManager defaults.
  */
 public interface IFlatLafStyledForLGoodDatePicker {
 
     int TEXT_FIELD_HEIGHT = new JTextField().getPreferredSize().height;
 
-    /**
-     * Returns the internal JTextField used by the LGoodDatePicker.
-     *
-     * @return the component's internal JTextField
-     */
+    /** Returns the internal JTextField of the picker. */
     JTextField getInternalTextField();
 
     /**
      * Adjusts the given dimension to use the standard text field height.
      *
      * @param original the original dimension
-     * @return the dimension with height set to TEXT_FIELD_HEIGHT
+     * @return dimension with height set to TEXT_FIELD_HEIGHT
      */
     default Dimension computePreferredSize(Dimension original) {
         original.height = TEXT_FIELD_HEIGHT;
@@ -39,8 +34,8 @@ public interface IFlatLafStyledForLGoodDatePicker {
     }
 
     /**
-     * Applies FlatLaf styling to the internal JTextField. Sets border, colors, font, and margins
-     * according to UIManager defaults.
+     * Applies FlatLaf styling to the internal text field. Sets border, colors, font, and margins
+     * from UIManager defaults.
      */
     default void applyTheme() {
         JTextField textField = getInternalTextField();
@@ -59,24 +54,6 @@ public interface IFlatLafStyledForLGoodDatePicker {
             }
             textField.revalidate();
             textField.repaint();
-        }
-    }
-
-    /**
-     * Installs a property change listener on the internal text field. Automatically reapplies the
-     * FlatLaf theme when font, background, or foreground changes.
-     */
-    default void installThemeListener() {
-        JTextField textField = getInternalTextField();
-        if (textField != null) {
-            textField.addPropertyChangeListener(
-                    evt -> {
-                        if ("font".equals(evt.getPropertyName())
-                                || "background".equals(evt.getPropertyName())
-                                || "foreground".equals(evt.getPropertyName())) {
-                            applyTheme();
-                        }
-                    });
         }
     }
 }
