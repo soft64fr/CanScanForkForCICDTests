@@ -35,6 +35,9 @@ echo   NativeImageConfigSimulator    : Classe simulant l'usage runtime de l'app
 echo.
 java -agentlib:native-image-agent=config-output-dir=../config ^
      -Djava.awt.headless=false ^
+     -Duser.language=fr ^
+     -Duser.country=FR ^
+     -Duser.region=FR ^
      -cp "../target/canscan-%2.jar;../target/test-classes" ^
           fr.softsf.canscan.NativeImageConfigSimulator
 
@@ -66,6 +69,9 @@ call native-image --no-fallback ^
                   -H:Class=%4 ^
                   -H:NativeLinkerOption=/SUBSYSTEM:WINDOWS ^
                   -H:NativeLinkerOption=/ENTRY:mainCRTStartup ^
+                  -Duser.language=fr ^
+                  -Duser.country=FR ^
+                  -Duser.region=FR ^
                   -Djava.awt.headless=false ^
                   -Dsun.java2d.d3d=false ^
                   -J-Xmx7G ^

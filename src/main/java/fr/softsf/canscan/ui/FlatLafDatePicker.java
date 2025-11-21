@@ -40,7 +40,7 @@ public class FlatLafDatePicker extends DatePicker implements IFlatLafStyledForLG
 
     /** Prepares DatePickerSettings with FlatLaf colors and borders. */
     private static DatePickerSettings createSettings() {
-        Locale localeFR = Locale.FRANCE;
+        Locale localeFR = Locale.FRENCH;
         DatePickerSettings settings = new DatePickerSettings(localeFR);
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy", localeFR);
         settings.setFormatForDatesCommonEra(dateFormatter);
