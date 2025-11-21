@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Applies FlatLaf styling to the internal JTextField.">
+<g id="a_Node000001"><a xlink:title="Applies FlatLaf styling to the internal text field.">
 <polygon fill="#999999" stroke="#666666" points="205,-38 0,-38 0,-6 205,-6 205,-38"/>
 <text text-anchor="start" x="8" y="-24.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.IFlat</text>
 <text text-anchor="middle" x="102.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">LafStyledForLGoodDatePicker.applyTheme</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aefd53a813e3651ae14f3ef740410bade" target="_top" xlink:title="Returns the internal JTextField used by the LGoodDatePicker.">
+<g id="a_Node000002"><a xlink:href="interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aefd53a813e3651ae14f3ef740410bade" target="_top" xlink:title="Returns the internal JTextField of the picker.">
 <polygon fill="white" stroke="#666666" points="406.25,-44 241,-44 241,0 406.25,0 406.25,-44"/>
 <text text-anchor="start" x="249" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.ui.IFlat</text>
 <text text-anchor="start" x="249" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">LafStyledForLGoodDatePicker.get</text>

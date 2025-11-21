@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.ui.FlatLafTimePicker.getPreferredSize" name="fr.softsf.canscan.ui.FlatLafTimePicker.getPreferredSize">
-<area shape="rect" id="Node000001" title="Returns the preferred size with the height adjusted to match a standard text field." alt="" coords="5,13,212,56"/>
+<area shape="rect" id="Node000001" title="Returns preferred size with height adjusted to standard text field height." alt="" coords="5,13,212,56"/>
 <area shape="rect" id="Node000002" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aa541de5e4f25b0c945fa891aa891b883" title="Adjusts the given dimension to use the standard text field height." alt="" coords="260,5,512,64"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,32,244,32,244,37,212,37"/>
 </map>

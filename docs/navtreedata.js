@@ -58,8 +58,8 @@ var NAVTREEINDEX =
 "_abstract_dynamic_worker_8java.html",
 "classfr_1_1softsf_1_1canscan_1_1_can_scan.html#afb8d451dc5d6d9c7b6700e4b688c98a3",
 "classfr_1_1softsf_1_1canscan_1_1ui_1_1_encoded_image.html#a1f675a96edbc6fb8d417920bd4e26c41",
-"dir_120ed4da3e3217b1e7fc0b4f48568e79.html",
-"enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a88f59798782812f0fcf61267db09a8b9"
+"classfr_1_1softsf_1_1canscan_1_1util_1_1_use_luciole_font_u_test.html",
+"enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

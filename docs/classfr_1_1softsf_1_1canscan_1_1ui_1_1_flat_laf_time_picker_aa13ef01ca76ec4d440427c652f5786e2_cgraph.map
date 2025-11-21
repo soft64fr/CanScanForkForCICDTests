@@ -1,11 +1,9 @@
 <map id="fr.softsf.canscan.ui.FlatLafTimePicker.FlatLafTimePicker" name="fr.softsf.canscan.ui.FlatLafTimePicker.FlatLafTimePicker">
-<area shape="rect" id="Node000001" title="Creates a new FlatLafTimePicker with styling applied and listener installed." alt="" coords="5,31,221,73"/>
-<area shape="rect" id="Node000002" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#a5fdca55f301a7bc8db1f4dbf6caaa635" title="Applies FlatLaf styling to the internal JTextField." alt="" coords="553,5,826,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,44,269,41,537,30,538,35,269,47,221,49"/>
-<area shape="rect" id="Node000004" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#a6dc0ecfec2349d410dc78f6f8feca211" title="Installs a property change listener on the internal text field." alt="" coords="269,56,505,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,62,253,66,253,72,221,68"/>
-<area shape="rect" id="Node000003" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aefd53a813e3651ae14f3ef740410bade" title="Returns the internal JTextField used by the LGoodDatePicker." alt="" coords="874,27,1095,85"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="827,38,859,41,859,46,827,43"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="505,60,561,49,562,54,506,65"/>
-<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="505,77,859,59,859,65,505,82"/>
+<area shape="rect" id="Node000001" title="Creates a new FlatLafTimePicker with FlatLaf styling applied." alt="" coords="5,47,221,89"/>
+<area shape="rect" id="Node000002" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#a5fdca55f301a7bc8db1f4dbf6caaa635" title="Applies FlatLaf styling to the internal text field." alt="" coords="269,13,542,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,53,253,49,253,55,221,58"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1ui_1_1_flat_laf_time_picker.html#a2c70cbf92e4711bb65583b9a07da4f36" title="Configures TimePickerSettings with FlatLaf colors and borders." alt="" coords="309,80,502,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,78,293,86,293,91,221,83"/>
+<area shape="rect" id="Node000003" href="$interfacefr_1_1softsf_1_1canscan_1_1ui_1_1_i_flat_laf_styled_for_l_good_date_picker.html#aefd53a813e3651ae14f3ef740410bade" title="Returns the internal JTextField of the picker." alt="" coords="590,5,810,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="542,32,574,32,574,37,542,37"/>
 </map>
