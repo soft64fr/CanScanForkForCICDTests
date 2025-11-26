@@ -75,8 +75,6 @@ import fr.softsf.canscan.util.ValidationFieldHelper;
 public class CanScan extends JFrame {
 
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
-    private static final String LATEST_RELEASES_REPO_URL =
-            "https://github.com/Lob2018/CanScan/releases/latest";
     private static final int MINIMUM_QR_CODE_SIZE = 10;
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private static final String NORTH_PANEL = "northPanel";
@@ -341,9 +339,13 @@ public class CanScan extends JFrame {
     private void configureUpdateButton() {
         update.setEnabled(false);
         update.setToolTipText(
-                "<html>Recherche de mise à jour<br>" + LATEST_RELEASES_REPO_URL + "</html>");
+                "<html>Recherche de mise à jour<br>"
+                        + StringConstants.LATEST_RELEASES_REPO_URL.getValue()
+                        + "</html>");
         update.addActionListener(
-                e -> BrowserHelper.INSTANCE.openInBrowser(LATEST_RELEASES_REPO_URL));
+                e ->
+                        BrowserHelper.INSTANCE.openInBrowser(
+                                StringConstants.LATEST_RELEASES_REPO_URL.getValue()));
         SwingWorker<Boolean, Void> worker =
                 VersionService.INSTANCE.checkLatestVersion(
                         StringConstants.VERSION.getValue(), update);

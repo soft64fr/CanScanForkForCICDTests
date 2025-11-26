@@ -7,10 +7,12 @@ package fr.softsf.canscan.util;
 
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.FontMetrics;
 import java.awt.GraphicsEnvironment;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
 import java.io.InputStream;
+import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -34,11 +36,9 @@ public enum UseLucioleFont {
     private static final String FONT_LUCIOLE_PATH = "/font/Luciole-Regular.ttf";
     private static final String DEFAULT_FONT = "defaultFont";
     private static final double FONT_SHIFT_DOWN = 2.5;
+    private static final JLabel DUMMY_JLABEL = new JLabel();
 
-    /**
-     * Initializes and applies the Luciole font as the default Swing UI font. If the font cannot be
-     * loaded, a popup error dialog is shown.
-     */
+    /** Initializes and applies the Luciole font as the default Swing UI font. */
     public void initialize() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_LUCIOLE_PATH)) {
             if (is == null) {
@@ -62,5 +62,36 @@ public enum UseLucioleFont {
                     e.getMessage(),
                     StringConstants.ERREUR.getValue());
         }
+    }
+
+    /**
+     * Returns the reference character width based on 'W'.
+     *
+     * <p>Uses an internal JLabel context to calculate exact metrics.
+     *
+     * @return The width of 'W' in pixels.
+     */
+    public int getCharWidth() {
+        return getCurrentFontMetrics().charWidth('W');
+    }
+
+    /**
+     * Returns the total line height (ascent + descent + leading).
+     *
+     * @return The line height in pixels.
+     */
+    public int getLineHeight() {
+        return getCurrentFontMetrics().getHeight();
+    }
+
+    /**
+     * Retrieves the FontMetrics object for the applied UI font.
+     *
+     * <p>Assumes the UIManager always contains a valid font reference for the default UI font.
+     *
+     * @return The FontMetrics for the applied font.
+     */
+    private FontMetrics getCurrentFontMetrics() {
+        return DUMMY_JLABEL.getFontMetrics(UIManager.getFont(DEFAULT_FONT));
     }
 }

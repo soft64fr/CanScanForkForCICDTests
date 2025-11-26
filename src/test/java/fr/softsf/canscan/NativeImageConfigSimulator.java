@@ -31,6 +31,7 @@ import com.formdev.flatlaf.intellijthemes.FlatCobalt2IJTheme;
 import com.github.lgooddatepicker.components.TimePicker;
 
 import fr.softsf.canscan.constant.StringConstants;
+import fr.softsf.canscan.util.BrowserHelper;
 import fr.softsf.canscan.util.UseLucioleFont;
 
 /**
@@ -115,12 +116,33 @@ public class NativeImageConfigSimulator {
             chooseModuleColor(qrColorButton, robot);
             freeDataTooBig(freeRadio, freeField, robot);
             selectABeginTime(meetRadio, meetBeginTimePicker, robot);
+            openLatestReleaseRepoInBrowser(robot);
             System.out.println("\n=== SIMULATION E2E TERMINEE ===\n");
         } catch (Exception e) {
             System.err.println("[e2e ERROR] Dans la simulation E2E: " + e.getMessage());
             e.printStackTrace();
             System.exit(1);
         }
+    }
+
+    /**
+     * Simulates opening the latest release repository URL in the system browser using the Java
+     * Desktop API. This test verifies that the Java call is successfully initiated and completed
+     * (returns {@code true}) within the specified timeout.
+     *
+     * @param robot the Robot used for UI synchronization.
+     * @throws Exception if the browser operation fails and the result is not "true".
+     */
+    private static void openLatestReleaseRepoInBrowser(Robot robot) throws Exception {
+        boolean operationSuccess =
+                BrowserHelper.INSTANCE.openInBrowser(
+                        StringConstants.LATEST_RELEASES_REPO_URL.getValue());
+        robot.waitForIdle();
+        robot.delay(1000);
+        assertEquals(
+                "\n=== Test 7 : Verification de l'ouverture du navigateur ===\n",
+                "true",
+                String.valueOf(operationSuccess));
     }
 
     /**
@@ -140,14 +162,21 @@ public class NativeImageConfigSimulator {
         robot.mouseMove(meetRadioLocation.x + 10, meetRadioLocation.y + 10);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(500);
+        robot.waitForIdle();
+        robot.delay(800);
         Point beginTimePickerLocation =
                 meetBeginTimePicker.getComponentToggleTimeMenuButton().getLocationOnScreen();
         robot.mouseMove(beginTimePickerLocation.x + 10, beginTimePickerLocation.y + 10);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.waitForIdle();
+        robot.delay(1500);
         pressDown(robot);
+        robot.waitForIdle();
+        robot.delay(200);
         pressEnter(robot);
+        robot.waitForIdle();
+        robot.delay(1000);
         String actual = meetBeginTimePicker.getComponentTimeTextField().getText();
         assertEquals("\n=== Test 6 : Verification du selecteur horaire ===\n", expected, actual);
     }
@@ -341,6 +370,7 @@ public class NativeImageConfigSimulator {
     private static void typeString(Robot robot, String text) {
         for (char c : text.toCharArray()) {
             typeChar(robot, c);
+            robot.waitForIdle();
         }
     }
 
@@ -362,7 +392,7 @@ public class NativeImageConfigSimulator {
         if (shift) {
             robot.keyRelease(KeyEvent.VK_SHIFT);
         }
-        robot.delay(50);
+        robot.delay(200);
     }
 
     /**

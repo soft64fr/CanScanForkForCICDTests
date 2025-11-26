@@ -92,7 +92,7 @@ public enum VersionService {
                     return true;
                 }
                 try {
-                    return requestAndVerifiy(currentVersion);
+                    return requestAndVerify(currentVersion);
                 } catch (IOException e) {
                     return true;
                 } catch (InterruptedException e) {
@@ -145,7 +145,7 @@ public enum VersionService {
      * @throws IOException if the request fails due to network issues
      * @throws InterruptedException if the thread is interrupted during the request
      */
-    private Boolean requestAndVerifiy(String currentVersion)
+    private Boolean requestAndVerify(String currentVersion)
             throws IOException, InterruptedException {
         HttpRequest request =
                 HttpRequest.newBuilder()
@@ -188,7 +188,8 @@ public enum VersionService {
                     updateButtonState(
                             updateButton,
                             false,
-                            "<html>Il manque un paramètre pour vérifier la mise à jour.<br>"
+                            "<html>Il manque un paramètre dans checkLatestVersion pour vérifier la"
+                                    + " mise à jour.<br>"
                                     + LATEST_RELEASES_REPO_URL
                                     + CLOSE_HTML);
                 }

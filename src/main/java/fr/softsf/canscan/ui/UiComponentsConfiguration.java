@@ -42,6 +42,7 @@ import fr.softsf.canscan.model.MecardJFields;
 import fr.softsf.canscan.model.MeetJFields;
 import fr.softsf.canscan.model.NativeImageUiComponents;
 import fr.softsf.canscan.util.Checker;
+import fr.softsf.canscan.util.UseLucioleFont;
 
 /** Creating and configuring UI components. */
 public enum UiComponentsConfiguration {
@@ -216,13 +217,11 @@ public enum UiComponentsConfiguration {
         }
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);
-        var fm = textArea.getFontMetrics(textArea.getFont());
-        int charHeight = fm.getHeight();
-        int charWidth = fm.charWidth('W');
         Dimension size =
                 new Dimension(
-                        charWidth * IntConstants.TEXT_FIELDS_COLUMNS.getValue(),
-                        charHeight * MULTILINE_TEXT_FIELDS_ROWS);
+                        UseLucioleFont.INSTANCE.getCharWidth()
+                                * IntConstants.TEXT_FIELDS_COLUMNS.getValue(),
+                        UseLucioleFont.INSTANCE.getLineHeight() * MULTILINE_TEXT_FIELDS_ROWS);
         scrollPane.setPreferredSize(size);
         scrollPane.setMinimumSize(size);
         scrollPane.setMaximumSize(size);
