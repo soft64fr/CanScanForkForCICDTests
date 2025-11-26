@@ -4,7 +4,7 @@
   <!-- Project information -->
   <groupId>fr.softsf</groupId>
   <artifactId>canscan</artifactId>
-  <version>0.11.1.0</version>
+  <version>0.12.0.0</version>
   <name>CanScan</name>
   <organization>
     <name>Soft64.fr</name>
@@ -28,9 +28,7 @@
     <app.organization>${project.organization.name}</app.organization>
     <app.version>${project.version}</app.version>
     <java.version>21</java.version>
-    <license.name>MIT</license.name>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <license.name>GPLv3.0</license.name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>lob2018</sonar.organization>
@@ -54,6 +52,13 @@
       <groupId>com.github.lgooddatepicker</groupId>
       <artifactId>LGoodDatePicker</artifactId>
       <version>11.2.1</version>
+    </dependency>
+    <!-- SpotBugs Annotations -->
+    <dependency>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <version>4.9.8</version>
+      <optional>true</optional>
     </dependency>
     <!-- Zxing QR Code dependency -->
     <dependency>
@@ -204,7 +209,7 @@
               <content><![CDATA[
 /*
  * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
- * Licensed under the MIT License (MIT).
+ * Licensed under the GNU General Public License v3.0 (GPLv3.0).
  * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
  */
 ]]></content>
@@ -328,8 +333,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.1</version>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
+          <release>${java.version}</release>
         </configuration>
       </plugin>
       <!-- Maven Enforcer Plugin to define the minimum Maven version -->
@@ -366,7 +370,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>3.6.2</version>
         <configuration>
           <mainClass>fr.softsf.canscan.CanScan</mainClass>
         </configuration>
@@ -430,7 +434,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>3.1.0</version>
+            <version>3.6.2</version>
             <configuration>
               <executable>java</executable>
               <arguments>
@@ -461,6 +465,40 @@
         </plugins>
       </build>
     </profile>
+    <!-- Profile for native Linux packaging. Runs a shell at package phase. -->
+    <profile>
+      <id>linux-native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.6.2</version>
+            <executions>
+              <execution>
+                <id>exec-bash</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                  <executable>bash</executable>
+                  <arguments>
+                    <argument>.myresources/scripts/natif.sh</argument>
+                    <argument>${app.name}</argument>
+                    <argument>${app.version}</argument>
+                    <argument>${app.organization}</argument>
+                    <argument>${app.main-class}</argument>
+                    <argument>${app.lang}</argument>
+                    <argument>${app.country}</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <!-- Profile for native Windows packaging. Runs a batch script at package phase. -->
     <profile>
       <id>windows-native</id>
@@ -469,7 +507,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>3.6.1</version>
+            <version>3.6.2</version>
             <executions>
               <execution>
                 <!-- Windows package using batch script -->

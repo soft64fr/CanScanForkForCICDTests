@@ -1,6 +1,6 @@
 /*
  * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
- * Licensed under the MIT License (MIT).
+ * Licensed under the GNU General Public License v3.0 (GPLv3.0).
  * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
  */
 package fr.softsf.canscan.util;
@@ -29,52 +29,72 @@ public enum BrowserHelper {
     private static final String ERROR = "ERROR";
 
     /**
-     * Opens a URL in the system's default browser with timeout protection. Requires Desktop API
-     * support on the platform.
+     * Attempts to open a URL in the default browser asynchronously with a 2-second timeout.
      *
-     * @param url the URL to open (must be valid URI format)
-     * @throws NullPointerException if url is null
+     * @param url The URL to open.
+     * @return {@code true} if the launch command completed successfully within the timeout; {@code
+     *     false} otherwise (error details are displayed via a dialog).
+     * @throws NullPointerException if url is {@code null}.
      */
-    public void openInBrowser(String url) {
+    public boolean openInBrowser(String url) {
         Objects.requireNonNull(url, "URL cannot be null");
 
         try (ExecutorService executor = Executors.newSingleThreadExecutor()) {
-            Future<?> future = executor.submit(() -> tryOpenBrowser(url));
-
+            Future<Boolean> future = executor.submit(() -> tryOpenBrowser(url));
             try {
-                future.get(TIMEOUT_SECONDS, TimeUnit.SECONDS);
+                return future.get(TIMEOUT_SECONDS, TimeUnit.SECONDS);
             } catch (TimeoutException e) {
                 future.cancel(true);
                 handleError("Browser opening timed out", e, url);
+                return false;
             } catch (ExecutionException e) {
                 handleError("Error opening browser", e, url);
+                return false;
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 handleError("Browser opening interrupted", e, url);
+                return false;
             }
         }
     }
 
     /**
-     * Attempts to open the URL using Java's Desktop API.
+     * Executes {@code Desktop.browse} or falls back to the native {@code xdg-open} command on Linux
+     * if the AWT Desktop API fails to support the BROWSE action.
      *
-     * @param url the URL to open
+     * @param url The URL to open.
+     * @return {@code true} if the browser was successfully called; {@code false} on internal error.
      */
-    private void tryOpenBrowser(String url) {
+    private boolean tryOpenBrowser(String url) {
+        URI uri;
         try {
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().browse(URI.create(url));
-            } else {
-                handleError(
-                        "Desktop API not supported on this platform",
-                        new UnsupportedOperationException(),
-                        url);
-            }
-        } catch (IOException e) {
-            handleError("Failed to open URL", e, url);
+            uri = URI.create(url);
         } catch (IllegalArgumentException e) {
             handleError("Invalid URL format", e, url);
+            return false;
         }
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().browse(uri);
+                return true;
+            } catch (UnsupportedOperationException | IOException e) {
+                // Moved to B plan
+            }
+        }
+        if (System.getProperty("os.name", "").toLowerCase().contains("linux")) {
+            try {
+                new ProcessBuilder("/usr/bin/xdg-open", url).start();
+                return true;
+            } catch (IOException e) {
+                handleError("Failed to open URL via xdg-open", e, url);
+                return false;
+            }
+        }
+        handleError(
+                "Desktop API not supported or BROWSE action unavailable",
+                new UnsupportedOperationException(),
+                url);
+        return false;
     }
 
     /**

@@ -1,6 +1,6 @@
 /*
  * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
- * Licensed under the MIT License (MIT).
+ * Licensed under the GNU General Public License v3.0 (GPLv3.0).
  * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
  */
 package fr.softsf.canscan;
@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -68,20 +69,19 @@ import fr.softsf.canscan.util.BrowserHelper;
 import fr.softsf.canscan.util.Checker;
 import fr.softsf.canscan.util.CoordinateHelper;
 import fr.softsf.canscan.util.DateHelper;
-import fr.softsf.canscan.util.UseLucioleFont;
+import fr.softsf.canscan.util.FontManager;
 import fr.softsf.canscan.util.ValidationFieldHelper;
 
 /** CanScan — Swing QR code generator with MECARD, MEET, and FREE modes. */
 public class CanScan extends JFrame {
 
     private static final int VERTICAL_SCROLL_UNIT_INCREMENT = 16;
-    private static final String LATEST_RELEASES_REPO_URL =
-            "https://github.com/Lob2018/CanScan/releases/latest";
     private static final int MINIMUM_QR_CODE_SIZE = 10;
     private static final int QR_CODE_LABEL_DEFAULT_SIZE = 50;
     private static final String NORTH_PANEL = "northPanel";
     private static final String HTML_B_STRING_B_HTML = "<html><b>%s</b></html>";
     private static final int MAX_COORDINATE_LENGTH = 12;
+    public static final String WARNING_ICON = "\uE002";
     private Color qrColor = Color.BLACK;
     private Color bgColor = Color.WHITE;
     private int margin = 3;
@@ -96,8 +96,7 @@ public class CanScan extends JFrame {
             new JRadioButton(String.format(HTML_B_STRING_B_HTML, Mode.MEET.text()));
     private final JRadioButton freeRadio =
             new JRadioButton(String.format(HTML_B_STRING_B_HTML, Mode.FREE.text()));
-    // update
-    private final JButton update = new JButton("\uD83D\uDD04");
+    private final JButton update = UiComponentsConfiguration.createIconOnlyButton("\uE863");
     // MeCard
     private final JTextField nameField =
             new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
@@ -144,10 +143,12 @@ public class CanScan extends JFrame {
     private final JPanel cardPanel = new JPanel(cardLayout);
     private final JLabel qrCodeLabel = new JLabel("", SwingConstants.CENTER);
     private final JPanel southSpacer = new JPanel();
-    private final JButton browseButton = new JButton("\uD83D\uDCC1 Parcourir");
+    private final JButton browseButton =
+            UiComponentsConfiguration.INSTANCE.createIconButton("\uE2C7", "Parcourir");
     private final JButton qrColorButton = new JButton("#000000");
     private final JButton bgColorButton = new JButton("#FFFFFF");
-    private final JButton generateButton = new JButton("\uD83D\uDCBE Enregistrer et copier");
+    private final JButton generateButton =
+            UiComponentsConfiguration.INSTANCE.createIconButton("\uE161", "Enregistrer et copier");
     // SERVICES
     private final transient EncodedImage encodedImage = new EncodedImage();
     private final transient DynamicResizeWorker qrCodeResize =
@@ -339,11 +340,16 @@ public class CanScan extends JFrame {
      * <p>Sets tooltip, browser action, and background worker execution.
      */
     private void configureUpdateButton() {
+        update.setMargin(new Insets(3, 3, 3, 3));
         update.setEnabled(false);
         update.setToolTipText(
-                "<html>Recherche de mise à jour<br>" + LATEST_RELEASES_REPO_URL + "</html>");
+                "<html>Recherche de mise à jour<br>"
+                        + StringConstants.LATEST_RELEASES_REPO_URL.getValue()
+                        + "</html>");
         update.addActionListener(
-                e -> BrowserHelper.INSTANCE.openInBrowser(LATEST_RELEASES_REPO_URL));
+                e ->
+                        BrowserHelper.INSTANCE.openInBrowser(
+                                StringConstants.LATEST_RELEASES_REPO_URL.getValue()));
         SwingWorker<Boolean, Void> worker =
                 VersionService.INSTANCE.checkLatestVersion(
                         StringConstants.VERSION.getValue(), update);
@@ -401,35 +407,35 @@ public class CanScan extends JFrame {
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
-                "Taille du logo ⚠",
-                "<html>Le pourcentage du logo dans le code QR.<br>⚠ Peut gêner la"
+                UiComponentsConfiguration.getIconAfterTextHtml("Taille du logo", WARNING_ICON),
+                "<html>Le pourcentage du logo dans le code QR.<br>Cela peut gêner la"
                         + " détection.</html>",
                 ratioSlider);
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
-                "Marge ⚠",
-                "<html>La marge extérieure entre 0 et 10.<br>⚠ Peut gêner la détection.</html>",
+                UiComponentsConfiguration.getIconAfterTextHtml("Marge", WARNING_ICON),
+                "<html>La marge extérieure entre 0 et 10.<br>Cela peut gêner la détection.</html>",
                 marginSlider);
         JPanel colorPanel = colorPanel();
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
-                "Couleurs ⚠",
+                UiComponentsConfiguration.getIconAfterTextHtml("Couleurs", WARNING_ICON),
                 "Le code QR ne fonctionnera que si le contraste est suffisant.",
                 colorPanel);
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
-                "Dimension ⚠",
-                "<html>Le côté du code QR en pixels.<br>⚠ Une trop grande taille, peut dégrader les"
+                UiComponentsConfiguration.getIconAfterTextHtml("Dimension", WARNING_ICON),
+                "<html>Le côté du code QR en pixels.<br>Une trop grande taille, peut dégrader les"
                         + " performances de l'application.</html>",
                 sizeField);
         UiComponentsConfiguration.INSTANCE.addRow(
                 northPanel,
                 grid,
-                "Modules ronds ⚠",
-                "<html>Arrondir les modules.<br>⚠ Peut gêner la détection.</html>",
+                UiComponentsConfiguration.getIconAfterTextHtml("Modules ronds", WARNING_ICON),
+                "<html>Arrondir les modules.<br>Cela peut gêner la détection.</html>",
                 roundedModulesCheckBox);
     }
 
@@ -913,7 +919,7 @@ public class CanScan extends JFrame {
      */
     public static void main(String[] args) {
         FlatCobalt2IJTheme.setup();
-        UseLucioleFont.INSTANCE.initialize();
+        FontManager.INSTANCE.initialize();
         SwingUtilities.invokeLater(() -> new CanScan().setVisible(true));
     }
 }
