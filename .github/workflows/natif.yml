@@ -6,6 +6,9 @@ on:
       - main
 
 jobs:
+  # ------------------------------------------------------------------------
+  # 1. JOB WINDOWS
+  # ------------------------------------------------------------------------
   package_for_windows:
     name: Package for Windows
     runs-on: windows-latest
@@ -135,11 +138,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-            mvn -B test -f pom.xml ^
-            org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
-            -Dsonar.projectKey=Lob2018_CanScan ^
-            -Dsonar.qualitygate.wait=true ^
-            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+          mvn -B test -f pom.xml ^
+          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
+          -Dsonar.projectKey=Lob2018_CanScan ^
+          -Dsonar.qualitygate.wait=true ^
+          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
       - name: Build native Windows package
         shell: cmd
@@ -161,17 +164,100 @@ jobs:
             "$hash  $($exeFile.Name)" | Out-File -FilePath "output\hash_windows.txt" -Encoding UTF8
           }
 
-      - name: Upload output folder
+      - name: Upload output folder (Windows)
         uses: actions/upload-artifact@v4
         with:
           name: output-folder-windows
           path: output
 
+  # ------------------------------------------------------------------------
+  # 2. NOUVEAU JOB UBUNTU/AppImage
+  # ------------------------------------------------------------------------
+  package_for_ubuntu:
+    name: Package for Ubuntu (AppImage)
+    runs-on: ubuntu-latest
+    needs: [package_for_windows]
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install native dependencies
+        run: |
+          sudo apt update
+          # Dépendances nécessaires pour la compilation native de GraalVM/Swing sous Linux
+          sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
+
+      - name: Set up Liberica NIK (Linux)
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'liberica'
+          check-latest: true
+          cache: 'maven'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          architecture: 'x64'
+
+      - name: Check Java environment
+        run: |
+          java -version
+          native-image --version
+
+      - name: Extract app properties from pom.xml
+        id: properties
+        run: |
+          APP_NAME=$(mvn help:evaluate -Dexpression=app.name -q -DforceStdout)
+          APP_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          ORG_NAME=$(mvn help:evaluate -Dexpression=app.org -q -DforceStdout)
+          MAIN_CLASS=$(mvn help:evaluate -Dexpression=app.mainclass -q -DforceStdout)
+          LANG_CODE=$(mvn help:evaluate -Dexpression=app.lang -q -DforceStdout)
+          COUNTRY_CODE=$(mvn help:evaluate -Dexpression=app.country -q -DforceStdout)
+          echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV
+          echo "POM_VERSION=$APP_VERSION" >> $GITHUB_ENV
+          echo "ORG_NAME=$ORG_NAME" >> $GITHUB_ENV
+          echo "MAIN_CLASS=$MAIN_CLASS" >> $GITHUB_ENV
+          echo "LANG_CODE=$LANG_CODE" >> $GITHUB_ENV
+          echo "COUNTRY_CODE=$COUNTRY_CODE" >> $GITHUB_ENV
+
+      - name: Run native AppImage build script
+        run: |
+          chmod +x natif.sh
+          ./natif.sh ${{ env.APP_NAME }} ${{ env.POM_VERSION }} ${{ env.ORG_NAME }} ${{ env.MAIN_CLASS }} ${{ env.LANG_CODE }} ${{ env.COUNTRY_CODE }}
+
+      - name: Generate hash file for AppImage
+        shell: bash
+        run: |
+          APPIMAGE_FILE=$(find output -name "*.AppImage" | head -n 1)
+          if [ -f "$APPIMAGE_FILE" ]; then
+            hash=$(sha256sum "$APPIMAGE_FILE" | awk '{print $1}')
+            filename=$(basename "$APPIMAGE_FILE")
+            echo "$hash  $filename" > output/hash_ubuntu.txt
+          else
+            echo "❌ AppImage file not found in output directory."
+            exit 1
+          fi
+
+      - name: Upload output folder (AppImage)
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-folder-ubuntu
+          path: output
+
+  # ------------------------------------------------------------------------
+  # 3. JOB PUBLISH (Adapté pour dépendre des deux jobs précédents et télécharger les deux artifacts)
+  # ------------------------------------------------------------------------
   publish_release:
     permissions:
       contents: write
     name: Publish the release and tag it
-    needs: [ package_for_windows ]
+    needs: [package_for_windows, package_for_ubuntu]
     runs-on: ubuntu-latest
     env:
       GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
@@ -191,13 +277,20 @@ jobs:
           version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo "POM_VERSION=$version" >> $GITHUB_ENV
 
-      - name: Download output folder (Windows)
+      - name: Download all output folders
         uses: actions/download-artifact@v4
         with:
-          name: output-folder-windows
-          path: output
+          path: .
 
-      - name: List files in output directory
+      - name: Merge output folders
+        run: |
+          mkdir -p output
+          # Copie des fichiers de Windows (ils sont dans le sous-dossier output-folder-windows)
+          cp output-folder-windows/* output/
+          # Copie des fichiers d'Ubuntu (ils sont dans le sous-dossier output-folder-ubuntu)
+          cp output-folder-ubuntu/* output/
+
+      - name: List files in final output directory
         run: ls -la output/
 
       - name: GPG - Import private key using an isolated configuration
@@ -251,31 +344,33 @@ jobs:
           body: |
             ## 📲 CanScan v${{ env.POM_VERSION }}
 
-            **Ce fichier Installe automatiquement l'application sur les systèmes Windows 64 bits.**
+            ### 💻 Windows (64-bit Installer)
 
             Lien de l'installateur Windows x64 :
 
             &nbsp;&nbsp;&nbsp;&nbsp;[![Windows EXE](https://img.shields.io/badge/Windows_EXE-CanScan--${{ env.POM_VERSION }}--x64.exe-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/CanScan-${{ env.POM_VERSION }}-x64.exe)
 
+            ### 🐧 Linux (AppImage)
+
+            Lien de l'AppImage (compatible avec la plupart des distributions Linux) :
+
+            &nbsp;&nbsp;&nbsp;&nbsp;[![Linux AppImage](https://img.shields.io/badge/Linux_AppImage-CanScan--${{ env.POM_VERSION }}--x86__64.AppImage-blue.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/CanScan-${{ env.POM_VERSION }}-x86_64.AppImage)
+
+            ---
             ## Vérification de l'intégrité du fichier avec GPG
 
-            **Pour garantir l'intégrité du fichier téléchargé, vérifiez sa signature à l'aide de la clé publique GPG correspondante**
+            **Pour garantir l'intégrité des fichiers téléchargés, vérifiez leur signature à l'aide de la clé publique GPG correspondante**
 
             Lien vers la clé publique GPG :
 
             &nbsp;&nbsp;&nbsp;&nbsp;[![Public GPG (GNU Privacy Guard)](https://img.shields.io/badge/Public_GPG-canscan--public--key.asc-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/canscan-public-key.asc)
 
-            Lien vers la signature GPG disponible :
+            ### Signatures et Empreintes
 
-            &nbsp;&nbsp;&nbsp;&nbsp;[![Windows EXE GPG (GNU Privacy Guard)](https://img.shields.io/badge/Windows_EXE_GPG-CanScan--${{ env.POM_VERSION }}--x64.exe.asc-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/CanScan-${{ env.POM_VERSION }}-x64.exe.asc)
-
-            ## Empreinte du fichier
-
-            **L'intégrité du fichier téléchargé peut être vérifiée à l'aide du fichier de hash correspondant**
-
-            Lien du fichier de hash :
-
-            &nbsp;&nbsp;&nbsp;&nbsp;[![hash_windows.txt](https://img.shields.io/badge/hash__windows.txt-(pour_Windows)-brightgreen.svg)](https://github.com/${{ github.repository }}/releases/download/v${{ env.POM_VERSION }}/hash_windows.txt)
+            | Fichier | Signature (.asc) | Empreinte (hash_*.txt) |
+            | :--- | :--- | :--- |
+            | Windows EXE | disponible | hash_windows.txt |
+            | Linux AppImage | disponible | hash_ubuntu.txt |
 
           artifacts: 'output/*'
 
