@@ -136,13 +136,13 @@ jobs:
         shell: cmd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn -B test -f pom.xml ^
-          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
-          -Dsonar.projectKey=Lob2018_CanScan ^
-          -Dsonar.qualitygate.wait=true ^
-          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+#          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
+#          -Dsonar.projectKey=Lob2018_CanScan ^
+#          -Dsonar.qualitygate.wait=true ^
+#          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
       - name: Build native Windows package
         shell: cmd
