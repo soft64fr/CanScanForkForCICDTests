@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingWorker;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import fr.softsf.canscan.constant.IntConstants;
 import fr.softsf.canscan.model.WholeFields;
 import fr.softsf.canscan.ui.EncodedImage;
@@ -46,11 +47,15 @@ public class DynamicResizeWorker extends AbstractDynamicWorker<ImageIcon> {
     /**
      * Constructs a new QR code resize manager for a specific label.
      *
+     * <p>NOTE: References to mutable dependencies (EncodedImage, Swing components) are
+     * intentionally stored as they represent shared application state.
+     *
      * @param encodedImage the source QR code image; must not be {@code null}
      * @param qrCodeLabel the label where the resized QR code will be displayed; must not be {@code
      *     null}
      * @param loader loader to show a wait/progress indicator
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public DynamicResizeWorker(EncodedImage encodedImage, JLabel qrCodeLabel, JProgressBar loader) {
         super(loader);
         this.encodedImage = encodedImage;

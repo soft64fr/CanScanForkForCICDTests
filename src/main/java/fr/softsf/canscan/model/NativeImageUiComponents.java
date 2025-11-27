@@ -13,13 +13,18 @@ import javax.swing.JTextField;
 
 import com.github.lgooddatepicker.components.TimePicker;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
- * Encapsulates GUI components used for simulating Native Image configuration behavior in UI tests
- * and previews.
+ * Encapsulates core Swing GUI components used for UI testing and previews simulating Native Image
+ * configuration.
  *
- * <p>Provides a method to assign unique names to each component to allow test frameworks to
- * reliably identify them.
+ * <p>The record holds direct references to mutable Swing components (e.g., JButton, JTextField);
+ * this is intentional as copying them is impractical.
+ *
+ * <p>Provides a method to assign unique names for reliable identification by test frameworks.
  */
+@SuppressFBWarnings({"EI_EXPOSE_REP2", "EI_EXPOSE_REP"})
 public record NativeImageUiComponents(
         JTextField nameField,
         JButton browseButton,

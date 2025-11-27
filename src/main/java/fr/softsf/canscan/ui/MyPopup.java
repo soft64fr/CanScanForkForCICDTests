@@ -65,7 +65,7 @@ public enum MyPopup {
         }
         JOptionPane.showMessageDialog(
                 FrameHelper.INSTANCE.getParentFrame(),
-                prefix + message,
+                prefix.isBlank() ? "" : prefix + " " + message,
                 title,
                 JOptionPane.PLAIN_MESSAGE);
     }

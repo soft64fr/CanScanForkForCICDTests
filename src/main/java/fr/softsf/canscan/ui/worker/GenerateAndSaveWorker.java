@@ -20,6 +20,7 @@ import javax.swing.SwingWorker;
 
 import com.google.zxing.WriterException;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import fr.softsf.canscan.constant.StringConstants;
 import fr.softsf.canscan.model.CommonFields;
 import fr.softsf.canscan.model.EncodedData;
@@ -44,12 +45,16 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
     /**
      * Creates a new QR generation worker.
      *
+     * <p>NOTE: References to mutable dependencies (EncodedImage, Swing components) are
+     * intentionally stored as they represent shared application state.
+     *
      * @param qrData the QR code data
      * @param config the visual configuration
      * @param loader the progress bar to hide after completion
      * @param outputFile the target file for saving the QR code
      * @param encodedImage the service to generate QR code images
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public GenerateAndSaveWorker(
             EncodedData qrData,
             CommonFields config,

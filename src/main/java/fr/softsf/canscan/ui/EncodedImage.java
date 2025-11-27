@@ -52,22 +52,39 @@ public class EncodedImage {
     private final Object imageLock = new Object();
 
     /**
-     * @return the current QR code image, or null if not set.
+     * Retrieves a defensive copy of the QR code image.
+     *
+     * <p>Synchronized. Returns a copy to prevent external mutation of the internal state.
+     *
+     * @return A defensive copy of the image, or {@code null}.
      */
     public BufferedImage getQrOriginal() {
         synchronized (imageLock) {
-            return qrOriginal;
+            if (qrOriginal == null) {
+                return null;
+            }
+            return createDefensiveCopy(qrOriginal);
         }
     }
 
     /**
-     * Updates the QR code image. Should only be called by internal components.
+     * Updates the QR code image using a defensive copy.
      *
-     * @param newImage the new image, can be null.
+     * <p>Stores a copy of the input (input defense).
+     *
+     * @param newImage The new image; {@code null} clears the current image.
      */
     public void updateQrOriginal(BufferedImage newImage) {
+        if (newImage == null) {
+            freeQrOriginal();
+            return;
+        }
+        BufferedImage safeCopy = createDefensiveCopy(newImage);
         synchronized (imageLock) {
-            this.qrOriginal = newImage;
+            if (this.qrOriginal != null) {
+                this.qrOriginal.flush();
+            }
+            this.qrOriginal = safeCopy;
         }
     }
 
@@ -152,12 +169,8 @@ public class EncodedImage {
         if (totalPixels > MAX_PIXELS) {
             throw new OutOfMemoryError(
                     String.format(
-                            """
-
-                            Dimension trop grande:
-                            %dx%d pixels (%,d pixels).
-                            Maximum autorisé: %,d pixels.
-                            """,
+                            "%n%nDimension trop grande:%n%dx%d pixels (%,d pixels).%nMaximum"
+                                    + " autorisé: %,d pixels.",
                             size, size, totalPixels, MAX_PIXELS));
         }
         long estimatedMB = estimateImageMemoryMB(size);
@@ -601,5 +614,24 @@ public class EncodedImage {
                 (int) (y + centerMargin),
                 (int) (diameter - 2 * centerMargin),
                 (int) (diameter - 2 * centerMargin));
+    }
+
+    /**
+     * Creates a defensive copy of the source image.
+     *
+     * @param sourceImage The image to copy (must not be null).
+     * @return A new BufferedImage instance with the content of the source image.
+     */
+    private BufferedImage createDefensiveCopy(BufferedImage sourceImage) {
+        BufferedImage copy =
+                new BufferedImage(
+                        sourceImage.getWidth(), sourceImage.getHeight(), sourceImage.getType());
+        Graphics2D g = copy.createGraphics();
+        try {
+            g.drawImage(sourceImage, 0, 0, null);
+        } finally {
+            g.dispose();
+        }
+        return copy;
     }
 }
