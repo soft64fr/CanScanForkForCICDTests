@@ -189,12 +189,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install native dependencies
+      - name: Install dependencies
         run: |
           sudo apt update
-          # Dépendances nécessaires pour la compilation native de GraalVM/Swing sous Linux
           sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
-          sudo apt install firefox xdg-utils -y
+          sudo apt install xdg-utils chromium-browser -y
+          chromium-browser --version 2>/dev/null || chromium --version
+          xdg-settings set default-web-browser chromium-browser.desktop 2>/dev/null || \
+          xdg-settings set default-web-browser chromium.desktop
+
+      - name: Verify browser setup
+        run: |
+          echo "Default browser: $(xdg-settings get default-web-browser)"
+          timeout 3s xdg-open "https://example.com" & sleep 1
+          ps aux | grep chromium | head -n 2 || echo "Browser process check"
+
       - name: Cache Liberica NIK tarball
         uses: actions/cache@v3
         with:

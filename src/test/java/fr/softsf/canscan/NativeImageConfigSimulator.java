@@ -140,7 +140,7 @@ public class NativeImageConfigSimulator {
                 BrowserHelper.INSTANCE.openInBrowser(
                         StringConstants.LATEST_RELEASES_REPO_URL.getValue());
         robot.waitForIdle();
-        robot.delay(1000);
+        robot.delay(3000);
         assertEquals(
                 "\n=== Test 7 : Verification de l'ouverture du navigateur ===\n",
                 "true",
