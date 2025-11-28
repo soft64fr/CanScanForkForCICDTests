@@ -387,6 +387,7 @@ public class NativeImageConfigSimulator {
     private static void typeString(Robot robot, String text) {
         for (char c : text.toCharArray()) {
             typeChar(robot, c);
+            robot.delay(200);
             robot.waitForIdle();
         }
     }
@@ -409,7 +410,8 @@ public class NativeImageConfigSimulator {
         if (shift) {
             robot.keyRelease(KeyEvent.VK_SHIFT);
         }
-        robot.delay(200);
+        robot.delay(20);
+        robot.waitForIdle();
     }
 
     /**
