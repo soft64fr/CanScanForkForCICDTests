@@ -89,8 +89,8 @@ public enum UseLucioleFont {
     /**
      * Retrieves {@link FontMetrics} safely.
      *
-     * <p>Guarantees non-null return, resolving the Font and relying on client catch blocks
-     * for fault tolerance in headless environments.
+     * <p>Guarantees non-null return, resolving the Font and relying on client catch blocks for
+     * fault tolerance in headless environments.
      *
      * @return The real {@link FontMetrics} object.
      */
