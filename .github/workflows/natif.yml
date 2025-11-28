@@ -191,21 +191,22 @@ jobs:
 
       - name: Install native dependencies
         run: |
-            sudo apt update
-            sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
-            sudo apt install xdg-utils software-properties-common -y          
-            sudo snap remove firefox 2>/dev/null || true
-            sudo add-apt-repository ppa:mozillateam/ppa -y
-            cat << 'EOF' | sudo tee /etc/apt/preferences.d/mozilla-firefox
-            Package: *
-            Pin: release o=LP-PPA-mozillateam
-            Pin-Priority: 1001
-            EOF
-            sudo apt update
-            sudo apt install firefox-esr -y
-            sudo ln -sf /usr/bin/firefox-esr /usr/bin/firefox
-            firefox-esr --version
-            which firefox-esr
+          sudo apt update          
+          sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
+          sudo apt install xdg-utils -y
+          sudo snap remove firefox 2>/dev/null || true
+          sudo DEBIAN_FRONTEND=noninteractive apt install software-properties-common -y          
+          sudo add-apt-repository ppa:mozillateam/ppa -y          
+          cat << 'EOF' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+          Package: *
+          Pin: release o=LP-PPA-mozillateam
+          Pin-Priority: 1001
+          EOF          
+          sudo apt update
+          sudo DEBIAN_FRONTEND=noninteractive apt install firefox-esr -y          
+          sudo ln -sf /usr/bin/firefox-esr /usr/bin/firefox
+          firefox-esr --version
+          which firefox-esr
 
       - name: Verify browser setup
         run: |
