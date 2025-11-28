@@ -246,11 +246,9 @@ jobs:
           echo "LANG_CODE=$LANG_CODE" >> $GITHUB_ENV
           echo "COUNTRY_CODE=$COUNTRY_CODE" >> $GITHUB_ENV
 
-      - name: Run native AppImage build script
-        run: |
-          chmod +x natif.sh
-          # native-image est maintenant disponible dans ce shell
-          ./natif.sh ${{ env.APP_NAME }} ${{ env.POM_VERSION }} ${{ env.ORG_NAME }} ${{ env.MAIN_CLASS }} ${{ env.LANG_CODE }} ${{ env.COUNTRY_CODE }}
+      - name: Build native Linux package
+        shell: bash
+        run: mvn package -Plinux-native
 
       - name: Generate hash file for AppImage
         shell: bash
