@@ -194,7 +194,7 @@ jobs:
           sudo apt update
           # Dépendances nécessaires pour la compilation native de GraalVM/Swing sous Linux
           sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
-
+          sudo apt install chromium-browser xdg-utils -y
       - name: Cache Liberica NIK tarball
         uses: actions/cache@v3
         with:
