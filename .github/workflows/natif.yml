@@ -166,12 +166,17 @@ jobs:
 #          path: output
 
   # ------------------------------------------------------------------------
-  # 2. NOUVEAU JOB UBUNTU/AppImage
+  # 2. JOB UBUNTU/AppImage (NIK téléchargé manuellement)
   # ------------------------------------------------------------------------
   package_for_ubuntu:
     name: Package for Ubuntu (AppImage)
     runs-on: ubuntu-latest
-#    needs: [package_for_windows]
+    #    needs: [package_for_windows] # Laisser commenté selon votre requête
+    env:
+      LIBERICA_VERSION: 23.1.9
+      OPENJDK_VERSION: 21.0.9+12
+      LIBERICA_TGZ: bellsoft-liberica-vm-openjdk21.0.9+12-23.1.9+1-linux-amd64.tar.gz
+      NIK_INSTALL_DIR: $HOME/liberica-nik
 
     steps:
       - name: Harden Runner
@@ -190,18 +195,38 @@ jobs:
           # Dépendances nécessaires pour la compilation native de GraalVM/Swing sous Linux
           sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
 
-      - name: Set up Liberica NIK (Linux)
-        uses: actions/setup-java@v3
+      - name: Cache Liberica NIK tarball
+        uses: actions/cache@v3
         with:
-          java-version: '21'
-          distribution: 'liberica'
-          package: 'jdk+native'
-          check-latest: true
-          cache: 'maven'
-          architecture: 'x64'
+          path: liberica-nik.tar.gz
+          key: liberica-nik-${{ runner.os }}-${{ env.LIBERICA_VERSION }}
 
-      - name: Check Java environment
+      - name: Download and Extract Liberica NIK (Linux)
+        shell: bash
         run: |
+          NIK_FILE="liberica-nik.tar.gz"
+          DOWNLOAD_URL="https://download.bell-sw.com/vm/${{ env.LIBERICA_VERSION }}/${{ env.LIBERICA_TGZ }}"
+
+          if [ ! -f "$NIK_FILE" ]; then
+            echo "Downloading NIK from $DOWNLOAD_URL"
+            curl -L -o "$NIK_FILE" "$DOWNLOAD_URL"
+          fi
+          
+          # Crée le dossier cible et extrait l'archive
+          mkdir -p ${{ env.NIK_INSTALL_DIR }}
+          tar -xzf "$NIK_FILE" -C ${{ env.NIK_INSTALL_DIR }} --strip-components=1
+
+      - name: Set JAVA_HOME and update PATH
+        shell: bash
+        run: |
+          # Définit JAVA_HOME (utilisé par Maven) et met à jour le PATH pour trouver native-image
+          echo "JAVA_HOME=${{ env.NIK_INSTALL_DIR }}" >> $GITHUB_ENV
+          echo "NIK_HOME=${{ env.NIK_INSTALL_DIR }}" >> $GITHUB_ENV
+          echo "${{ env.NIK_INSTALL_DIR }}/bin" >> $GITHUB_PATH
+
+      - name: Check Java environment (NIK confirmed)
+        run: |
+          # Utilise maintenant le PATH mis à jour
           java -version
           native-image --version
 
@@ -224,6 +249,7 @@ jobs:
       - name: Run native AppImage build script
         run: |
           chmod +x natif.sh
+          # native-image est maintenant disponible dans ce shell
           ./natif.sh ${{ env.APP_NAME }} ${{ env.POM_VERSION }} ${{ env.ORG_NAME }} ${{ env.MAIN_CLASS }} ${{ env.LANG_CODE }} ${{ env.COUNTRY_CODE }}
 
       - name: Generate hash file for AppImage
