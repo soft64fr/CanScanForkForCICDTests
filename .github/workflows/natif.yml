@@ -189,20 +189,40 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install dependencies
+      - name: Install native dependencies
         run: |
-          sudo apt update
-          sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
-          sudo apt install xdg-utils chromium-browser -y
-          chromium-browser --version 2>/dev/null || chromium --version
-          xdg-settings set default-web-browser chromium-browser.desktop 2>/dev/null || \
-          xdg-settings set default-web-browser chromium.desktop
+            sudo apt update
+            sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
+            sudo apt install xdg-utils software-properties-common -y          
+            sudo snap remove firefox 2>/dev/null || true
+            sudo add-apt-repository ppa:mozillateam/ppa -y
+            cat << 'EOF' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+            Package: *
+            Pin: release o=LP-PPA-mozillateam
+            Pin-Priority: 1001
+            EOF
+            sudo apt update
+            sudo apt install firefox-esr -y
+            sudo ln -sf /usr/bin/firefox-esr /usr/bin/firefox
+            firefox-esr --version
+            which firefox-esr
 
       - name: Verify browser setup
         run: |
+          xdg-settings set default-web-browser firefox-esr.desktop || \
+          xdg-settings set default-web-browser firefox.desktop
+          echo "=== Browser Configuration ==="
           echo "Default browser: $(xdg-settings get default-web-browser)"
-          timeout 3s xdg-open "https://example.com" & sleep 1
-          ps aux | grep chromium | head -n 2 || echo "Browser process check"
+          echo ""
+          echo "Testing xdg-open with Firefox..."
+          timeout 5s xdg-open "https://example.com" &
+          sleep 2
+          if ps aux | grep -E 'firefox' | grep -v grep > /dev/null; then
+            echo "✅ Firefox process detected"
+          else
+            echo "⚠️  No Firefox process found (may be normal in headless mode)"
+          fi
+          echo "✅ Firefox ESR installed and configured"
 
       - name: Cache Liberica NIK tarball
         uses: actions/cache@v3
