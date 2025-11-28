@@ -165,13 +165,12 @@ jobs:
 #          name: output-folder-windows
 #          path: output
 
-  # ------------------------------------------------------------------------
-  # 2. JOB UBUNTU/AppImage (NIK téléchargé manuellement)
-  # ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# 2. JOB UBUNTU/AppImage (NIK téléchargé manuellement)
+# ------------------------------------------------------------------------
   package_for_ubuntu:
     name: Package for Ubuntu (AppImage)
     runs-on: ubuntu-latest
-    #    needs: [package_for_windows] # Laisser commenté selon votre requête
     env:
       LIBERICA_VERSION: 23.1.9
       OPENJDK_VERSION: 21.0.9+12
@@ -193,17 +192,17 @@ jobs:
         run: |
           sudo apt update          
           sudo apt install build-essential libz-dev zlib1g-dev libxext-dev libxi-dev libxrender-dev libxtst-dev libfontconfig1 -y
-          sudo apt install xdg-utils -y
+          sudo DEBIAN_FRONTEND=noninteractive apt install xdg-utils software-properties-common -y          
           sudo snap remove firefox 2>/dev/null || true
-          sudo DEBIAN_FRONTEND=noninteractive apt install software-properties-common -y          
           sudo add-apt-repository ppa:mozillateam/ppa -y          
-          cat << 'EOF' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+          # Correction du pinning APT: Utilisation de 'cat <<-' et alignement du contenu à gauche
+          cat <<- 'EOF' | sudo tee /etc/apt/preferences.d/mozilla-firefox
           Package: *
           Pin: release o=LP-PPA-mozillateam
           Pin-Priority: 1001
-          EOF          
+          EOF
           sudo apt update
-          sudo DEBIAN_FRONTEND=noninteractive apt install firefox-esr -y          
+          sudo DEBIAN_FRONTEND=noninteractive apt install firefox-esr -y
           sudo ln -sf /usr/bin/firefox-esr /usr/bin/firefox
           firefox-esr --version
           which firefox-esr
@@ -212,18 +211,9 @@ jobs:
         run: |
           xdg-settings set default-web-browser firefox-esr.desktop || \
           xdg-settings set default-web-browser firefox.desktop
-          echo "=== Browser Configuration ==="
           echo "Default browser: $(xdg-settings get default-web-browser)"
-          echo ""
-          echo "Testing xdg-open with Firefox..."
           timeout 5s xdg-open "https://example.com" &
           sleep 2
-          if ps aux | grep -E 'firefox' | grep -v grep > /dev/null; then
-            echo "✅ Firefox process detected"
-          else
-            echo "⚠️  No Firefox process found (may be normal in headless mode)"
-          fi
-          echo "✅ Firefox ESR installed and configured"
 
       - name: Cache Liberica NIK tarball
         uses: actions/cache@v3
@@ -236,27 +226,21 @@ jobs:
         run: |
           NIK_FILE="liberica-nik.tar.gz"
           DOWNLOAD_URL="https://download.bell-sw.com/vm/${{ env.LIBERICA_VERSION }}/${{ env.LIBERICA_TGZ }}"
-
           if [ ! -f "$NIK_FILE" ]; then
-            echo "Downloading NIK from $DOWNLOAD_URL"
             curl -L -o "$NIK_FILE" "$DOWNLOAD_URL"
           fi
-
-          # Crée le dossier cible et extrait l'archive
           mkdir -p ${{ env.NIK_INSTALL_DIR }}
           tar -xzf "$NIK_FILE" -C ${{ env.NIK_INSTALL_DIR }} --strip-components=1
 
       - name: Set JAVA_HOME and update PATH
         shell: bash
         run: |
-          # Définit JAVA_HOME (utilisé par Maven) et met à jour le PATH pour trouver native-image
           echo "JAVA_HOME=${{ env.NIK_INSTALL_DIR }}" >> $GITHUB_ENV
           echo "NIK_HOME=${{ env.NIK_INSTALL_DIR }}" >> $GITHUB_ENV
           echo "${{ env.NIK_INSTALL_DIR }}/bin" >> $GITHUB_PATH
 
       - name: Check Java environment (NIK confirmed)
         run: |
-          # Utilise maintenant le PATH mis à jour
           java -version
           native-image --version
 
@@ -297,7 +281,6 @@ jobs:
             filename=$(basename "$APPIMAGE_FILE")
             echo "$hash  $filename" > output/hash_ubuntu.txt
           else
-            echo "❌ AppImage file not found in output directory."
             exit 1
           fi
 
