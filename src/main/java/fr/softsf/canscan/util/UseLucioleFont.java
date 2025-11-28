@@ -37,6 +37,8 @@ public enum UseLucioleFont {
     private static final String DEFAULT_FONT = "defaultFont";
     private static final double FONT_SHIFT_DOWN = 2.5;
     private static final JLabel DUMMY_JLABEL = new JLabel();
+    private static final Font JRE_GUARANTEED_FONT_FALLBACK_FOR_UNIT_TESTS =
+            new Font("Dialog", Font.PLAIN, 12);
 
     /** Initializes and applies the Luciole font as the default Swing UI font. */
     public void initialize() {
@@ -85,13 +87,18 @@ public enum UseLucioleFont {
     }
 
     /**
-     * Retrieves the FontMetrics object for the applied UI font.
+     * Retrieves {@link FontMetrics} safely.
      *
-     * <p>Assumes the UIManager always contains a valid font reference for the default UI font.
+     * <p>Guarantees non-null return, resolving the Font and relying on client catch blocks
+     * for fault tolerance in headless environments.
      *
-     * @return The FontMetrics for the applied font.
+     * @return The real {@link FontMetrics} object.
      */
     private FontMetrics getCurrentFontMetrics() {
-        return DUMMY_JLABEL.getFontMetrics(UIManager.getFont(DEFAULT_FONT));
+        Font font = UIManager.getFont(DEFAULT_FONT);
+        if (font == null) {
+            font = JRE_GUARANTEED_FONT_FALLBACK_FOR_UNIT_TESTS;
+        }
+        return DUMMY_JLABEL.getFontMetrics(font);
     }
 }
