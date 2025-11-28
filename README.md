@@ -10,7 +10,7 @@ Générez en un instant un code QR pour **ajouter un contact**, **créer un év�
 - [x] 📷 **Vérifier et tester** : S’assurer que le code QR est scannable grâce à l’aperçu dynamique
 - [x] 💾 **Enregistrer facilement** : Sauvegarder l’image au format PNG
 
-<br>[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme)<br>
+<br>[![License](https://img.shields.io/badge/license-GPLv3.0-brightgreen.svg)](https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme)<br>
 [![Snyk Scan](https://img.shields.io/badge/Snyk%20Scan-authentication%20required-brightgreen?logo=snyk)](https://app.snyk.io/org/lob2018/project/d091601e-bd98-48ed-bd26-d3f369708314)<br>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Lob2018_CanScan&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Lob2018_CanScan)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Lob2018_CanScan&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Lob2018_CanScan)
@@ -178,5 +178,5 @@ CanScan détecte automatiquement les nouvelles versions et affiche un bouton de 
 
 ### Licence
 
-MIT License © 2025 SOFT64.FR Lob2018
+GPLv3.0 License © 2025 SOFT64.FR Lob2018
 📜 [Consulter la licence complète](https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme)

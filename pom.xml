@@ -4,7 +4,7 @@
   <!-- Project information -->
   <groupId>fr.softsf</groupId>
   <artifactId>canscan</artifactId>
-  <version>0.11.2.0</version>
+  <version>0.12.0.0</version>
   <name>CanScan</name>
   <organization>
     <name>Soft64.fr</name>
@@ -28,7 +28,7 @@
     <app.organization>${project.organization.name}</app.organization>
     <app.version>${project.version}</app.version>
     <java.version>21</java.version>
-    <license.name>MIT</license.name>
+    <license.name>GPLv3.0</license.name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>lob2018</sonar.organization>
@@ -52,6 +52,13 @@
       <groupId>com.github.lgooddatepicker</groupId>
       <artifactId>LGoodDatePicker</artifactId>
       <version>11.2.1</version>
+    </dependency>
+    <!-- SpotBugs Annotations -->
+    <dependency>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <version>4.9.8</version>
+      <optional>true</optional>
     </dependency>
     <!-- Zxing QR Code dependency -->
     <dependency>
@@ -202,7 +209,7 @@
               <content><![CDATA[
 /*
  * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
- * Licensed under the MIT License (MIT).
+ * Licensed under the GNU General Public License v3.0 (GPLv3.0).
  * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
  */
 ]]></content>

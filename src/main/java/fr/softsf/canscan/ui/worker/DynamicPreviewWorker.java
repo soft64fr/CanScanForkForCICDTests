@@ -1,6 +1,6 @@
 /*
  * CanScan - Copyright © 2025-present SOFT64.FR Lob2018
- * Licensed under the MIT License (MIT).
+ * Licensed under the GNU General Public License v3.0 (GPLv3.0).
  * See the full license at: https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme
  */
 package fr.softsf.canscan.ui.worker;
@@ -15,6 +15,7 @@ import javax.swing.SwingWorker;
 
 import org.apache.commons.lang3.StringUtils;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import fr.softsf.canscan.constant.StringConstants;
 import fr.softsf.canscan.model.CommonFields;
 import fr.softsf.canscan.model.EncodedData;
@@ -48,7 +49,10 @@ public class DynamicPreviewWorker extends AbstractDynamicWorker<BufferedImage> {
     private final JLabel qrCodeLabel;
 
     /**
-     * Constructs a new asynchronous QR code preview manager for the specified label.
+     * Constructs the asynchronous QR code preview manager.
+     *
+     * <p>NOTE: References to mutable dependencies (EncodedImage, Swing components) are
+     * intentionally stored as they represent shared application state.
      *
      * @param encodedImage the source QR code image; must not be {@code null}
      * @param qrCodeResize the {@link DynamicResizeWorker} instance responsible for asynchronous
@@ -57,6 +61,7 @@ public class DynamicPreviewWorker extends AbstractDynamicWorker<BufferedImage> {
      *     be {@code null}
      * @param loader loader to indicate background processing
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public DynamicPreviewWorker(
             EncodedImage encodedImage,
             DynamicResizeWorker qrCodeResize,
