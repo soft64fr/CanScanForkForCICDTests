@@ -162,7 +162,7 @@ jobs:
       - name: Upload output folder (Windows)
         uses: actions/upload-artifact@v4
         with:
-          name: output-folder-windows
+          name: output-windows
           path: output
 
   # ------------------------------------------------------------------------
@@ -275,7 +275,7 @@ jobs:
       - name: Upload output folder (AppImage)
         uses: actions/upload-artifact@v4
         with:
-          name: output-folder-ubuntu
+          name: output-ubuntu
           path: output
 
 # ------------------------------------------------------------------------
