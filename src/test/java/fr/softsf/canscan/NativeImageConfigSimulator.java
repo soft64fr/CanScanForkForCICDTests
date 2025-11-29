@@ -13,8 +13,6 @@ import java.awt.Window;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
@@ -130,58 +128,20 @@ public class NativeImageConfigSimulator {
     }
 
     /**
-     * Simulates opening the latest release repository URL in the system browser using the Java
-     * Desktop API. This test verifies that the Java call is successfully initiated and completed
-     * (returns {@code true}) within the specified timeout.
+     * Simulates opening the latest release repository URL in the system browser.
+     * Verifies that the {@code openInBrowser} call succeeds and returns {@code true},
+     * thereby tracing the successful execution path for Native Image configuration.
      *
-     * @throws Exception if the browser operation fails and the result is not "true".
+     * @throws Exception if the operation fails or does not return {@code true}.
      */
     private static void openLatestReleaseRepoInBrowser() throws Exception {
-        // Le résultat de l'opération importe peu, seule la trace est essentielle.
-        boolean operationSuccess = false;
-        // --- Début du Test 7 ---
-        System.out.println("\n=== Test 7 : Verification de l'ouverture du navigateur (Linux CI) ===");
-        // 1. Démarrer le Timer qui forcera la sortie après le blocage
-        Timer exitTimer = new Timer(true);
-        exitTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                // Le thread principal est bloqué à ce moment.
-                System.out.println("[TIMER THREAD] 4s delay reached. Forcing System.exit(0) to flush Native Image config.");
-                // 🚨 Ceci est l'action critique pour débloquer le workflow.
-                System.exit(0);
-            }
-        }, 4000); // 4 secondes (suffisant après le timeout de 2s du BrowserHelper)
-        // 2. Exécuter l'appel bloquant (Thread de simulation)
-        try{
-            System.out.println("[MAIN THREAD] Calling BrowserHelper.openInBrowser() (Expected to block after 2s).");
-            // Cette ligne va bloquer le thread de simulation après 2 secondes (dans MyPopup.showDialog)
-            operationSuccess =
-                    BrowserHelper.INSTANCE.openInBrowser(
-                            StringConstants.LATEST_RELEASES_REPO_URL.getValue());
-            // Si le code arrive ici, c'est que le blocage a échoué (comportement non voulu en CI)
-            System.out.println("[MAIN THREAD WARNING] BrowserHelper returned unexpectedly. Result: " + operationSuccess);
-        }catch (Exception e) {
-            // Cette exception est très improbable.
-            System.out.println("[MAIN THREAD ERROR] Unexpected exception: " + e.getMessage());
-        }
-        // 3. Bloquer le Thread principal (Filet de sécurité)
-        System.out.println("[MAIN THREAD] Blocking main thread via join() to await Timer exit.");
-        try {
-            // Bloquer le thread principal pour laisser le Timer l'arrêter.
-            Thread.currentThread().join();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        // 4. Assertion (si le code arrive ici, il y a un problème de logique, mais on s'attend à false)
-        // Nous conservons l'assertion pour respecter le format de la simulation
+        boolean operationSuccess =
+                BrowserHelper.INSTANCE.openInBrowser(
+                        StringConstants.LATEST_RELEASES_REPO_URL.getValue());
         assertEquals(
                 "\n=== Test 7 : Verification de l'ouverture du navigateur ===\n",
-                "false", // On s'attend à FALSE car l'opération de navigation a échoué.
+                "true",
                 String.valueOf(operationSuccess));
-        // Si nous arrivons ici, c'est que le Timer a échoué, donc la simulation a échoué.
-        System.out.println("FAIL: Timer failed to terminate process.");
-        System.exit(1);
     }
 
     /**
