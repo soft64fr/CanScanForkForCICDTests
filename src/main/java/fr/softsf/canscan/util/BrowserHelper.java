@@ -5,6 +5,8 @@
  */
 package fr.softsf.canscan.util;
 
+import fr.softsf.canscan.ui.MyPopup;
+
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -15,8 +17,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import fr.softsf.canscan.ui.MyPopup;
 
 /**
  * Singleton service for browser operations in Swing applications. Provides robust URL opening with
@@ -59,31 +59,42 @@ public enum BrowserHelper {
     }
 
     /**
-     * Executes the {@code Desktop.browse} operation. Handles and logs internal failures.
+     * Executes {@code Desktop.browse} or falls back to the native {@code xdg-open} command on Linux
+     * if the AWT Desktop API fails to support the BROWSE action.
      *
      * @param url The URL to open.
-     * @return {@code true} if {@code Desktop.browse} was successfully called; {@code false} on
-     *     internal error (e.g., IO, unsupported API).
+     * @return {@code true} if the browser was successfully called; {@code false} on internal error.
      */
     private boolean tryOpenBrowser(String url) {
+        URI uri;
         try {
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().browse(URI.create(url));
-                return true;
-            } else {
-                handleError(
-                        "Desktop API not supported on this platform",
-                        new UnsupportedOperationException(),
-                        url);
-                return false;
-            }
-        } catch (IOException e) {
-            handleError("Failed to open URL", e, url);
-            return false;
+            uri = URI.create(url);
         } catch (IllegalArgumentException e) {
             handleError("Invalid URL format", e, url);
             return false;
         }
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().browse(uri);
+                return true;
+            } catch (UnsupportedOperationException | IOException e) {
+                // Moved to B plan
+            }
+        }
+        if (System.getProperty("os.name", "").toLowerCase().contains("linux")) {
+            try {
+                new ProcessBuilder("/usr/bin/xdg-open", url).start();
+                return true;
+            } catch (IOException e) {
+                handleError("Failed to open URL via xdg-open", e, url);
+                return false;
+            }
+        }
+        handleError(
+                "Desktop API not supported or BROWSE action unavailable",
+                new UnsupportedOperationException(),
+                url);
+        return false;
     }
 
     /**
