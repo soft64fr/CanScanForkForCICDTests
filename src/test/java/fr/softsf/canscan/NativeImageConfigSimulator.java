@@ -33,7 +33,7 @@ import com.github.lgooddatepicker.components.TimePicker;
 
 import fr.softsf.canscan.constant.StringConstants;
 import fr.softsf.canscan.util.BrowserHelper;
-import fr.softsf.canscan.util.UseLucioleFont;
+import fr.softsf.canscan.util.FontManager;
 
 /**
  * Simulates Native Image configuration behavior for UI testing and preview without generating the
@@ -52,7 +52,7 @@ public class NativeImageConfigSimulator {
                 "\n[Simulation INFO] Demarrage de la generation de configuration Native Image...");
         try {
             FlatCobalt2IJTheme.setup();
-            UseLucioleFont.INSTANCE.initialize();
+            FontManager.INSTANCE.initialize();
         } catch (Exception e) {
             System.err.println("[Simulation ERROR] dans le setup du theme: " + e.getMessage());
             e.printStackTrace();
@@ -128,9 +128,9 @@ public class NativeImageConfigSimulator {
     }
 
     /**
-     * Simulates opening the latest release repository URL in the system browser.
-     * Verifies that the {@code openInBrowser} call succeeds and returns {@code true},
-     * thereby tracing the successful execution path for Native Image configuration.
+     * Simulates opening the latest release repository URL in the system browser. Verifies that the
+     * {@code openInBrowser} call succeeds and returns {@code true}, thereby tracing the successful
+     * execution path for Native Image configuration.
      *
      * @throws Exception if the operation fails or does not return {@code true}.
      */

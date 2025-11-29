@@ -5,8 +5,6 @@
  */
 package fr.softsf.canscan.util;
 
-import fr.softsf.canscan.ui.MyPopup;
-
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -17,6 +15,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import fr.softsf.canscan.ui.MyPopup;
 
 /**
  * Singleton service for browser operations in Swing applications. Provides robust URL opening with
@@ -105,7 +105,6 @@ public enum BrowserHelper {
      * @param url the URL that failed to open
      */
     private void handleError(String message, Exception e, String url) {
-        System.out.println("# BrowserHelper handleError #"+message + "\n"+ e.getMessage() + "\nURL: " + url);
         MyPopup.INSTANCE.showDialog(message + "\n", e.getMessage() + "\nURL: " + url, ERROR);
     }
 }

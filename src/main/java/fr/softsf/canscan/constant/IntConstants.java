@@ -5,7 +5,7 @@
  */
 package fr.softsf.canscan.constant;
 
-import fr.softsf.canscan.util.UseLucioleFont;
+import fr.softsf.canscan.util.FontManager;
 
 /** Int constants. */
 public enum IntConstants {
@@ -13,7 +13,7 @@ public enum IntConstants {
     LOADER_SIZE_OFFSET(4),
     MAX_PERCENTAGE(100),
     TEXT_FIELDS_COLUMNS(25),
-    DEFAULT_LABEL_WIDTH(UseLucioleFont.INSTANCE.getCharWidth() * 9);
+    DEFAULT_LABEL_WIDTH(FontManager.INSTANCE.getCharWidth() * 9);
 
     private final int value;
 

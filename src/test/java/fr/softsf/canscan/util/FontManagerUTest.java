@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("*** Use Luciole font tests ***")
-class UseLucioleFontUTest {
+class FontManagerUTest {
 
     @BeforeEach
     void setUp() {
@@ -26,7 +26,7 @@ class UseLucioleFontUTest {
     void givenDefaultFont_whenInitializeLuciole_thenDefaultFontIsReplaced() {
         Font before = UIManager.getFont("defaultFont");
         assertNotNull(before);
-        UseLucioleFont.INSTANCE.initialize();
+        FontManager.INSTANCE.initialize();
         Font after = UIManager.getFont("defaultFont");
         assertNotNull(after);
         assertNotEquals(before, after, "La font Luciole doit remplacer la font par défaut");

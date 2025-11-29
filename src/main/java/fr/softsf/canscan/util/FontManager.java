@@ -24,24 +24,37 @@ import fr.softsf.canscan.constant.StringConstants;
 import fr.softsf.canscan.ui.MyPopup;
 
 /**
- * Singleton that loads and applies the Luciole font as the default Swing UI font.
+ * Singleton responsible for loading and applying custom fonts in the Swing UI.
  *
- * <p>The font is loaded from the application resources, registered, slightly vertically adjusted
- * for baseline alignment, and applied via {@link UIManager}. The UI is then refreshed with {@link
- * FlatLaf#updateUI()}.
+ * <p>It loads the **Luciole font** as the default {@link UIManager} font (with vertical adjustment)
+ * and registers the **Material Icons font** for use in specialized UI components. This class is
+ * accessed via the {@code INSTANCE} enum constant.
  */
-public enum UseLucioleFont {
+public enum FontManager {
     INSTANCE;
 
     private static final String FONT_LUCIOLE_PATH = "/font/Luciole-Regular.ttf";
+    private static final String FONT_MATERIAL_ICONS_PATH = "/font/MaterialIcons-Regular.ttf";
     private static final String DEFAULT_FONT = "defaultFont";
     private static final double FONT_SHIFT_DOWN = 2.5;
     private static final JLabel DUMMY_JLABEL = new JLabel();
     private static final Font JRE_GUARANTEED_FONT_FALLBACK_FOR_UNIT_TESTS =
             new Font("Dialog", Font.PLAIN, 12);
 
-    /** Initializes and applies the Luciole font as the default Swing UI font. */
+    /**
+     * Initializes and sets the **Luciole font** as the default Swing UI font (including
+     * scaling/shifting). It also loads and registers the **Material Icons font** for UI components.
+     * *
+     *
+     * <p>The UI is updated asynchronously on the EDT using {@link
+     * SwingUtilities#invokeLater(Runnable)} after fonts are loaded.
+     */
     public void initialize() {
+        loadLucioleFontAsDefaultFont();
+        loadMaterialIconsFont();
+    }
+
+    private static void loadLucioleFontAsDefaultFont() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_LUCIOLE_PATH)) {
             if (is == null) {
                 throw new IllegalStateException(
@@ -61,6 +74,27 @@ public enum UseLucioleFont {
         } catch (FontFormatException | IOException | IllegalStateException e) {
             MyPopup.INSTANCE.showDialog(
                     "La police Luciole n'a pas pu être utilisée\n",
+                    e.getMessage(),
+                    StringConstants.ERREUR.getValue());
+        }
+    }
+
+    /**
+     * Loads Material Icons (TTF) and registers it in the JVM's Graphics Environment. The font is
+     * then accessible using the family name "Material Icons".
+     */
+    private void loadMaterialIconsFont() {
+        try (InputStream is = CanScan.class.getResourceAsStream(FONT_MATERIAL_ICONS_PATH)) {
+            if (is == null) {
+                throw new IllegalStateException(
+                        "La police Material icon n'a pas pu être chargée : "
+                                + FONT_MATERIAL_ICONS_PATH);
+            }
+            Font loadedFont = Font.createFont(Font.TRUETYPE_FONT, is);
+            GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(loadedFont);
+        } catch (FontFormatException | IOException e) {
+            MyPopup.INSTANCE.showDialog(
+                    "La police Material icon n'a pas pu être utilisée\n",
                     e.getMessage(),
                     StringConstants.ERREUR.getValue());
         }

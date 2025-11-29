@@ -42,7 +42,7 @@ import fr.softsf.canscan.model.MecardJFields;
 import fr.softsf.canscan.model.MeetJFields;
 import fr.softsf.canscan.model.NativeImageUiComponents;
 import fr.softsf.canscan.util.Checker;
-import fr.softsf.canscan.util.UseLucioleFont;
+import fr.softsf.canscan.util.FontManager;
 
 /** Creating and configuring UI components. */
 public enum UiComponentsConfiguration {
@@ -219,9 +219,9 @@ public enum UiComponentsConfiguration {
         textArea.setLineWrap(true);
         Dimension size =
                 new Dimension(
-                        UseLucioleFont.INSTANCE.getCharWidth()
+                        FontManager.INSTANCE.getCharWidth()
                                 * IntConstants.TEXT_FIELDS_COLUMNS.getValue(),
-                        UseLucioleFont.INSTANCE.getLineHeight() * MULTILINE_TEXT_FIELDS_ROWS);
+                        FontManager.INSTANCE.getLineHeight() * MULTILINE_TEXT_FIELDS_ROWS);
         scrollPane.setPreferredSize(size);
         scrollPane.setMinimumSize(size);
         scrollPane.setMaximumSize(size);
@@ -663,5 +663,67 @@ public enum UiComponentsConfiguration {
         gbc.gridy = -1;
         gbc.weightx = 1;
         return gbc;
+    }
+
+    /**
+     * Creates a JButton styled with a Material Icon and a text label.
+     *
+     * <p>Uses an HTML table structure for consistent vertical alignment of the icon and text.
+     *
+     * @param iconCode The Unicode value of the Material Icon (e.g., {@code "\uE2C7"}).
+     * @param text The text label to display next to the icon.
+     * @return A new, styled {@code JButton} configured with the icon and text.
+     */
+    public JButton createIconButton(String iconCode, String text) {
+        String html =
+                String.format(
+                        "<html>"
+                                + "<table cellpadding=0 cellspacing=0>"
+                                + "<tr>"
+                                + "<td style='vertical-align: middle;'>"
+                                + "<font face=\"Material Icons\" size=\"+1\">%s</font>"
+                                + "</td>"
+                                + "<td style='vertical-align: middle;'>&nbsp;%s</td>"
+                                + "</tr>"
+                                + "</table>"
+                                + "</html>",
+                        iconCode, text);
+        return new JButton(html);
+    }
+
+    /**
+     * Creates a JButton styled to display a **bold** Material Icon only.
+     *
+     * @param iconCode The Unicode value of the Material Icon (e.g., "\uE863").
+     * @return A new JButton containing only the icon.
+     */
+    public static JButton createIconOnlyButton(String iconCode) {
+        String html =
+                String.format(
+                        "<html><b><font face=\"Material Icons\" size=\"+1\">%s</font></b></html>",
+                        iconCode);
+        return new JButton(html);
+    }
+
+    /**
+     * Generates the HTML string for a JLabel with text followed by an icon.
+     *
+     * @param text The text label to display first.
+     * @param iconCode The Unicode value of the Material Icon (e.g., {@code "\uE161"}).
+     * @return The formatted HTML string.
+     */
+    public static String getIconAfterTextHtml(String text, String iconCode) {
+        return String.format(
+                "<html>"
+                        + "<table cellpadding=0 cellspacing=0>"
+                        + "<tr>"
+                        + "<td style='vertical-align: middle;'>%s&nbsp;</td>"
+                        + "<td style='vertical-align: middle;'>"
+                        + "<font face=\"Material Icons\" size=\"+0\">%s</font>"
+                        + "</td>"
+                        + "</tr>"
+                        + "</table>"
+                        + "</html>",
+                text, iconCode);
     }
 }
