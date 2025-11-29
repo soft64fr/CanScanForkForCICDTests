@@ -127,18 +127,33 @@ Générez en un instant un code QR pour **ajouter un contact**, **créer un év�
 
 ### Installation
 
+#### 🪟 Windows (64 bits)
+
 1. **Télécharger** la dernière version : [Releases](https://github.com/Lob2018/CanScan/releases/latest)
 2. **Lancer** `CanScan-v.v.v.v-x64.exe`
 3. **Suivre** les étapes : dossier, raccourci, lancement
 4. **Visual C++** inclus automatiquement
 
-> 📌 Compatible Windows 64 bits uniquement
+#### 🐧 Linux (AppImage x86_64 glibc/Debian)
+
+1. **Télécharger** la dernière version de l'AppImage : [Releases](https://github.com/Lob2018/CanScan/releases/latest)
+2. **Rendre l'AppImage exécutable** :
+   ```bash
+   chmod +x CanScan-v.v.v.v-x86_64.AppImage
+   ```
+3.  **Lancer** le fichier :
+    ```bash
+    ./CanScan-v.v.v.v-x86_64.AppImage
+    ```
 
 #### Vérification du fichier *(optionnel)*
 
 ```bash
 gpg --import canscan-public-key.asc
-gpg --verify  CanScan-0.9.0.0-x64.exe.asc CanScan-0.9.0.0-x64.exe
+# Windows
+gpg --verify CanScan-0.9.0.0-x64.exe.asc CanScan-0.9.0.0-x64.exe
+# Linux
+gpg --verify CanScan-0.9.0.0-x86_64.AppImage.asc CanScan-0.9.0.0-x86_64.AppImage
 ```
 
 📖 [Manuel GnuPG](https://gnupg.org/documentation/manuals/gnupg/)
@@ -148,12 +163,18 @@ gpg --verify  CanScan-0.9.0.0-x64.exe.asc CanScan-0.9.0.0-x64.exe
 CanScan détecte automatiquement les nouvelles versions et affiche un bouton de mise à jour dans l’interface.
 
 1. **Cliquer** sur le bouton de mise à jour ou télécharger la dernière version depuis les [releases GitHub](https://github.com/Lob2018/CanScan/releases/latest).
-2. **Lancer** le fichier `.exe` — la version précédente sera automatiquement reconnue.
+
+2. **Lancer** le fichier :
+    * **🪟 Windows (.exe) :** Lancer le nouveau fichier `.exe`. La version précédente sera automatiquement reconnue et mise à jour.
+    * **🐧 Linux (AppImage) :** **Supprimer l'ancienne AppImage**, puis utiliser la nouvelle version téléchargée.
+
 3. **Suivre** les instructions :
     - Le raccourci est mis à jour *(si présent)*
     - La nouvelle version est disponible immédiatement
 
 ### Désinstallation
+
+#### 🪟 Windows (via l'installateur)
 
 1. Ouvrir **Panneau de configuration** → *Programmes*
 2. Rechercher **CanScan**
@@ -161,8 +182,12 @@ CanScan détecte automatiquement les nouvelles versions et affiche un bouton de 
 4. Suivre les instructions
 
 > Tous les fichiers installés seront supprimés, y compris les raccourcis et les entrées du registre
-
+>
 > Le runtime Visual C++ installé avec CanScan peut rester sur le système après désinstallation.<br>Il est utilisé par d’autres applications et peut être supprimé manuellement si nécessaire.
+
+#### 🐧 Linux (AppImage)
+
+Pour "désinstaller" CanScan, il suffit de **supprimer le fichier AppImage** téléchargé.
 
 ## 📘 Informations techniques
 
@@ -178,5 +203,5 @@ CanScan détecte automatiquement les nouvelles versions et affiche un bouton de 
 
 ### Licence
 
-GPLv3.0 License © 2025 SOFT64.FR Lob2018
+GPLv3.0 License © 2025 SOFT64.FR Lob2018<br>
 📜 [Consulter la licence complète](https://github.com/Lob2018/CanScan?tab=License-1-ov-file#readme)
