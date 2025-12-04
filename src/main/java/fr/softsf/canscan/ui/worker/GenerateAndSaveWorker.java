@@ -187,7 +187,7 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
      */
     private void handleExecutionError(ExecutionException ee) {
         if (errorTitle != null && errorMessage != null) {
-            MyPopup.INSTANCE.showDialog("", errorMessage, errorTitle);
+            MyPopup.INSTANCE.showDialog("Erreur inattendue\n", errorMessage, errorTitle);
         } else {
             Throwable cause = ee.getCause();
             MyPopup.INSTANCE.showDialog(

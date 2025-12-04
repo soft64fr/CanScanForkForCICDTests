@@ -511,8 +511,8 @@ public class EncodedImage {
             logo = ImageIO.read(in);
             if (logo == null) {
                 MyPopup.INSTANCE.showDialog(
-                        "",
                         "Ce format de logo n'est pas pris en charge (seulement PNG, JPG, ou JPEG).",
+                        "Choisir un logo au format PNG, JPG, ou JPEG",
                         "Information");
                 return;
             }

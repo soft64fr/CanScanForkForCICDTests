@@ -49,7 +49,10 @@ public class GenerateAndSaveService {
     public void generateAndSave(EncodedData qrData, CommonFields config, JProgressBar loader) {
         if (checkNPEInputs(qrData, config, loader)) {
             if (qrData.data().isBlank()) {
-                MyPopup.INSTANCE.showDialog("", "Aucune donnée à encoder", "Information");
+                MyPopup.INSTANCE.showDialog(
+                        "Aucune donnée à encoder",
+                        "Compléter les champs correspondants",
+                        "Information");
                 return;
             }
             File outputFile = chooseOutputFile(qrData);
