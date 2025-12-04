@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="CanScan [e2e NativeImageConfigGenerator]" type="Application" factoryName="Application">
+  <configuration default="false" name="CanScan [auto simulation (Config trace)]" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="fr.softsf.canscan.NativeImageConfigSimulator" />
     <module name="canscan" />
     <extension name="coverage">

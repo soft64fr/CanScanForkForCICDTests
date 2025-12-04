@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CanScan [manual simulation (Runtime)]" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="fr.softsf.canscan.CanScan" />
+    <module name="canscan" />
+    <option name="VM_PARAMETERS" value="-agentlib:native-image-agent=config-output-dir=config-trace -Djava.awt.headless=false -Duser.language=fr -Duser.country=FR -Duser.region=FR" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
