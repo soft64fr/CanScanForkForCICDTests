@@ -46,24 +46,17 @@ echo "-----------------------------------------------"
 echo
 
 echo
-echo "[1/5] Cleaning previous config..."
-rm -rf config 2>/dev/null
-mkdir -p config
+echo "[1/5] Cleaning previous config-trace, dist, output..."
+rm -rf config-trace dist output 2>/dev/null
+mkdir -p config-trace dist output
 
 echo
-echo "[2/5] Preparing distribution and output folders..."
-rm -rf dist output 2>/dev/null
-mkdir -p dist output
-
-# On entre dans 'dist' pour la simulation
+echo "[2/5] Moved to dist..."
 cd dist || { echo "Failure of cd dist"; exit 1; }
 
 echo
-echo "[3/5] Simulating runtime usage to generate native-image config..."
-# SUPPRESSION: -Djava.awt.WM_CLASS="$CANONICAL_NAME" \
-# SUPPRESSION: -Dsun.awt.wm.class="$CANONICAL_NAME" \
-# Passage des propriétés au simulateur pour la génération de la config
-java -agentlib:native-image-agent=config-output-dir=../config \
+echo "[3/5] Simulating runtime usage to generate native-image config-trace..."
+java -agentlib:native-image-agent=config-output-dir=../config-trace \
      -Djava.awt.headless=false \
      -Duser.language="$LANG_CODE" \
      -Duser.country="$COUNTRY_CODE" \
@@ -83,15 +76,11 @@ echo
 echo "[4/5] Building native image (GLibC Standard)..."
 echo "=========================================================="
 echo
-
-# COMMANDE NATIVE-IMAGE STANDARD
-# SUPPRESSION: -Djava.awt.WM_CLASS=\"$CANONICAL_NAME\" \
-# SUPPRESSION: -Dsun.awt.wm.class=\"$CANONICAL_NAME\" \
 native_image_command="native-image \
     --no-fallback \
     --strict-image-heap \
     -H:+UnlockExperimentalVMOptions \
-    -H:ConfigurationFileDirectories=../config \
+    -H:ConfigurationFileDirectories=../.myresources/scripts/config-manual/linux,../config-trace \
     -H:Name=$CANONICAL_NAME \
     -H:Class=\"$MAIN_CLASS\" \
     -Duser.language=\"$LANG_CODE\" \

@@ -15,27 +15,27 @@ echo [0/6] Cleaning and packaging application...
 call mvn clean package -DskipTests
 
 echo.
-echo [1/6] Cleaning previous config...
-rmdir /S /Q config 2>nul
-mkdir config
+echo [1/6] Cleaning previous config-trace, dist, output...
+rmdir /S /Q config-trace 2>nul
+rmdir /S /Q dist 2>nul
+rmdir /S /Q output 2>nul
+mkdir config-trace
+mkdir dist
+mkdir output
 
 echo.
-echo [2/6] Preparing distribution and output folders...
-rmdir /S /Q dist 2>nul
-mkdir dist
-rmdir /S /Q output 2>nul
-mkdir output
+echo [2/6] Moved to dist...
 cd dist
 
 echo.
-echo [3/6] Simulating runtime usage to generate native-image config...
+echo [3/6] Simulating runtime usage to generate native-image config-trace...
 echo   -agentlib:native-image-agent  : Agent GraalVM pour tracer reflexion/ressources/JNI
-echo   config-output-dir             : Repertoire de sortie des fichiers de config
+echo   config-output-dir             : Repertoire de sortie des fichiers de config-trace
 echo   -Djava.awt.headless=false     : Active l'interface graphique Swing/AWT
 echo   -cp                           : Classpath (JAR + classes de test)
 echo   NativeImageConfigSimulator    : Classe simulant l'usage runtime de l'app
 echo.
-java -agentlib:native-image-agent=config-output-dir=../config ^
+java -agentlib:native-image-agent=config-output-dir=../config-trace ^
      -Djava.awt.headless=false ^
      -Duser.language=%5 ^
      -Duser.country=%6 ^
@@ -66,7 +66,7 @@ echo.
 call native-image --no-fallback ^
                   --strict-image-heap ^
                   -H:+UnlockExperimentalVMOptions ^
-                  -H:ConfigurationFileDirectories=../config ^
+                  -H:ConfigurationFileDirectories=../.myresources/scripts/config-manual/windows,../config-trace ^
                   -H:Name=canscan ^
                   -H:Class=%4 ^
                   -H:NativeLinkerOption=/SUBSYSTEM:WINDOWS ^
