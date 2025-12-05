@@ -1,13 +1,11 @@
 <map id="fr.softsf.canscan.CanScan.getQrInput" name="fr.softsf.canscan.CanScan.getQrInput">
-<area shape="rect" id="Node000001" title="Collects current input and visual settings into a WholeFields for QR code generation." alt="" coords="5,139,205,181"/>
-<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a381368b99c4a0857c6abe6349b2c6d27" title="Calculates the available height for QR code rendering." alt="" coords="253,5,486,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,136,185,96,251,58,266,51,268,56,254,62,188,101,134,140"/>
-<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" title="Validates and returns the current QR code margin from the margin slider." alt="" coords="256,72,482,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,135,267,116,268,122,193,141"/>
-<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a8a2b238ac4af96d8710b3e5d7d051f77" title="Validates and returns the current meet UID from the meet title field." alt="" coords="256,139,482,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,157,241,157,241,163,205,163"/>
-<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider." alt="" coords="256,205,482,248"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="193,179,268,198,267,204,192,185"/>
-<area shape="rect" id="Node000006" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" title="Validates and returns the QR code size from the corresponding text field." alt="" coords="256,272,482,315"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="134,180,188,219,254,258,268,264,266,269,251,262,185,224,131,184"/>
+<area shape="rect" id="Node000001" title="Collects current input and visual settings into a WholeFields for QR code generation." alt="" coords="5,105,205,148"/>
+<area shape="rect" id="Node000002" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a4e67b1b5c764e72414a5c0f387810f5c" title="Validates and returns the current QR code margin from the margin slider." alt="" coords="253,5,479,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,102,252,58,271,51,273,56,254,62,151,107"/>
+<area shape="rect" id="Node000003" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a8a2b238ac4af96d8710b3e5d7d051f77" title="Validates and returns the current meet UID from the meet title field." alt="" coords="253,72,479,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,111,237,107,237,112,205,117"/>
+<area shape="rect" id="Node000004" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a9e8188875168199cde065113ae2a393d" title="Validates and returns the current image&#45;to&#45;QR ratio from the ratio slider." alt="" coords="253,139,479,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,137,237,141,237,146,205,142"/>
+<area shape="rect" id="Node000005" href="$classfr_1_1softsf_1_1canscan_1_1_can_scan.html#a6d139bb8d0a3c7081096c8956189b684" title="Validates and returns the QR code size from the corresponding text field." alt="" coords="253,205,479,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,146,254,191,273,198,271,203,252,196,149,151"/>
 </map>
