@@ -170,6 +170,10 @@
   "methods":[{"name":"createUI","parameterTypes":["javax.swing.JComponent"] }]
 },
 {
+  "name":"com.formdev.flatlaf.icons.FlatOptionPaneWarningIcon",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"com.formdev.flatlaf.ui.FlatPanelUI",
   "methods":[{"name":"createUI","parameterTypes":["javax.swing.JComponent"] }]
 },
@@ -287,11 +291,19 @@
   "name":"com.github.jaiimageio.impl.common.PackageUtil"
 },
 {
+  "name":"com.github.lgooddatepicker.components.CalendarPanel",
+  "methods":[{"name":"coalesceEvents","parameterTypes":["java.awt.AWTEvent","java.awt.AWTEvent"] }]
+},
+{
   "name":"com.github.lgooddatepicker.components.DatePicker",
   "methods":[{"name":"coalesceEvents","parameterTypes":["java.awt.AWTEvent","java.awt.AWTEvent"] }]
 },
 {
   "name":"com.github.lgooddatepicker.components.TimePicker",
+  "methods":[{"name":"coalesceEvents","parameterTypes":["java.awt.AWTEvent","java.awt.AWTEvent"] }]
+},
+{
+  "name":"com.github.lgooddatepicker.zinternaltools.JIntegerTextField",
   "methods":[{"name":"coalesceEvents","parameterTypes":["java.awt.AWTEvent","java.awt.AWTEvent"] }]
 },
 {
@@ -453,6 +465,10 @@
 {
   "name":"javax.swing.plaf.basic.BasicGraphicsUtils",
   "methods":[{"name":"drawStringUnderlineCharAt","parameterTypes":["javax.swing.JComponent","java.awt.Graphics2D","java.lang.String","int","float","float"] }]
+},
+{
+  "name":"javax.swing.plaf.basic.BasicMenuItemUI",
+  "methods":[{"name":"loadActionMap","parameterTypes":["javax.swing.plaf.basic.LazyActionMap"] }]
 },
 {
   "name":"javax.swing.plaf.basic.BasicOptionPaneUI",

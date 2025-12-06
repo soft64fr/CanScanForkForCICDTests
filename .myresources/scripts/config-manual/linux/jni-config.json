@@ -25,6 +25,10 @@
   "methods":[{"name":"getLocationOnScreen_NoTreeLock","parameterTypes":[] }, {"name":"getParent_NoClientCode","parameterTypes":[] }]
 },
 {
+  "name":"java.awt.Desktop$Action",
+  "fields":[{"name":"BROWSE"}, {"name":"MAIL"}, {"name":"OPEN"}]
+},
+{
   "name":"java.awt.GraphicsEnvironment",
   "methods":[{"name":"getLocalGraphicsEnvironment","parameterTypes":[] }, {"name":"isHeadless","parameterTypes":[] }]
 },
@@ -106,6 +110,10 @@
   "methods":[{"name":"yield","parameterTypes":[] }]
 },
 {
+  "name":"java.util.ArrayList",
+  "methods":[{"name":"add","parameterTypes":["java.lang.Object"] }, {"name":"clear","parameterTypes":[] }]
+},
+{
   "name":"javax.imageio.plugins.jpeg.JPEGHuffmanTable",
   "fields":[{"name":"lengths"}, {"name":"values"}]
 },
@@ -130,6 +138,10 @@
   "name":"sun.awt.X11.XContentWindow"
 },
 {
+  "name":"sun.awt.X11.XDesktopPeer",
+  "fields":[{"name":"supportedActions"}]
+},
+{
   "name":"sun.awt.X11.XDialogPeer"
 },
 {
@@ -138,6 +150,10 @@
 },
 {
   "name":"sun.awt.X11.XFramePeer"
+},
+{
+  "name":"sun.awt.X11.XRootWindow",
+  "methods":[{"name":"getXRootWindow","parameterTypes":[] }]
 },
 {
   "name":"sun.awt.X11.XToolkit",
