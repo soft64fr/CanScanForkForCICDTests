@@ -87,7 +87,7 @@ native_image_command="native-image \
     -Duser.country=\"$COUNTRY_CODE\" \
     -Duser.region=\"$COUNTRY_CODE\" \
     -Djava.awt.headless=false \
-    -H:CFlags=-march=nehalem \
+    -H:CCompilerOption=-march=nehalem \
     -J-Xmx7G \
     -jar \"../target/canscan-$APP_VERSION.jar\""
 
