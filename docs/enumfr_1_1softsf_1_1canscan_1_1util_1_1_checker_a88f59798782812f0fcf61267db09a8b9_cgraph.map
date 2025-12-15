@@ -1,5 +1,5 @@
 <map id="fr.softsf.canscan.util.Checker.checkNPE" name="fr.softsf.canscan.util.Checker.checkNPE">
 <area shape="rect" id="Node000001" title="Validates that the specified object is not null." alt="" coords="5,13,266,40"/>
-<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a82691680982c86f9e1f664e065f2247e" title="Validates the given object for null or blank values." alt="" coords="314,5,546,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1util_1_1_checker.html#a254e5e0b787c8424dff543d8554d790b" title="Validates the given object for null or blank values." alt="" coords="314,5,546,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,24,298,24,298,29,266,29"/>
 </map>

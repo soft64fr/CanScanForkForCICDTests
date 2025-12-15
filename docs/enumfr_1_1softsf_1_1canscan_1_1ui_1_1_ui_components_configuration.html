@@ -99,7 +99,6 @@ $(function(){initNavTree('enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_co
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -126,6 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf7bea7b10b7a06a2211e8ef15c73654" id="r_adf7bea7b10b7a06a2211e8ef15c73654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf7bea7b10b7a06a2211e8ef15c73654">assignComponentNames</a> (NativeImageUiComponents nativeImageUiComponents)</td></tr>
 <tr class="memdesc:adf7bea7b10b7a06a2211e8ef15c73654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns unique names to all GUI components encapsulated in the given <code><a class="el" href="">NativeImageUiComponents</a></code> instance.  <br /></td></tr>
 <tr class="separator:adf7bea7b10b7a06a2211e8ef15c73654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee9ba799dcf7ebe32e32b9772a82fdf" id="r_a3ee9ba799dcf7ebe32e32b9772a82fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ee9ba799dcf7ebe32e32b9772a82fdf">attachLimitedDocumentListener</a> (JTextField field, int maxLength, Runnable action)</td></tr>
+<tr class="memdesc:a3ee9ba799dcf7ebe32e32b9772a82fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches a <code><a class="el" href="">DocumentListener</a></code> to a <code><a class="el" href="">JTextField</a></code> that:  <br /></td></tr>
+<tr class="separator:a3ee9ba799dcf7ebe32e32b9772a82fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d8dc40e728c516a45d968f9c20a4ff0" id="r_a3d8dc40e728c516a45d968f9c20a4ff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d8dc40e728c516a45d968f9c20a4ff0">configureFreeTextArea</a> (JTextArea textArea, JScrollPane scrollPane)</td></tr>
 <tr class="memdesc:a3d8dc40e728c516a45d968f9c20a4ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures a JTextArea for free text input with word wrapping and a fixed size.  <br /></td></tr>
 <tr class="separator:a3d8dc40e728c516a45d968f9c20a4ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,15 +152,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a847d60134ee0342c62bd02232e8f2ed7" id="r_a847d60134ee0342c62bd02232e8f2ed7"><td class="memItemLeft" align="right" valign="top">GridBagConstraints&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a847d60134ee0342c62bd02232e8f2ed7">createDefaultConstraints</a> ()</td></tr>
 <tr class="memdesc:a847d60134ee0342c62bd02232e8f2ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates default <code><a class="el" href="">GridBagConstraints</a></code> for consistent layout.  <br /></td></tr>
 <tr class="separator:a847d60134ee0342c62bd02232e8f2ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc36de010da534a68c8dfa9a32e1759" id="r_a8dc36de010da534a68c8dfa9a32e1759"><td class="memItemLeft" align="right" valign="top">DocumentListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dc36de010da534a68c8dfa9a32e1759">createDocumentListener</a> (Runnable action)</td></tr>
+<tr class="memdesc:a8dc36de010da534a68c8dfa9a32e1759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a simple <code><a class="el" href="">DocumentListener</a></code> that executes the given action on any change to the document.  <br /></td></tr>
+<tr class="separator:a8dc36de010da534a68c8dfa9a32e1759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3400aaec73c96f695ff9bfc11b525d0" id="r_ae3400aaec73c96f695ff9bfc11b525d0"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3400aaec73c96f695ff9bfc11b525d0">createIconButton</a> (String iconCode, String text)</td></tr>
 <tr class="memdesc:ae3400aaec73c96f695ff9bfc11b525d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a JButton styled with a Material Icon and a text label.  <br /></td></tr>
 <tr class="separator:ae3400aaec73c96f695ff9bfc11b525d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc43db5c91f5b7da8082e0c63eba6c7e" id="r_abc43db5c91f5b7da8082e0c63eba6c7e"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc43db5c91f5b7da8082e0c63eba6c7e">createIconOnlyButton</a> (String iconCode)</td></tr>
+<tr class="memdesc:abc43db5c91f5b7da8082e0c63eba6c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a JButton styled to display a <b>bold</b> Material Icon only.  <br /></td></tr>
+<tr class="separator:abc43db5c91f5b7da8082e0c63eba6c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140cdf06b78d5f2b0d588f7cc4c88178" id="r_a140cdf06b78d5f2b0d588f7cc4c88178"><td class="memItemLeft" align="right" valign="top">JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a140cdf06b78d5f2b0d588f7cc4c88178">createModePanel</a> (JRadioButton mecardRadio, JRadioButton meetRadio, JRadioButton freeRadio, JButton updateButton, ButtonGroup buttonGroup)</td></tr>
 <tr class="memdesc:a140cdf06b78d5f2b0d588f7cc4c88178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a mode selection panel containing radio buttons for different modes and an update button.  <br /></td></tr>
 <tr class="separator:a140cdf06b78d5f2b0d588f7cc4c88178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94404c0c52c8ebabf4d7479e844ea1c9" id="r_a94404c0c52c8ebabf4d7479e844ea1c9"><td class="memItemLeft" align="right" valign="top">JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94404c0c52c8ebabf4d7479e844ea1c9">createQrCodeOverlayPanel</a> (JProgressBar loader, JLabel qrCodeLabel)</td></tr>
 <tr class="memdesc:a94404c0c52c8ebabf4d7479e844ea1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an overlay panel containing a loader and a QR code label.  <br /></td></tr>
 <tr class="separator:a94404c0c52c8ebabf4d7479e844ea1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad9d45feaa5c32cf08821e48ee2b545" id="r_a9ad9d45feaa5c32cf08821e48ee2b545"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ad9d45feaa5c32cf08821e48ee2b545">getIconAfterTextHtml</a> (String text, String iconCode)</td></tr>
+<tr class="memdesc:a9ad9d45feaa5c32cf08821e48ee2b545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the HTML string for a JLabel with text followed by an icon.  <br /></td></tr>
+<tr class="separator:a9ad9d45feaa5c32cf08821e48ee2b545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa92005bb8f61d6438f3aca2827b7077c" id="r_aa92005bb8f61d6438f3aca2827b7077c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92005bb8f61d6438f3aca2827b7077c">populateFreePanel</a> (JPanel freePanel, GridBagConstraints grid, JTextArea freeField, JScrollPane freeScrollPane)</td></tr>
 <tr class="memdesc:aa92005bb8f61d6438f3aca2827b7077c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and populates a FREE text input panel.  <br /></td></tr>
 <tr class="separator:aa92005bb8f61d6438f3aca2827b7077c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,21 +179,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a891de561e1562c1b8cf95fde5070a6" id="r_a4a891de561e1562c1b8cf95fde5070a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a891de561e1562c1b8cf95fde5070a6">populateMeetPanel</a> (JPanel meetPanel, GridBagConstraints grid, MeetJFields meetJFields)</td></tr>
 <tr class="memdesc:a4a891de561e1562c1b8cf95fde5070a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and populates a MEET input panel with labeled input fields for event details.  <br /></td></tr>
 <tr class="separator:a4a891de561e1562c1b8cf95fde5070a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:afe8da76131acc9dd19a15d7f22ca9ef1" id="r_afe8da76131acc9dd19a15d7f22ca9ef1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe8da76131acc9dd19a15d7f22ca9ef1">attachLimitedDocumentListener</a> (JTextField field, int maxLength, Runnable action)</td></tr>
-<tr class="memdesc:afe8da76131acc9dd19a15d7f22ca9ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches a <code><a class="el" href="">DocumentListener</a></code> to a <code><a class="el" href="">JTextField</a></code> that:  <br /></td></tr>
-<tr class="separator:afe8da76131acc9dd19a15d7f22ca9ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa700d9f2a270f6e54fcb53111855fa44" id="r_aa700d9f2a270f6e54fcb53111855fa44"><td class="memItemLeft" align="right" valign="top">static DocumentListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa700d9f2a270f6e54fcb53111855fa44">createDocumentListener</a> (Runnable action)</td></tr>
-<tr class="memdesc:aa700d9f2a270f6e54fcb53111855fa44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a simple <code><a class="el" href="">DocumentListener</a></code> that executes the given action on any change to the document.  <br /></td></tr>
-<tr class="separator:aa700d9f2a270f6e54fcb53111855fa44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7439c5f2797059c2d6b5700a5ccf4e75" id="r_a7439c5f2797059c2d6b5700a5ccf4e75"><td class="memItemLeft" align="right" valign="top">static JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7439c5f2797059c2d6b5700a5ccf4e75">createIconOnlyButton</a> (String iconCode)</td></tr>
-<tr class="memdesc:a7439c5f2797059c2d6b5700a5ccf4e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a JButton styled to display a <b>bold</b> Material Icon only.  <br /></td></tr>
-<tr class="separator:a7439c5f2797059c2d6b5700a5ccf4e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a953922164a79d6b4a86eb426b782c730" id="r_a953922164a79d6b4a86eb426b782c730"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a953922164a79d6b4a86eb426b782c730">getIconAfterTextHtml</a> (String text, String iconCode)</td></tr>
-<tr class="memdesc:a953922164a79d6b4a86eb426b782c730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the HTML string for a JLabel with text followed by an icon.  <br /></td></tr>
-<tr class="separator:a953922164a79d6b4a86eb426b782c730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -296,17 +292,14 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afe8da76131acc9dd19a15d7f22ca9ef1" name="afe8da76131acc9dd19a15d7f22ca9ef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe8da76131acc9dd19a15d7f22ca9ef1">&#9670;&#160;</a></span>attachLimitedDocumentListener()</h2>
+<a id="a3ee9ba799dcf7ebe32e32b9772a82fdf" name="a3ee9ba799dcf7ebe32e32b9772a82fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee9ba799dcf7ebe32e32b9772a82fdf">&#9670;&#160;</a></span>attachLimitedDocumentListener()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void fr.softsf.canscan.ui.UiComponentsConfiguration.attachLimitedDocumentListener </td>
+          <td class="memname">void fr.softsf.canscan.ui.UiComponentsConfiguration.attachLimitedDocumentListener </td>
           <td>(</td>
           <td class="paramtype">JTextField</td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
         </tr>
@@ -321,11 +314,6 @@ Static Private Attributes</h2></td></tr>
           <td class="paramtype">Runnable</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Attaches a <code><a class="el" href="">DocumentListener</a></code> to a <code><a class="el" href="">JTextField</a></code> that: </p>
@@ -352,7 +340,7 @@ Removes line breaks (<br  />
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration_afe8da76131acc9dd19a15d7f22ca9ef1_cgraph.svg" width="544" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration_a3ee9ba799dcf7ebe32e32b9772a82fdf_cgraph.svg" width="544" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -597,27 +585,19 @@ COLOR_BUTTONS_GAP</code>.</p>
 
 </div>
 </div>
-<a id="aa700d9f2a270f6e54fcb53111855fa44" name="aa700d9f2a270f6e54fcb53111855fa44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa700d9f2a270f6e54fcb53111855fa44">&#9670;&#160;</a></span>createDocumentListener()</h2>
+<a id="a8dc36de010da534a68c8dfa9a32e1759" name="a8dc36de010da534a68c8dfa9a32e1759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc36de010da534a68c8dfa9a32e1759">&#9670;&#160;</a></span>createDocumentListener()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static DocumentListener fr.softsf.canscan.ui.UiComponentsConfiguration.createDocumentListener </td>
+          <td class="memname">DocumentListener fr.softsf.canscan.ui.UiComponentsConfiguration.createDocumentListener </td>
           <td>(</td>
           <td class="paramtype">Runnable</td>          <td class="paramname"><span class="paramname"><em>action</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates a simple <code><a class="el" href="">DocumentListener</a></code> that executes the given action on any change to the document. </p>
@@ -664,27 +644,19 @@ COLOR_BUTTONS_GAP</code>.</p>
 
 </div>
 </div>
-<a id="a7439c5f2797059c2d6b5700a5ccf4e75" name="a7439c5f2797059c2d6b5700a5ccf4e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7439c5f2797059c2d6b5700a5ccf4e75">&#9670;&#160;</a></span>createIconOnlyButton()</h2>
+<a id="abc43db5c91f5b7da8082e0c63eba6c7e" name="abc43db5c91f5b7da8082e0c63eba6c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc43db5c91f5b7da8082e0c63eba6c7e">&#9670;&#160;</a></span>createIconOnlyButton()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static JButton fr.softsf.canscan.ui.UiComponentsConfiguration.createIconOnlyButton </td>
+          <td class="memname">JButton fr.softsf.canscan.ui.UiComponentsConfiguration.createIconOnlyButton </td>
           <td>(</td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>iconCode</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates a JButton styled to display a <b>bold</b> Material Icon only. </p>
@@ -833,17 +805,14 @@ COLOR_BUTTONS_GAP</code>.</p>
 
 </div>
 </div>
-<a id="a953922164a79d6b4a86eb426b782c730" name="a953922164a79d6b4a86eb426b782c730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a953922164a79d6b4a86eb426b782c730">&#9670;&#160;</a></span>getIconAfterTextHtml()</h2>
+<a id="a9ad9d45feaa5c32cf08821e48ee2b545" name="a9ad9d45feaa5c32cf08821e48ee2b545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad9d45feaa5c32cf08821e48ee2b545">&#9670;&#160;</a></span>getIconAfterTextHtml()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static String fr.softsf.canscan.ui.UiComponentsConfiguration.getIconAfterTextHtml </td>
+          <td class="memname">String fr.softsf.canscan.ui.UiComponentsConfiguration.getIconAfterTextHtml </td>
           <td>(</td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
@@ -853,11 +822,6 @@ COLOR_BUTTONS_GAP</code>.</p>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>iconCode</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Generates the HTML string for a JLabel with text followed by an icon. </p>
@@ -1254,7 +1218,7 @@ COLOR_BUTTONS_GAP</code>.</p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>fr</b></li><li class="navelem"><b>softsf</b></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan.html">canscan</a></li><li class="navelem"><a class="el" href="namespacefr_1_1softsf_1_1canscan_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html">UiComponentsConfiguration</a></li>
-    <li class="footer">Generated on Fri Dec 5 2025 17:19:32 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Sat Dec 6 2025 23:19:14 for CanScan by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

@@ -1,8 +1,8 @@
 <map id="fr.softsf.canscan.service.VersionService.checkLatestVersion" name="fr.softsf.canscan.service.VersionService.checkLatestVersion">
 <area shape="rect" id="Node000001" title="Asynchronously checks whether the current application version matches the latest GitHub release tag." alt="" coords="5,64,232,107"/>
-<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c" title="Validates input for version check." alt="" coords="280,5,530,48"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9def0c33b490f00f468c273ee15f38dd" title="Validates input for version check." alt="" coords="280,5,530,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,61,282,49,283,54,226,66"/>
-<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac3765b9aae65297cd9337c852ee2fb30" title="Updates the state and tooltip of the given button based on application logic." alt="" coords="578,35,798,77"/>
+<area shape="rect" id="Node000003" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ad09fd68eb6816aec3c09f2c4066e64f5" title="Updates the state and tooltip of the given button based on application logic." alt="" coords="578,35,798,77"/>
 <area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="232,77,563,60,563,65,232,82"/>
 <area shape="rect" id="Node000004" href="$enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#af05c96862a2ab3a6153e7514694884f4" title="Sends an HTTP request to the GitHub tags API and verifies if the latest release tag matches the curre..." alt="" coords="299,123,510,165"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,105,284,117,283,122,225,110"/>

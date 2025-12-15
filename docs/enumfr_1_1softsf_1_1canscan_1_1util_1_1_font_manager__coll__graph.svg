@@ -57,10 +57,10 @@
 <text text-anchor="start" x="14" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">FontMetrics getCurrentFont</text>
 <text text-anchor="start" x="14" y="-50.5" font-family="Helvetica,sans-Serif" font-size="10.00">Metrics()</text>
 <text text-anchor="start" x="5.5" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="14" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">void loadMaterialIconsFont()</text>
-<text text-anchor="start" x="5.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="14" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">static void loadLucioleFont</text>
-<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">AsDefaultFont()</text>
+<text text-anchor="start" x="14" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">void loadLucioleFontAsDefault</text>
+<text text-anchor="start" x="14" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">Font()</text>
+<text text-anchor="start" x="5.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">void loadMaterialIconsFont()</text>
 <polygon fill="#666666" stroke="#666666" points="0,-318 0,-318 181.5,-318 181.5,-318 0,-318"/>
 <polygon fill="#666666" stroke="#666666" points="0,-122 0,-122 12,-122 12,-122 0,-122"/>
 <polygon fill="#666666" stroke="#666666" points="12,-122 12,-122 181.5,-122 181.5,-122 12,-122"/>

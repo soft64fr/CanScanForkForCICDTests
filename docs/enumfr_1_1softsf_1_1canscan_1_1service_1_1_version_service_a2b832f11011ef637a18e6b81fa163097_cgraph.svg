@@ -68,7 +68,7 @@ var sectionId = 'dynsection-1';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9e860e0a69da51da67be284deb2c701c" target="_top" xlink:title="Validates input for version check.">
+<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#a9def0c33b490f00f468c273ee15f38dd" target="_top" xlink:title="Validates input for version check.">
 <polygon fill="white" stroke="#666666" points="393.5,-120 205.75,-120 205.75,-88 393.5,-88 393.5,-120"/>
 <text text-anchor="start" x="213.75" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.service.</text>
 <text text-anchor="middle" x="299.62" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">VersionService.npeCheckLatestVersion</text>
@@ -87,7 +87,7 @@ var sectionId = 'dynsection-1';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ac3765b9aae65297cd9337c852ee2fb30" target="_top" xlink:title="Updates the state and tooltip of the given button based on application logic.">
+<g id="a_Node000003"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1service_1_1_version_service.html#ad09fd68eb6816aec3c09f2c4066e64f5" target="_top" xlink:title="Updates the state and tooltip of the given button based on application logic.">
 <polygon fill="white" stroke="#666666" points="594.75,-98 429.5,-98 429.5,-66 594.75,-66 594.75,-98"/>
 <text text-anchor="start" x="437.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.service.</text>
 <text text-anchor="middle" x="512.12" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">VersionService.updateButtonState</text>

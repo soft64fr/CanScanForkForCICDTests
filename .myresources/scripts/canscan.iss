@@ -1,6 +1,7 @@
 ; ============================================================================
 ; CanScan - Inno Setup Edition Installation Script
 ; Architecture: x64 only
+; Version: 1.0.0.0+ (Utiliser la version actuelle pour la compilation)
 ; ============================================================================
 
 ; Définitions par défaut (peuvent être surchargées par /D en ligne de commande)
@@ -31,8 +32,9 @@ VersionInfoDescription={#AppName}
 VersionInfoCopyright=Copyright (C) 2025 {#Organization}
 
 ; Répertoires d'installation
+; Nouvelle stratégie : Installation sans privilèges dans le répertoire utilisateur
 PrivilegesRequired=lowest
-DefaultDirName={commonpf}\{#Organization}\{#AppName}
+DefaultDirName={localappdata}\{#Organization}\{#AppName}
 DefaultGroupName={#Organization}\{#AppName}
 DisableProgramGroupPage=yes
 
@@ -100,13 +102,14 @@ Filename: "{app}\{#AppName}-{#AppVersion}.exe"; Description: "Lancer {#AppName}"
 ; Afficher le fichier README (optionnel non coché)
 Filename: "{app}\README.txt"; Description: "Afficher le fichier README"; Flags: postinstall skipifsilent unchecked
 
+[InstallDelete]
+; Stratégie de mise à jour : Suppression de TOUS les fichiers de l'application
+Type: filesandordirs; Name: "{app}\*"
+
 [UninstallDelete]
-; Supprimer les données locales
+; Stratégie de désinstallation : Supprime les dossiers créés par l'installation sans privilèges
 Type: filesandordirs; Name: "{localappdata}\{#Organization}\{#AppName}"
-; Supprimer le dossier d'installation principal
 Type: filesandordirs; Name: "{app}"
-; Supprimer le dossier {#Organization} si vide
-Type: dirifempty; Name: "{commonpf}\{#Organization}"
 Type: dirifempty; Name: "{localappdata}\{#Organization}"
 
 [Code]
@@ -131,10 +134,53 @@ begin
 end;
 
 // ============================================================================
-// Création de la page d'installation de VC++
+// VÉRIFICATION DU CHEMIN D'INSTALLATION (Pour la transition Program Files -> AppData)
+// Dépend de WizardForm, donc doit être exécuté dans InitializeWizard() ou après.
+// ============================================================================
+function OldInstallPathIsProgramFiles(): Boolean;
+var
+  InstallLocation: String;
+begin
+  // Utiliser WizardForm.DirEdit.Text pour lire le chemin de destination
+  InstallLocation := WizardForm.DirEdit.Text;
+
+  if InstallLocation = '' then
+  begin
+    Result := False;
+    Exit;
+  end;
+
+  // Vérifie si le chemin cible est Program Files ou Common Files
+  if (Pos(ExpandConstant('{commonpf}'), InstallLocation) = 1) or
+     (Pos(ExpandConstant('{pf}'), InstallLocation) = 1) then
+  begin
+    Result := True; // Cible est Program Files : BLOQUER
+  end else
+  begin
+    Result := False; // Cible est AppData/Local : CONTINUER
+  end;
+end;
+
+// ============================================================================
+// Création de la page de VC++ et VÉRIFICATION DU CHEMIN
 // ============================================================================
 procedure InitializeWizard();
 begin
+  // 1. VÉRIFICATION DU CHEMIN HISTORIQUE (S'exécute après la création de WizardForm)
+  if OldInstallPathIsProgramFiles() then
+  begin
+    MsgBox('Votre version installée de CanScan utilise actuellement un répertoire système (Program Files).' + #13#10#13#10 +
+           'À partir de la version 1.0.0.0, CanScan utilise un répertoire sans privilèges (dans votre dossier utilisateur).' + #13#10#13#10 +
+           'Veuillez désinstaller CanScan via le Panneau de configuration.' + #13#10#13#10 +
+           'Relancez ensuite cette installation.',
+           mbError, MB_OK);
+
+    // CORRECTION APPLIQUÉE : Abort() arrête immédiatement le processus.
+    Abort;
+    Exit;
+  end;
+
+  // 2. LOGIQUE EXISTANTE DE LA PAGE VC++
   VCInstallPage := CreateOutputProgressPage(
     'Installation des composants requis',
     'Veuillez patienter pendant l''installation des composants requis');
@@ -153,22 +199,17 @@ begin
   if NeedsVC then
   begin
     VCRedistPath := ExpandConstant('{tmp}\VC_redist.x64.exe');
-
-    // Extraire le fichier VC_redist.x64.exe dans {tmp} si ce n'est pas déjà fait
     ExtractTemporaryFile('VC_redist.x64.exe');
 
-    // Afficher la page personnalisée
     VCInstallPage.SetText(
       'Installation de Visual C++ Redistributable v14.44.35211 en cours...',
       'Cela peut prendre quelques minutes');
     VCInstallPage.Show;
 
     try
-      // Démarrer la barre de progression
       VCInstallPage.SetProgress(0, 100);
       VCInstallPage.ProgressBar.Style := npbstMarquee;
 
-      // Exécuter l'installation VC++ et attendre la fin
       if not Exec(VCRedistPath, '/quiet /norestart', '', SW_HIDE,
                   ewWaitUntilTerminated, ResultCode) then
       begin
@@ -177,17 +218,14 @@ begin
         Exit;
       end;
 
-      // Vérifier si un redémarrage est nécessaire (code 3010)
       if ResultCode = 3010 then
         NeedsRestart := True;
 
-      // Vérifier si l'installation a échoué
       if (ResultCode <> 0) and (ResultCode <> 3010) then
       begin
         Result := 'L''installation de Visual C++ Redistributable a échoué.' + #13#10 +
                   'Code d''erreur: ' + IntToStr(ResultCode) + #13#10#13#10 +
                   'L''installation de {#AppName} va continuer, mais l''application pourrait ne pas fonctionner correctement.';
-        // On continue quand même l'installation
         Result := '';
       end;
 
@@ -200,16 +238,20 @@ begin
 end;
 
 // ============================================================================
-// Fonction appelée avant l'installation
+// Fonction appelée avant l'installation (InitializeSetup)
+// VÉRIFICATION DE L'ARCHITECTURE (Priorité N°1)
 // ============================================================================
 function InitializeSetup(): Boolean;
 begin
-  Result := True;
-  // Vérifier si l'architecture est compatible
+  // Si non compatible 64 bits, on bloque immédiatement.
   if not Is64BitInstallMode then
   begin
     MsgBox('Cette application requiert un système Windows 64 bits.',
       mbError, MB_OK);
     Result := False;
+    Exit;
   end;
+
+  // L'installation peut continuer.
+  Result := True;
 end;

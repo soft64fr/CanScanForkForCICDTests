@@ -125,49 +125,49 @@ var sectionId = 'dynsection-0';
 <g id="a_Node000002"><a xlink:href="classfr_1_1softsf_1_1canscan_1_1_can_scan.html" target="_top" xlink:title="CanScan — Swing QR code generator with MECARD, MEET, and FREE modes.">
 <polygon fill="white" stroke="none" points="633.63,-1596 419.88,-1596 419.88,-572 633.63,-572 633.63,-1596"/>
 <text text-anchor="start" x="468.25" y="-1582.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.CanScan</text>
-<text text-anchor="start" x="423.88" y="-1566.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="433.88" y="-1566.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
-<text text-anchor="start" x="433.88" y="-1554.5" font-family="Helvetica,sans-Serif" font-size="10.00"> WARNING_ICON</text>
-<text text-anchor="start" x="425.38" y="-1538.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1538.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextField adrField</text>
-<text text-anchor="start" x="425.38" y="-1522.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1522.5" font-family="Helvetica,sans-Serif" font-size="10.00">Color bgColor</text>
-<text text-anchor="start" x="425.38" y="-1506.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1506.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JButton bgColorButton</text>
-<text text-anchor="start" x="425.38" y="-1490.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1490.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JButton browseButton</text>
-<text text-anchor="start" x="425.38" y="-1474.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1474.5" font-family="Helvetica,sans-Serif" font-size="10.00">final CardLayout cardLayout</text>
-<text text-anchor="start" x="425.38" y="-1458.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1458.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JPanel cardPanel</text>
-<text text-anchor="start" x="425.38" y="-1442.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1442.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextField emailField</text>
-<text text-anchor="start" x="425.38" y="-1426.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1426.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextArea freeField</text>
+<text text-anchor="start" x="425.38" y="-1566.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1566.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextField adrField</text>
+<text text-anchor="start" x="425.38" y="-1550.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1550.5" font-family="Helvetica,sans-Serif" font-size="10.00">Color bgColor</text>
+<text text-anchor="start" x="425.38" y="-1534.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1534.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JButton bgColorButton</text>
+<text text-anchor="start" x="425.38" y="-1518.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1518.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JButton browseButton</text>
+<text text-anchor="start" x="425.38" y="-1502.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1502.5" font-family="Helvetica,sans-Serif" font-size="10.00">final CardLayout cardLayout</text>
+<text text-anchor="start" x="425.38" y="-1486.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1486.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JPanel cardPanel</text>
+<text text-anchor="start" x="425.38" y="-1470.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1470.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextField emailField</text>
+<text text-anchor="start" x="425.38" y="-1454.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1454.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JTextArea freeField</text>
+<text text-anchor="start" x="425.38" y="-1438.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1438.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JRadioButton</text>
+<text text-anchor="start" x="433.88" y="-1426.5" font-family="Helvetica,sans-Serif" font-size="10.00"> freeRadio</text>
 <text text-anchor="start" x="425.38" y="-1410.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1410.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JRadioButton</text>
-<text text-anchor="start" x="433.88" y="-1398.5" font-family="Helvetica,sans-Serif" font-size="10.00"> freeRadio</text>
-<text text-anchor="start" x="425.38" y="-1382.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1382.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JScrollPane freeScrollPane</text>
-<text text-anchor="start" x="433.88" y="-1366.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 30 more...</text>
+<text text-anchor="start" x="433.88" y="-1410.5" font-family="Helvetica,sans-Serif" font-size="10.00">final JScrollPane freeScrollPane</text>
+<text text-anchor="start" x="433.88" y="-1394.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 30 more...</text>
+<text text-anchor="start" x="425.38" y="-1378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="433.88" y="-1378.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
+<text text-anchor="start" x="433.88" y="-1366.5" font-family="Helvetica,sans-Serif" font-size="10.00"> HTML_B_STRING_B_HTML</text>
 <text text-anchor="start" x="425.38" y="-1350.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1350.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
-<text text-anchor="start" x="433.88" y="-1338.5" font-family="Helvetica,sans-Serif" font-size="10.00"> HTML_B_STRING_B_HTML</text>
+<text text-anchor="start" x="433.88" y="-1350.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int MAX</text>
+<text text-anchor="start" x="433.88" y="-1338.5" font-family="Helvetica,sans-Serif" font-size="10.00">_COORDINATE_LENGTH</text>
 <text text-anchor="start" x="425.38" y="-1322.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1322.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int MAX</text>
-<text text-anchor="start" x="433.88" y="-1310.5" font-family="Helvetica,sans-Serif" font-size="10.00">_COORDINATE_LENGTH</text>
+<text text-anchor="start" x="433.88" y="-1322.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int MINIMUM</text>
+<text text-anchor="start" x="433.88" y="-1310.5" font-family="Helvetica,sans-Serif" font-size="10.00">_QR_CODE_SIZE</text>
 <text text-anchor="start" x="425.38" y="-1294.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1294.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int MINIMUM</text>
-<text text-anchor="start" x="433.88" y="-1282.5" font-family="Helvetica,sans-Serif" font-size="10.00">_QR_CODE_SIZE</text>
+<text text-anchor="start" x="433.88" y="-1294.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
+<text text-anchor="start" x="433.88" y="-1282.5" font-family="Helvetica,sans-Serif" font-size="10.00"> NORTH_PANEL</text>
 <text text-anchor="start" x="425.38" y="-1266.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1266.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
-<text text-anchor="start" x="433.88" y="-1254.5" font-family="Helvetica,sans-Serif" font-size="10.00"> NORTH_PANEL</text>
+<text text-anchor="start" x="433.88" y="-1266.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int QR</text>
+<text text-anchor="start" x="433.88" y="-1254.5" font-family="Helvetica,sans-Serif" font-size="10.00">_CODE_LABEL_DEFAULT_SIZE</text>
 <text text-anchor="start" x="425.38" y="-1238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1238.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int QR</text>
-<text text-anchor="start" x="433.88" y="-1226.5" font-family="Helvetica,sans-Serif" font-size="10.00">_CODE_LABEL_DEFAULT_SIZE</text>
+<text text-anchor="start" x="433.88" y="-1238.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int VERTICAL</text>
+<text text-anchor="start" x="433.88" y="-1226.5" font-family="Helvetica,sans-Serif" font-size="10.00">_SCROLL_UNIT_INCREMENT</text>
 <text text-anchor="start" x="425.38" y="-1210.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="433.88" y="-1210.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final int VERTICAL</text>
-<text text-anchor="start" x="433.88" y="-1198.5" font-family="Helvetica,sans-Serif" font-size="10.00">_SCROLL_UNIT_INCREMENT</text>
+<text text-anchor="start" x="433.88" y="-1210.5" font-family="Helvetica,sans-Serif" font-size="10.00">static final String</text>
+<text text-anchor="start" x="433.88" y="-1198.5" font-family="Helvetica,sans-Serif" font-size="10.00"> WARNING_ICON</text>
 <text text-anchor="start" x="423.88" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="433.88" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00">CanScan()</text>
 <text text-anchor="start" x="423.88" y="-1166.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

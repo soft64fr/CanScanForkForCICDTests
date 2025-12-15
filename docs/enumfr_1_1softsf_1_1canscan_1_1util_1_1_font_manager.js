@@ -4,7 +4,7 @@ var enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager =
     [ "getCurrentFontMetrics", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#ada59e3acd5ab9e18046ddc50cc1bc6d0", null ],
     [ "getLineHeight", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#a0059f88bdf6d679363a86fd8206e1971", null ],
     [ "initialize", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#ae28fec4c553db3b3c347e9af1b2f57ff", null ],
-    [ "loadLucioleFontAsDefaultFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#ab05eb8aa55a250a8b691012001cf0a43", null ],
+    [ "loadLucioleFontAsDefaultFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#af9227cd80e4e531e1279363241f87193", null ],
     [ "loadMaterialIconsFont", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#a9efcfe369b3d1cac6b75b8e15d782be5", null ],
     [ "DEFAULT_FONT", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#a43e7e34addacf43a3b39c128b48a3fa2", null ],
     [ "DUMMY_JLABEL", "enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#ad858d8487ebf4059c984ba6e019d46d8", null ],

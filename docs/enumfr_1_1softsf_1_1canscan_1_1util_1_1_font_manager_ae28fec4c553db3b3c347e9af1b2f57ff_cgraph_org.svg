@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#ab05eb8aa55a250a8b691012001cf0a43" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="enumfr_1_1softsf_1_1canscan_1_1util_1_1_font_manager.html#af9227cd80e4e531e1279363241f87193" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="351.5,-82 163.75,-82 163.75,-50 351.5,-50 351.5,-82"/>
 <text text-anchor="start" x="171.75" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">fr.softsf.canscan.util.Font</text>
 <text text-anchor="middle" x="257.62" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Manager.loadLucioleFontAsDefaultFont</text>

@@ -1,0 +1,5 @@
+<map id="fr.softsf.canscan.ui.UiComponentsConfiguration.attachLimitedDocumentListener" name="fr.softsf.canscan.ui.UiComponentsConfiguration.attachLimitedDocumentListener">
+<area shape="rect" id="Node000001" title="Attaches a DocumentListener to a JTextField that:" alt="" coords="5,5,246,64"/>
+<area shape="rect" id="Node000002" href="$enumfr_1_1softsf_1_1canscan_1_1ui_1_1_ui_components_configuration.html#a8dc36de010da534a68c8dfa9a32e1759" title="Creates a simple DocumentListener that executes the given action on any change to the document." alt="" coords="294,13,538,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,32,278,32,278,37,246,37"/>
+</map>
