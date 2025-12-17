@@ -79,6 +79,7 @@ echo
 native_image_command="native-image \
     --no-fallback \
     --strict-image-heap \
+    -march=compatibility \
     -H:+UnlockExperimentalVMOptions \
     -H:ConfigurationFileDirectories=../.myresources/scripts/config-manual/linux,../config-trace \
     -H:Name=$CANONICAL_NAME \
@@ -87,7 +88,6 @@ native_image_command="native-image \
     -Duser.country=\"$COUNTRY_CODE\" \
     -Duser.region=\"$COUNTRY_CODE\" \
     -Djava.awt.headless=false \
-    -H:CCompilerOption=-march=nehalem \
     -J-Xmx7G \
     -jar \"../target/canscan-$APP_VERSION.jar\""
 
