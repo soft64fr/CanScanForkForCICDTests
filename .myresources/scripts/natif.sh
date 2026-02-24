@@ -160,8 +160,8 @@ echo "[INFO] Creating .desktop file (using WM Class: $CANONICAL_NAME)..."
 cat > "$APP_DIR/$CANONICAL_NAME.desktop" <<EOF
 [Desktop Entry]
 Name=$APP_NAME
-Exec=$CANONICAL_NAME
-Icon=$CANONICAL_NAME
+Exec=AppRun
+Icon=$CANONICAL_NAME.png
 Type=Application
 Categories=Graphics;
 Comment=Application $APP_NAME Version $APP_VERSION
