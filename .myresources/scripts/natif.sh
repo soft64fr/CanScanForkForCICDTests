@@ -157,11 +157,11 @@ chmod +x "$APP_DIR/AppRun"
 # 5. Création du fichier .desktop
 echo "[INFO] Creating .desktop file (using WM Class: $CANONICAL_NAME)..."
 # La valeur StartupWMClass est ce que le gestionnaire de fenêtres tente de faire correspondre.
-cat > "$APP_DIR/canscan.desktop" <<EOF
+cat > "$APP_DIR/$CANONICAL_NAME.desktop" <<EOF
 [Desktop Entry]
 Name=$APP_NAME
-Exec=AppRun
-Icon=canscan
+Exec=$CANONICAL_NAME
+Icon=$CANONICAL_NAME
 Type=Application
 Categories=Graphics;
 Comment=Application $APP_NAME Version $APP_VERSION
@@ -174,9 +174,11 @@ EOF
 echo "[INFO] Copying icon from $ICON_SOURCE_PATH..."
 if [ -f "$ICON_SOURCE_PATH" ]; then
     cp "$ICON_SOURCE_PATH" "$APP_DIR/canscan.png"
+    ln -s canscan.png "$APP_DIR/.DirIcon"
 else
     echo "[ERROR] Icon file '$ICON_SOURCE_PATH' not found. AppImage build may fail or use a default icon."
     touch "$APP_DIR/canscan.png"
+    ln -s canscan.png "$APP_DIR/.DirIcon"
 fi
 
 # 7. Téléchargement de l'outil appimagetool
