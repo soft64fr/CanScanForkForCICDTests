@@ -35,9 +35,9 @@ jobs:
       - name: Extract locale properties from pom.xml
         shell: pwsh
         run: |
-          # Capture de la sortie en forçant le mode silencieux
-          $lang = (.\mvnw.cmd help:evaluate -Dexpression=app.lang -q -DforceStdout).Trim()
-          $country = (.\mvnw.cmd help:evaluate -Dexpression=app.country -q -DforceStdout).Trim()
+          # Ajout de guillemets autour des arguments Maven pour pwsh
+          $lang = (.\mvnw.cmd help:evaluate "-Dexpression=app.lang" -q "-DforceStdout").Trim()
+          $country = (.\mvnw.cmd help:evaluate "-Dexpression=app.country" -q "-DforceStdout").Trim()
           echo "APP_LANG=$lang" >> $env:GITHUB_ENV
           echo "APP_COUNTRY=$country" >> $env:GITHUB_ENV
           Write-Host "Extracted: Lang=$lang, Country=$country"
