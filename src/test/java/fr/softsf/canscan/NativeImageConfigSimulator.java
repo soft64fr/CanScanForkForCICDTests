@@ -44,7 +44,6 @@ public class NativeImageConfigSimulator {
 
     /**
      * Launches the Native Image configuration UI and runs the simulation in a background thread.
-     *
      */
     static void main() {
         System.setProperty("awt.appname", "canscan");
