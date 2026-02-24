@@ -46,7 +46,10 @@ public class NativeImageConfigSimulator {
      * Launches the Native Image configuration UI and runs the simulation in a background thread.
      */
     static void main() {
-        System.setProperty("awt.appname", "canscan");
+        if (!java.awt.GraphicsEnvironment.isHeadless() &&
+                StringConstants.CURRENT_OS.getValue().contains(StringConstants.OS_LINUX_KEY.getValue())) {
+            System.setProperty("awt.appname", "canscan");
+        }
         System.out.println(
                 "\n[Simulation INFO] Demarrage de la generation de configuration Native Image...");
         try {

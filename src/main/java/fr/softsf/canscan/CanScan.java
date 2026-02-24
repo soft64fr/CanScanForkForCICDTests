@@ -995,7 +995,10 @@ public final class CanScan extends JFrame {
 
     /** Application entry point. Initializes the UI theme, font, and launches the GUI on the EDT. */
     public static void main() {
-        System.setProperty("awt.appname", "canscan");
+        if (!java.awt.GraphicsEnvironment.isHeadless() &&
+                StringConstants.CURRENT_OS.getValue().contains(StringConstants.OS_LINUX_KEY.getValue())) {
+            System.setProperty("awt.appname", "canscan");
+        }
         configureGraphicsPipeline();
         FlatCobalt2IJTheme.setup();
         FontManager.INSTANCE.initialize();
