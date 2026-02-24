@@ -161,7 +161,7 @@ cat > "$APP_DIR/$CANONICAL_NAME.desktop" <<EOF
 [Desktop Entry]
 Name=$APP_NAME
 Exec=AppRun
-Icon=$CANONICAL_NAME.png
+Icon=$CANONICAL_NAME
 Type=Application
 Categories=Graphics;
 Comment=Application $APP_NAME Version $APP_VERSION
