@@ -59,7 +59,7 @@ echo "[3/5] Simulating runtime usage to generate native-image config-trace..."
 java --enable-native-access=ALL-UNNAMED \
      -agentlib:native-image-agent=config-output-dir=../config-trace \
      -Djava.awt.headless=false \
-     -Dawt.appname="$APP_NAME" \
+     -Dawt.appname="$CANONICAL_NAME" \
      -Dsun.java2d.xrender=true \
      -Dsun.java2d.uiScale.enabled=true \
      -Duser.language="$LANG_CODE" \
@@ -89,7 +89,7 @@ native-image --enable-native-access=ALL-UNNAMED \
     -H:ConfigurationFileDirectories=../.myresources/scripts/config-manual/linux,../config-trace \
     -H:Name=$CANONICAL_NAME \
     -H:Class="$MAIN_CLASS" \
-    -Dawt.appname="$APP_NAME" \
+    -Dawt.appname="$CANONICAL_NAME" \
     -Duser.language="$LANG_CODE" \
     -Duser.country="$COUNTRY_CODE" \
     -Duser.region="$COUNTRY_CODE" \
@@ -166,7 +166,7 @@ Icon=$CANONICAL_NAME
 Type=Application
 Categories=Graphics;
 Comment=Application $APP_NAME Version $APP_VERSION
-StartupWMClass=$APP_NAME
+StartupWMClass=$CANONICAL_NAME
 Terminal=false
 Keywords=qrcode;
 X-AppImage-Version=$APP_VERSION
