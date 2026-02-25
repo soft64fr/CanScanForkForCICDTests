@@ -977,7 +977,7 @@ public final class CanScan extends JFrame {
                             StringConstants.TRUE.getValue());
             case String s when s.contains(StringConstants.OS_LINUX_KEY.getValue()) ->
                     System.setProperty(
-                            StringConstants.JAVA_2D_OPENGL.getValue(),
+                            StringConstants.JAVA_2D_XRENDER.getValue(),
                             StringConstants.TRUE.getValue());
             default -> {
                 /* Aucun réglage spécifique pour macOS ou autres */

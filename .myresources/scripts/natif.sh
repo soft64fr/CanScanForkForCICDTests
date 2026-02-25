@@ -60,7 +60,7 @@ java --enable-native-access=ALL-UNNAMED \
      -agentlib:native-image-agent=config-output-dir=../config-trace \
      -Djava.awt.headless=false \
      -Dawt.appname="$APP_NAME" \
-     -Dsun.java2d.opengl=true \
+     -Dsun.java2d.xrender=true \
      -Dsun.java2d.uiScale.enabled=true \
      -Duser.language="$LANG_CODE" \
      -Duser.country="$COUNTRY_CODE" \
@@ -94,7 +94,7 @@ native-image --enable-native-access=ALL-UNNAMED \
     -Duser.country="$COUNTRY_CODE" \
     -Duser.region="$COUNTRY_CODE" \
     -Djava.awt.headless=false \
-    -Dsun.java2d.opengl=true \
+    -Dsun.java2d.xrender=true \
     -Dsun.java2d.uiScale.enabled=true \
     -J-Xmx7G \
     -jar "../target/canscan-$APP_VERSION.jar"

@@ -23,7 +23,7 @@ public enum StringConstants {
     OS_WINDOWS_KEY("win"),
     OS_LINUX_KEY("linux"),
     JAVA_2D_DPI_AWARE("sun.java2d.dpiaware"),
-    JAVA_2D_OPENGL("sun.java2d.opengl"),
+    JAVA_2D_XRENDER("sun.java2d.xrender"),
     JAVA_2D_UI_SCALE_ENABLED("sun.java2d.uiScale.enabled"),
     TRUE("true");
 
