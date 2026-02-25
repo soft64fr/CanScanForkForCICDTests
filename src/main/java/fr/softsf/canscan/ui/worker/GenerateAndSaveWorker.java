@@ -142,9 +142,6 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
      */
     @Override
     protected void done() {
-        if (!loader.isDisplayable()) {
-            return;
-        }
         try {
             handleSuccess();
         } catch (InterruptedException _) {
@@ -152,9 +149,7 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
         } catch (ExecutionException ee) {
             handleExecutionError(ee);
         } finally {
-            if (loader.isDisplayable()) {
-                loader.setVisible(false);
-            }
+            loader.setVisible(false);
         }
     }
 

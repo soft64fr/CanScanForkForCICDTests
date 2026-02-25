@@ -108,9 +108,6 @@ public class DynamicPreviewWorker extends AbstractDynamicWorker<BufferedImage> {
      */
     @Override
     protected SwingWorker<BufferedImage, Void> createWorker() {
-        if (this.wholeFields == null || this.wholeFields == WholeFields.EMPTY) {
-            return null;
-        }
         return new SwingWorker<>() {
             @Override
             protected BufferedImage doInBackground() {

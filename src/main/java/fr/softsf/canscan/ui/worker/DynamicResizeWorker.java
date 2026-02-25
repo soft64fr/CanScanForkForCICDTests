@@ -97,9 +97,6 @@ public class DynamicResizeWorker extends AbstractDynamicWorker<ImageIcon> {
      */
     @Override
     protected SwingWorker<ImageIcon, Void> createWorker() {
-        if (this.wholeFields == null || this.wholeFields == WholeFields.EMPTY) {
-            return null;
-        }
         int size = Math.max(wholeFields.availableHeightForQrCode().getAsInt(), DEFAULT_SIZE);
         return new SwingWorker<>() {
             @Override
