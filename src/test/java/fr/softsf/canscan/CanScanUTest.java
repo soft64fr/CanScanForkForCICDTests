@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -214,10 +215,8 @@ class CanScanUTest {
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
     @CsvSource({"500, 500", "abc, 400", "-50, 10", "0, 10", "5, 10"})
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
-            String input, int expected) {
-        while (400 != generator.validateAndGetSizeForTests()) {
-            Thread.onSpinWait();
-        }
+            String input, int expected) throws Exception {
+        SwingUtilities.invokeAndWait(() -> {});
         generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSizeForTests();
         assertEquals(expected, result);
