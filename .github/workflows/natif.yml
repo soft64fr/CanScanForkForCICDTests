@@ -137,9 +137,13 @@ jobs:
       - name: Compile, and Test with Maven profile
         shell: cmd
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          .\mvnw.cmd -B test -f pom.xml
+          .\mvnw.cmd -B test ^
+          -Djava.awt.headless=false ^
+          -Dsun.awt.disablegrab=true ^
+          -Duser.language=%APP_LANG% -Duser.country=%APP_COUNTRY% -Duser.region=%APP_COUNTRY% ^
+          -f pom.xml
 
       - name: Build native Windows package
         shell: cmd
