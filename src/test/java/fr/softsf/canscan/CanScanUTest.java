@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.concurrent.CountDownLatch;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
@@ -42,7 +43,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.doReturn;
@@ -214,21 +214,18 @@ class CanScanUTest {
     }
 
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
-    @CsvSource({
-        "500, 500", // valid
-        "abc, 400", // invalid text
-        "-50, 10", // negative
-        "0, 10", // zero
-        "5, 10" // below minimum
-    })
+    @CsvSource({"500, 500", "abc, 400", "-50, 10", "0, 10", "5, 10"})
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
-            String input, int expected) {
-        try {
-            SwingUtilities.invokeAndWait(
-                    () -> generator.setSizeFieldTextForTests(input));
-        } catch (Exception e) {
-            fail("Swing injection failed: " + e.getMessage());
-        }
+            String input, int expected) throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(1);
+        SwingUtilities.invokeLater(
+                () -> {
+                    if (400 == generator.validateAndGetSizeForTests()) {
+                        latch.countDown();
+                    }
+                });
+        latch.await();
+        generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSizeForTests();
         assertEquals(expected, result);
     }
