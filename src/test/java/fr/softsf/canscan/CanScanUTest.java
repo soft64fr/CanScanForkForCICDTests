@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -712,5 +713,12 @@ class CanScanUTest {
         g.dispose();
         ImageIO.write(logo, "png", logoPath.toFile());
         return logoPath.toFile();
+    }
+
+    @AfterEach
+    void tearDown() {
+        if (generator != null) {
+            generator.dispose();
+        }
     }
 }
