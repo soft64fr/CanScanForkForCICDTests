@@ -222,7 +222,7 @@ class CanScanUTest {
     })
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) {
-        generator.setSizeFieldTextForTests("");
+        generator.setSizeFieldTextForTests("400");
         generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSize();
         assertEquals(expected, result);
