@@ -217,7 +217,9 @@ class CanScanUTest {
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) throws Exception {
         SwingUtilities.invokeAndWait(() -> {});
+        generator.setSizeFieldTextForTests("");
         generator.setSizeFieldTextForTests(input);
+        SwingUtilities.invokeAndWait(() -> {});
         int result = generator.validateAndGetSizeForTests();
         assertEquals(expected, result);
     }
