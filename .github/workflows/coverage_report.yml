@@ -21,6 +21,7 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       - name: Install JDK
         uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5.2.0
         with:
@@ -28,16 +29,26 @@ jobs:
           java-version: '25'
           check-latest: true
           cache: 'maven'
+
       - name: Verify Java Installation
         run: java -version
+
       - name: Install Xvfb
         run: sudo apt-get install -y xvfb
+
       - name: Start Xvfb
         run: |
           Xvfb :99 -screen 0 1920x1080x24 &
           echo "DISPLAY=:99" >> $GITHUB_ENV
+
       - name: Test
-        run: ./mvnw clean test -f pom.xml
+        run: |
+          ./mvnw -B clean test \
+          -Djava.awt.headless=false \
+          -Dsun.awt.disablegrab=true \
+          -Duser.language=fr -Duser.country=FR \
+          -f pom.xml
+
       - name: JaCoCo Code Coverage Report
         id: jacoco_reporter
         uses: PavanMudigonda/jacoco-reporter@4fc6bf270fe893e8dda5467e432253a6961345b8 # v5.0
@@ -50,6 +61,7 @@ jobs:
           minimum_coverage: 70
           fail_below_threshold: true
           publish_only_summary: false
+
       - name: Add JaCoCo report to workflow run summary
         run: |
           echo "| Outcome | Value |" >> $GITHUB_STEP_SUMMARY
