@@ -32,9 +32,12 @@ jobs:
           java-version: '25'
           cache: 'maven'
 
+      - name: Set Java Options
+        shell: pwsh
+        run: |
+          echo "JAVA_TOOL_OPTIONS=-Duser.language=fr -Duser.country=FR -Duser.region=FR -Djava.awt.headless=false -Dsun.awt.disablegrab=true" >> $env:GITHUB_ENV
+
       - name: Compile, Test with Maven profile
         shell: cmd
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         run: |
-          .\mvnw.cmd -B test -Djava.awt.headless=false -Dsun.awt.disablegrab=true -f pom.xml
+          .\mvnw.cmd -B test -f pom.xml

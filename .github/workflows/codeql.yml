@@ -71,8 +71,11 @@ jobs:
 
       - name: Build and Test with Maven
         run: |
-          echo "Run, tests with Maven"
-          ./mvnw clean test -f pom.xml
+          ./mvnw -B clean test \
+          -Djava.awt.headless=false \
+          -Dsun.awt.disablegrab=true \
+          -Duser.language=fr -Duser.country=FR \
+          -f pom.xml
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@b20883b0cd1f46c72ae0ba6d1090936928f9fa30 # v4.32.0
