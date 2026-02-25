@@ -43,6 +43,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.doReturn;
@@ -717,9 +718,21 @@ class CanScanUTest {
     }
 
     @AfterEach
-    void tearDown() {
+    @SuppressWarnings("MagicConstant")
+    void tearDown() throws InterruptedException, InvocationTargetException {
         if (generator != null) {
-            generator.dispose();
+            try (MockedStatic<JOptionPane> paneMock = Mockito.mockStatic(JOptionPane.class)) {
+                paneMock.when(() -> JOptionPane.showMessageDialog(any(), any(), any(), anyInt()))
+                        .thenAnswer(_ -> null);
+                paneMock.when(() -> JOptionPane.showMessageDialog(any(), any()))
+                        .thenAnswer(_ -> null);
+                javax.swing.SwingUtilities.invokeAndWait(
+                        () -> {
+                            generator.setVisible(false);
+                            generator.dispose();
+                        });
+            }
+            generator = null;
         }
     }
 }
