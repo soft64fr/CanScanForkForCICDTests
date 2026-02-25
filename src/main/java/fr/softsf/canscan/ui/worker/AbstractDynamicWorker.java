@@ -114,9 +114,14 @@ public abstract class AbstractDynamicWorker<T> {
                 new Timer(
                         delayMs,
                         _ -> {
+                            if (wholeFields == null || wholeFields == WholeFields.EMPTY) {
+                                return;
+                            }
                             loader.setVisible(true);
                             worker = createWorker();
-                            worker.execute();
+                            if (worker != null) {
+                                worker.execute();
+                            }
                         });
         debounceTimer.setRepeats(false);
         debounceTimer.start();
