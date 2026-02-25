@@ -37,4 +37,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         run: |
-          .\mvnw.cmd -B test -f pom.xml
+          .\mvnw.cmd -B test -Djava.awt.headless=false -Dsun.awt.disablegrab=true -f pom.xml
