@@ -960,13 +960,8 @@ public final class CanScan extends JFrame {
     }
 
     /** Validates and returns the QR code size from the corresponding text field. */
-    private int validateAndGetSize() {
+    int validateAndGetSize() {
         return ValidationFieldHelper.INSTANCE.validateAndGetSize(sizeField);
-    }
-
-    /** Validates and returns the QR code size from the corresponding text field for tests. */
-    int validateAndGetSizeForTests() {
-        return validateAndGetSize();
     }
 
     /**

@@ -12,8 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
@@ -214,15 +212,19 @@ class CanScanUTest {
     }
 
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
-    @CsvSource({"500, 500", "abc, 400", "-50, 10", "0, 10", "5, 10"})
+    @CsvSource({
+        "500, 500", // valid
+        "abc, 400", // invalid text
+        "-50, 10", // negative
+        "0, 10", // zero
+        "5, 10" // below minimum
+    })
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
-            String input, int expected) throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(1);
-        boolean _ = latch.await(1, TimeUnit.SECONDS);
+            String input, int expected) {
         generator.setSizeFieldTextForTests("");
         generator.setSizeFieldTextForTests(input);
-        int result = generator.validateAndGetSizeForTests();
-        assertEquals(expected, result, "Validation mismatch for input: " + input);
+        int result = generator.validateAndGetSize();
+        assertEquals(expected, result);
     }
 
     @Test
