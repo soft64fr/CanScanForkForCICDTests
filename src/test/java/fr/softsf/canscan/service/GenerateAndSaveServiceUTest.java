@@ -12,8 +12,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import org.mockito.Mockito;
 
 import fr.softsf.canscan.ui.EncodedImage;
+import fr.softsf.canscan.ui.MyPopup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -54,7 +56,9 @@ class GenerateAndSaveServiceUTest {
     @Test
     void givenNonExistingFile_whenResolveFileNameConflict_thenReturnSameFile() {
         File testFile = new File(tempDir, "nonexistent.png");
-        File result = qrService.resolveFileNameConflictForTests(testFile);
-        assertEquals(testFile, result);
+        try (var _ = Mockito.mockStatic(MyPopup.class)) {
+            File result = qrService.resolveFileNameConflictForTests(testFile);
+            assertEquals(testFile, result);
+        }
     }
 }
