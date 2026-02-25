@@ -12,12 +12,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.concurrent.CountDownLatch;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -216,15 +214,10 @@ class CanScanUTest {
     @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
     @CsvSource({"500, 500", "abc, 400", "-50, 10", "0, 10", "5, 10"})
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
-            String input, int expected) throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(1);
-        SwingUtilities.invokeLater(
-                () -> {
-                    if (400 == generator.validateAndGetSizeForTests()) {
-                        latch.countDown();
-                    }
-                });
-        latch.await();
+            String input, int expected) {
+        while (400 != generator.validateAndGetSizeForTests()) {
+            Thread.onSpinWait();
+        }
         generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSizeForTests();
         assertEquals(expected, result);
