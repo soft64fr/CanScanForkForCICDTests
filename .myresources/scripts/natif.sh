@@ -169,6 +169,8 @@ Comment=Application $APP_NAME Version $APP_VERSION
 StartupWMClass=$APP_NAME
 Terminal=false
 Keywords=qrcode;
+X-AppImage-Version=$APP_VERSION
+X-AppImage-Identifier=$APP_ID_DOMAIN
 EOF
 
 # 6. Gestion de l'icône
