@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -57,8 +58,8 @@ class CanScanUTest {
     @TempDir File tempDir;
 
     @BeforeEach
-    void setUp() {
-        generator = new CanScan();
+    void setUp() throws InterruptedException, InvocationTargetException {
+        javax.swing.SwingUtilities.invokeAndWait(() -> generator = new CanScan());
         colorOperation = new ColorOperation();
         generator.setNameFieldTextForTests();
         generator.setPhoneFieldTextForTests();
