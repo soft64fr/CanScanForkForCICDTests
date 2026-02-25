@@ -142,6 +142,9 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
      */
     @Override
     protected void done() {
+        if (!loader.isDisplayable()) {
+            return;
+        }
         try {
             handleSuccess();
         } catch (InterruptedException _) {
@@ -149,7 +152,9 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
         } catch (ExecutionException ee) {
             handleExecutionError(ee);
         } finally {
-            loader.setVisible(false);
+            if (loader.isDisplayable()) {
+                loader.setVisible(false);
+            }
         }
     }
 
@@ -165,9 +170,11 @@ public class GenerateAndSaveWorker extends SwingWorker<BufferedImage, Void> {
             return;
         }
         BufferedImage qr = get();
-        encodedImage.updateQrOriginal(qr);
-        MyPopup.INSTANCE.showDialog(
-                "Code QR enregistré dans\n", outputFile.getAbsolutePath(), "Confirmation");
+        if (encodedImage != null && qr != null) {
+            encodedImage.updateQrOriginal(qr);
+            MyPopup.INSTANCE.showDialog(
+                    "Code QR enregistré dans\n", outputFile.getAbsolutePath(), "Confirmation");
+        }
     }
 
     /**
