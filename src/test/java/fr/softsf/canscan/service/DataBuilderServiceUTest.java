@@ -13,10 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/** Suite de tests unitaires pour la construction des chaînes de données (MECARD, VEVENT). */
 @DisplayName("*** Data builder service tests ***")
 class DataBuilderServiceUTest {
 
+    /** Vérifie la génération d'une chaîne MECARD complète avec tous les attributs. */
     @Test
+    @DisplayName("MECARD : Construction d'une fiche contact complète")
     void givenAllMecardFieldsWhenBuildMecardThenReturnValidString() {
         String result =
                 DataBuilderService.INSTANCE.buildMecard(
@@ -34,13 +37,20 @@ class DataBuilderServiceUTest {
         assertTrue(result.endsWith(";"));
     }
 
+    /** Vérifie qu'une saisie vide pour MECARD retourne une chaîne vide. */
     @Test
+    @DisplayName("MECARD : Gestion des champs vides")
     void givenBlankMecardFieldsWhenBuildMecardThenReturnEmptyString() {
         String result = DataBuilderService.INSTANCE.buildMecard("", "", "", "", "", "");
         assertEquals("", result);
     }
 
+    /**
+     * Vérifie la génération d'un événement VEVENT incluant les coordonnées géographiques et le lien
+     * OSM.
+     */
     @Test
+    @DisplayName("MEET : Construction d'un événement avec géolocalisation")
     void givenMeetFieldsWithGeoWhenBuildMeetThenIncludeGeoAndLocation() {
         String result =
                 DataBuilderService.INSTANCE.buildMeet(
@@ -62,7 +72,9 @@ class DataBuilderServiceUTest {
         assertTrue(result.contains("END:VEVENT"));
     }
 
+    /** Vérifie que les champs GEO et LOCATION sont omis si les coordonnées sont absentes. */
     @Test
+    @DisplayName("MEET : Construction d'un événement sans géolocalisation")
     void givenMeetFieldsWithoutGeoWhenBuildMeetThenSkipGeoAndLocation() {
         String result =
                 DataBuilderService.INSTANCE.buildMeet(
@@ -80,7 +92,9 @@ class DataBuilderServiceUTest {
         assertFalse(result.contains("LOCATION:"));
     }
 
+    /** Vérifie qu'une saisie vide pour MEET retourne une chaîne vide. */
     @Test
+    @DisplayName("MEET : Gestion des champs vides")
     void givenBlankMeetFieldsWhenBuildMeetThenReturnEmptyString() {
         String result = DataBuilderService.INSTANCE.buildMeet("", "", "", "", "", "", "");
         assertEquals("", result);

@@ -397,6 +397,8 @@
         <version>3.5.4</version>
         <configuration>
           <argLine>@{jacoco.argLine} -XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
+          <useFile>false</useFile>
+          <reportFormat>plain</reportFormat>
         </configuration>
       </plugin>
       <plugin>

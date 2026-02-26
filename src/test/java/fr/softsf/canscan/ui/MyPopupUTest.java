@@ -17,16 +17,19 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mockStatic;
 
+/** Suite de tests unitaires pour la gestion des fenêtres contextuelles via MyPopup. */
 @DisplayName("*** MyPopup tests ***")
 class MyPopupUTest {
 
+    /** Tests relatifs à l'affichage des erreurs d'arguments. */
     @Nested
     @DisplayName("showArgumentErrorDialog tests")
     class ShowArgumentErrorDialogTests {
 
+        /** Vérifie que l'appel avec des paramètres valides ne lève aucune exception. */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException")
+        @DisplayName("UI : Affichage erreur argument avec paramètres valides")
         void givenValidParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 assertDoesNotThrow(
@@ -36,9 +39,10 @@ class MyPopupUTest {
             }
         }
 
+        /** Vérifie la robustesse de la méthode face à des paramètres nuls. */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenNullParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException")
+        @DisplayName("UI : Affichage erreur argument avec paramètres nuls")
         void givenNullParameters_whenShowArgumentErrorDialog_thenDoesNotThrowException() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 assertDoesNotThrow(
@@ -47,13 +51,15 @@ class MyPopupUTest {
         }
     }
 
+    /** Tests relatifs à l'affichage des boîtes de dialogue standards. */
     @Nested
     @DisplayName("showDialog tests")
     class ShowDialogTests {
 
+        /** Vérifie l'affichage d'un dialogue informatif classique. */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenValidArguments_whenShowDialog_thenDoesNotThrowException")
+        @DisplayName("UI : Affichage dialogue avec arguments valides")
         void givenValidArguments_whenShowDialog_thenDoesNotThrowException() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 assertDoesNotThrow(
@@ -63,18 +69,20 @@ class MyPopupUTest {
             }
         }
 
+        /** Vérifie la gestion des valeurs vides ou nulles dans le dialogue. */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenNullAndBlankValues_whenShowDialog_thenDoesNotThrowException")
+        @DisplayName("UI : Affichage dialogue avec valeurs nulles ou vides")
         void givenNullAndBlankValues_whenShowDialog_thenDoesNotThrowException() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 assertDoesNotThrow(() -> MyPopup.INSTANCE.showDialog(null, " ", null));
             }
         }
 
+        /** Vérifie le support des caractères Unicode complexes (Emoji, Idéogrammes). */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenUnicodeCharacters_whenShowDialog_thenDoesNotThrowException")
+        @DisplayName("UI : Affichage dialogue avec caractères Unicode")
         void givenUnicodeCharacters_whenShowDialog_thenDoesNotThrowException() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 String unicodeMessage = "Test message — 你好 🌍 🚀";
@@ -86,13 +94,17 @@ class MyPopupUTest {
         }
     }
 
+    /** Tests relatifs aux dialogues de confirmation Oui/Non. */
     @Nested
     @DisplayName("showYesNoConfirmDialog tests")
     class ShowYesNoConfirmDialogTests {
 
+        /**
+         * Vérifie que la réponse du dialogue correspond aux constantes attendues de JOptionPane.
+         */
         @Test
         @SuppressWarnings("unused")
-        @DisplayName("givenValidMessage_whenShowYesNoConfirmDialog_thenReturnsValidOption")
+        @DisplayName("UI : Retour d'option valide pour dialogue Oui/Non")
         void givenValidMessage_whenShowYesNoConfirmDialog_thenReturnsValidOption() {
             try (MockedStatic<JOptionPane> mocked = mockStatic(JOptionPane.class)) {
                 mocked.when(
@@ -111,12 +123,14 @@ class MyPopupUTest {
         }
     }
 
+    /** Tests vérifiant l'implémentation du pattern Singleton. */
     @Nested
     @DisplayName("Singleton behavior tests")
     class SingletonTests {
 
+        /** S'assure que l'instance enum est unique et accessible. */
         @Test
-        @DisplayName("givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique")
+        @DisplayName("PATTERN : Unicité de l'instance Singleton MyPopup")
         void givenPopupEnum_whenAccessInstance_thenInstanceIsNotNullAndUnique() {
             MyPopup instance1 = MyPopup.INSTANCE;
             MyPopup instance2 = MyPopup.valueOf("INSTANCE");

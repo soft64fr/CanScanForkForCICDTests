@@ -14,15 +14,22 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/** Suite de tests unitaires pour la gestion de la typographie via FontManager. */
 @DisplayName("*** Use Luciole font tests ***")
 class FontManagerUTest {
 
+    /** Réinitialise la police par défaut de l'UI avant chaque test. */
     @BeforeEach
     void setUp() {
         UIManager.put("defaultFont", new Font("Arial", Font.PLAIN, 12));
     }
 
+    /**
+     * Vérifie que l'initialisation du gestionnaire remplace correctement la police système par
+     * Luciole.
+     */
     @Test
+    @DisplayName("FONT : Remplacement de la police par défaut par Luciole")
     void givenDefaultFont_whenInitializeLuciole_thenDefaultFontIsReplaced() {
         Font before = UIManager.getFont("defaultFont");
         assertNotNull(before);

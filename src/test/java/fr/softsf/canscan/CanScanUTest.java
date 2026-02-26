@@ -50,6 +50,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 
+/** Suite de tests unitaires pour la logique principale de CanScan. */
 @DisplayName("*** CanScan tests ***")
 class CanScanUTest {
 
@@ -58,6 +59,7 @@ class CanScanUTest {
 
     @TempDir File tempDir;
 
+    /** Initialisation de l'instance de test et configuration des champs par défaut. */
     @BeforeEach
     void setUp() throws InterruptedException, InvocationTargetException {
         javax.swing.SwingUtilities.invokeAndWait(() -> generator = new CanScan());
@@ -75,6 +77,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("MECARD : Construction d'une chaîne complète avec tous les champs de contact")
     void givenAllContactFields_whenBuildMecard_thenReturnCompleteMecardString() {
         String mecard =
                 DataBuilderService.INSTANCE.buildMecard(
@@ -89,6 +92,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("MECARD : Construction avec le nom uniquement")
     void givenOnlyNameField_whenBuildMecard_thenReturnMecardWithNameOnly() {
         String mecard = DataBuilderService.INSTANCE.buildMecard("Bob", "", "", "", "", "");
         assertTrue(mecard.startsWith("MECARD:"));
@@ -98,12 +102,14 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("MECARD : Retourne une chaîne vide si aucun champ n'est saisi")
     void givenAllBlankFields_whenBuildMecard_thenReturnEmptyString() {
         String mecard = DataBuilderService.INSTANCE.buildMecard("", "", "", "", "", "");
         assertEquals("", mecard);
     }
 
     @Test
+    @DisplayName("QR : Génération d'image 400x400 sans logo")
     void givenConfigWithoutLogo_whenGenerateQrCodeImage_thenReturn400x400Image() throws Exception {
         CommonFields config = new CommonFields(null, 400, 0.27, Color.BLACK, Color.WHITE, false, 3);
         EncodedImage encodedImage = new EncodedImage();
@@ -118,6 +124,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("QR : Génération avec modules arrondis")
     void givenConfigWithRoundedModules_whenGenerateQrCodeImage_thenReturn400x400Image()
             throws Exception {
         CommonFields config = new CommonFields(null, 400, 0.27, Color.BLACK, Color.WHITE, true, 3);
@@ -129,6 +136,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("QR : Génération avec couleurs personnalisées et taille 300")
     void givenConfigWithCustomColors_whenGenerateQrCodeImage_thenReturn300x300Image()
             throws Exception {
         CommonFields config = new CommonFields(null, 300, 0.0, Color.RED, Color.YELLOW, false, 2);
@@ -139,6 +147,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("QR : Génération avec marge nulle")
     void givenConfigWithZeroMargin_whenGenerateQrCodeImage_thenReturnValidImage() throws Exception {
         CommonFields config = new CommonFields(null, 400, 0.1, Color.BLACK, Color.WHITE, false, 0);
         EncodedImage encodedImage = new EncodedImage();
@@ -147,6 +156,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("QR : Génération avec un ratio de logo élevé (0.5)")
     void givenConfigWithLargeLogoRatio_whenGenerateQrCodeImage_thenReturnValidImage()
             throws Exception {
         CommonFields config = new CommonFields(null, 500, 0.5, Color.BLACK, Color.WHITE, true, 4);
@@ -156,6 +166,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UI : Mise à jour du bouton après sélection de la couleur du QR (Rouge)")
     void givenRedColorSelected_whenChooseQrColor_thenButtonTextAndColorUpdated() {
         JButton button = new JButton();
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
@@ -169,6 +180,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UI : Mise à jour du bouton après sélection de la couleur de fond (Bleu)")
     void givenBlueColorSelected_whenChooseBgColor_thenButtonTextAndColorUpdated() {
         JButton button = new JButton();
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
@@ -182,6 +194,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UI : Annulation du sélecteur de couleur")
     void givenColorDialogCancelled_whenChooseColor_thenButtonTextUnchanged() {
         JButton button = new JButton("Noir");
         try (MockedStatic<JColorChooser> chooserMock = Mockito.mockStatic(JColorChooser.class)) {
@@ -195,6 +208,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UI : Mise à jour du champ logo après sélection d'un fichier")
     void givenFileSelected_whenBrowseLogo_thenLogoFieldUpdated() {
         CanScan spyGenerator = spy(generator);
         File fakeFile = new File("fake-logo.png");
@@ -205,6 +219,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UI : Champ logo inchangé si la sélection de fichier est annulée")
     void givenFileSelectionCancelled_whenBrowseLogo_thenLogoFieldUnchanged() {
         CanScan spyGenerator = spy(generator);
         doReturn(null).when(spyGenerator).chooseLogoFile();
@@ -214,7 +229,7 @@ class CanScanUTest {
         assertEquals("logoField", spyGenerator.getLogoFieldTextForTests());
     }
 
-    @ParameterizedTest(name = "given input ''{0}'' when sizeFieldCheck then expect {1}")
+    @ParameterizedTest(name = "Saisie : {0}, Attendu : {1}")
     @CsvSource({
         "500, 500", // valid
         "abc, 400", // invalid text
@@ -222,6 +237,7 @@ class CanScanUTest {
         "0, 10", // zero
         "5, 10" // below minimum
     })
+    @DisplayName("VALIDATION : Vérification de la saisie du champ taille")
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) {
         generator.setSizeFieldTextForTests("400");
@@ -231,6 +247,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("VALIDATION : Marge valide fixée à 4")
     void givenValidMargin4_whenMarginFieldCheck_thenGetMarginUpdatedTo4() {
         generator.setMarginSliderValueForTests(4);
         generator.validateAndGetMarginForTests();
@@ -238,6 +255,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("VALIDATION : Marge négative corrigée à 0")
     void givenNegativeMargin_whenMarginFieldCheck_thenGetMarginSetTo0() {
         generator.setMarginSliderValueForTests(-2);
         generator.validateAndGetMarginForTests();
@@ -245,14 +263,16 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("VALIDATION : Marge excessive corrigée à 10")
     void givenMarginAboveMaximum_whenMarginFieldCheck_thenGetMarginSetTo10() {
         generator.setMarginSliderValueForTests(15);
         generator.validateAndGetMarginForTests();
         assertEquals(10, generator.getMarginFieldIntForTests());
     }
 
-    @ParameterizedTest(name = "given ratio {0}% when ratioFieldCheck then ratio set to {1}")
+    @ParameterizedTest(name = "Saisie slider : {0}%, Ratio attendu : {1}")
     @CsvSource({"0,0.0", "50,0.5", "100,1.0"})
+    @DisplayName("VALIDATION : Calcul du ratio du logo")
     void givenRatioPercent_whenRatioFieldCheck_thenGetRatioSetCorrectly(
             int sliderValue, double expectedRatio) {
         generator.setRatioSliderValueForTests(sliderValue);
@@ -262,6 +282,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("MODE : Changement du mode MECARD vers FREE")
     void givenMecardMode_whenSwitchToFreeMode_thenCurrentModeIsFree() {
         generator.setCurrentModeForTests(Mode.MECARD);
         generator.switchModeForTests(Mode.FREE);
@@ -269,6 +290,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("MODE : Changement du mode FREE vers MECARD")
     void givenFreeMode_whenSwitchToMecardMode_thenCurrentModeIsMecard() {
         generator.setCurrentModeForTests(Mode.FREE);
         generator.switchModeForTests(Mode.MECARD);
@@ -276,6 +298,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("DRAW : Dessin du motif de recherche carré (Finder Pattern)")
     void givenBlackWhiteImage_whenDrawSquareFinderPattern_thenPatternDrawnAtOrigin() {
         BufferedImage img = new BufferedImage(50, 50, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = img.createGraphics();
@@ -286,6 +309,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("DRAW : Vérification du dessin des trois motifs de recherche sur le QR")
     void givenQrImage_whenDrawFinderPatterns_thenAllThreePatternsDrawn() {
         BufferedImage img = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = img.createGraphics();
@@ -309,28 +333,33 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("UTIL : Conversion de la couleur Noire en Hexadécimal")
     void givenBlackColor_whenConvertToHex_thenReturn000000() {
         String hex = colorOperation.colorToHex(Color.BLACK);
         assertEquals("#000000", hex);
     }
 
     @Test
+    @DisplayName("MODE : Libellé du mode MECARD")
     void givenMecardMode_whenGetModeText_thenReturnContact() {
         assertEquals("Contact", Mode.MECARD.text());
     }
 
     @Test
+    @DisplayName("MODE : Libellé du mode FREE")
     void givenFreeMode_whenGetModeText_thenReturnSaisieLibre() {
         assertEquals("Saisie libre", Mode.FREE.text());
     }
 
     @Test
+    @DisplayName("UTIL : Conversion de la couleur Blanche en Hexadécimal")
     void givenWhiteColor_whenConvertToHex_thenReturnFFFFFF() {
         String hex = colorOperation.colorToHex(Color.WHITE);
         assertEquals("#FFFFFF", hex);
     }
 
     @Test
+    @DisplayName("UTIL : Conversion d'une couleur personnalisée en Hexadécimal")
     void givenCustomColor_whenConvertToHex_thenReturnCorrectHex() {
         Color custom = new Color(128, 64, 192);
         String hex = colorOperation.colorToHex(custom);
@@ -338,6 +367,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("DATA : Génération des données MECARD à partir de l'objet WholeFields")
     void givenMecardModeWithContactData_whenBuildQrData_thenReturnMecardString() {
         WholeFields input =
                 new WholeFields(
@@ -373,6 +403,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("DATA : Génération des données en mode Saisie Libre")
     void givenFreeModeWithText_whenBuildQrData_thenReturnFreeText() {
         WholeFields input =
                 new WholeFields(
@@ -405,6 +436,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("DATA : Retourne une chaîne vide si les champs MECARD sont vides")
     void givenEmptyMecardFields_whenBuildQrData_thenReturnEmptyString() {
         WholeFields input =
                 new WholeFields(
@@ -437,6 +469,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Dessin effectif du logo sur l'image QR")
     void givenValidLogo_whenDrawLogoIfPresent_thenLogoDrawnOnImage() throws Exception {
         File logoFile = createTestLogoFile("test-logo.png");
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
@@ -462,6 +495,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Absence d'exception si Graphics2D est null")
     void givenNullGraphics_whenDrawLogoIfPresent_thenReturnWithoutException() throws Exception {
         File logoFile = createTestLogoFile("test-logo.png");
         CommonFields config =
@@ -476,6 +510,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Absence d'exception si CommonFields est null")
     void givenNullConfig_whenDrawLogoIfPresent_thenReturnWithoutException() {
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = qrImage.createGraphics();
@@ -494,6 +529,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Absence d'exception si le fichier logo est null")
     void givenNullLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException() {
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = qrImage.createGraphics();
@@ -507,6 +543,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Absence d'exception si le fichier logo n'existe pas")
     void givenNonExistentLogoFile_whenDrawLogoIfPresent_thenReturnWithoutException() {
         File nonExistentFile = new File(tempDir, "non-existent-logo.png");
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
@@ -522,6 +559,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Absence d'exception si le ratio du logo est à zéro")
     void givenZeroImageRatio_whenDrawLogoIfPresent_thenReturnWithoutException() throws Exception {
         File logoFile = createTestLogoFile("test-logo.png");
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
@@ -536,9 +574,9 @@ class CanScanUTest {
         g.dispose();
     }
 
-    @ParameterizedTest(
-            name = "given imageRatio {0} when drawLogoIfPresent then logo scaled correctly")
+    @ParameterizedTest(name = "Ratio : {0}")
     @CsvSource({"0.1", "0.2", "0.27", "0.3", "0.4", "0.5"})
+    @DisplayName("LOGO : Validation du redimensionnement selon différents ratios")
     void givenDifferentImageRatios_whenDrawLogoIfPresent_thenLogoScaledCorrectly(double ratio)
             throws Exception {
         File logoFile = createTestLogoFile("test-logo-ratio.png");
@@ -556,6 +594,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Support du format JPEG")
     void givenJPEGLogo_whenDrawLogoIfPresent_thenLogoDrawnSuccessfully() throws Exception {
         File logoFile = createTestLogoFile("test-logo.jpg");
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
@@ -572,6 +611,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Mise à l'échelle sur un QR Code de grande taille (1000px)")
     void givenLargeQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly() throws Exception {
         File logoFile = createTestLogoFile("test-logo-large.png");
         int largeSize = 1000;
@@ -589,6 +629,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Mise à l'échelle sur un QR Code de petite taille (100px)")
     void givenSmallQRSize_whenDrawLogoIfPresent_thenLogoScaledProperly() throws Exception {
         File logoFile = createTestLogoFile("test-logo-small.png");
         int smallSize = 100;
@@ -606,6 +647,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Support de la transparence (Alpha channel)")
     void givenLogoWithTransparency_whenDrawLogoIfPresent_thenLogoDrawnWithAlpha() throws Exception {
         File logoFile = createTestLogoFileWithAlpha();
         BufferedImage qrImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
@@ -622,6 +664,7 @@ class CanScanUTest {
     }
 
     @Test
+    @DisplayName("LOGO : Centrage précis du logo sur le QR Code")
     void givenValidLogo_whenDrawLogoIfPresent_thenLogoCenteredCorrectly() throws Exception {
         File logoFile = createTestLogoFile("test-logo-centered.png");
         int size = 400;
@@ -656,8 +699,7 @@ class CanScanUTest {
         g.dispose();
     }
 
-    // Méthodes utilitaires
-
+    /** Exécute un test en simulant l'absence d'interaction utilisateur via JOptionPane. */
     private void executeWithoutDialog(Runnable test) {
         try (MockedStatic<JOptionPane> optionPaneMock = Mockito.mockStatic(JOptionPane.class)) {
             optionPaneMock
@@ -694,6 +736,7 @@ class CanScanUTest {
         }
     }
 
+    /** Crée un fichier image temporaire pour les besoins des tests. */
     private File createTestLogoFile(String filename) throws IOException {
         String extension = filename.substring(filename.lastIndexOf('.') + 1);
         Path logoPath = tempDir.toPath().resolve(filename);
@@ -706,6 +749,7 @@ class CanScanUTest {
         return logoPath.toFile();
     }
 
+    /** Crée un fichier image avec transparence pour tester le canal Alpha. */
     private File createTestLogoFileWithAlpha() throws IOException {
         Path logoPath = tempDir.toPath().resolve("test-logo-alpha.png");
         BufferedImage logo = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
@@ -717,6 +761,7 @@ class CanScanUTest {
         return logoPath.toFile();
     }
 
+    /** Nettoyage après chaque test : fermeture de la fenêtre et libération des ressources. */
     @AfterEach
     @SuppressWarnings("MagicConstant")
     void tearDown() throws InterruptedException, InvocationTargetException {
