@@ -240,7 +240,6 @@ class CanScanUTest {
     @DisplayName("VALIDATION : Vérification de la saisie du champ taille")
     void givenVariousSizeInputs_whenValidateAndGetSize_thenReturnExpectedResult(
             String input, int expected) {
-        generator.setSizeFieldTextForTests("400");
         generator.setSizeFieldTextForTests(input);
         int result = generator.validateAndGetSize();
         assertEquals(expected, result);

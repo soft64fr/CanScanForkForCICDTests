@@ -20,6 +20,7 @@ import fr.softsf.canscan.model.WholeFields;
 import fr.softsf.canscan.ui.EncodedImage;
 import fr.softsf.canscan.ui.LabelIconUtil;
 import fr.softsf.canscan.util.Checker;
+import fr.softsf.canscan.util.FontManager;
 
 /**
  * Asynchronously resizes a generated QR code image for display in a Swing UI.
@@ -97,7 +98,10 @@ public class DynamicResizeWorker extends AbstractDynamicWorker<ImageIcon> {
      */
     @Override
     protected SwingWorker<ImageIcon, Void> createWorker() {
-        int size = Math.max(wholeFields.availableHeightForQrCode().getAsInt(), DEFAULT_SIZE);
+        int size =
+                Math.max(
+                        wholeFields.availableHeightForQrCode().getAsInt(),
+                        FontManager.INSTANCE.getScaledDimension(DEFAULT_SIZE));
         return new SwingWorker<>() {
             @Override
             protected ImageIcon doInBackground() {
@@ -145,7 +149,10 @@ public class DynamicResizeWorker extends AbstractDynamicWorker<ImageIcon> {
      * container to ensure proper layout and rendering.
      */
     private void updateLoaderSize() {
-        int size = Math.max(wholeFields.availableHeightForQrCode().getAsInt(), DEFAULT_SIZE);
+        int size =
+                Math.max(
+                        wholeFields.availableHeightForQrCode().getAsInt(),
+                        FontManager.INSTANCE.getScaledDimension(DEFAULT_SIZE));
         Dimension dim = new Dimension(size, size);
         loader.setPreferredSize(dim);
         loader.setMinimumSize(dim);

@@ -53,7 +53,6 @@ public enum UiComponentsConfiguration {
     private static final int COLOR_BUTTONS_GAP = 10;
     private static final int MAJOR_TICK_SPACING = 25;
     private static final double GBC_HALF_WEIGHT_X = 0.5;
-    private static final int GENERATE_BUTTON_EXTRA_HEIGHT = 35;
     private static final String CREATE_MODE_PANEL = "createModePanel";
     private static final String ADD_ROW = "addRow";
     private static final int COORDINATES_FIELDS_GAP = 5;
@@ -241,8 +240,7 @@ public enum UiComponentsConfiguration {
             return;
         }
         Dimension baseDim = button.getPreferredSize();
-        Dimension finalDim =
-                new Dimension(baseDim.width, baseDim.height + GENERATE_BUTTON_EXTRA_HEIGHT);
+        Dimension finalDim = new Dimension(baseDim.width, (int) (baseDim.height * 1.5));
         button.setPreferredSize(finalDim);
         button.setMinimumSize(finalDim);
         button.addActionListener(listener);

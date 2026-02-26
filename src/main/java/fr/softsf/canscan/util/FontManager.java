@@ -27,10 +27,11 @@ import fr.softsf.canscan.constant.StringConstants;
 import fr.softsf.canscan.ui.MyPopup;
 
 /**
- * Singleton responsible for loading and applying custom fonts in the Swing UI.
+ * Singleton responsible for loading, applying, and scaling custom fonts in the Swing UI.
  *
- * <p>It loads the **Luciole font** and automatically calculates the required vertical offset to
- * ensure perfect centering across different operating systems.
+ * <p>This manager handles the **Luciole** and **Material Icons** fonts. It automatically calculates
+ * vertical offsets and scaling ratios to ensure consistent rendering across different operating
+ * systems (Windows, Linux) and High-DPI displays.
  */
 public enum FontManager {
     INSTANCE;
@@ -41,12 +42,18 @@ public enum FontManager {
     private static final JLabel DUMMY_JLABEL = new JLabel();
     private static final Font JRE_GUARANTEED_FONT_FALLBACK_FOR_UNIT_TESTS =
             new Font("Dialog", Font.PLAIN, 12);
+    static final double BASE_LINE_HEIGHT_REFERENCE = 16.0;
 
+    /** Entry point to load resources and refresh the Look and Feel. */
     public void initialize() {
         loadLucioleFontAsDefaultFont();
         loadMaterialIconsFont();
     }
 
+    /**
+     * Loads the Luciole TTF, registers it in the environment, and applies it to UIManager. Includes
+     * automated baseline correction via AffineTransform.
+     */
     private void loadLucioleFontAsDefaultFont() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_LUCIOLE_PATH)) {
             if (is == null) {
@@ -56,18 +63,13 @@ public enum FontManager {
             Font defaultFont = UIManager.getFont(DEFAULT_FONT);
             Font loadedFont = Font.createFont(Font.TRUETYPE_FONT, is);
             GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(loadedFont);
-
             Font luciole =
                     FontUtils.getCompositeFont(
                             loadedFont.getFamily(), defaultFont.getStyle(), defaultFont.getSize());
-
-            // Calcul automatique de l'offset vertical via LineMetrics
             double verticalOffset = calculateVerticalOffset(luciole);
-
             AffineTransform shiftDown = AffineTransform.getTranslateInstance(0, verticalOffset);
             Font adjustedFont =
                     luciole.deriveFont(shiftDown).deriveFont(luciole.getStyle(), luciole.getSize());
-
             UIManager.put(DEFAULT_FONT, adjustedFont);
             SwingUtilities.invokeLater(FlatLaf::updateUI);
         } catch (FontFormatException | IOException | IllegalStateException e) {
@@ -79,8 +81,10 @@ public enum FontManager {
     }
 
     /**
-     * Calculates the vertical offset required to center the font baseline. This replaces hardcoded
-     * OS-specific shifts.
+     * Calculates the vertical offset required to center the font baseline. * @param font The font
+     * to measure.
+     *
+     * @return The calculated Y-axis translation.
      */
     private double calculateVerticalOffset(Font font) {
         BufferedImage img = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
@@ -93,6 +97,7 @@ public enum FontManager {
         }
     }
 
+    /** Loads Material Icons font into the Graphics Environment for icon rendering. */
     private void loadMaterialIconsFont() {
         try (InputStream is = CanScan.class.getResourceAsStream(FONT_MATERIAL_ICONS_PATH)) {
             if (is == null) {
@@ -110,14 +115,39 @@ public enum FontManager {
         }
     }
 
+    /**
+     * Returns the width of a reference character ('W') for grid alignments. * @return Width in
+     * pixels.
+     */
     public int getCharWidth() {
         return getCurrentFontMetrics().charWidth('W');
     }
 
+    /**
+     * Returns the total line height based on current UI font metrics. * @return Height in pixels
+     * (ascent + descent + leading).
+     */
     public int getLineHeight() {
         return getCurrentFontMetrics().getHeight();
     }
 
+    /**
+     * Calculates a scaled dimension based on the current font's line height. This ensures graphical
+     * elements (like QR Codes) maintain visual consistency between Windows (HiDPI) and Linux
+     * environments.
+     *
+     * @param basePx The reference dimension in pixels (e.g., 50px).
+     * @return The scaled dimension adjusted for the current OS scaling factor.
+     */
+    public int getScaledDimension(int basePx) {
+        double ratio = getLineHeight() / BASE_LINE_HEIGHT_REFERENCE;
+        return (int) Math.round(basePx * ratio);
+    }
+
+    /**
+     * Retrieves the current font metrics from UIManager or provides a JRE fallback. * @return Valid
+     * FontMetrics object.
+     */
     private FontMetrics getCurrentFontMetrics() {
         Font font = UIManager.getFont(DEFAULT_FONT);
         if (font == null) {

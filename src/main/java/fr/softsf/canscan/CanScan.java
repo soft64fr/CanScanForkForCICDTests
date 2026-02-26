@@ -554,7 +554,8 @@ public final class CanScan extends JFrame {
                 Math.max(
                         calculateAvailableQrCodeLabelHeight()
                                 + IntConstants.LOADER_SIZE_OFFSET.getValue(),
-                        QR_CODE_LABEL_DEFAULT_SIZE + IntConstants.LOADER_SIZE_OFFSET.getValue());
+                        FontManager.INSTANCE.getScaledDimension(QR_CODE_LABEL_DEFAULT_SIZE)
+                                + IntConstants.LOADER_SIZE_OFFSET.getValue());
         Dimension size = new Dimension(h, h);
         loader.setPreferredSize(size);
         loader.setMaximumSize(size);
@@ -890,7 +891,7 @@ public final class CanScan extends JFrame {
             return viewport.getHeight() - northPanelWrapper.getHeight() - southSpacer.getHeight();
         }
         return Math.max(
-                QR_CODE_LABEL_DEFAULT_SIZE,
+                FontManager.INSTANCE.getScaledDimension(QR_CODE_LABEL_DEFAULT_SIZE),
                 super.getContentPane().getHeight()
                         - northPanelWrapper.getHeight()
                         - southSpacer.getHeight());
