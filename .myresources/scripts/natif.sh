@@ -56,7 +56,7 @@ cd dist || { echo "Failure of cd dist"; exit 1; }
 
 echo
 echo "[3/5] Simulating runtime usage to generate native-image config-trace..."
-if ! java --enable-native-access=ALL-UNNAMED \
+if ! "$JAVA_HOME/bin/java" --enable-native-access=ALL-UNNAMED \
      -agentlib:native-image-agent=config-output-dir=../config-trace \
      -Djava.awt.headless=false \
      -Dawt.appname="$CANONICAL_NAME" \
@@ -78,7 +78,7 @@ echo
 echo "[4/5] Building native image (GLibC Standard)..."
 echo "=========================================================="
 echo
-if ! native-image --enable-native-access=ALL-UNNAMED \
+if ! "$JAVA_HOME/bin/native-image" --enable-native-access=ALL-UNNAMED \
     --no-fallback \
     --strict-image-heap \
     -march=compatibility \
