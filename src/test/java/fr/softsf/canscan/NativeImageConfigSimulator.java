@@ -112,6 +112,7 @@ public class NativeImageConfigSimulator {
             // Tests
             ratioSliderTooltipSimulation(ratioSlider, robot);
             nameTypingSimulation(nameField, robot);
+            textFieldClipboardAndValidationSimulation(nameField, robot);
             browseFoldersSimulation(browseButton, robot);
             chooseModuleColor(qrColorButton, robot);
             freeDataTooBig(freeRadio, freeField, robot);
@@ -137,7 +138,7 @@ public class NativeImageConfigSimulator {
                 BrowserHelper.INSTANCE.openInBrowser(
                         StringConstants.LATEST_RELEASES_REPO_URL.getValue());
         assertEquals(
-                "\n=== Test 7 : Verification de l'ouverture du navigateur ===\n",
+                "\n=== Test 8 : Verification de l'ouverture du navigateur ===\n",
                 "true",
                 String.valueOf(operationSuccess));
     }
@@ -191,7 +192,7 @@ public class NativeImageConfigSimulator {
             System.out.println(
                     "La JList des heures n'a pas ete trouvee apres l'ouverture du TimePicker.");
         }
-        assertEquals("\n=== Test 6 : Verification du selecteur horaire ===\n", expected, actual);
+        assertEquals("\n=== Test 7 : Verification du selecteur horaire ===\n", expected, actual);
     }
 
     /**
@@ -214,7 +215,7 @@ public class NativeImageConfigSimulator {
         robot.delay(500);
         String actual = interceptAndValideDialog(robot);
         assertEquals(
-                "\n=== Test 5 : Verification de free Data too big ===\n",
+                "\n=== Test 6 : Verification de free Data too big ===\n",
                 StringConstants.ERREUR.getValue(),
                 actual);
     }
@@ -253,7 +254,7 @@ public class NativeImageConfigSimulator {
         String expected = "#000000";
         String actual = qrColorButton.getText();
         assertEquals(
-                "\n=== Test 4 : Verification de la couleur selectionnee ===\n", expected, actual);
+                "\n=== Test 5 : Verification de la couleur selectionnee ===\n", expected, actual);
     }
 
     /**
@@ -322,17 +323,15 @@ public class NativeImageConfigSimulator {
         }
         Objects.requireNonNull(dialog, "dialog ne doit pas etre null");
         dialog.dispose();
-        assertEquals("\n=== Test 3 : Verification du selecteur de fichier ===\n", expected, actual);
+        assertEquals("\n=== Test 4 : Verification du selecteur de fichier ===\n", expected, actual);
     }
 
     /**
-     * Simulates typing "Test" into a {@link JTextField} and verifies the input using a {@link
-     * Robot}. Validation verifies containment due to input synchronization issues and potential
-     * character repetition (e.g., "tttest") in the environment.
+     * Simulates typing text into a {@link JTextField} using a {@link Robot} and verifies the input.
      *
      * @param nameField the text field to interact with
-     * @param robot the Robot used for mouse and keyboard actions
-     * @throws Exception if input or verification fails
+     * @param robot the Robot used for keyboard and mouse actions
+     * @throws Exception if typing or verification fails
      */
     private static void nameTypingSimulation(JTextField nameField, Robot robot) throws Exception {
         Point nameFieldLocation = nameField.getLocationOnScreen();
@@ -340,8 +339,65 @@ public class NativeImageConfigSimulator {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(200);
-        String expected = "test";
-        typeString(robot, expected);
+        String expectedInput = "test";
+        typeString(robot, expectedInput);
+        robot.delay(500);
+        assertEquals(
+                "\n=== Test 2: Verification de la saisie du nom ===\n",
+                expectedInput.toLowerCase(),
+                nameField.getText().toLowerCase().contains(expectedInput) ? expectedInput : "");
+    }
+
+    /**
+     * Simulates clipboard operations, shortcut manipulations, and length validation error dialogs on a {@link JTextField}.
+     *
+     * @param nameField the text field to interact with
+     * @param robot the Robot used for keyboard and mouse actions
+     * @throws Exception if simulation or dialog interception fails
+     */
+    private static void textFieldClipboardAndValidationSimulation(JTextField nameField, Robot robot) throws Exception {
+        Point nameFieldLocation = nameField.getLocationOnScreen();
+        robot.mouseMove(nameFieldLocation.x + 10, nameFieldLocation.y + 10);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(200);
+        nameField.setText("0".repeat(3058));
+        robot.delay(500);
+        interceptAndValideDialog(robot);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(100);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(500);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_X);
+        robot.keyRelease(KeyEvent.VK_X);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.delay(500);
+        interceptAndValideDialog(robot);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.delay(500);
+        interceptAndValideDialog(robot);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_DELETE);
+        robot.keyRelease(KeyEvent.VK_DELETE);
+        robot.delay(500);
+        String expectedInput = "test";
+        typeString(robot, expectedInput);
         robot.delay(500);
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.delay(100);
@@ -360,9 +416,9 @@ public class NativeImageConfigSimulator {
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.delay(500);
         assertEquals(
-                "\n=== Test 2: Verification de la saisie du nom ===\n",
-                expected.toLowerCase(),
-                nameField.getText().toLowerCase().contains(expected) ? expected : "");
+                "\n=== Test 3: Verification du copier-coller et des limites ===\n",
+                expectedInput.toLowerCase(),
+                nameField.getText().toLowerCase().contains(expectedInput) ? expectedInput : "");
     }
 
     /**
