@@ -112,7 +112,7 @@ public class NativeImageConfigSimulator {
             // Tests
             ratioSliderTooltipSimulation(ratioSlider, robot);
             nameTypingSimulation(nameField, robot);
-            textFieldClipboardAndValidationSimulation(nameField, robot);
+            simulateClipboardAndLengthValidation(nameField, robot);
             browseFoldersSimulation(browseButton, robot);
             chooseModuleColor(qrColorButton, robot);
             freeDataTooBig(freeRadio, freeField, robot);
@@ -349,13 +349,14 @@ public class NativeImageConfigSimulator {
     }
 
     /**
-     * Simulates clipboard operations, shortcut manipulations, and length validation error dialogs on a {@link JTextField}.
+     * Simulates clipboard shortcuts (cut, copy, paste, select all), text length validation,
+     * and error dialog handling on a {@link JTextField}.
      *
      * @param nameField the text field to interact with
-     * @param robot the Robot used for keyboard and mouse actions
+     * @param robot the Robot used for automated input simulation
      * @throws Exception if simulation or dialog interception fails
      */
-    private static void textFieldClipboardAndValidationSimulation(JTextField nameField, Robot robot) throws Exception {
+    private static void simulateClipboardAndLengthValidation(JTextField nameField, Robot robot) throws Exception {
         Point nameFieldLocation = nameField.getLocationOnScreen();
         robot.mouseMove(nameFieldLocation.x + 10, nameFieldLocation.y + 10);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -369,51 +370,56 @@ public class NativeImageConfigSimulator {
         robot.delay(100);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(500);
-        robot.keyPress(KeyEvent.VK_CONTROL);
         robot.delay(100);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.delay(500);
         robot.keyPress(KeyEvent.VK_X);
         robot.keyRelease(KeyEvent.VK_X);
         robot.delay(100);
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
-        robot.delay(500);
-        interceptAndValideDialog(robot);
-        robot.delay(100);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_A);
-        robot.delay(100);
-        robot.keyPress(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_V);
-        robot.delay(500);
-        interceptAndValideDialog(robot);
-        robot.delay(100);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_A);
         robot.delay(100);
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.delay(100);
-        robot.keyPress(KeyEvent.VK_DELETE);
-        robot.keyRelease(KeyEvent.VK_DELETE);
+        interceptAndValideDialog(robot);
         robot.delay(500);
-        String expectedInput = "test";
-        typeString(robot, expectedInput);
-        robot.delay(500);
+        robot.delay(100);
+        robot.mouseMove(nameFieldLocation.x + 10, nameFieldLocation.y + 10);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(100);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(100);
         robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.delay(100);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyRelease(KeyEvent.VK_A);
-        robot.delay(100);
+        robot.delay(500);
         robot.keyPress(KeyEvent.VK_C);
         robot.keyRelease(KeyEvent.VK_C);
         robot.delay(100);
-        robot.keyPress(KeyEvent.VK_X);
-        robot.keyRelease(KeyEvent.VK_X);
-        robot.delay(100);
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
         robot.delay(100);
         robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(100);
+        interceptAndValideDialog(robot);
+        robot.delay(500);
+        robot.delay(100);
+        robot.mouseMove(nameFieldLocation.x + 10, nameFieldLocation.y + 10);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.delay(500);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.delay(100);
+        robot.keyPress(KeyEvent.VK_DELETE);
+        robot.keyRelease(KeyEvent.VK_DELETE);
+        robot.delay(100);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(500);
+        String expectedInput = "test";
+        typeString(robot, expectedInput);
         robot.delay(500);
         assertEquals(
                 "\n=== Test 3: Verification du copier-coller et des limites ===\n",
