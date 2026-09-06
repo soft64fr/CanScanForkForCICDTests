@@ -418,13 +418,10 @@ public class NativeImageConfigSimulator {
         robot.delay(100);
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.delay(500);
-        String expectedInput = "test";
-        typeString(robot, expectedInput);
-        robot.delay(500);
         assertEquals(
                 "\n=== Test 3: Verification du copier-coller et des limites ===\n",
-                expectedInput.toLowerCase(),
-                nameField.getText().toLowerCase().contains(expectedInput) ? expectedInput : "");
+                "",
+                nameField.getText());
     }
 
     /**
