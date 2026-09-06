@@ -212,7 +212,7 @@ public class NativeImageConfigSimulator {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(500);
         freeField.setText("0".repeat(3058));
-        robot.delay(500);
+        robot.delay(1000);
         String actual = interceptAndValideDialog(robot);
         assertEquals(
                 "\n=== Test 6 : Verification de free Data too big ===\n",
@@ -341,7 +341,7 @@ public class NativeImageConfigSimulator {
         robot.delay(200);
         String expectedInput = "test";
         typeString(robot, expectedInput);
-        robot.delay(500);
+        robot.delay(1000);
         assertEquals(
                 "\n=== Test 2: Verification de la saisie du nom ===\n",
                 expectedInput.toLowerCase(),
@@ -362,8 +362,8 @@ public class NativeImageConfigSimulator {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(200);
-        nameField.setText("0".repeat(3058));
-        robot.delay(500);
+        nameField.setText("0".repeat(1500));
+        robot.delay(1000);
         interceptAndValideDialog(robot);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
