@@ -64,6 +64,7 @@ import fr.softsf.canscan.ui.EncodedImage;
 import fr.softsf.canscan.ui.FlatLafDatePicker;
 import fr.softsf.canscan.ui.FlatLafTimePicker;
 import fr.softsf.canscan.ui.MyPopup;
+import fr.softsf.canscan.ui.MyTextField;
 import fr.softsf.canscan.ui.UiComponentsConfiguration;
 import fr.softsf.canscan.ui.field.FieldConfig;
 import fr.softsf.canscan.ui.field.FieldFilterType;
@@ -110,22 +111,25 @@ public final class CanScan extends JFrame {
     private final JButton update =
             UiComponentsConfiguration.INSTANCE.createIconOnlyButton("\uE863");
     // MeCard
-    private final JTextField nameField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField phoneField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField emailField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField orgField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField adrField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField urlField = new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField nameField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField phoneField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField emailField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField orgField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField adrField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField urlField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
     // Meet
-    private final JTextField meetTitleField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField meetUIdField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField meetNameField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField meetTitleField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField meetUIdField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField meetNameField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
     private final DatePicker meetBeginDatePicker = new FlatLafDatePicker();
     private final TimePicker meetBeginTimePicker = new FlatLafTimePicker();
     private final DatePicker meetEndDatePicker = new FlatLafDatePicker();
@@ -136,10 +140,10 @@ public final class CanScan extends JFrame {
     private final JTextArea freeField = new JTextArea("");
     private final JScrollPane freeScrollPane = new JScrollPane(freeField);
     // common
-    private final JTextField logoField =
-            new JTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
-    private final JTextField sizeField =
-            new JTextField(
+    private final MyTextField logoField =
+            new MyTextField(IntConstants.TEXT_FIELDS_COLUMNS.getValue());
+    private final MyTextField sizeField =
+            new MyTextField(
                     StringConstants.DEFAULT_QR_CODE_DIMENSION_FIELD.getValue(),
                     IntConstants.TEXT_FIELDS_COLUMNS.getValue());
     private final JSlider marginSlider = new JSlider(0, MINIMUM_QR_CODE_SIZE, margin);
