@@ -908,35 +908,79 @@ public final class CanScan extends JFrame {
     /**
      * Collects current input and visual settings into a {@link WholeFields} for QR code generation.
      *
+     * <p>Validates the generated data length against the ISO 18004 capacity limit. If the limit is
+     * exceeded, active fields are cleared.
+     *
      * @return a populated {@link WholeFields} instance
      */
     private WholeFields getQrInput() {
-        return new WholeFields(
-                this::calculateAvailableQrCodeLabelHeight,
-                currentMode,
-                freeField.getText(),
-                nameField.getText(),
-                orgField.getText(),
-                phoneField.getText(),
-                emailField.getText(),
-                adrField.getText(),
-                urlField.getText(),
-                meetTitleField.getText(),
-                validateAndGetMeetUID(),
-                meetNameField.getText(),
-                DateHelper.INSTANCE.validateAndGetDateAndTime(
-                        meetBeginDatePicker.getDate(), meetBeginTimePicker.getTime()),
-                DateHelper.INSTANCE.validateAndGetDateAndTime(
-                        meetEndDatePicker.getDate(), meetEndTimePicker.getTime()),
-                CoordinateHelper.INSTANCE.getValidatedCoordinate(meetLatField, true),
-                CoordinateHelper.INSTANCE.getValidatedCoordinate(meetLongField, false),
-                logoField.getText(),
-                validateAndGetSize(),
-                validateAndGetMargin(),
-                validateAndGetRatio(),
-                qrColor,
-                bgColor,
-                roundedModulesCheckBox.isSelected());
+        WholeFields fields =
+                new WholeFields(
+                        this::calculateAvailableQrCodeLabelHeight,
+                        currentMode,
+                        freeField.getText(),
+                        nameField.getText(),
+                        orgField.getText(),
+                        phoneField.getText(),
+                        emailField.getText(),
+                        adrField.getText(),
+                        urlField.getText(),
+                        meetTitleField.getText(),
+                        validateAndGetMeetUID(),
+                        meetNameField.getText(),
+                        DateHelper.INSTANCE.validateAndGetDateAndTime(
+                                meetBeginDatePicker.getDate(), meetBeginTimePicker.getTime()),
+                        DateHelper.INSTANCE.validateAndGetDateAndTime(
+                                meetEndDatePicker.getDate(), meetEndTimePicker.getTime()),
+                        CoordinateHelper.INSTANCE.getValidatedCoordinate(meetLatField, true),
+                        CoordinateHelper.INSTANCE.getValidatedCoordinate(meetLongField, false),
+                        logoField.getText(),
+                        validateAndGetSize(),
+                        validateAndGetMargin(),
+                        validateAndGetRatio(),
+                        qrColor,
+                        bgColor,
+                        roundedModulesCheckBox.isSelected());
+        EncodedData encodedData = DataBuilderService.INSTANCE.buildData(currentMode, fields);
+        String data = encodedData != null ? encodedData.data() : null;
+        int maxLength = IntConstants.ISO_18004_HIGH_NUMERIC_MAX_CHAR_PLUS_1.getValue();
+        if (data != null && data.length() > maxLength) {
+            clearFieldsForCurrentMode();
+            SwingUtilities.invokeLater(
+                    () ->
+                            MyPopup.INSTANCE.showDialog(
+                                    "Les champs de saisie ont été réinitialisés\n",
+                                    String.format(
+                                            "Le texte contenait %d caractères et la limite est de"
+                                                    + " %d.",
+                                            data.length(), maxLength),
+                                    StringConstants.ERREUR.getValue()));
+            return getQrInput();
+        }
+        return fields;
+    }
+
+    /**
+     * Clears input fields corresponding to the active generation mode upon exceeding capacity
+     * limits.
+     */
+    private void clearFieldsForCurrentMode() {
+        switch (currentMode) {
+            case FREE -> freeField.setText("");
+            case MECARD -> {
+                nameField.setText("");
+                orgField.setText("");
+                phoneField.setText("");
+                emailField.setText("");
+                adrField.setText("");
+                urlField.setText("");
+            }
+            case MEET -> {
+                meetTitleField.setText("");
+                meetNameField.setText("");
+            }
+            default -> {}
+        }
     }
 
     /** Validates and returns the current meet UID from the meet title field. */

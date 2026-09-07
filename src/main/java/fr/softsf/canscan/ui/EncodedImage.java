@@ -25,6 +25,7 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+import fr.softsf.canscan.constant.IntConstants;
 import fr.softsf.canscan.model.CommonFields;
 import fr.softsf.canscan.model.ModuleContext;
 import fr.softsf.canscan.util.Checker;
@@ -109,7 +110,8 @@ public class EncodedImage {
      * @param data the string to encode in the QR code
      * @param config configuration including size, colors, margin, module style, and optional logo
      * @return a BufferedImage containing the generated QR code
-     * @throws WriterException if encoding the data fails
+     * @throws WriterException if encoding the data fails or if data length exceeds the maximum ISO
+     *     limit
      * @throws IOException if reading the logo file fails
      * @throws OutOfMemoryError if the requested size exceeds available memory
      */
@@ -118,6 +120,14 @@ public class EncodedImage {
         if (Checker.INSTANCE.checkNPE(config, GENERATE_QR_CODE_IMAGE, CONFIG)
                 || Checker.INSTANCE.checkNPE(data, GENERATE_QR_CODE_IMAGE, "data")) {
             return null;
+        }
+        int maxLength = IntConstants.ISO_18004_HIGH_NUMERIC_MAX_CHAR_PLUS_1.getValue();
+        if (data.length() > maxLength) {
+            throw new WriterException(
+                    String.format(
+                            "Image non générée car le texte contient %d caractères et la limite est"
+                                    + " de %d",
+                            data.length(), maxLength));
         }
         final int size = config.size();
         validateMemoryForImageSize(size);

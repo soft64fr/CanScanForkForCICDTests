@@ -349,14 +349,15 @@ public class NativeImageConfigSimulator {
     }
 
     /**
-     * Simulates clipboard shortcuts (cut, copy, paste, select all), text length validation,
-     * and error dialog handling on a {@link JTextField}.
+     * Simulates clipboard shortcuts (cut, copy, paste, select all), text length validation, and
+     * error dialog handling on a {@link JTextField}.
      *
      * @param nameField the text field to interact with
      * @param robot the Robot used for automated input simulation
      * @throws Exception if simulation or dialog interception fails
      */
-    private static void simulateClipboardAndLengthValidation(JTextField nameField, Robot robot) throws Exception {
+    private static void simulateClipboardAndLengthValidation(JTextField nameField, Robot robot)
+            throws Exception {
         Point nameFieldLocation = nameField.getLocationOnScreen();
         robot.mouseMove(nameFieldLocation.x + 10, nameFieldLocation.y + 10);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
